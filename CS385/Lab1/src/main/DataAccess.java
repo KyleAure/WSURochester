@@ -1,5 +1,6 @@
 package main;
 
+<<<<<<< HEAD
 import exceptions.DataAccessException;
 
 import java.util.List;
@@ -105,6 +106,13 @@ public class DataAccess {
 	 */
 	private void notifyException(Exception e) {
 		JOptionPane.showMessageDialog(null, e.toString(), "Error", JOptionPane.ERROR_MESSAGE);
+=======
+public class DataAccess {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+>>>>>>> Create empty project
 	}
 
 }
