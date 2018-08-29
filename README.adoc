@@ -8,17 +8,17 @@ the university's code of conduct. Any current students should avoid copying
 code.
 
 == Course Repositories
-[CS313 - Networking and Telecommunications](./CS313/)
+[CS313 - Networking and Telecommunications](/CS313/)
 
-[CS341 - Data Structures](./CS341/)
+[CS341 - Data Structures](/CS341/)
 
-[CS344 - Intro to Web Programming](./CS344/)
+[CS344 - Intro to Web Programming](/CS344/)
 
-[CS375 - Computer Systems](./CS375/)
+[CS375 - Computer Systems](/CS375/)
 
-[CS385 - Applied Database Management Systems](./CS385/)
+[CS385 - Applied Database Management Systems](/CS385/)
 
-[CS415 - Principles of Programming Languages](./CS415/)
+[CS415 - Principles of Programming Languages](/CS415/)
 
 == Authors
 
