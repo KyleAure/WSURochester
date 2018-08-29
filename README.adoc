@@ -8,11 +8,7 @@ the university's code of conduct. Any current students should avoid copying
 code.
 
 == Course Repositories
-<<<<<<< HEAD
 [CS313 - Networking and Telecommunications](/CS313/)
-=======
-[CS313 - Networking and Telecommunications](./CS313/)
->>>>>>> 53715ef024595cbb593319578dc9fa6aae507b96
 
 [CS341 - Data Structures](/CS341/)
 
@@ -22,11 +18,7 @@ code.
 
 [CS385 - Applied Database Management Systems](/CS385/)
 
-<<<<<<< HEAD
 [CS415 - Principles of Programming Languages](/CS415/)
-=======
-[CS415 - Principles of Programming Languages](./CS415/)
->>>>>>> 53715ef024595cbb593319578dc9fa6aae507b96
 
 == Authors
 
