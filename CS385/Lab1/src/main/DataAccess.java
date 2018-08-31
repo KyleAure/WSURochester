@@ -4,84 +4,28 @@ import exceptions.DataAccessException;
 
 import java.util.List;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-
-import com.opencsv.CSVReader;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import com.opencsv.CSVReader;
+
 public class DataAccess {
-	private enum FILETYPES{
-		UNSUPPORTED, TXT, CSV;
-	}
-	private static final String nl = System.getProperty("line.separator"); 
-	private static DataAccessException dae;
-	private static File file;
-	private static FILETYPES filetype;
-
-	public static void main(String[] args) throws DataAccessException {
-		while(file == null) {
-			chooseFile();
-		}
-		
-		try {
-			getTable();
-		} catch (Exception e) {
-			
-		}
-		
-
-	}
+	private enum FILETYPES{ UNSUPPORTED, TXT, CSV; }
+	private final String nl = System.getProperty("line.separator"); 
+	private DataAccessException dae;
+	private File file;
+	private FILETYPES filetype;
 	
 	/**
-	 * 
-	 * @throws IOException 
+	 * TODO
+	 * @return
 	 */
-	private static void getTable() throws IOException {
-		JTable table = null;
-		
-		if(filetype == FILETYPES.CSV) {
-			CSVReader reader = new CSVReader(new FileReader(file)); 
-			List myEntries = reader.readAll();
-			Object[] columnnames = (String[]) myEntries.get(0);
-			DefaultTableModel tableModel = new DefaultTableModel(columnnames, myEntries.size()-1); 
-			int rowcount = tableModel.getRowCount();
-			for (int x = 0; x<rowcount+1; x++)
-			{
-			    int y = 0;
-			    if (x>0)
-			    {
-			        for (String thiscellvalue : (String[])myEntries.get(x))
-			        {
-			            tableModel.setValueAt(thiscellvalue, x-1, y);
-			            y++;
-			        }
-			    }
-			}
-
-			table = new JTable(tableModel);
-		}
-		
-		if(table != null) {
-			table.setVisible(true);
-		}
-		
-	}
-	
-	private static void printData() {
-		
-	}
-	
-	/**
-	 * Opens a JFileChooser and prompts user to choose a data file.
-	 * This helper method will set the class variables file and filetype.
-	 */
-	private static void chooseFile()  {
+	private File chooseFile()  {
 		//Location file chooser will open too
 		File workingDirectory = new File(System.getProperty("user.dir"));
 		
@@ -106,11 +50,52 @@ public class DataAccess {
 				dae = new DataAccessException(nl + "Invalid File Type." + 
 						nl + "Please choose a .txt file.");
 				notifyException(dae);
-				return;
+				return null;
+			} else {
+				System.out.println(selectedFile.getAbsolutePath());
+				file = selectedFile;
+				return file;
 			}
-			System.out.println(selectedFile.getAbsolutePath());
-			file = selectedFile;
+		} else {
+			return null;
 		}
+		
+	}
+	
+	/**
+	 * TODO 
+	 * 
+	 * @return
+	 * @throws IOException
+	 */
+	public JTable getTable() throws IOException {
+		JTable table = null;
+		
+		if(filetype == FILETYPES.CSV) {
+			@SuppressWarnings("resource")
+			CSVReader reader = new CSVReader(new FileReader(file)); 
+			
+			List<String[]> myEntries = reader.readAll();
+			
+			String[] columnnames = myEntries.get(0);
+			System.out.println("column =" + columnnames);
+			DefaultTableModel tableModel = new DefaultTableModel(columnnames, myEntries.size()-1); 
+			int rowcount = tableModel.getRowCount();
+			for (int x = 0; x<rowcount+1; x++) {
+			    int y = 0;
+			    if (x>0) {
+			        for (String thiscellvalue : myEntries.get(x)) {
+			            tableModel.setValueAt(thiscellvalue, x-1, y);
+			            y++;
+			        }
+			    }
+			}
+
+			table = new JTable(tableModel);
+		}
+		
+		return table;
+		
 	}
 	
 	/**
@@ -118,7 +103,7 @@ public class DataAccess {
 	 * 
 	 * @param e Exception that was thrown
 	 */
-	private static void notifyException(Exception e) {
+	private void notifyException(Exception e) {
 		JOptionPane.showMessageDialog(null, e.toString(), "Error", JOptionPane.ERROR_MESSAGE);
 	}
 
