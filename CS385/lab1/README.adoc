@@ -1,0 +1,26 @@
+= CS395 Lab1
+
+== Project Goals
+* Download student list from D2L (Student.xlsx)
+* Choose format to work with data, such as, comma delaminated format.
+* With a partner, using pair programming, or individually.
+* Construct a Java program that reads from the file, then prints out the names of all of the students that have a favorite color of Green or Black in alphabetical order.
+* For next week, be prepared to answer questions about how you completed this task, and about the challenges you would face if additional requirements were added to the program.
+
+== Running project
+Create a local copy of this project by running the following command:
+
+```bash
+git clone git@github.com:KyleAure/WSURochester.git
+```
+
+Then navigate to this project directory:
+```bash
+cd WSURochester/CS385/lab1
+```
+
+Then run the following maven goals to build and run this program:
+```bash
+mvn clean install
+mvn exec:java -Dexec.mainClass="com.cs385.app.App"
+```

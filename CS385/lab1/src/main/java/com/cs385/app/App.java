@@ -1,4 +1,4 @@
-package main;
+package com.cs385.app;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -8,15 +8,14 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 
-
-public class ClassTable extends JPanel {
-	
-	//TODO Make this work using the data access stuff
-	
+//TODO 
+public class App extends JPanel {
+	private static final long serialVersionUID = 2835313883254677925L;
 	private boolean DEBUG = false;
 	 
-    public ClassTable() {
+    public App() {
         super(new GridLayout(1,0));
  
         String[] columnNames = {"First Name",
@@ -84,7 +83,7 @@ public class ClassTable extends JPanel {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
         //Create and set up the content pane.
-        ClassTable newContentPane = new ClassTable();
+        App newContentPane = new App();
         newContentPane.setOpaque(true); //content panes must be opaque
         frame.setContentPane(newContentPane);
  
@@ -94,6 +93,17 @@ public class ClassTable extends JPanel {
     }
  
     public static void main(String[] args) {
+    	DataAccess da = new DataAccess();
+    	da.chooseFile();
+    	
+    	try {
+			da.parseData();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
