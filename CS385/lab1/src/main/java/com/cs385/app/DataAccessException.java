@@ -1,6 +1,8 @@
-package exceptions;
+package com.cs385.app;
 
 public class DataAccessException extends Exception {
+	private static final long serialVersionUID = -4287245645002940503L;
+
 	public DataAccessException() {
 		super();
 	}
