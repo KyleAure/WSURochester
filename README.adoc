@@ -1,25 +1,23 @@
 = CS Project Repository
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
 
 Educational project repository owned by Kyle Jon Aure for the
 Winona State University - Rochester Computer Science program.
 
 IMPORTANT: Project and assignment solutions are enclosed. Plagiarism is against
 the university's code of conduct. Any current students should avoid copying
-code.
+code or assignments.
 
-== Course Repositories
-[CS313 - Networking and Telecommunications](/../CS313/)
+== Author Information
+**Kyle Jon Aure** - Creator - link:{AuthorURL}[KyleAure]
 
-[CS341 - Data Structures](/CS341/)
+Computer Science student at link:www.winona.edu[Winona State University]
 
-[CS344 - Intro to Web Programming](/CS344/)
-
-[CS375 - Computer Systems](/CS375/)
-
-[CS385 - Applied Database Management Systems](/CS385/)
-
-[CS415 - Principles of Programming Languages](/CS415/)
-
-== Authors
-
-* **Kyle Jon Aure** - *Creator* - [KyleAure](https://github.com/KyleAure)
+== Links to Course Projects
+* link:{RepoURL}/CS313[CS313 - Networking and Telecommunications]
+* link:{RepoURL}/CS341[CS341 - Data Structures]
+* link:{RepoURL}/CS344[CS344 - Intro to Web Programming]
+* link:{RepoURL}/CS375[CS375 - Computer Systems]
+* link:{RepoURL}/CS385[CS385 - Applied Database Management Systems]
+* link:{RepoURL}/CS415[CS415 - Principles of Programming Languages]

@@ -1,0 +1,41 @@
+= My Document's Title
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2018-09-02
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CSXXX
+
+.Project Description
+****
+Short project description
+****
+
+== Project Details
+* **Course** - CSXXX
+* **Instructor** - Dr. XXX
+* **Date** - 2018/01/01
+
+== Project Goals
+* Thing 1
+* Thing 2
+* Thing 3
+* Thing 4
+* Thing 5
+
+== Running project
+Create a local copy of this project by running the following command:
+
+```bash
+git clone git@github.com:KyleAure/WSURochester.git
+```
+
+Then navigate to this project directory:
+```bash
+cd WSURochester/CS385/lab1
+```
+
+Then run the following maven goals to build and run this program:
+```bash
+mvn clean install
+mvn exec:java -Dexec.mainClass="com.cs385.app.App"
+```
