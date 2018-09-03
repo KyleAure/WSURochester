@@ -10,10 +10,9 @@ v1.0, 2018-09-02
 Introduction project to C++ for CS415: Principles of Programming Languages
 ****
 
-== Project Details
+== Course Details
 * **Course** - CS415: Principles of Programming Languages
 * **Instructor** - Daniel Nash
-* **Date** - 2018/09/02
 
 == Project Goals
 * Install C++ IDE

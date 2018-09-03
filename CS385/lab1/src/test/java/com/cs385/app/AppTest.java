@@ -30,6 +30,10 @@ public class AppTest extends TestCase {
     }
 
 
+    /**
+     * Ensures that after creating a new student that this
+     * student is then added to the student list.
+     */
     public void testStudentAddedToList() {
     	Student x = new Student("a", "b", "c", "d", "e", "f", "g");
         ArrayList<Student> list = helper.getStudentList();
@@ -37,6 +41,10 @@ public class AppTest extends TestCase {
         assertTrue("Student list should have contained student x.", list.contains(x));
     }
     
+    /**
+     * Ensures that after a student is added to the list it 
+     * can successfully be removed using the removeStudentFromList method.
+     */
     public void testRemoveStudentFromList() {
     	Student x = new Student("a", "b", "c", "d", "e", "f", "g");
     	
@@ -47,6 +55,9 @@ public class AppTest extends TestCase {
     	}
     }
     
+    /**
+     * Ensures that students are successfully sorted by last name.
+     */
     @SuppressWarnings("unused")
 	public void testSort() {
     	Student x = new Student("a", "Zebra", "black", "d", "e", "f", "g");
@@ -60,6 +71,10 @@ public class AppTest extends TestCase {
     	assertTrue("Student z should have be at position 0", list.get(0) == z);
     }
     
+    /**
+     * Ensures that only students that have a 'favorite color' of black or
+     * green end up in the sorted list.
+     */
     public void testQuery() {
     	Student x = new Student("a", "b", "black", "d", "e", "f", "g");
     	Student y = new Student("a", "b", "green", "d", "e", "f", "g");
