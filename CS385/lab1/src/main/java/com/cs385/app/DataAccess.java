@@ -14,57 +14,50 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 
 /**
- * The data access class provides helper methods to choose a data file from the
- * system. and process it.
+ * The data access class provides helper methods to choose a data file 
+ * from the system, process it, and manipulate the data.
  * 
- * @author wu7472qj
- *
+ * @author Kyle Jon Aure
  */
 public class DataAccess {
+	
+	/**
+	 * Enum list of supported file tips.
+	 * TODO Add support for .txt files that are also comma delimited.
+	 */
 	private enum FILETYPES {
-		UNSUPPORTED, TXT, CSV;
+		UNSUPPORTED, CSV;
 	}
-
+	
+	//Constants
 	private final String nl = System.getProperty("line.separator");
+	
+	//Fields
 	private DataAccessException dae;
 	private File file;
 	private FILETYPES filetype;
+	private Student helper;
+	
+	/* ********************
+	 * CONSTRUCTORS
+	 * ********************/
 
 	/**
-	 * Data Access constructor initializes a null file with null filetype. It is
-	 * recommended that after initializing a DataAccess object that you use the
-	 * chooseFile() method.
+	 * Data Access constructor 
+	 * 
+	 * Initializes a null file with null filetype and a helper student. 
+	 * It is recommended that after initializing a DataAccess object that you use the
+	 * chooseFile() method to get the file and filetype.
 	 */
 	public DataAccess() {
 		file = null;
 		filetype = null;
+		helper = new Student();
 	}
-
-	/**
-	 * Returns the file object
-	 * 
-	 * @return File this data access file object
-	 */
-	public File getFile() {
-		if (file == null) {
-			throw new NullPointerException("No file has been choosen.  Please use the chooseFile method");
-		} else {
-			return file;
-		}
-	}
-
-	/**
-	 * Returns the file type
-	 * 
-	 * @return FILETYPES this data access file's type
-	 */
-	public FILETYPES getFileType() {
-		if (filetype == null) {
-			throw new NullPointerException("No file has been choosen.  Please use the chooseFile method");
-		} else {
-			return filetype;
-		}
-	}
+	
+	/* ********************
+	 * HELPER METHODS
+	 * ********************/
 
 	/**
 	 * Opens a file chooser and gets a file object and type
@@ -72,7 +65,7 @@ public class DataAccess {
 	 * @return File this data access file object
 	 */
 	public File chooseFile() {
-		// Location file chooser will open too
+		// Location where file chooser will open too
 		File workingDirectory = new File(System.getProperty("user.dir"));
 
 		// File chooser and settings
@@ -88,17 +81,18 @@ public class DataAccess {
 		if (returnValue == JFileChooser.APPROVE_OPTION) {
 			File selectedFile = fc.getSelectedFile();
 
-			filetype = selectedFile.getName().contains(".txt") ? FILETYPES.TXT
-					: selectedFile.getName().contains("csv") ? FILETYPES.CSV : FILETYPES.UNSUPPORTED;
+			filetype = selectedFile.getName().contains(".csv") ? FILETYPES.CSV : FILETYPES.UNSUPPORTED;
 
 			if (filetype == FILETYPES.UNSUPPORTED) {
-				dae = new DataAccessException(nl + "Invalid File Type." + nl + "Please choose a .txt file.");
+				dae = new DataAccessException(nl + "Invalid File Type." + nl + "Please choose a .csv file.");
 				notifyException(dae);
 				file = null;
 			} else {
 				System.out.println(selectedFile.getAbsolutePath());
 				file = selectedFile;
 			}
+		} else {
+			return new File("CANCEL");
 		}
 
 		return file;
@@ -130,14 +124,48 @@ public class DataAccess {
 		}
 	}
 	
+	/**
+	 * Creates a header by using a helper student
+	 * to get header information from the Student class.
+	 * 
+	 * @return String[] header row
+	 */
+	public String[] createHeader() {
+		return helper.createHeader();
+	}
+	
+	/* ********************
+	 * GETTERS
+	 * ********************/
+
+	public File getFile() {
+		if (file == null) {
+			throw new NullPointerException("No file has been choosen.  Please use the chooseFile method");
+		} else {
+			return file;
+		}
+	}
+
+	public FILETYPES getFileType() {
+		if (filetype == null) {
+			throw new NullPointerException("No file has been choosen.  Please use the chooseFile method");
+		} else {
+			return filetype;
+		}
+	}
+	
 	public ArrayList<Student> getStudentList() {
-		return Student.getStudentList();
+		return helper.getStudentList();
 	}
 	
 	public ArrayList<Student> getSortedList() {
-		new Student().sortAndQuery();
-		return Student.getSortedList();
+		helper.sortAndQuery();
+		return helper.getSortedList();
 	}
+	
+	/* ********************
+	 * OUTPUT
+	 * ********************/
 
 	/**
 	 * Notifies user that a non-program breaking exception was thrown.
