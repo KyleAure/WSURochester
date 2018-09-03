@@ -1,4 +1,4 @@
-/*CS 415; Program #1; Name:
+/*CS 415; Program #1; Name: Kyle Jon Aure
 C++ program to demonstrate methods of passing arguments in function.
   Pass by value, Pass by reference, Pass by address.
 */
