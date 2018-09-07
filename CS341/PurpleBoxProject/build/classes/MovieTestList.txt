@@ -1,3 +1,0 @@
-Harry Potter#false#Horror#10/17/2018#true#5
-Lord of the Rings#true#Sci-Fi#2/28/2018#false#2
-Bee Movie#true#Cartoon#2/22/2018#true#15

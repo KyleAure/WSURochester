@@ -15,9 +15,9 @@ code or assignments.
 Computer Science student at link:www.winona.edu[Winona State University]
 
 == Links to Course Projects
-* link:{RepoURL}/CS313[CS313 - Networking and Telecommunications]
-* link:{RepoURL}/CS341[CS341 - Data Structures]
-* link:{RepoURL}/CS344[CS344 - Intro to Web Programming]
-* link:{RepoURL}/CS375[CS375 - Computer Systems]
-* link:{RepoURL}/CS385[CS385 - Applied Database Management Systems]
-* link:{RepoURL}/CS415[CS415 - Principles of Programming Languages]
+* link:{RepoURL}/tree/master/CS313[CS313 - Networking and Telecommunications]
+* link:{RepoURL}/tree/master/CS341[CS341 - Data Structures]
+* link:{RepoURL}/tree/master/CS344[CS344 - Intro to Web Programming]
+* link:{RepoURL}/tree/master/CS375[CS375 - Computer Systems]
+* link:{RepoURL}/tree/master/CS385[CS385 - Applied Database Management Systems]
+* link:{RepoURL}/tree/master/CS415[CS415 - Principles of Programming Languages]
