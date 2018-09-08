@@ -1,27 +1,27 @@
-Firstname,Lastname,FavoriteColor,Pets,Hometown,Favorite Movie(s),Shoe size
-Perla,Olivas,Purple,"Toy poodle Noir, Pitsky Nebula",Rochester,Selena,N/A
-PK,Lai,Green,None,Rochester,Transylvania,9 1/2
-Brandon,Salmon,Red,Poodle Comet,Coon Rapids,Blade Runner,10
-Travis,Kruse,Green,N/A,Hayfield,Avengers: Infinity War,13
-Andrew,Poss,Orange ,None,Rochester,Incredibles,13
-Tyree, Gustafson,Dark grey,None,"Rochester, MN",Sacrio,11.5
-Joe,Hernandez,Blue,None,"Lakewood, CA",Titanic,10
-Rachel,Dunkley,Purple,None,Eden Prairie,Lion King,6
-Lauren,Jones,Pink,None,Rochester,Shaun of the Dead,11
-Erika,Tix,Turquoise,"German collie Odin, Pitsky Lyra, Bearded Dragon Mushu",Mantorville,Across The Universe,9
-Tristin,Harvell,Black,Australian Shepard: Kumo,Zumbro Falls,Inception,9
-Johnny,Tran,Green,"Shar Pei: Lucky, Cocker Spaniel: Lucy",Rochester,The Lobster,10
-Amel,Nukic,Blue,N/A,Rochester,N/A,10
-Jiawei Sherry,Zhou,Silver,Persian Kabi,"Chengdu, China",Her,7.5
-Nick,Schinke,Blue,None,Rochester,Up,10
-Rhett ,JAcobs,Green,2 dogs,Rochester,Fight Club,10
-Kyle,Aure,Purple,Fish: poseidon,"Big Lake, MN",Moana,12
-Nicholas,Kepros,Red,None,Pine Island,The Empire Strikes Back,N/A
-Michael,Riley,Blue,"Pomeranian, Prince",Rochester,Willy Wonka and The Chocolate Factory,10.5
-Chris,Herold,Blue,None,West Concord,Ready player one,10.5
-Hunter,Mahoney,Blue,cat max,Cannon Falls,Hot fuzz,9
-Arifur,Niloy,Black,"Golden retriever, maximus ",Dhaka," swashank redemption, forest gump",8
-Zack,Anderson,Green,None,Kasson,Grown Ups,12
-Brian,Klein,Dark Green,no pets,"Aiea, HI",13th Warrior,13
-Jon,Collins,Forest Green,"Black Lab/Schipperke Indy, Husky/Shepherd Grizzly Bear","Rochester, MN",N/A,12 W
-Joe,Denzer,Green,"Lab Turley, Teddy Bear Teddy, Jack Russell Ozzy","Ellsworth, WI",Braveheart,10
+﻿Firstname;Lastname;FavoriteColor;Pets;Hometown;Favorite Movie(s);Shoe size
+Perla;Olivas;Purple;Toy poodle Noir, Pitsky Nebula;Rochester;Selena;N/A
+PK;Lai;Green;None;Rochester;Transylvania;9 1/2
+Brandon;Salmon;Red;Poodle Comet;Coon Rapids;Blade Runner;10
+Travis;Kruse;Green;N/A;Hayfield;Avengers: Infinity War;13
+Andrew;Poss;Orange ;None;Rochester;Incredibles;13
+Tyree; Gustafson;Dark grey;None;Rochester, MN;Sacrio;11.5
+Joe;Hernandez;Blue;None;Lakewood, CA;Titanic;10
+Rachel;Dunkley;Purple;None;Eden Prairie;Lion King;6
+Lauren;Jones;Pink;None;Rochester;Shaun of the Dead;11
+Erika;Tix;Turquoise;German collie Odin, Pitsky Lyra, Bearded Dragon Mushu;Mantorville;Across The Universe;9
+Tristin;Harvell;Black;Australian Shepard: Kumo;Zumbro Falls;Inception;9
+Johnny;Tran;Green;Shar Pei: Lucky, Cocker Spaniel: Lucy;Rochester;The Lobster;10
+Amel;Nukic;Blue;N/A;Rochester;N/A;10
+Jiawei Sherry;Zhou;Silver;Persian Kabi;Chengdu, China;Her;7.5
+Nick;Schinke;Blue;None;Rochester;Up;10
+Rhett ;JAcobs;Green;2 dogs;Rochester;Fight Club;10
+Kyle;Aure;Purple;Fish: poseidon;Big Lake, MN;Moana;12
+Nicholas;Kepros;Red;None;Pine Island;The Empire Strikes Back;N/A
+Michael;Riley;Blue;Pomeranian, Prince;Rochester;Willy Wonka and The Chocolate Factory;10.5
+Chris;Herold;Blue;None;West Concord;Ready player one;10.5
+Hunter;Mahoney;Blue;cat max;Cannon Falls;Hot fuzz;9
+Arifur;Niloy;Black;Golden retriever, maximus ;Dhaka; swashank redemption, forest gump;8
+Zack;Anderson;Green;None;Kasson;Grown Ups;12
+Brian;Klein;Dark Green;no pets;Aiea, HI;13th Warrior;13
+Jon;Collins;Forest Green;Black Lab/Schipperke Indy, Husky/Shepherd Grizzly Bear;Rochester, MN;N/A;12 W
+Joe;Denzer;Green;Lab Turley, Teddy Bear Teddy, Jack Russell Ozzy;Ellsworth, WI;Braveheart;10
