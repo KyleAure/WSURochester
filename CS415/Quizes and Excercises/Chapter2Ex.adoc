@@ -14,8 +14,8 @@ Be sure to number your answers, and include your name and class number.
 
 == Problems
 === 2.1f
-P. Write a regular expression to capture the following:
-D. Financial quantities in American notation.
+* Write a regular expression to capture the following:
+* Financial quantities in American notation.
 1. Leading dollar sign ($),
 2. An optional string of asterisks ,
 3. A string of decimal digits,
@@ -24,8 +24,39 @@ D. Financial quantities in American notation.
 6. Otherwise it must not start with a zero.
 7. If there are more than three digits to the left of the decimal point, groups of three (counting from the right) must be separated by commas (,).
 
-A.
+**Answers**
+
 
 === 2.12
+* Consider the following grammar:
+** G → S $$
+** S → A M
+** M → S | ε
+** A → a E | b A A
+** E → a B | b A | ε
+** B → b E | a B B
+
+**Answers**
+
+A. Describe in English the language that the grammar generates.
+B. Show a parse tree for the string a b a a.
+C. Is the grammar LL(1)? If so, show the parse table; if not, identify a prediction conflict.
 
 === Extra Credit 2.15 a-c
+* Consider the following context-free grammar.
+** G → G B
+** __ → G N
+** __ → ε
+** B → ( E )
+** E → E ( E )
+** __ → ε
+** N → ( L ]
+** L → L E
+** __ → L (
+** __ → ε
+
+**Answers**
+
+A. Describe in English the language that the grammar generates.
+B. Give a parse tree for the string (( ]( ).
+C. Give a canonical (right-most) derivation of this same string.
