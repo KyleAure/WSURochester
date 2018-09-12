@@ -1,4 +1,4 @@
-= CS395 Lab1
+= CS385 Lab1
 Kyle Aure <KAure09@winona.edu>
 v1.0, 2018-09-03
 :RepoURL: https://github.com/KyleAure/WSURochester
