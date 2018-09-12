@@ -1,9 +1,9 @@
-= CS395 Lab2
+= CS385 Lab2
 Kyle Aure <KAure09@winona.edu>
 v1.0, 2018-09-07
 :RepoURL: https://github.com/KyleAure/WSURochester
 :AuthorURL: https://github.com/KyleAure
-:DirURL: {RepoURL}/CS395
+:DirURL: {RepoURL}/CS385
 
 .Project Description
 ****
@@ -12,7 +12,7 @@ With this database we will query our data using the SQL syntax.
 ****
 
 == Course Details
-* **Course** - CS395
+* **Course** - CS385
 * **Instructor** - Dr. Nicole Anderson
 
 == Project Goals
@@ -44,8 +44,8 @@ image::assets/outputSortByFirstName.png[]
 
 === Group By Color
 This query was hard given the specification.
-I choose to use the `GROUP BY` keyword to create a table that lists the number of students whose favorite colors were `BLACK` or `GREEN`.
-However, I could have used the `ORDER BY` keyword to sort the list so that `BLACK` and `GREEN` fans showed up 'in order'.
+I choose to use the `ORDER BY` keyword to sort the list so that `BLACK` and `GREEN` fans showed up 'in order'.
+I could have used the `GROUP BY` keyword to create a table that lists the number of students whose favorite colors were `BLACK` or `GREEN`.
 
 image::assets/queryGroupByColor.png[]
 image::assets/outputGroupByColor.png[]
