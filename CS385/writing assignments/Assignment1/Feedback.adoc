@@ -1,0 +1,28 @@
+= Writing Feedback
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2018-09-24 - CS385 Applied Database Management Systems
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS385
+
+== Self Critique
+The writing assignment did not mention that the paper needed to necessarily be a 'How-To' paper.
+Instead I wrote a paper on the Basics of Knitting.
+The review sheet questions did indicate, however, that the basis of the paper should describe how to do an action.
+
+Upon reviewing other student's papers I decided that I should keep the basis of my paper the same.
+However, since it is not a How-To paper I needed to change my introduction to clarify the purpose of the paper.
+
+== Peer Critique
+The peer critiques all indicated that I needed to make my introduction / thesis more clear.
+Additionally, that my conclusion was interesting, but was off topic with the rest of my paper.
+
+The peer critiques did all enjoy the subject and thought that the layout and flow were well done.
+Some of my peer critiques did mention that they felt like the paper did not meet the requirements for the paper.
+One critique mentioned that it would be nice in the conclusion to direct readers on the next steps to learn how to knit.
+
+== Results
+I changed my title from 'Basics of Knitting' to 'Introduction of Knitting' to clarify that this is an introduction to craft knitting and not a How-To.
+I made a clearer introduction / thesis statement.
+I updated the conclusion to review the topics discussed in the paper and recommend beginning projects / resources.
+I also updated some of the grammar and punctuation.
