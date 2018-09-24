@@ -1,0 +1,99 @@
+= Introduction to Craft Knitting
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2018-09-24 - CS385 Applied Database Management Systems
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS385
+
+== Background
+Knitting and knitted fabric has been around for hundreds of years.
+Up until the industrial revolution knitting was done by the use of needles or looms.
+During this renaissance knitters became creative, creating different types of fabrics and color designs.
+Once machines took over the job of knitting fabrics for everyday clothing, knitting became more and more a pastime craft.
+In the simplest of terms `knitting is the process of creating fabric using a specialized stitch called a knit.`
+Before learning to knit a perspective knitter needs to know about the tools, techniques, and costs associated with the craft.
+
+== Tools and Materials
+The basic tools required to create a piece of knit fabric are a pair of knitting `needles` and `yarn`.
+Knitting needles come in a few different varieties.
+The `classic style` of needles are straight, have one pointed end and one capped end, and are typically long enough to hold a babies blanket worth of stitches.
+There are `double pointed` needles that have points on both sides and are typically a foot in length.
+Finally, there are `circular needles` which resemble two double pointed needles who's ends are attached by a cable.
+
+The variety of needles types also come in a variety of sizes.
+A needles circumference should be scaled with the thickness of yarn a knitter is using.
+This will ensure that the resulting fabric is knit tight enough that gaps between stitches are minimal.
+
+Yarn can be made out of many different materials.
+Traditionally, yarn was made out of `animal fibers`, such as sheep, lama, or alpaca fur.
+Yarn can also be made out of `organic fibers`, such as cotton, hemp, or bamboo.
+Common these days are yarns made from `synthetic fibers` like nylon or polyester.
+Fibers are then spun into yarn of varying thicknesses and tightness for different types of fabric.
+
+== Stitches and Fabrics
+Knitting is full of abbreviations and terms unique to the craft.
+There are two types of stitches in knitting the `knit` stitch and the `purl` stitch.
+The `knit` stitch is the most recognizable as the front face of knit fabric which creates columns of 'v' shapes down the fabric.
+To knit a circular piece of fabric, such as a sock or sleeve, a knitter would just knit every stitch in concentric circles until the fabric is at it's desired length.
+
+To knit a flat piece of fabric, after each row a knitter needs to turn the work and go backwards.
+Knitting in this way is similar to how an inkjet printer head goes back and forth across the page.
+When the work is turned to the `wrong side` and knit, the iconic 'v' shape will be on the back of the work instead of on the front of the work.
+In this case a `purl` stitch, which is just a knit done backwards, is used so that the 'v' ends up on the correct side.
+
+Combining knit and purl stitches in unique ways will give different textures to fabric.
+For example, many people have heard the phrase 'knit two - purl two.'
+This will result in a `ribbed` fabric.
+The 'v' of the knit stitch will pull the fabric forward and the purl will push the fabric backwards.
+The result of this will be a fabric that resembles the pleats of an accordion.
+
+Stitches can also be knit out of order.
+This is done to create a style of fabric called `cabling`.
+To achieve this style a knitter will pull a few stitches off the needle, continue knitting, and then knit the stitches on hold back in later.
+A cabled fabric resembles the twisting or braiding of hair.
+
+== Color Work
+One of the best parts of knitting garments or accessories is being able to customize the color.
+Color can be introduced into a project by using a `designer yarn`.
+Designer yarns have been dyed with multiple colors to create color variation without having to introduce multiple yarns.
+Advanced techniques for introducing multiple colors include `fair isle`, `intarsia`, and `stripping`.
+
+`Fair isle` is the technique of knitting using multiple yarns at the same time.
+Fair isle alternates which yarn (color) is being brought forward with the knit stitch.
+This results in a fabric with intricate designs usually seen in Nordic culture.
+
+New techniques, such as intarsia and stripping, are easier to learn.
+These techniques use multiple yarn colors, but the knitter only uses one color at a time.
+By changing the yarn at the end of a row stripes are created in the technique called `stripping`.
+Alternatively, by changing the yarn in the middle of a row squares or patches of color are created in the technique called `intarsia`.
+
+== Costs and Time
+Knitting as a hobby is pretty inexpensive for someone who is just beginning.
+A pair of traditional knitting needles are anywhere from $5 to $15.
+A puck or skein of synthetic yarn can be purchased for $7 to $15.
+
+Like any other hobby, knitting can also be very expensive.
+A set of interchangeable needles can run anywhere from $100 to $200.
+Similarly, a skein of specialized alpaca yarn can cost upwards of $50 to $100.
+
+Knitting a scarf, blanket, or any square project is pretty straightforward.
+However, more complicated projects, such as sweaters, gloves, or mittens are easier to knit with an established pattern.
+This is where Knitting shines as a hobby as patterns are often free and readily available online.
+Most knitters share their projects and patterns on a quasi social media site called `Raverly`.
+
+Knitting a garment or accessory is often more expensive in materials and time than a manufactured version.
+Knitting using needles, especially while learning, is pretty slow.
+It can take upwards of a few hundred hours to knit a full size blanket.
+More intricate pieces, such as sweaters or mittens, can take just as long.
+
+== Conclusion
+Knitting as a craft or pastime can be very rewarding.
+The amount of customization a knitter can put into a piece of work makes every project special.
+Knitters can create customized pieces of clothing that fit their body or model perfectly.
+Some of the other benefits of knitting include stress relief, creative outlet, and manual dexterity therapy.
+
+This paper gave an introduction to the world of knitting.
+Now that you know what materials you need, the types of fabrics you can create, and the cost of knitting you will be well prepared to learn how to knit.
+To learn how to knit there are many tutorials online through `YouTube` or similar videos streaming services.
+Good starter projects include blankets, scarves, and hats.
+Once you have learned the basics socks and mittens are good intermediate projects. 
