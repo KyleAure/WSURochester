@@ -5,7 +5,8 @@
 * Description:  Program to multiply two positive integers using Egyptian multiplication.
 *               A way to multiply using reptative addition where processing time is equivalent to O(n) = log(n)
 * Registers  :  [D2] = M  [D3] = N  [D1] = PRODUCT
-*-----------------------------------------------------------
+*-----------------------------------------------------------
+
 * START PROGRAM
         ORG     $1000
 START   MOVE    M,D2    ;D2 <- M
@@ -17,7 +18,7 @@ WHILE   CMP     #0,D2   ;WHILE (M!=0)
         BCS     ADD     ;IF REMAINDER => M WAS ODD > BRANCH TO ADD
         BRA     NOADD   ;ELSE BRANCH TO NOADD
 ADD     ADD     D3,D1   ;D1 <- D1 + D3 C <- CARRY
-        BCS     OFLOW   ;IF CARRY=> MULIPLICATIVE OVERFLOW > BRANCH TO OFLOW
+        BCS     OFLOW   ;IF CARRY => MULIPLICATIVE OVERFLOW > BRANCH TO OFLOW
 NOADD   ASL     #1,D3   ;D3 <- D3 * 2 
         BRA     WHILE   ;LOOP
 OFLOW   MOVE    #-1,D1  ;D1 <- #-1
@@ -31,10 +32,14 @@ ENDW    MOVE    D1,PRODUCT  ;PRODUCT <- [D1]
 
 * DECLARE VARIABLES
         ORG     $2000   ;DATA STARTS HERE
-M       DC.W    234       ;FIRST INPUT
-N       DC.W    567       ;SECOND INPUT
+M       DC.W    122       ;FIRST INPUT
+N       DC.W    503       ;SECOND INPUT
 PRODUCT DS.W    1       ;OUTPUT
-        END     START   ;END PROGRAM        
+        END     START   ;END PROGRAM
+
+        
+
+
 *~Font name~Courier New~
 *~Font size~10~
 *~Tab type~1~

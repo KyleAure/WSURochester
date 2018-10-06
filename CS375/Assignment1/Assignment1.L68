@@ -1,43 +1,46 @@
 00001000 Starting Address
 Assembler used: EASy68K Editor/Assembler v5.16.01
-Created On: 10/3/2018 5:11:15 PM
+Created On: 10/6/2018 1:57:26 PM
 
 00000000                             1  *-----------------------------------------------------------
 00000000                             2  * Title      :  Assignment1.x68
 00000000                             3  * Written by :  Kyle Jon Aure
 00000000                             4  * Date       :  10/03/2018
-00000000                             5  * Description:  Program to multiply two positive integers using Egyptian multiplication.  
-00000000                             6  * Registers  :  [D2] = M  [D3] = N  [D1] = PRODUCT
-00000000                             7  *-----------------------------------------------------------
-00000000                             8  * START PROGRAM
-00001000                             9          ORG     $1000
-00001000  3439 00002000             10  START   MOVE    M,D2    ;D2 <- M
-00001006  3639 00002002             11          MOVE    N,D3    ;D3 <- N
-0000100C  4244                      12          CLR     D4      ;D1 <- #0
-0000100E  B47C 0000                 13  WHILE   CMP     #0,D2   
-00001012  6700 001A                 14          BEQ     ENDW    ;IF D2 = #0 BRANCH TO ENDW  
-00001016  E242                      15          ASR     #1,D2   ;D2 <- D2 / 2
-00001018  6500 0006                 16          BCS     ADD     ;BRANCH TO ADD IF CARRY IS SET
-0000101C  6000 0008                 17          BRA     NOADD   ;ELSE BRANCH TO NOADD
-00001020  D243                      18  ADD     ADD     D3,D1   ;D1 <- D1 + D3
-00001022  6500 0006                 19          BCS     OFLOW   ;BRANCH TO OFLOW IF CARRY IS SETBY ADDITION
-00001026  E343                      20  NOADD   ASL     #1,D3   ;D3 <- D3 * 2
-00001028  60E4                      21          BRA     WHILE   ;LOOP
-0000102A  323C FFFF                 22  OFLOW   MOVE    #-1,D1  ;D1 <- #-1
-0000102E  33C1 00002004             23  ENDW    MOVE    D1,PRODUCT  ;PRODUCT <- [D1]
-00001034                            24  
-00001034                            25  * OUTPUT
-00001034  48C1                      26          EXT.L   D1
-00001036  303C 0003                 27          MOVE    #3,D0
-0000103A  4E4F                      28          TRAP    #15
-0000103C  4E72 2700                 29          STOP    #$2700
-00001040                            30  
-00001040                            31  * VARIABLES
-00002000                            32          ORG     $2000   ;DATA STARTS HERE
-00002000= 00EA                      33  M       DC.W    234       ;FIRST INPUT
-00002002= 0237                      34  N       DC.W    567       ;SECOND INPUT
-00002004                            35  PRODUCT DS.W    1       ;OUTPUT
-00002006                            36          END     START   ;END PROGRAM        
+00000000                             5  * Description:  Program to multiply two positive integers using Egyptian multiplication.
+00000000                             6  *               A way to multiply using reptative addition where processing time is equivalent to O(n) = log(n)
+00000000                             7  * Registers  :  [D2] = M  [D3] = N  [D1] = PRODUCT
+00000000                             8  *-----------------------------------------------------------
+00000000                             9  
+00000000                            10  * START PROGRAM
+00001000                            11          ORG     $1000
+00001000  3439 00002000             12  START   MOVE    M,D2    ;D2 <- M
+00001006  3639 00002002             13          MOVE    N,D3    ;D3 <- N
+0000100C  4244                      14          CLR     D4      ;D1 <- #0
+0000100E  B47C 0000                 15  WHILE   CMP     #0,D2   ;WHILE (M!=0)
+00001012  6700 001E                 16          BEQ     ENDW 
+00001016  E242                      17          ASR     #1,D2   ;D2 <- D2 / 2  C <- REMAINDER
+00001018  6500 0006                 18          BCS     ADD     ;IF REMAINDER => M WAS ODD > BRANCH TO ADD
+0000101C  6000 000C                 19          BRA     NOADD   ;ELSE BRANCH TO NOADD
+00001020  D243                      20  ADD     ADD     D3,D1   ;D1 <- D1 + D3 C <- CARRY
+00001022  6500 000A                 21          BCS     OFLOW   ;IF CARRY => MULIPLICATIVE OVERFLOW > BRANCH TO OFLOW
+00001026  6900 0006                 22          BVS     OFLOW   ;IF OVERFLOW => MULIPLICATIVE OVERFLOW > BRANCH TO OFLOW
+0000102A  E343                      23  NOADD   ASL     #1,D3   ;D3 <- D3 * 2 
+0000102C  60E0                      24          BRA     WHILE   ;LOOP
+0000102E  323C FFFF                 25  OFLOW   MOVE    #-1,D1  ;D1 <- #-1
+00001032  33C1 00002004             26  ENDW    MOVE    D1,PRODUCT  ;PRODUCT <- [D1]
+00001038                            27  
+00001038                            28  * OUTPUT RESULT
+00001038  48C1                      29          EXT.L   D1
+0000103A  303C 0003                 30          MOVE    #3,D0
+0000103E  4E4F                      31          TRAP    #15
+00001040  4E72 2700                 32          STOP    #$2700
+00001044                            33  
+00001044                            34  * DECLARE VARIABLES
+00002000                            35          ORG     $2000   ;DATA STARTS HERE
+00002000= 007A                      36  M       DC.W    122       ;FIRST INPUT
+00002002= 0090                      37  N       DC.W    144       ;SECOND INPUT
+00002004                            38  PRODUCT DS.W    1       ;OUTPUT
+00002006                            39          END     START   ;END PROGRAM
 
 No errors detected
 No warnings generated
@@ -47,11 +50,11 @@ SYMBOL TABLE INFORMATION
 Symbol-name         Value
 -------------------------
 ADD                 1020
-ENDW                102E
+ENDW                1032
 M                   2000
 N                   2002
-NOADD               1026
-OFLOW               102A
+NOADD               102A
+OFLOW               102E
 PRODUCT             2004
 START               1000
 WHILE               100E
