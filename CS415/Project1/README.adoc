@@ -3,7 +3,7 @@ Kyle Aure <KAure09@winona.edu>
 v1.0, 2018-09-02
 :RepoURL: https://github.com/KyleAure/WSURochester
 :AuthorURL: https://github.com/KyleAure
-:DirURL: {RepoURL}/CSXXX
+:DirURL: {RepoURL}/CS415
 
 .Project Description
 ****
@@ -60,4 +60,4 @@ This will pass the variable's `address` and you are also able to edit the mainli
 * I am unsure when it would be better to reference a variable by `address` vs `reference`.
 
 === Output
-image:images/output.png[]
+image:assets/output.png[]

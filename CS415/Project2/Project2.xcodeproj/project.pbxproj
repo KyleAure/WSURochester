@@ -41,7 +41,7 @@
 		5E7B36D12166444900A8FDB8 = {
 			isa = PBXGroup;
 			children = (
-				5E7B36DC2166444900A8FDB8 /* Project2 */,
+				5E7B36DC2166444900A8FDB8 /* src */,
 				5E7B36DB2166444900A8FDB8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5E7B36DC2166444900A8FDB8 /* Project2 */ = {
+		5E7B36DC2166444900A8FDB8 /* src */ = {
 			isa = PBXGroup;
 			children = (
 				5E7B36DD2166444900A8FDB8 /* main.cpp */,
 			);
-			path = Project2;
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
