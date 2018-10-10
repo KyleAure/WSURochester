@@ -1,5 +1,5 @@
 = Quiz 2 Solutions
-
+17/17
 1. Syntax describes:
 ** What a legal program looks like
 2. Semantics describes:

@@ -1,5 +1,5 @@
 = Quiz 1 Solutions
-
+20/20
 1. A lexical error, detected by the scanner
 ** ‘@’ sign outside of a string or comment
 2. A syntax error, detected by the parser
