@@ -12,15 +12,13 @@
 ** (Not Dynamic Binding, answer should be static binding but that is not an option)
 ** Early Binding
 6. A symbols table
-** (Answer should be key to attribute pairing since the symbol table keeps more information then just the value.  But it does not keep the address of the variable.)
 ** At compilation maintains a Key to Value pairing
 7. Attributes of parts of programs
 ** Must be "bound" to an object before or during computation
 8. Which is NOT true of Static binding?
 ** slower from run-time lookups
 9. What refers to obtaining the value (l-value equivalent) of a pointer variable?
-**  (Answer must be getting or referencing)
-**  getting?
+**  dereferencing
 10. What is scope of a variable in programming?
 **  the range of program instructions where the variable is known
 11. Scope can be
@@ -35,9 +33,9 @@
 ** 	stack
 16. With heap-based objects, if an object is not deallocated at the end of its lifetime, then the program may "leak memory", eventually running out of heap space. Deallocation error are notoriously difficult to identify and fix.  What is a language feature has been developed to handle this issue?
 **  garbage collectors
-17. Static scoping is also referred to as _________ scoping
+17. Static scoping is also referred to as ___ scoping
 **  Lexical
-18. The term _____________ refers to the process by which declarations become active when control first enters a scope.
+18. The term ___ refers to the process by which declarations become active when control first enters a scope.
 **  elaboration?
 19. What introduces a name and indicates its scope, buy may omit certain implementation details?
 ** declaration
