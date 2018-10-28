@@ -19,6 +19,7 @@ WHILE   CMP     #0,D2   ;WHILE (M!=0)
         BRA     NOADD   ;ELSE BRANCH TO NOADD
 ADD     ADD     D3,D1   ;D1 <- D1 + D3 C <- CARRY
         BCS     OFLOW   ;IF CARRY => MULIPLICATIVE OVERFLOW > BRANCH TO OFLOW
+        BVS     OFLOW   ;IF OVERFLOW => MULTIPLICATIVE OVERFLOW > BRACH TO OFLOW
 NOADD   ASL     #1,D3   ;D3 <- D3 * 2 
         BRA     WHILE   ;LOOP
 OFLOW   MOVE    #-1,D1  ;D1 <- #-1
@@ -38,6 +39,7 @@ PRODUCT DS.W    1       ;OUTPUT
         END     START   ;END PROGRAM
 
         
+
 
 
 *~Font name~Courier New~
