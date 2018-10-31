@@ -1,0 +1,58 @@
+= Outline
+== Development
+* How do you get the programming language?
+* What IDEs can you use?
+* What platforms does it run on?
+* Examples of use.
+* Samples of code.
+* Is there community support?
+* Is there corporate support?
+* How easy was it for you to learn?
+
+== Ease of Using Lanaguage
+* SYNTAX: What forms does the language allow?
+** How does the programmer know how to construct statements that will be accepted by the complier?
+** Standard notation system?
+
+* SEMANTICS: What does this form mean?
+** Is there any ambiguity? (for example dangling else)
+
+* EXPRESSIVENESS: Is there consistancy with commonly used notation?
+** Is arithetic infix, postfix, or prefix?
+** How are assignments (=) and assertions (==) differentiated?
+** How is input-output handled?
+
+* UNIFORM: Do similar constructs have similar meanings?
+** If I pass a parameter to a function will it be taken by value or reference?
+
+* ORTHOGONAL: Are all concepts independent from one another?
+
+* GENERAL: Can this language handle any type of problem?
+** What cannot be done?
+
+*PEDAGOGY: Is it easy to learn?
+** In general how easy is the language to pickup?
+
+== Software Engineering
+* RELIABILITY: Is it difficult for errors to go unnoticed by the compiler/programmer?
+** What sort of type checking is done?
+** How readable is the program?
+
+* MODULARITY: Can a large program be broken up into moduals?
+** Are functions, subroutines, libraries, etc supported?
+
+* EXTENSIBLE: Can a programmer easily create and use new data types to fit the problem at hand?
+** What data types are supported?
+** What data structures are included in the Lanaguage?
+
+* PROVEABILITY: Can formal methods be used to prove the correctness of a program?
+
+== Performance
+* FAST COMPILATION: How long does compilation take?
+** How is the program compiled?
+
+* EFFICIENT OBJECT CODE: How much object code is producted after compilation?
+** Does the language make neccessary verbose object code?
+
+* PORTABILITY: Can a program be run on different opperating systems?
+** Does it need to be recompiled?
