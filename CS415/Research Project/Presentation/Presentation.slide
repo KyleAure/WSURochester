@@ -1,0 +1,34 @@
+GoLang
+Program attibutes and features
+7 Nov 2018
+Tags: Go, GoLang, Programming, Development
+
+Kyle Jon Aure
+CS Major, WSU - Rochester
+KAure09@winona.edu
+https://github.com/KyleAure
+@Kyle_Aure
+Some text
+
+* Title of Section/Slide
+
+* Introduction
+* History
+* Who uses Go
+* What is it used for
+* Support
+* Syntax
+** Comments 
+** Keywords and Identifiers
+** Strings
+** Numbers
+** Variables
+** Control Sturcture
+** Methods
+** Classes / Structures
+* Typing
+* Special features
+* Pros and Cons
+
+
+.play -edit ../program/hello.go 
