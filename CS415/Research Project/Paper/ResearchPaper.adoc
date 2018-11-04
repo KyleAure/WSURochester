@@ -1,56 +1,79 @@
-= GoLang: A Programming Lanaguge Evaluation
+= GoLang: A Programming Language Case Study
 Kyle Jon Aure <KAure09@winona.edu>
 v1.0, 2018-10-31: Rough Draft
-:sectnums:                                                          
-:toc:  
-:description: A research paper                           
-:keywords: Go, GoLang, Programming Lanaguage, Evaluation, Criteria, Research                                      
+:sectnums:
+:toc:
+:description: A research paper
+:keywords: Go, GoLang, Programming Language, Evaluation, Criteria, Research
 :imagesdir: ./Assets/
-:bibtex-file: biblio.bib
+:bibtex-file: ./Assets/biblio.bib
 :bibtex-order: alphabetical
-:bibtex-style: ieee
+:bibtex-style: apa
+:source-highlighter: coderay
+:coderay-linenums-mode: inline
 :RepoURL: https://github.com/KyleAure/WSURochester
 :AuthorURL: https://github.com/KyleAure
 :DirURL: {RepoURL}/CS415
 
-[Preamble]
 == Introduction
 
-== Body
+In the computer science field, programming languages vary almost to the same degree of spoken languages.
+Like spoken languages there exist programming languages that are well established and often used.
+Then, there are languages that are rarely spoken, and those that are dying due to unpopularity.
+In this case study the language to be examined is `Go`.
 
-== Conclusion
+The art of language design and the factors that constitute an objectively 'good' language vary.
+Those who develop programming languages do so for specific purposes, company interests, or to improve an existing language. cite:[scott16(7-9)]
+Therefore, this case study will examine the history, support, ease of use, software engineering capabilities, and performance of the `Go` programming language.
 
-== Sources
+== History
 
-References can be inserted in lists, too:
+The `Go` programming language was developed by Robert Griesemer, Rob Pike, and Ken Thompson.
+These programmers started working on `Go` in 2007, and it became a public open source project on November 10, 2009. cite:[golangorigins]
+Today, it is estimated that there are between 504,000 to 966,000 `Go` programmers, often referred to as `Gophers`. cite:[gophercount]
 
-1. See cite:[Lane12a].
-2. See cite:[Anderson98].
-3. See cite:[Anderson04].
+`Go` was developed in response to the boom of cloud computing in the last 2000's.
+At the time, developing server software using the traditional programming languages like `C++` and `Java` was becoming increasingly complex.
+Griesemer, Pike, and Thompson wanted to develop a language that would tackle this problem and make concurrency, garbage collection, and memory management more optimized.
+Since, the release of `Go` in 2009 the platform has yet to see a leveling off of new users adopting the language. cite:[stackoverflow18]
 
-Also works for unordered list:
+== Support and Uses
 
-* See cite:[Lane12a].
-* See cite:[Anderson98].
-* See cite:[Anderson04].
+The `Go` programming language has made a big impact on the cloud computing space with the most notable products developed on `Go` being `Docker` and `Kubernetes`.
+In addition, as a Google product `Go` is being used to develop some of the largest scale software today. cite:[GoLangTalks]
+More and more companies are turning to `Go` for their product development including, BBC, Uber, and SoundCloud.
 
-[sect2] 
-== Bibliography
+`Go` can be developed on the Windows, MacOS, Linux, and more open source operating systems. cite:[minrequirements]
+Additionally, `Go` can be used to develop software for use on personal computers, servers, and mobile devices.
+[[Add More]]
 
-bibliography::biblio.bib[ieee]
+Being a newer language `Go` was developed to be supported by existing Integrated Development Environments (IDEs).
+`Vim`, `Visual Studio Code`, `IntelliJ`, and `Atom` are some of the most popular IDEs with `Go` plugins that support syntax highlighting, debugging, and testing.
+[[Add More]]
+
+== Ease of Use
+
+`Go` is an imperative programming language that includes themes from the Von Neumann, Object-Oriented, and Scripting language classifications. cite:[scott16(11-12)]
+
+=== Lexical Elements
 
 
-== Development
-* How do you get the programming language?
-* What IDEs can you use?
-* What platforms does it run on?
-* Examples of use.
-* Samples of code.
-* Is there community support?
-* Is there corporate support?
-* How easy was it for you to learn?
 
-== Ease of Using Lanaguage
+=== Types
+
+[source, java, linenums]
+----
+Public Class Foo (int bar){
+  int a; //<1>
+}
+----
+
+=== Functions
+
+=== Scope
+
+=== Garbage Collection
+
 * SYNTAX: What forms does the language allow?
 ** How does the programmer know how to construct statements that will be accepted by the complier?
 ** Standard notation system?
@@ -71,10 +94,12 @@ bibliography::biblio.bib[ieee]
 * GENERAL: Can this language handle any type of problem?
 ** What cannot be done?
 
-*PEDAGOGY: Is it easy to learn?
+* PEDAGOGY: Is it easy to learn?
 ** In general how easy is the language to pickup?
 
+
 == Software Engineering
+
 * RELIABILITY: Is it difficult for errors to go unnoticed by the compiler/programmer?
 ** What sort of type checking is done?
 ** How readable is the program?
@@ -86,9 +111,11 @@ bibliography::biblio.bib[ieee]
 ** What data types are supported?
 ** What data structures are included in the Lanaguage?
 
-* PROVEABILITY: Can formal methods be used to prove the correctness of a program?
+* PROVABILITY: Can formal methods be used to prove the correctness of a program?
+
 
 == Performance
+
 * FAST COMPILATION: How long does compilation take?
 ** How is the program compiled?
 
@@ -97,3 +124,9 @@ bibliography::biblio.bib[ieee]
 
 * PORTABILITY: Can a program be run on different opperating systems?
 ** Does it need to be recompiled?
+
+== Conclusion
+
+== Bibliography
+
+bibliography::biblio.bib[ieee]
