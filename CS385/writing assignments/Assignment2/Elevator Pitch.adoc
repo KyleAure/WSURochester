@@ -1,0 +1,21 @@
+= Elevator Pitch
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2018-11-04 - CS385 Applied Database Management Systems
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS385
+
+== Pitch
+
+Good afternoon, my name is Kyle and I am a student at Winona State University - Rochester.
+I will be graduating next December with my Bachelors Degree in Computer Science.
+This last summer I did a full-time internship at IBM doing backend Java development for their WebSphere product.
+I really enjoyed the position and worked incredibly well with the team I was placed on.
+I have actually received a full time offer with IBM starting next summer prior to graduation.
+I am still at the beginning of my computer science journey I was hoping you would be available as a mentor?
+My goal is to work in software development for the next 10 - 15 years, while earning a Doctorate in Computer Science.
+I then want to spend the rest of my career teaching Computer Science or Mathematics at a University.
+
+== Writing Project
+
+For the final writing project I will be writing a children's story.
