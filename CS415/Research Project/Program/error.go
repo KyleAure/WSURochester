@@ -4,31 +4,20 @@ import "errors"
 import "fmt"
 import "math"
 
-//BEGIN SQRT
-func Sqrt(value float64)(float64, error) {
-   if(value < 0){
-      return 0, errors.New("Math: negative number passed to Sqrt") //HL
-   }
-   return math.Sqrt(value), nil
+func Sqrt(value float64) (float64, error) {
+	if value < 0 {
+		return 0, errors.New("Math: negative number passed to Sqrt")
+	}
+	return math.Sqrt(value), nil
 }
-//END SQRT
 
-//BEGIN MAIN
 func main() {
-   result, err:= Sqrt(-1)
+	result, err := Sqrt(-1)
 
-   if err != nil {
-      fmt.Println(err)
-   } else {
-      fmt.Println(result)
-   }
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(result)
+	}
 
-   result, err = Sqrt(9)
-
-   if err != nil {
-      fmt.Println(err)
-   } else {
-      fmt.Println(result)
-   }
 }
-//END MAIN

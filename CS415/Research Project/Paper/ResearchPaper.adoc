@@ -5,8 +5,9 @@ v1.0, 2018-10-31: Rough Draft
 :toc:
 :description: A research paper
 :keywords: Go, GoLang, Programming Language, Evaluation, Criteria, Research
-:imagesdir: ./Assets/
-:bibtex-file: ./Assets/biblio.bib
+:imagesdir: ../Assets/Images
+:programdir: ../Program
+:bibtex-file: ../Assets/biblio.bib
 :bibtex-order: alphabetical
 :bibtex-style: apa
 :source-highlighter: coderay
@@ -18,9 +19,9 @@ v1.0, 2018-10-31: Rough Draft
 == Introduction
 
 In the computer science field, programming languages vary almost to the same degree of spoken languages.
-Like spoken languages there exist programming languages that are well established and often used.
-Then, there are languages that are rarely spoken, and those that are dying due to unpopularity.
-In this case study the language to be examined is `Go`.
+Like spoken languages, there exist programming languages that are well established and often used, like `Java` and `C++`.
+Then, there are languages that are rarely spoken and are dying due to unpopularity, like `BLISS` and `Lisp`.
+In this case study, the language to be examined is `Go`.
 
 The art of language design and the factors that constitute an objectively 'good' language vary.
 Those who develop programming languages do so for specific purposes, company interests, or to improve an existing language. cite:[scott16(7-9)]
@@ -39,94 +40,211 @@ Since, the release of `Go` in 2009 the platform has yet to see a leveling off of
 
 == Support and Uses
 
+Some of the biggest companies today are using `Go` for their product development, including, Google, Uber, Soundcloud, and Tumblr. cite:[gousers18]
 The `Go` programming language has made a big impact on the cloud computing space with the most notable products developed on `Go` being `Docker` and `Kubernetes`.
-In addition, as a Google product `Go` is being used to develop some of the largest scale software today. cite:[GoLangTalks]
-More and more companies are turning to `Go` for their product development including, BBC, Uber, and SoundCloud.
+In addition, as a Google product `Go` is being used to develop some of the largest scale software today by Google themselves. cite:[GoLangTalks]
 
 `Go` can be developed on the Windows, MacOS, Linux, and more open source operating systems. cite:[minrequirements]
 Additionally, `Go` can be used to develop software for use on personal computers, servers, and mobile devices.
-[[Add More]]
+The flexibility of being able to development on multiple operating systems for various platforms is one fo the reasons `Go` has been so successful as a fairly new programming language.
 
-Being a newer language `Go` was developed to be supported by existing Integrated Development Environments (IDEs).
-`Vim`, `Visual Studio Code`, `IntelliJ`, and `Atom` are some of the most popular IDEs with `Go` plugins that support syntax highlighting, debugging, and testing.
-[[Add More]]
+Being a newer language `Go` was developed to be supported by existing text editors and Integrated Development Environments (IDEs).
+`Vim`, `Visual Studio Code`, and `Atom` are some of the most popular Text Editors with `Go` plugins that support syntax highlighting, debugging, and testing.
+The more robust IDEs for `Go` have been developed on top of some of the more popular general purpose IDEs.
+These include `GoLand` built on top of `IntelliJ` and `GoClipse` build on top of `Eclipse`.
+The massive support for `Go` on platforms that developers already use has made a big impact on the success of this programming language.
 
 == Ease of Use
 
+One of the primary reasons `Go` was developed was due to the creators frustration of having to choose between efficient compilation, efficient execution, or ease of programming when choosing a programming language. cite:[golangorigins]
+`Go` addressed these issues by attempting to combine the ease of programming of an interpreted, dynamically typed language with the efficiency and safety of a statically typed, compiled language. cite:[golangorigins]
 `Go` is an imperative programming language that includes themes from the Von Neumann, Object-Oriented, and Scripting language classifications. cite:[scott16(11-12)]
+
+`Go` can be compiled using a self-hosted compiler written in `Go`.
+The Go Compiler can produce binaries to target all of the major operating systems including mobile operating systems.
+In addition, `Go` can be compiled using the GCCgo compiler, which is a front end compiler that uses GCC as the back end. cite:[golangorigins]
+Lastly, GopherJS is a `Go` compiler that can target `Javascript` which allows developers to write front end code that can run on almost all browsers.
 
 === Lexical Elements
 
+`Go` is written in the same style as the C languages but attempts to improve readability and safety. cite:[golangorigins]
+Arithmetic operators on numbers are done with the infix notation.
+Symbols used to perform arithmetic operators are standard for addition (+), subtraction (-), multiplication (*), division (/), and modulus (%).
+In addition, for integers `Go` provides bitwise logical operators AND (&), OR (|), XOR (^), and CLEAR (&^).
+Finally, integers also have arithmetic shift operators for left shift (<<) and right shift (>>).
 
+The arithmetic operators listed above, along with a few more terminals are the starting point for the `Go` programming language specification.
+The `Go` programming language uses the Backus–Naur Form (BNF) for the official language specification. cite:[golangorigins]
+Below is the `Go` language specification for `identifiers` such as those used to name variables, functions, and types.
+```
+identifier = letter { letter | unicode_digit }
+```
+
+The right side of this production starts with a `letter` meaning that all variables must start with at least 1 letter.
+Next, the curly brackets `{}` represent 0 or more of the terminals contained inside.
+Finally, the vertical bar `|` represents a logical OR.
+Therefore, an identifier could be on letter, a letter followed by other letters, a letter followed by numbers, or a letter followed by letters and number.
+
+Comments in `Go` are the same as both `Java` and `C++` using the double backslash (//) for single line comments and slash-star for multiline comments (/* */).
+All code preceding the double slash and all code surrounded by the slash-star tokens are removed during compilation.
+Additionally, the white space characters space, tab, carriage return, and new-lines are also ignored / removed during compilation.
+The only exception to this is when a new-line character is present at the end of statement production.
+In these cases, the new-line character will be replaced with a semicolon.
 
 === Types
 
-[source, java, linenums]
-----
-Public Class Foo (int bar){
-  int a; //<1>
-}
-----
+`Go` is a statically-typed, compiled language. cite:[golangorigins]
+The built in types supported by `Go` include Numbers (byte, int, float), Strings, and Booleans.
+`Go` is a statically-typed language, but when declaring a variable the type can be inferred similar to a traditional dynamically-typed language.
 
-=== Functions
+[source,go,indent=0]
+----
+include::{programdir}/typing.go[tags=typing;]
+----
+<1> Static representation can be used, but it is discouraged since the type is implied by the left hand side.
+<2> Dynamic representation can be used anywhere in a `Go` program and is the most commonly used.
+<3> Implied representation can only be used inside of functions or methods for local variables.
+
+=== Composite Types
+
+`Go` supports these eight different composite types; array, struct, pointer, function, interface, slice, map, and channel types.
+Arrays can be declared by using the square bracket symbol ([]) in front of a variable.
+
+[source,go,indent=0]
+----
+include::{programdir}/arrays.go[tags=array;]
+----
+<1> Array declaration of 5 integers.
+<2> Setting an element of an array.
+<3> Declaring and initializing an array of 5 floats.
+<4> Declaring a 2-D array.
+
+Structures are named elements in `Go` that have named attributes, but not methods.
+[source,go]
+----
+include::{programdir}/structure.go[tags=structure;]
+----
+<1> Declaration of the dog structure.
+<2> Initialization of a dog object.
+<3> Use data from structure.
+
+Functions in `Go` can be used to declare a single function or a mapping of all functions with the same name, input parameters, and return values.
+[source,go]
+----
+type error func(err, string) nil <1>
+errFuncs := []error {func(e err, notice string) {fmt.Println(e, notice)}, <2>
+                    func(e err, notice string) {fmt.Println(notice, e)}, <3>
+                   }
+errFuncs[0](e, "Arithmetic error") <4>
+----
+<1> error is the name of all functions in the form `func (err, string) nil`
+<2> errFuncs is an instance of error and contains two functions.
+<3> Each inner function is an independent function that performs different tasks with the same input data.
+<4> Using a function from a group.
+
+Pointers in `Go` are similar to pointers in `C++` which allows variables to be passed by reference instead of value.
+[source,go]
+----
+include::{programdir}/pointer.go[tags=pointer;]
+----
+<1> In a function declaration a pointer is denoted by the asterisk symbol (*).
+<2> When called a variables address is sent to the function using the ampersand symbol (&).
+
+The other composite types are a bit outside of the scope of this paper.
+Speaking of scope.
 
 === Scope
 
-=== Garbage Collection
+`Go` uses lexical, or static, scoping. cite:[golangorigins]
+This is very similar to how scoping works in a language like `Java`.
+Scope expressly defined by the use the curly brackets `{}`.
 
-* SYNTAX: What forms does the language allow?
-** How does the programmer know how to construct statements that will be accepted by the complier?
-** Standard notation system?
-
-* SEMANTICS: What does this form mean?
-** Is there any ambiguity? (for example dangling else)
-
-* EXPRESSIVENESS: Is there consistancy with commonly used notation?
-** Is arithetic infix, postfix, or prefix?
-** How are assignments (=) and assertions (==) differentiated?
-** How is input-output handled?
-
-* UNIFORM: Do similar constructs have similar meanings?
-** If I pass a parameter to a function will it be taken by value or reference?
-
-* ORTHOGONAL: Are all concepts independent from one another?
-
-* GENERAL: Can this language handle any type of problem?
-** What cannot be done?
-
-* PEDAGOGY: Is it easy to learn?
-** In general how easy is the language to pickup?
-
+[source,go,indent=0]
+----
+include::{programdir}/scope.go[tags=scope;]
+----
+<1> Within a function if no local variable is declared yet, global scope is used. a = 1.
+<2> Within a function a local variable will be used instead of global scope. a = 2.
+<3> The curly brackets `{}` define scope not only for functions, but also at the programmers whim. a =3.
 
 == Software Engineering
 
-* RELIABILITY: Is it difficult for errors to go unnoticed by the compiler/programmer?
-** What sort of type checking is done?
-** How readable is the program?
+=== Testing
 
-* MODULARITY: Can a large program be broken up into moduals?
-** Are functions, subroutines, libraries, etc supported?
+`Go` provides natively supported testing using the `testing` package. cite:[golangorigins]
+In order to run a test, declare a function in the form `func TestXxx (t *testing.T)`.
+Where the identifier starts with `Test` followed a capital letter and zero or more letters of any capitalization.
+[source,go,indent=0]
+----
+include::{programdir}/sample_test.go[tags=test;]
+----
+<1> Function to be tested.
+<2> Test function declaration.
+<3> Fail condition.
 
-* EXTENSIBLE: Can a programmer easily create and use new data types to fit the problem at hand?
-** What data types are supported?
-** What data structures are included in the Lanaguage?
+In addition to traditional testing functions, `Benchmark` and `Example` are reserved function keywords that allow programmers to run benchmarks and example code, respectively.
 
-* PROVABILITY: Can formal methods be used to prove the correctness of a program?
+=== Modularity
 
+Modularity is important in software engineering since it enables programmers to work on small independent chunks of code.
+This improves readability, debugging, and issues related to scope.
+`Go` uses a package and import system similar to `Java` and `C++`.
+Every file in `Go` must start with a package declaration and optionally imports.
+
+[source,go]
+----
+package main <1>
+
+import ( <2>
+  "fmt"
+  "testing"
+)
+
+func main () {
+  fmt.Println("Example") <3>
+}
+----
+<1> Package declaration.  Main is reserved for the `Go` file that contains the main method. This is the only file that can be used with the command `Go run`.
+<2> Single imports can be declared using the import keyword, and multiple imports can be declared by wrapping them in parentheses.
+<3> Functions from an imported package can be used with the dot (.) operator.
+
+=== Portability
+
+As mentioned in the introduction to this section.
+`Go` is a compiled language with binary targets per operating system.
+This makes `Go` less portable then languages that have an intermediary form, such as, java byte-code for `Java`.
+However, the Go Compiler does allow for cross platform compilation using directives like `+build linux darwin`.
 
 == Performance
 
-* FAST COMPILATION: How long does compilation take?
-** How is the program compiled?
+As stated previously, one of the reasons `Go` was developed was for server-side development.
+In addition, `Go` boats about its ability to utilize multi-core processors more efficiently.
+As a programming language developed by Google it has already been implemented using large data sets. cite:[GoLangTalks]
 
-* EFFICIENT OBJECT CODE: How much object code is producted after compilation?
-** Does the language make neccessary verbose object code?
+`Go` handles concurrency with a technology they call `GoRoutines`.
+`GoRoutines` allow for a simple approach to write code that utilize multiple threads.
 
-* PORTABILITY: Can a program be run on different opperating systems?
-** Does it need to be recompiled?
+[source,go]
+----
+include::{programdir}/goroutine.go[tags=goroutine;]
+----
+<1> `go` keyword indicates a function `say` should be run on a new thread.
+
+The ease of entry into concurrency with `Go` means that high performing programs can be written with ease right out of the gate.
+In a performance review of the top server side programming languages `Go` was found to be the best performing in 2018. cite:[performancetests]
+This performance review compared `Go`, `Node.js`, `PHP`, and `Java`.
+The test team compared
 
 == Conclusion
 
+`Go` is a very powerful programming language.
+It opens up the doors for rapid development, testing, benchmarking, and compilation.
+With a focus on runtime performance it is clear why this programming language is being used by some of the biggest technology companies of this generation.
+However, `Go` still has some room to improve with many developers criticizing the lack of operator overloading, type interfaces, and immutable data types.
+`Go` also has unique features missing from competing languages, such as, garbage collection, lambda expressions, and state of the art exception handling.
+Overall, `Go` is a step in the right direction for programming languages and for many projects `Go` is an exceptional choice.
+
+<<<
 == Bibliography
 
 bibliography::biblio.bib[ieee]
