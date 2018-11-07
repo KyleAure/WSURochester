@@ -16,6 +16,7 @@ MANIFEST.MF
 
 # Asciidoc rendered
 README.html
+.pdf
 
 # Zip files
 *.zip

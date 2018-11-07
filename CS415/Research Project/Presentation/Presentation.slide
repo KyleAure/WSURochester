@@ -1,0 +1,203 @@
+#+theme=slate
+#+closingMessage=Thank you any questions?
+GoLang
+A Programming Language Case Study
+7 Nov 2018
+Tags: Go, GoLang, Programming, Development
+
+Kyle Jon Aure
+CS Major, WSU - Rochester
+KAure09@winona.edu
+https://github.com/KyleAure
+@Kyle_Aure
+Some text
+
+* Table of Contents
+
+- Introduction
+- History
+- Support and Uses
+- Lexical Elements
+- Types
+- Composite Types
+- Scope
+- Testing 
+- Modularity 
+- Portability
+- Performance 
+
+* Introduction
+
+.image ../Assets/Images/golanglogo.png
+
+Go is a programming language developed by Google Employees.
+
+To help differentiate the word 'go' from the language `Go` many people say `GoLang` instead.
+
+People who develop in Go often refer to themselves as `Gophers`.
+
+Go is mostly in the C family of languages with basic syntax.
+
+Go was developed as an attempt to combine the ease of programming of an interpreted, dynamically typed language with the efficiency and safety of a statically typed, compiled language.
+
+* History
+
+Developed by Robert Griesemer, Rob Pike, and Ken Thompson all Google employees.
+
+Started development in 2007 and released November 10, 2009.
+
+Estimated that today there are 504,000 to 966,000 Go programmers.
+
+.image ../Assets/Images/SOtrends.png _ 450
+.caption Trends [[https://insights.stackoverflow.com/trends?tags=go%2Chaskell%2Cgroovy][Stack Overflow]]
+
+* What is it used for?
+
+Go was developed in response to the boom of cloud computing.
+
+Development of server software using traditional languages like Java and C++ can be complex.
+
+Go is exceptionally good at `handling`concurrency`, `garbage`collection`, and `memory`management`.
+
+* Who Uses Go
+
+.image ../Assets/Images/docker.png _ 100
+.image ../Assets/Images/kubernetes.png _ 100
+.image ../Assets/Images/soundcloud.png _ 100
+.image ../Assets/Images/uber.jpg _ 100
+
+* Support
+
+Development can be done on the `Windows`, `MacOS`, and `Linux` operating systems along with a number of open source operating systems.
+
+Go is compiled into binaries that can be targeted to run on personal computers, servers, and mobile devices. 
+
+Go does not have a standalone IDE instead it is supported by exising technology.
+- Text Editors: Visual Studio Code, Vim, Emacs, and Atom.
+- IDEs: GoLand built on top of IntelliJ, and GoClipse built on top of Eclipse
+
+I tried both Visual Studio Code and Atom and preferred Visual Studio for Go since it allowed me to run terminal commands natively.
+
+* Lexical Elements
+
+Numeric Operators:
++ : addition
+- : subtraction
+* : multiplication
+/ : division
+% : modulus
+
+Bitwise Operators (int):
+& : AND 
+| : OR 
+^ : XOR 
+&^: Clear
+<<: Arithmetic shift left
+>>: Arithmetic shift right
+
+* Language Specification
+
+The Go language specification is written in `Backus-Naur`Form`(BNF)`.
+
+Identifiers are specified by the production:
+`identifier`=`letter`{`letter`|`unicode_digit`}`
+
+Comments are the same as most languages.
+- // single line comment 
+- /* multiline comment */
+
+During compilation white space is ignored.
+Except at end of staments new line characters will be replaced with semicolons.
+Therefore, semicolons are optional.
+
+* Typing
+
+Go is a `statically-typed`, `compiled` language.
+
+But, some features of Go make it appear that variables can be dynamically typed.
+
+.play -edit ../Program/typing.go /func main()/,/ENDMAIN/
+
+* Composite Types
+
+Go supports these eight different composite types; array, struct, pointer, function, interface, slice, map, and channel types.
+
+- Array
+.play -edit ../Program/arrays.go /tag::array/,/end::array/
+
+- Struct  
+.play -edit ../Program/structure.go /tag::structure/,/end::structure/
+
+* Functions
+
+Functions in Go can take 0 or more arguments, and return 0 or more results.
+Functions themselves can be defined as types.
+
+.play -edit ../Program/function.go /tag::function/,/end::function/
+
+* Pointers
+
+Pointers work exactly the same as pointers in C++.
+(*) symbol is used during function declarlation to denote an address pointer.
+(&) symbol is used when using a function to pass an address instead of value.
+
+.play -edit ../Program/pointer.go /tag::pointer/,/end::pointer/
+
+* Scope
+
+Go uses `lexical` (static) `scoping`. 
+This is similar to languages like Java where scope is expressly defined by the use of curly brackets `{`}`.
+
+.play -edit ../Program/scope.go /tag::scope/,/end::scope/
+
+* Testing 
+
+Go provides natively supported testing using the `testing` package.
+To define a test function the declaration needs to be in the form: 
+`func`TestXxx`(t`*testing.T)`
+
+.play -edit ../Program/sample_test.go /tag::test/,/end::test/
+
+* Modularity 
+
+Similar to Java, Go uses a package / import system to handle large program modularity. 
+`package`main` is reservered for the Go file that contains the main function. 
+`import` is an optional declaration to import other local Go files or those that come with the Go language. 
+
+* Modularity cont.
+
+.play -edit ../Program/error.go
+
+* Portability
+
+There are three main compilers for Go.
+- Go Compiler: written in Go and targets binaries for source machine and across platforms.
+- GCCgo: A front end to the open source GCC compiler.
+- GopherJS: A Go compiler that targerts Javascript
+
+Being a compiled language without an intermediate like `Java`Bytecode` means that target programs are not as portable and typically the source code is needed.
+
+* Performance 
+
+Go handles concurrence with a techology they call `GoRoutines`. 
+This allows for a simple approach to write code that utilizes multiple threads. 
+
+.play -edit ../Program/goroutine.go /tag::goroutine/,/end::goroutine/
+
+* Conclusion
+
+Pros
+- Go is very powerful programming language.
+- Supports rapid development.
+- Focus on Runtime performance.
+- Can handle 'big data'.
+- Made for cloud development.
+
+Cons 
+- Lack of operator overloading.
+- Type interfaces are not supported.
+- Data types are immutable.
+
+* Works Cited
+
+.image ../Assets/Images/workscited.png _ 850
