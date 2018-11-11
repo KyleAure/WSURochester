@@ -1,0 +1,17 @@
+1. Employees of which company created the Go programming language?
+    a. Amazon
+    b. Microsoft
+    c. IBM
+    d. *Google*
+2. Which of the following are NOT a built-in feature of the Go programming language?
+    a. Concurrency
+    b. *Operator Overloading*
+    c. Software Testing
+    d. Package/Import 
+3. The syntax for Go is defined using which form?
+    a. *Backus-Naur Form*
+    b. Context free grammar
+    c. Syntax diagrams
+    d. None of the above
+4. *True*/False Go is a compiled language.
+5. True/*False* Go uses dynamic scoping.

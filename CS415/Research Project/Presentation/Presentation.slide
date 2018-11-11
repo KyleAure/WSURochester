@@ -36,8 +36,6 @@ To help differentiate the word 'go' from the language `Go` many people say `GoLa
 
 People who develop in Go often refer to themselves as `Gophers`.
 
-Go is mostly in the C family of languages with basic syntax.
-
 Go was developed as an attempt to combine the ease of programming of an interpreted, dynamically typed language with the efficiency and safety of a statically typed, compiled language.
 
 * History
@@ -68,15 +66,15 @@ Go is exceptionally good at `handling`concurrency`, `garbage`collection`, and `m
 
 * Support
 
-Development can be done on the `Windows`, `MacOS`, and `Linux` operating systems along with a number of open source operating systems.
-
-Go is compiled into binaries that can be targeted to run on personal computers, servers, and mobile devices. 
+Development can be done on almost any operating system.
 
 Go does not have a standalone IDE instead it is supported by exising technology.
-- Text Editors: Visual Studio Code, Vim, Emacs, and Atom.
-- IDEs: GoLand built on top of IntelliJ, and GoClipse built on top of Eclipse
+- *Text*Editors*: Visual Studio Code, Vim, Emacs, and Atom.
+- *IDEs*: GoLand built on top of IntelliJ, and GoClipse built on top of Eclipse.
 
-I tried both Visual Studio Code and Atom and preferred Visual Studio for Go since it allowed me to run terminal commands natively.
+I used `Visual Studio Code` since it allows for native terminal commands.
+
+.image ../Assets/Images/VSCode.png _ 150
 
 * Lexical Elements
 
@@ -106,15 +104,13 @@ Comments are the same as most languages.
 - // single line comment 
 - /* multiline comment */
 
-During compilation white space is ignored.
-Except at end of staments new line characters will be replaced with semicolons.
-Therefore, semicolons are optional.
+Semicolons are optional!
 
 * Typing
 
 Go is a `statically-typed`, `compiled` language.
 
-But, some features of Go make it appear that variables can be dynamically typed.
+But, the syntax is similar to a `dynamically-typed` language.
 
 .play -edit ../Program/typing.go /func main()/,/ENDMAIN/
 
@@ -130,23 +126,24 @@ Go supports these eight different composite types; array, struct, pointer, funct
 
 * Functions
 
-Functions in Go can take 0 or more arguments, and return 0 or more results.
-Functions themselves can be defined as types.
+Functions in Go
+- Have 0 or more arguments, 0 or more results.
+- Can be defined as types.
 
 .play -edit ../Program/function.go /tag::function/,/end::function/
 
 * Pointers
 
 Pointers work exactly the same as pointers in C++.
-(*) symbol is used during function declarlation to denote an address pointer.
-(&) symbol is used when using a function to pass an address instead of value.
+- *: Points to address
+- &: Address of variable
 
 .play -edit ../Program/pointer.go /tag::pointer/,/end::pointer/
 
 * Scope
 
 Go uses `lexical` (static) `scoping`. 
-This is similar to languages like Java where scope is expressly defined by the use of curly brackets `{`}`.
+Scope is expressly defined by the use of curly brackets `{`}`.
 
 .play -edit ../Program/scope.go /tag::scope/,/end::scope/
 
@@ -160,9 +157,9 @@ To define a test function the declaration needs to be in the form:
 
 * Modularity 
 
-Similar to Java, Go uses a package / import system to handle large program modularity. 
-`package`main` is reservered for the Go file that contains the main function. 
-`import` is an optional declaration to import other local Go files or those that come with the Go language. 
+Go uses a package / import system to handle large program modularity. 
+- `package`main` is reservered 
+- `import` is an optional 
 
 * Modularity cont.
 
@@ -175,7 +172,7 @@ There are three main compilers for Go.
 - GCCgo: A front end to the open source GCC compiler.
 - GopherJS: A Go compiler that targerts Javascript
 
-Being a compiled language without an intermediate like `Java`Bytecode` means that target programs are not as portable and typically the source code is needed.
+Target programs cannot be ported to other systems.  They must be recompiled.
 
 * Performance 
 

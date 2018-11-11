@@ -12,7 +12,7 @@ func add(a int, b int) int { //<1>
 
 func TestAdd(t *testing.T) { //<2>
 	var a = 5
-	var b = 6
+	var b = 5
 	var c = add(a, b)
 	if c != 11 {
 		t.Error("Expected ", 11, " got ", c) //<3>
