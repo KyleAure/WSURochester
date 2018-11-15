@@ -1,0 +1,22 @@
+= Quiz 6 Solutions
+10/10
+1. References that denote locations are references to as ___
+** l-values
+2. Expressions that denote values are referred to as ___
+** r-value
+3. Statements are to be executed in a certain specified order--usually the order in which they appear in the program test, describes
+** sequencing
+4. A program fragment is executed optimistically, on the assumption that some expected condition will be true. If that condition turns out to be false, execution branches to a handler that executes in place of the remainder of the protected fragment. This describes
+** exception handling and speculation
+5. Two or more program fragments are to be executed/evaluated "at the same time," either in parallel on separate processors, or interleaved on a single processor in a way that achieves the same effect. This describes
+** concurrency
+6. A potentially complex collection of control constructs is encapsulated in a way that allows it to be treated as a single unit, usually subject to parameterization. This describes
+** procedural abstraction
+7. An expression is defined in terms of itself, either directly or indirectly,; the computational model requires a stack on which to save information about partially evaluated instances of the expression. This describes
+** recursion
+8. The ordering or choice among statements or expressions is deliberately left unspecified, implying that any alternative will lead to correct results. Some languages require the choice to be random, or fair, in some formal sense of the word. This describes
+** nondeterminacy
+9. Depending on some run-time condition, a choice is to be made among two or more statements or expressions.  This describes
+** selection
+10. A given fragment of code is to be executed repeatedly, either a certain number of times, or until a certain run-time condition is true. This describes
+**  iteration

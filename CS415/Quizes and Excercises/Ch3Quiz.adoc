@@ -1,0 +1,45 @@
+= Quiz 3 Solutions
+20/21
+1. The term "High Level" in computer languages is because?
+** Their syntax and semantics are significantly more abstract that assembly language
+2. What is "Binding" in computing?
+** to make an association between two or more programming objects or values for some scope of time and space
+3. What is "Binding time"?
+** the time at which any implementation decision is made
+4. When can binding occur?
+** all the above
+5. In terms of binding, which tends to be faster?
+** (Not Dynamic Binding, answer should be static binding but that is not an option)
+** Early Binding
+6. A symbols table
+** At compilation maintains a Key to Value pairing
+7. Attributes of parts of programs
+** Must be "bound" to an object before or during computation
+8. Which is NOT true of Static binding?
+** slower from run-time lookups
+9. What refers to obtaining the value (l-value equivalent) of a pointer variable?
+**  dereferencing
+10. What is scope of a variable in programming?
+**  the range of program instructions where the variable is known
+11. Scope can be
+**  all the above
+12. Dynamic scoping (best answer)
+**  is associated with dynamic typing
+13. Where do we find non-local variables are associated with declarations at run time?
+** 	dynamic scoping
+14. What term describes a region of storage in which sub-blocks can be allocated and deallocated at arbitrary times?
+**  A heap allocation
+15. What storage allocation mechanism is it where objects are allocated and deallocated in last-in, first-out order, usually in conjunction with subroutine calls and returns?
+** 	stack
+16. With heap-based objects, if an object is not deallocated at the end of its lifetime, then the program may "leak memory", eventually running out of heap space. Deallocation error are notoriously difficult to identify and fix.  What is a language feature has been developed to handle this issue?
+**  garbage collectors
+17. Static scoping is also referred to as ___ scoping
+**  Lexical
+18. The term ___ refers to the process by which declarations become active when control first enters a scope.
+**  elaboration?
+19. What introduces a name and indicates its scope, buy may omit certain implementation details?
+** declaration
+20. A definition describes an object in
+** sufficient detail for the compiler to determine it's implementation
+21. A lambda expression is described as a
+** anonymous function

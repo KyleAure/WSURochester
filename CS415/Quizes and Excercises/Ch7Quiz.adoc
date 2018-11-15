@@ -1,0 +1,15 @@
+= Quiz 4 Solutions
+9/9
+1. Nonscalar types are usually called
+** composite types
+2. What contain a sequence of elements, but there is no notion of mapping or indexing?
+** list
+3. What is intended to represent data on mass-storage devices, outside the memory in which other program objects reside?
+** files
+4. What is the most commonly used composite type?
+** arrays
+5. The meaning of "type" can be formalized, most popularly as ______ point of view
+** all of the above
+?? denotational
+6. What term is used to describe the process of ensuring that a program obeys the language's type compatibility rules
+** type checking
