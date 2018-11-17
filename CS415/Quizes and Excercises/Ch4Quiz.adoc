@@ -1,0 +1,20 @@
+= Quiz 4 Solutions
+9/9
+1. Semantics
+** is the behavior of a valid program
+2. Which semantic is evaluated at compile time?
+** static
+3. Task the semantic analyzer should perform?
+** all the above
+4. An ______ is a specification that defines a property of an object, element or file
+** Attribute
+5. A synthesized attribute
+** have attributes that can be computed independently of context
+6. AST stands for
+** Analysis of Abstract Syntax Tree
+7. ANTLR stand for
+** ANother Tool for Language Recognition
+8. An example of a LR parser is
+** YACC
+9. A compile-time algorithm that predicts run-time behavior is know as
+** static analysis
