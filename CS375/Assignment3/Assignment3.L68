@@ -1,0 +1,97 @@
+00000400 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 11/18/2018 1:26:20 PM
+
+00000000                             1  *------------------------------------------------------------------------------- 
+00000000                             2  * Title         : Assignment3.x68
+00000000                             3  * Written by    : Kyle Jon Aure
+00000000                             4  * Date          : 11/18/18
+00000000                             5  * Description   : Recursive implentation of Egyption Muliplication
+00000000                             6  * Registers used and purposes:  [D4] = m, [D5] = n, Product = [D0]
+00000000                             7  *                               [A7] = StackPointer, [A0] = FramePointer
+00000000                             8  *-------------------------------------------------------------------------------
+00000000                             9  * Recurrence of Egyptian Multiplication:
+00000000                            10  *     BASE CASE:   egp(m, n) = 0, if m = 0 
+00000000                            11  *     Recursion 1: egp(m/2, 2n), if m is even
+00000000                            12  *     Recursion 2: egp(m/2, 2n) + n, if m is odd
+00000000                            13  *
+00000000                            14  * ACTIVATION RECORD and STACK FRAME  Algorithm (without handling overflow):
+00000000                            15  *   --------------------
+00000000                            16  *   | Saved Registers  |(A7)      EGP(M, N) 
+00000000                            17  *   |------------------|             IF M = 0 THEN RETURN 0  // RET. VAL. = 0
+00000000                            18  *   | Local TM = M/2   |-4(A0)       TN = 2 * N
+00000000                            19  *   |------------------|             TM = M / 2
+00000000                            20  *   | Local TN = 2*N   |-2(A0)     IF M is even THEN
+00000000                            21  *   |------------------|             RETURN EGP(TM, TN)
+00000000                            22  *   | [A0]             |(A0)       ELSE
+00000000                            23  *   |------------------|             RETURN EGP(TM, TN) + N
+00000000                            24  *   | RETURN ADDRESS   |4(A0)
+00000000                            25  *   |------------------|
+00000000                            26  *   | INPUT PARAMETER N|8(A0)
+00000000                            27  *   |------------------|
+00000000                            28  *   | INPUT PARAMETER M|10(A0)
+00000000                            29  *    -------------------
+00000000                            30  *-------------------------------------------------------------------------------
+00000000                            31  *#### Inputs and Outputs ####
+00000200                            32           ORG      $200
+00000200= 0005                      33  Input1   DC.W      5        ;Input1 <- m
+00000202= 0002                      34  Input2   DC.W      2        ;Input2 <- n
+00000204                            35  PROD     DS.W      1        ;m*n if no overflow, -1 otherwise
+00000206                            36  
+00000206                            37  *### Main Program ####
+00000400                            38  START    ORG      $400
+00000400  4FF8 2000                 39           LEA      $2000,A7          ;Set up stack pointer
+00000404  3F38 0200                 40           MOVE.W   Input1,-(A7)      ;Push m (-2)
+00000408  3F38 0202                 41           MOVE.W   Input2,-(A7)      ;Push n (-2)
+0000040C  6100 0014                 42           BSR      EGP               ;CALL egp(m,n)
+00000410  4FEF 0004                 43           LEA      4(A7),A7          ;Cleanup stack
+00000414                            44  
+00000414                            45  *### Output Results ###
+00000414  3238 0204                 46           MOVE.W   PROD,D1           ;Move RPOD to D1 to be displayed
+00000418  303C 0003                 47           MOVE     #3,D0             ;Move directive #3 to D0
+0000041C  4E4F                      48           TRAP     #15               ;Display D1
+0000041E  4E72 2700                 49           STOP     #$2700
+00000422                            50  
+00000422                            51  
+00000422                            52  *------------------------------------------------------------------------------- 
+00000422                            53  * Subroutine : egp
+00000422                            54  * Written by : Kyle Jon Aure
+00000422                            55  
+00000422                            56  * Date       : 11/18/18
+00000422                            57  * Description: Recursive Subroutine for 
+00000422                            58  * Registers used and purposes: [D0] = result of this iteration
+00000422                            59  *-------------------------------------------------------------------------------
+00000422                            60  EGP                                 ;Store return address on stack (-4)
+00000422  4E50 FFFC                 61           LINK      A0,#-4           ;Create FramePointer
+00000426  48E7 8000                 62           MOVEM.L   D0,-(A7)         ;Save register D0
+0000042A  =FFFFFFFE                 63  TN       EQU       -2               ;Location of TN relative to A0
+0000042A  =FFFFFFFC                 64  TM       EQU       -4               ;Location of TM relative to A0 
+0000042A  =00000008                 65  N        EQU       8                ;Location of N relative to A0 
+0000042A  =0000000A                 66  M        EQU       10               ;Location of M relative to A0 
+0000042A                            67  * Temporary code to make sure everything else works correctly         
+0000042A  3028 0008                 68           MOVE.W    N(A0),D0         ;[D0] <- N
+0000042E  C0E8 000A                 69           MULU      M(A0),D0         ;[D0] <- M*N
+00000432  31C0 0204                 70           MOVE.W    D0,PROD          ;(PROD) <- [D0]
+00000436  4CDF 0001                 71           MOVEM.L   (A7)+,D0         ;Restore D0  
+0000043A  4E58                      72           UNLK      A0               ;Return StackPointer to A0
+0000043C  4E75                      73           RTS                        ;End of Subroutine EGP
+0000043E                            74           
+0000043E                            75  
+0000043E                            76           END       START
+
+No errors detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+EGP                 422
+INPUT1              200
+INPUT2              202
+M                   A
+N                   8
+PROD                204
+START               400
+TM                  FFFFFFFC
+TN                  FFFFFFFE
