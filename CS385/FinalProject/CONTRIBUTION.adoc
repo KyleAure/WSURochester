@@ -1,0 +1,19 @@
+.Contributions
+|===
+|Part of Project |Contribution by
+
+|Design Decisions |Together
+
+|Normalization | Together
+
+|Schema |Together
+
+|ERDiagram |Andrew
+
+|Documentation | Kyle
+
+|Database Creation |Kyle
+
+|Data insertion |Tables split evenly
+
+|===
