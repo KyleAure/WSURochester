@@ -1,6 +1,6 @@
 = CS375 Assignment 3
 Kyle Aure <KAure09@winona.edu>
-v1.0, 2018-11-18
+v1.0, 2018-11-21
 :RepoURL: https://github.com/KyleAure/WSURochester
 :AuthorURL: https://github.com/KyleAure
 :DirURL: {RepoURL}/CS375
@@ -22,22 +22,42 @@ Provided below are outputs from running the code with various inputs.
 
 == Documentation
 === Output
-1. 1*11
-
-2. 0*10
-
-3. 10*0
-
-4. 11*7
-
-5. 35*56
-
-6. 127*78
-
-7. 256*99
-
-8. 200.438
-
-9. 3200*2
-
-10. 2*16000
+1. 1 * 11 = 11
++
+image:assets/Test1.png[]
++
+2. 0 * 10 = 0
++
+image:assets/Test2.png[]
++
+3. 10 * 0 = 0
++
+image:assets/Test3.png[]
++
+4. 11 * 7 = 77
++
+image:assets/Test4.png[]
++
+5. 35 * 56 = 1,960
++
+image:assets/Test5.png[]
++
+6. 127 * 78 = 9,906
++
+image:assets/Test6.png[]
++
+7. 256 * 99 = 25,344
++
+image:assets/Test7.png[]
++
+8. 200 * 438 = 87,600 (Overflow result should be -1)
++
+image:assets/Test8.png[]
++
+9. 32000 * 2 = 64,000 (Overflow result should be -1)
++
+image:assets/Test9.png[]
++
+10. 2 * 16000 = 32,000
++
+image:assets/Test10.png[]
