@@ -10,10 +10,18 @@
 
 |ERDiagram |Andrew
 
-|Documentation | Kyle
+|Documentation |Kyle
 
 |Database Creation |Kyle
 
 |Data insertion |Tables split evenly
+
+|Database Finalization |Together
+
+|Query requirements |Together
+
+|Query creation |Split evenly
+
+|Query execution |Together
 
 |===

@@ -34,15 +34,16 @@ Based on the generic relationships above we then looked at creating functional r
 During this process we also made sure to normalize data to get rid of all partial and transitive dependencies.
 
 .Independent Functional Relationships (No foreign keys)
-* EmergencyContact:contactNo -> fName, lName, phoneNum
+* EmergencyContact:eContactID -> fName, lName, phoneNum
 * AgeRange:rangeNo -> youngest, oldest
 * Fee:feeRate -> nonMember, member
+* DateRange:dateNo -> startDate, endDate
 
 .Dependent Functional Relationships (With foreign keys)
-* Camper:camperID -> fName, lName, age, email, memberStatus, eContactID
-* CampInfo:campAbr -> campName, description, feeRate, rangeNo
-* Camp:campAbr + sessionNo -> startDate, endDate, am_pm
-* Registration:camperID + campAbr -> payStatus
+* Camper:camperID -> fName, lName, age, email, memberStatus, _eContactID_
+* CampInfo:campAbr -> campName, description, feeRate, _rangeNo_
+* Camp:campAbr + sessionNo -> _dateNo_, am_pm
+* Registration:camperID + campAbr + sessionNo -> payStatus
 
 == Entity Relationship Diagram
 After we made all the design decisions and normalized the database we created the following Entity Relationship (ER) diagram.
@@ -52,10 +53,12 @@ After adding the entities and attributes we created relationships between them a
 * EmergencyContact(0..1) - needs - (1..\*)Camper
 * Campers(1..\*) - requires - (0..\*)Registration
 * Registration(0..\*) - contains - (1)Camp
+* Camp(0..\*) - held during - (1)DateRange
 * Camp(1..\*) - describes - (0..1)CampInfo
 * CampInfo(0..\*) - has - (1)Fee
 * CampInfo(0..\*) - grouped in - (1)AgeRange
 
+.Entity Relationship Diagram
 image::Assets/camp-diagram.png[]
 
 == Final Schema
@@ -84,10 +87,19 @@ CREATE TABLE AgeRange (
 .Fee Table
 ----
 CREATE TABLE Fee (
-    feeRate   INTEGER PRIMARY KEY,
+    feeRate   INTEGER PRIMARY KEY
                       UNIQUE,
     nonMember DOUBLE,
     member    DOUBLE
+);
+----
+
+.DateRange table
+----
+CREATE TABLE DateRange (
+    dateNo    INTEGER PRIMARY KEY,
+    startDate DATE,
+    endDate   DATE
 );
 ----
 
@@ -113,7 +125,7 @@ CREATE TABLE CampInfo (
     campName    STRING,
     description STRING,
     feeRate     INTEGER REFERENCES Fee (feeRate),
-    ageRange    INTEGER REFERENCES AgeRange (RangeNo)
+    rangeNo     INTEGER REFERENCES AgeRange (RangeNo)
 );
 ----
 
@@ -122,8 +134,7 @@ CREATE TABLE CampInfo (
 CREATE TABLE Camp (
     campAbr   STRING  REFERENCES CampInfo (campAbr),
     sessionNo INTEGER,
-    startDate DATE,
-    endDate   DATE,
+    dateNo    INTEGER REFERENCES DateRange (dateNo),
     am_pm     STRING,
     PRIMARY KEY (
         campAbr ASC,
@@ -137,17 +148,37 @@ CREATE TABLE Camp (
 ----
 CREATE TABLE Registration (
     camperID  INTEGER REFERENCES Camper (camperID),
-    campAbr   STRING  REFERENCES Camp (campAbr),
+    campAbr   STRING,
+    sessionNo INTEGER,
     payStatus BOOLEAN,
     PRIMARY KEY (
         camperID ASC,
-        campAbr ASC
+        campAbr ASC,
+        sessionNo ASC
     )
-    ON CONFLICT ROLLBACK
+    ON CONFLICT ROLLBACK,
+    FOREIGN KEY (
+        campAbr,
+        sessionNo
+    )
+    REFERENCES Camp (campAbr,
+    sessionNo)
 );
 ----
 
 == Queries and Results
+
+1. What weeks is the Teen Nature Photography camp running?
+2. Registration list for Scales & Slime.
+3. Camp sessions for students who are 10 that are held in the morning.
+4. Show the emergency contact list for GR session 9 with campers name.
+5. Is Astrid Cleveland paid in full?
+6. Which camps and sessions are running in June.
+7. Show the emergency contact for Hilary Bush.
+8. Get email addresses of all campers signed up for Fur-ology Fun.
+9. Get information together for a brochure; Camp name, Fee rates, and Age ranges.
+10. Get a list of non-members that have not paid their bills.
+
 
 
 == Contributions
