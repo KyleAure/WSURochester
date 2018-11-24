@@ -174,12 +174,101 @@ CREATE TABLE Registration (
 4. Show the emergency contact list for GR session 9 with campers name.
 5. Is Astrid Cleveland paid in full?
 6. Which camps and sessions are running in June.
++
+----
+CREATE VIEW [June Sessions] AS
+    SELECT CampInfo.campName,
+           Camp.campAbr,
+           Camp.sessionNo,
+           DateRange.startDate,
+           DateRange.endDate
+      FROM Camp
+           INNER JOIN
+           CampInfo ON Camp.campAbr = CampInfo.campAbr
+           INNER JOIN
+           DateRange ON Camp.dateNo = DateRange.dateNo
+     WHERE DateRange.startDate LIKE '6/%_/__';
+----
++
+image:Assets/Q6.png[]
++
 7. Show the emergency contact for Hilary Bush.
++
+----
+CREATE VIEW eContactHilary AS
+    SELECT EmergencyContact.fName,
+           EmergencyContact.lName,
+           EmergencyContact.phoneNum
+      FROM EmergencyContact
+           INNER JOIN
+           Camper ON EmergencyContact.eContactID = Camper.eContactID
+     WHERE Upper(Camper.fName) = 'HILARY' AND
+           Upper(camper.lName) = 'BUSH';
+----
++
+image:Assets/Q7.png[]
++
 8. Get email addresses of all campers signed up for Fur-ology Fun.
++
+----
+CREATE VIEW [emailFur-Ology] AS
+    SELECT Camper.email
+      FROM Camper
+           INNER JOIN
+           Registration ON Registration.camperID = Camper.camperID
+     WHERE Registration.campAbr = 'FF';
+----
++
+image:Assets/Q8.png[]
++
 9. Get information together for a brochure; Camp name, Fee rates, and Age ranges.
++
+----
+CREATE VIEW BrocureData AS
+    SELECT CampInfo.campName,
+           CampInfo.campAbr,
+           CampInfo.description,
+           Fee.member,
+           Fee.nonMember,
+           DateRange.startDate,
+           DateRange.endDate,
+           AgeRange.youngest,
+           AgeRange.oldest
+      FROM Camp
+           INNER JOIN
+           CampInfo ON CampInfo.campAbr = Camp.campAbr
+           INNER JOIN
+           Fee ON Fee.feeRate = CampInfo.feeRate
+           INNER JOIN
+           DateRange ON DateRange.dateNo = Camp.dateNo
+           INNER JOIN
+           AgeRange ON AgeRange.rangeNo = CampInfo.rangeNo;
+----
++
+image:Assets/Q9.png[]
++
 10. Get a list of non-members that have not paid their bills.
-
-
++
+----
+CREATE VIEW NonMemberBills AS
+    SELECT Camper.fName,
+           Camper.lName,
+           Camper.email,
+           Fee.nonMember AS Owes
+      FROM Registration
+           INNER JOIN
+           Camper ON Camper.camperID = Registration.camperID
+           INNER JOIN
+           Camp ON Camp.campAbr = Registration.campAbr AND
+                   Camp.sessionNo = Registration.sessionNo
+           INNER JOIN
+           CampInfo ON CampInfo.campAbr = Camp.campAbr
+           INNER JOIN
+           Fee ON Fee.feeRate = CampInfo.feeRate
+     WHERE Registration.payStatus = 'FALSE';
+----
++
+image:Assets/Q10.png[]
 
 == Contributions
 Project contributions were split evenly among team members.
