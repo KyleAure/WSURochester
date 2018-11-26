@@ -1,0 +1,79 @@
+/*
+  Robotics Project
+  CS375:  Computer Systems
+  By:     Kyle Aure and Almedin Bajramovic
+  Date:   11/24/2018
+*/
+/* *********************
+   Constants
+   ********************* */
+#define THRESHOLD 60
+
+/* *********************
+   Variables
+   ********************* */
+dseg segment
+  Switch sword 0
+  Level sword 0
+  Count sword 0
+dseg ends
+
+/* *********************
+   Switch Section
+   ********************* */
+thread switch
+  SetSensorType(IN_1,IN_TYPE_SWITCH)
+  SetSensorMode(IN_1,IN_MODE_BOOLEAN)
+  ResetSensor(IN_1)
+  OnFwd(OUT_BC,100)
+
+CheckSensor:
+  ReadSensor(IN_1,Switch)
+  brtst EQ, CheckSensor, Switch
+
+  Off(OUT_BC)
+endt
+
+/* *********************
+   Light Section
+   ********************* */
+thread Light
+  SetSensorLight(IN_3)
+  OnFwd(OUT_BC,100)
+CheckSensor:
+  ReadSensor(IN_3,Level)
+  brcmp LT, CheckSensor, Level, THRESHOLD
+  OnRev(OUT_B,50)
+FindLine:
+  ReadSensor(IN_3,Level)
+  brcmp GTEQ, FindLine, Level, THRESHOLD
+  OnFwd(OUT_BC,100)
+  jmp CheckSensor
+endt
+
+/* *********************
+   Sound Section
+   ********************* */
+ thread Sound
+   SetSensorType(IN_2, IN_TYPE_SOUND_DB)
+   SetSensorMode(IN_2, IN_MODE_PERIODCOUNTER)
+   ResetSensor(IN_2)
+
+ Forever:
+   ClearSensor(IN_2)
+ CheckCount:
+   ReadSensor(IN_2, Count)
+   brtst EQ, CheckCount, Count
+   wait 500
+   ReadSensor(IN_2, Count)
+   brcmp EQ, StopIt, Count, 1
+   OnFwd(OUT_BC,100)
+   jmp Forever
+ StopIt:
+   Off(OUT_BC)
+   jmp Forever
+ endt
+
+ /* *********************
+    Main Program
+    ********************* */
