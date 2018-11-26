@@ -30,7 +30,8 @@ endt
    MOTORS: OUT_B, OUT_C
    ********************* */
 thread Move_Around
-   precedes Clap                      //Start Clap Thread
+   //Start Clap Thread
+   precedes Clap
    SetSensorTouch(IN_1)               //Set up Sensors
    SetSensorMode(IN_1,IN_MODE_BOOLEAN)
 Resume:                               //Loop here after rotate
@@ -45,7 +46,7 @@ CheckSensor:                          //Loop here continue to check
    call rotate                        //     Rotate
    jmp Resume                         //     Go forward again
 END:
-endt                                  //END THREAD
+endt
 
 /* *****Subroutine**** */
 subroutine rotate
@@ -67,14 +68,17 @@ ends
    MOTORS: NONE
    ********************* */
 thread Clap
-  SetSensorType(IN_2, IN_TYPE_SOUND_DB)      //Set up sensors
+  SetSensorType(IN_2, IN_TYPE_SOUND_DB)
   SetSensorMode(IN_2, IN_MODE_PERIODCOUNTER)
-  ResetSensor(IN_2)                          //Clear sensor
-CheckCount:                                  //Loop here continue to check
-  ReadSensor(IN_2, ClapCount)                //Read sensor for number of claps
-  brtst EQ, CheckCount, ClapCount            //If   ClapCount == 0(TRUE) check again
-  set ClapStatus TRUE                        //ELSE Set ClapStatus = True
-endt                                         //END TREAD
+  ResetSensor(IN_2)
+Forever:
+  ClearSensor(IN_2)
+CheckCount:
+  ReadSensor(IN_2, ClapCount)
+  brtst EQ, CheckCount, ClapCount
+
+
+endt
 
 /* *********Thread*******
 

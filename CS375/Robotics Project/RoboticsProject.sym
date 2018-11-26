@@ -1,0 +1,118 @@
+#SYMBOLS
+Index	Identifier	Type	Flag	Data	Size	RefCount
+0	__ResetSensorMutex	9	0	0	4	6
+1	__rotate_wait_now	5	1	4	4	3
+2	__rotate_wait_then	5	1	8	4	2
+3	ClapCount	4	1	12	2	2
+4	TouchStatus	4	1	14	2	2
+5	__constVal523	4	0	16	2	1
+6	__rotate_wait_ms	3	1	18	2	3
+7	ClapStatus	4	1	20	2	2
+8	__constVal500	4	0	22	2	1
+9	__constVal75	2	0	24	1	1
+10	__constVal50	2	0	25	1	2
+11	__rotate_return	1	1	26	1	3
+12	__rotate_wait_return	1	1	27	1	3
+13	__constVal96	2	0	28	1	6
+14	__constVal63	2	0	29	1	5
+15	__constVal0	2	1	30	1	24
+16	__constVal3	2	0	31	1	5
+17	__constVal4	2	0	32	1	1
+18	__OnRev_Tmp	2	1	33	1	2
+19	__constVal32	2	0	34	1	17
+20	__constVal1	2	0	35	1	7
+21	__ResetSensorPort	1	1	36	1	5
+22	__constVal7	2	0	37	1	1
+23	__PFTmp	1	1	38	1	1
+24	__constVal2	2	0	39	1	1
+25	__ResetSensorTmp	1	1	40	1	2
+26	____ResetSensorSubroutine_return	1	1	41	1	5
+27	__PlayToneTmp	8	0	5	8	5
+28	__PlayToneTmp.Result	2	1	44	1	5
+29	__PlayToneTmp.Frequency	3	1	46	2	5
+30	__PlayToneTmp.Duration	3	1	48	2	5
+31	__PlayToneTmp.Loop	1	1	50	1	5
+32	__PlayToneTmp.Volume	1	1	51	1	5
+33	__OUT_BC	7	0	52	4	3
+34	__OUT_BC.__OUT_BC_type	1	0	0	1	0
+#SOURCES
+Clump	Line	PC	Source
+0	25	0		exit 0, 0
+1	5476	0		setin __constVal1, __ResetSensorPort, 5
+1	5478	4		getin __ResetSensorTmp, __ResetSensorPort, 5
+1	5479	8		brtst 5, __SensorStillInvalid, __ResetSensorTmp
+1	5480	11		subret ____ResetSensorSubroutine_return
+2	34	0	#pragma macro 6
+2	34	0		setin __constVal1, __constVal0, 0
+2	34	4		setin __constVal32, __constVal0, 1
+2	34	8		acquire __ResetSensorMutex
+2	34	9		mov __ResetSensorPort, __constVal0
+2	34	11		subcall __ResetSensorSubroutine, ____ResetSensorSubroutine_return
+2	34	13		release __ResetSensorMutex
+2	34	14	#line 34 "C:\Users\Kyle\Desktop\WSURochester\CS375\Robotics Project\RoboticsProject.nbc"
+2	35	14		setin __constVal32, __constVal0, 1
+2	37	18	#pragma macro 4
+2	37	18		acquire __ResetSensorMutex
+2	37	19		mov __ResetSensorPort, __constVal0
+2	37	21		subcall __ResetSensorSubroutine, ____ResetSensorSubroutine_return
+2	37	23		release __ResetSensorMutex
+2	37	24	#line 37 "C:\Users\Kyle\Desktop\WSURochester\CS375\Robotics Project\RoboticsProject.nbc"
+2	38	24	#pragma macro 7
+2	38	24		setout __OUT_BC, 2, __constVal75, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+2	38	47	#line 38 "C:\Users\Kyle\Desktop\WSURochester\CS375\Robotics Project\RoboticsProject.nbc"
+2	40	47		getin TouchStatus, __constVal0, 4
+2	41	51		brtst 4, END, ClapStatus
+2	43	54		brtst 4, CheckSensor, TouchStatus
+2	44	57	#pragma macro 7
+2	44	57		setout __OUT_BC, 2, __constVal0, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+2	44	80	#line 44 "C:\Users\Kyle\Desktop\WSURochester\CS375\Robotics Project\RoboticsProject.nbc"
+2	45	80		subcall rotate, __rotate_return
+2	46	82		jmp Resume
+2	48	84		exit 0, 0
+3	53	0	#pragma macro 7
+3	53	0		mov __PlayToneTmp.Frequency, __constVal523
+3	53	2		mov __PlayToneTmp.Duration, __constVal500
+3	53	4		mov __PlayToneTmp.Volume, __constVal4
+3	53	6		mov __PlayToneTmp.Loop, __constVal0
+3	53	8		syscall 10, __PlayToneTmp
+3	53	11	#line 53 "C:\Users\Kyle\Desktop\WSURochester\CS375\Robotics Project\RoboticsProject.nbc"
+3	54	11		set __rotate_wait_ms, 100
+3	54	14		subcall __rotate_wait, __rotate_wait_return
+3	56	16	#pragma macro 10
+3	56	16		neg __OnRev_Tmp, __constVal50
+3	56	19		setout __constVal2, 2, __OnRev_Tmp, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+3	56	42	#line 56 "C:\Users\Kyle\Desktop\WSURochester\CS375\Robotics Project\RoboticsProject.nbc"
+3	57	42	#pragma macro 7
+3	57	42		setout __constVal1, 2, __constVal50, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+3	57	65	#line 57 "C:\Users\Kyle\Desktop\WSURochester\CS375\Robotics Project\RoboticsProject.nbc"
+3	58	65		set __rotate_wait_ms, 300
+3	58	68		subcall __rotate_wait, __rotate_wait_return
+3	60	70	#pragma macro 7
+3	60	70		setout __OUT_BC, 2, __constVal0, 1, __constVal3, 8, __constVal0, 6, __constVal32, 7, __constVal0, 5, __constVal0, 10, __constVal96, 11, __constVal32, 12, __constVal32, 0, __constVal63
+3	60	93	#line 60 "C:\Users\Kyle\Desktop\WSURochester\CS375\Robotics Project\RoboticsProject.nbc"
+3	61	93		subret __rotate_return
+4	0	0		gettick __rotate_wait_now
+4	0	2		add __rotate_wait_then, __rotate_wait_now, __rotate_wait_ms
+4	0	6	__rotate_waiting:	gettick __rotate_wait_now
+4	0	8		brcmp LT, __rotate_waiting, __rotate_wait_now, __rotate_wait_then
+4	0	12		subret __rotate_wait_return
+5	70	0		setin __constVal7, __constVal1, 0
+5	71	4		setin __constVal96, __constVal1, 1
+5	72	8	#pragma macro 4
+5	72	8		acquire __ResetSensorMutex
+5	72	9		mov __ResetSensorPort, __constVal1
+5	72	11		subcall __ResetSensorSubroutine, ____ResetSensorSubroutine_return
+5	72	13		release __ResetSensorMutex
+5	72	14	#line 72 "C:\Users\Kyle\Desktop\WSURochester\CS375\Robotics Project\RoboticsProject.nbc"
+5	74	14		getin ClapCount, __constVal1, 4
+5	75	18		brtst 4, CheckCount, ClapCount
+5	76	21		set ClapStatus, 1
+5	77	24		exit -1, -1
+#CLUMPS
+Clump	Name	Offset	File
+0	main	0	C:\Users\Kyle\Desktop\WSURochester\CS375\Robotics Project\RoboticsProject.nbc
+1	__ResetSensorSubroutine	3	NXTDefs.h
+2	Move_Around	16	C:\Users\Kyle\Desktop\WSURochester\CS375\Robotics Project\RoboticsProject.nbc
+3	rotate	103	C:\Users\Kyle\Desktop\WSURochester\CS375\Robotics Project\RoboticsProject.nbc
+4	__rotate_wait	198	C:\Users\Kyle\Desktop\WSURochester\CS375\Robotics Project\RoboticsProject.nbc
+5	Clap	212	C:\Users\Kyle\Desktop\WSURochester\CS375\Robotics Project\RoboticsProject.nbc
