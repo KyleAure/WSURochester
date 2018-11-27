@@ -45,6 +45,8 @@ During this process we also made sure to normalize data to get rid of all partia
 * Camp:campAbr + sessionNo -> _dateNo_, am_pm
 * Registration:camperID + campAbr + sessionNo -> payStatus
 
+After reviewing every relationship no transitive dependencies exist that we could determine.
+
 == Entity Relationship Diagram
 After we made all the design decisions and normalized the database we created the following Entity Relationship (ER) diagram.
 After adding the entities and attributes we created relationships between them as follows.
@@ -60,6 +62,12 @@ After adding the entities and attributes we created relationships between them a
 
 .Entity Relationship Diagram
 image::Assets/camp-diagram.png[]
+
+== Database Model
+We decided to use a Relational model for this Database.
+We choose to use a Relational model since after creating our relationships and normalization.
+The resulting relationships can directly be correlated to tables of a relational database.
+Additionally, the ability to use primary and foreign keys to link tables together would make for easy query writing.
 
 == Final Schema
 
@@ -168,12 +176,106 @@ CREATE TABLE Registration (
 
 == Queries and Results
 
-1. What weeks is the Teen Nature Photography camp running?
+1. Weeks that the Teen Nature Photography camp is running.
+** This query can be used to create brochures for a specific camp where dates for each session is important.
++
+----
+CREATE VIEW TNP AS
+    SELECT startDate,
+           endDate
+      FROM DateRange
+     WHERE dateNo IN (
+               SELECT dateNo
+                 FROM Camp
+                WHERE campAbr = 'TNP'
+           );
+----
++
+image:Assets/Q1.png[]
++
 2. Registration list for Scales & Slime.
+** This query can be used to create a checkin or registration list for a camp leader.
++
+----
+CREATE VIEW RegListSS AS
+    SELECT fName,
+           lName
+      FROM Camper
+     WHERE camperID IN (
+               SELECT camperID
+                 FROM Registration
+                WHERE campAbr = 'SS'
+           );
+----
++
+image:Assets/Q2.png[]
++
 3. Camp sessions for students who are 10 that are held in the morning.
-4. Show the emergency contact list for GR session 9 with campers name.
-5. Is Astrid Cleveland paid in full?
+** This query could be used for a recruiter that is going to a middle school classroom.
++
+----
+CREATE VIEW [10+AMCamp] AS
+    SELECT campAbr,
+           sessionNo
+      FROM Camp
+     WHERE am_pm = 'AM' AND
+           campAbr IN (
+               SELECT campAbr
+                 FROM CampInfo
+                WHERE rangeNo IN (
+                          SELECT rangeNo
+                            FROM AgeRange
+                           WHERE Youngest = 10 OR
+                                 Oldest = 10
+                      )
+           );
+----
++
+image:Assets/Q3.png[]
++
+4. Show the emergency contact list for Geology Rocks (GR) session 9 with campers name.
+** This query could be used to take onsite during this camp incase a child gets injured.
++
+----
+CREATE VIEW [GR-9eContacts] AS
+    SELECT fName,
+           lName,
+           phoneNum
+      FROM EmergencyContact
+     WHERE eContactID IN (
+               SELECT eContactID
+                 FROM Camper
+                WHERE camperID IN (
+                          SELECT camperID
+                            FROM Registration
+                           WHERE campAbr = 'GR' AND
+                                 sessionNo = '9'
+                      )
+           );
+----
++
+image:Assets/Q4.png[]
++
+5. Has Astrid Cleveland paid in full?
+** This query can be used by the administrative staff at Quarry Hill to determine if a child is allowed to attend this camp.
++
+----
+CREATE VIEW PaidAC AS
+    SELECT campAbr,
+           payStatus
+      FROM Registration
+     WHERE camperID IN (
+               SELECT camperID
+                 FROM Camper
+                WHERE fName = 'Astrid' AND
+                      lName = 'Cleveland'
+           );
+----
++
+image:Assets/Q5.png[]
++
 6. Which camps and sessions are running in June.
+** This query could be used to send out a monthly email of camps that are taking session during the next month.
 +
 ----
 CREATE VIEW [June Sessions] AS
@@ -193,6 +295,7 @@ CREATE VIEW [June Sessions] AS
 image:Assets/Q6.png[]
 +
 7. Show the emergency contact for Hilary Bush.
+** This could be useful if a specific child is hurt and the emergency contact record needs to be pulled.
 +
 ----
 CREATE VIEW eContactHilary AS
@@ -209,6 +312,7 @@ CREATE VIEW eContactHilary AS
 image:Assets/Q7.png[]
 +
 8. Get email addresses of all campers signed up for Fur-ology Fun.
+** This could be useful for sending out a mass email for specific camp reasons.
 +
 ----
 CREATE VIEW [emailFur-Ology] AS
@@ -222,6 +326,7 @@ CREATE VIEW [emailFur-Ology] AS
 image:Assets/Q8.png[]
 +
 9. Get information together for a brochure; Camp name, Fee rates, and Age ranges.
+** This would be the best way to get all the information together to create a brochure or general website for this organization.
 +
 ----
 CREATE VIEW BrocureData AS
@@ -248,6 +353,7 @@ CREATE VIEW BrocureData AS
 image:Assets/Q9.png[]
 +
 10. Get a list of non-members that have not paid their bills.
+** This would be useful for administrative staff to be able to contact non-members who have forgotten to pay their bills. 
 +
 ----
 CREATE VIEW NonMemberBills AS
