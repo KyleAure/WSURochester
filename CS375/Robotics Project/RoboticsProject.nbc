@@ -21,7 +21,7 @@ dseg ends
    Main program - starts all other threads
    ********************* */
 thread main
-   precedes Move_Around
+   precedes Move_Around, Clap
 endt
 
 /* *********Thread*******
@@ -30,7 +30,6 @@ endt
    MOTORS: OUT_B, OUT_C
    ********************* */
 thread Move_Around
-   precedes Clap                      //Start Clap Thread
    SetSensorTouch(IN_1)               //Set up Sensors
    SetSensorMode(IN_1,IN_MODE_BOOLEAN)
 Resume:                               //Loop here after rotate
@@ -38,7 +37,7 @@ Resume:                               //Loop here after rotate
    OnFwd(OUT_BC,FULL_SPEED)           //     Go forward
 CheckSensor:                          //Loop here continue to check
    ReadSensor(IN_1,TouchStatus)       //     Get sensor status
-   brtst EQ, END, ClapStatus          //If   clap has been sensed END this thread.
+   brtst NEQ, END, ClapStatus          //If   clap has been sensed END this thread.
                                       //Else continue
    brtst EQ, CheckSensor, TouchStatus //If   sensor was not touched check again
    Off(OUT_BC)                        //Else turn off motors
@@ -49,9 +48,6 @@ endt                                  //END THREAD
 
 /* *****Subroutine**** */
 subroutine rotate
-  //Play tone to ack subroutine
-  PlayTone(TONE_C5,500)
-  wait 100
   //C - Rev, B - Fwd
   OnRev(OUT_C,ROTATE_SPEED)
   OnFwd(OUT_B,ROTATE_SPEED)
@@ -69,16 +65,20 @@ ends
 thread Clap
   SetSensorType(IN_2, IN_TYPE_SOUND_DB)      //Set up sensors
   SetSensorMode(IN_2, IN_MODE_PERIODCOUNTER)
-  ResetSensor(IN_2)                          //Clear sensor
-CheckCount:                                  //Loop here continue to check
+  ResetSensor(IN_2)
+CheckCount:
+  ClearSensor(IN_2)                                  //Loop here continue to check
   ReadSensor(IN_2, ClapCount)                //Read sensor for number of claps
-  brtst EQ, CheckCount, ClapCount            //If   ClapCount == 0(TRUE) check again
-  set ClapStatus TRUE                        //ELSE Set ClapStatus = True
+  brtst EQ, CheckCount, ClapCount
+  wait 500
+  brcmp EQ, END, ClapCount, 1
+  jmp CheckCount
+END:
+  set ClapStatus 1                           //ELSE Set ClapStatus = True
 endt                                         //END TREAD
 
 /* *********Thread*******
 
    ********************* */
  thread Sound
-   //TODO: Complete
  endt
