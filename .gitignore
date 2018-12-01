@@ -20,3 +20,14 @@ README.html
 
 # Zip files
 *.zip
+
+#CS385 Final Presentation
+/CS385/FinalProject/Presentation/node_modules/
+/CS385/FinalProject/Presentation/*.html
+/CS385/FinalProject/Presentation/Gemfile
+/CS385/FinalProject/Presentation/Gemfile.lock
+/CS385/FinalProject/Presentation/.bundle
+/CS385/FinalProject/Presentation/*.json
+/CS385/FinalProject/Presentation/reveal.js
+
+

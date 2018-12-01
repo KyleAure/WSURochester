@@ -24,7 +24,7 @@ To begin with we knew we would need data on a camper, the camp, emergency contac
 As we went we made relationships for all of the attributes that we knew we wanted to track.
 
 .General Relationships
-* Camper:camperID -> fName, lName, age, email, memberStatus, emergencyContact,
+* Camper:camperID -> fName, lName, age, email, memberStatus, emergencyContact
 * Camp:campAbr -> campName, description, feeRate, ageRange, sessionNo, startDate, endDate, am_pm
 * EmergencyContact:contactNo -> fName, lName, phoneNum
 * Fee:feeRate -> nonMember, member, payStatus
@@ -353,7 +353,7 @@ CREATE VIEW BrocureData AS
 image:Assets/Q9.png[]
 +
 10. Get a list of non-members that have not paid their bills.
-** This would be useful for administrative staff to be able to contact non-members who have forgotten to pay their bills. 
+** This would be useful for administrative staff to be able to contact non-members who have forgotten to pay their bills.
 +
 ----
 CREATE VIEW NonMemberBills AS

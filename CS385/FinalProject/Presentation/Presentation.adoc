@@ -1,0 +1,142 @@
+
+= Database Project
+:revealjs_plugin_pdf: enabled
+:revealjs_theme: sky
+:ROOT: ../README.adoc
+
+== Course Details
+* **Course** - CS385: Applied Database Management
+* **Instructor** - Dr. Nicole Anderson
+* **Date** - 12/11/2018
+* **Contributors** - Kyle Aure and Andrew Poss
+
+== Database Design
+
+=== What Categories?
+1. Campers
+2. Camps
+3. Emergency Contacts
+4. Fees
+
+=== What Data?
+For *campers* we need
+
+[%step]
+fName, lName, age, email, member status, emergencyContact
+
+=== General Relationships
+* **Camper:camperID** -> fName, lName, age, email, memberStatus, emergencyContact,
+* **Camp:campAbr** -> campName, description, feeRate, ageRange, sessionNo, startDate, endDate, am_pm
+* **EmergencyContact:contactNo** -> fName, lName, phoneNum
+* **Fee:feeRate** -> nonMember, member, payStatus
+
+== Normalization
+To get to 3rd normal form we needed to get rid of **Partial** and **Transitive** dependencies.
+
+=== Independent FR
+* **EmergencyContact:eContactID** -> fName, lName, phoneNum
+* **AgeRange:rangeNo** -> youngest, oldest
+* **Fee:feeRate** -> nonMember, member
+* **DateRange:dateNo** -> startDate, endDate
+
+=== Dependent FR
+* **Camper:camperID** -> fName, lName, age, email, memberStatus, _eContactID_
+* **CampInfo:campAbr** -> campName, description, feeRate, _rangeNo_
+* **Camp:campAbr + sessionNo** -> _dateNo_, am_pm
+* **Registration:camperID + campAbr + sessionNo** -> payStatus
+
+== ER Diagram
+
+=== !
+image:../Assets/camp-diagram.png[background, size=cover]
+
+== Database Model
+Our functional relationships already resembled tables with primary and foreign keys.
+
+Therefore, we decided to use a **Relational Database**.
+
+== Schema
+
+=== Independent Tables
+.EmergencyContact Table
+----
+CREATE TABLE EmergencyContact (
+    eContactID INTEGER PRIMARY KEY
+                       UNIQUE,
+    fName      STRING,
+    lName      STRING,
+    phoneNum   STRING
+);
+----
+
+=== Dependent Tables
+.Registration Table
+----
+CREATE TABLE Registration (
+    camperID  INTEGER REFERENCES Camper (camperID),
+    campAbr   STRING,
+    sessionNo INTEGER,
+    payStatus BOOLEAN,
+    PRIMARY KEY (
+        camperID ASC,
+        campAbr ASC,
+        sessionNo ASC
+    )
+    ON CONFLICT ROLLBACK,
+    FOREIGN KEY (
+        campAbr,
+        sessionNo
+    )
+    REFERENCES Camp (campAbr,
+    sessionNo)
+);
+----
+
+== Queries and Results
+In total we wrote 10 different queries on our database for various business applications.
+
+=== Payments
+----
+CREATE VIEW PaidAC AS
+    SELECT campAbr,
+           payStatus
+      FROM Registration
+     WHERE camperID IN (
+               SELECT camperID
+                 FROM Camper
+                WHERE fName = 'Astrid' AND
+                      lName = 'Cleveland'
+           );
+----
+[%step]
+image:../Assets/Q5.png[]
+
+=== June Sessions
+----
+CREATE VIEW [June Sessions] AS
+    SELECT CampInfo.campName,
+           Camp.campAbr,
+           Camp.sessionNo,
+           DateRange.startDate,
+           DateRange.endDate
+      FROM Camp
+           INNER JOIN
+           CampInfo ON Camp.campAbr = CampInfo.campAbr
+           INNER JOIN
+           DateRange ON Camp.dateNo = DateRange.dateNo
+     WHERE DateRange.startDate LIKE '6/%_/__';
+----
+[%step]
+image:../Assets/Q6.png[]
+
+== Contributions
+*Kyle Jon Aure*
+
+* KAure09@winona.edu
+* https://github.com/KyleAure
+
+*Andrew Poss*
+
+* APoss17@winona.edu
+
+Thank you for your time.
