@@ -4,21 +4,22 @@
 In order run this presentation open terminal and navigate to the `Presentation` folder.
 
 Ruby Setup:
-
+----
 $ gem install bundler
 $ rvm use default
 $ bundle config --local github.https true
 $ bundle --path=.bundle/gems --binstubs=.bundle/.bin
 $ git clone -b 3.6.0 --depth 1 https://github.com/hakimel/reveal.js.git
+----
 
 NodeJS Setup:
-
+----
 $ npm i --save asciidoctor-reveal.js
-
-== Running presetnation
-
+----
+== Running presentation
+----
 $ bundle exec asciidoctor-revealjs Presentation.adoc
-
+----
 Then open the `Presentation.html` file to present.
 
 To print presentation as a PDF then add `?print-pdf` to the end of the HTML path.
