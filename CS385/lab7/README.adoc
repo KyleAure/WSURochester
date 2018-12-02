@@ -27,27 +27,66 @@ No database files are needed for this project.  Sample data is provided below.
 * Receipt([underline]#receiptID#, storeNum, date)
 * Cup([underline]#receiptID#, [underline]#colorID#)
 
-
 === Queries
+
+While working on these queries I decided to use Relational Algebra instead of SQL to create these queries.
+I did this because it lead to an easier to think about how the tables are linked together.
+Given more time I would convert these to SQL queries.
+
+
 1. Which cup had the largest sales in each state?
-** Data Needed:
+** Goal: Create a query that lists which color had the largest sales in that state. Could not figure out a simple way to output all states.
 +
 ----
-
+// Cup-Reciept table
+CR = (Cup) ⨝(Cup.receiptID=Receipt.receiptID) (Receipt)
+// Store-Cup-Reciept table
+SCR = Store ⨝(Store.storeNum=Receipt.storeNum) CR
+// Color-Store-Cup-Receipt table
+CSCR = Color⨝Color.colorID=Cup.colorID SCR
+// Group by stateAbrv AND CupColor WHILE counting colorID as Column ColorCount from Table CSCR
+Count = γ Store.stateAbrv,Color.cupColor;count(Cup.colorID)->ColorCount CSCR
+// State interested in
+StateCount = σ(Store.stateAbrv = 'MN') Count
+// Order by counts
+τ ColorCount desc StateCount
 ----
++
+image:Assets/Q1.png[]
 +
 2. What is the distribution of cup sales in each state?
-**
+** Goal: Create a query that will list the state abbreviation and number of each cup type sold in that state.
 +
 ----
+// Cup-Reciept table
+CR = (Cup) ⨝(Cup.receiptID=Receipt.receiptID) (Receipt)
+// Store-Cup-Reciept table
+SCR = Store ⨝(Store.storeNum=Receipt.storeNum) CR
+// Color-Store-Cup-Receipt table
+CSCR = Color⨝Color.colorID=Cup.colorID SCR
+// Group by stateAbrv AND CupColor WHILE counting colorID as Column ColorCount from Table CSCR
+γ Store.stateAbrv,Color.cupColor;count(Cup.colorID)->ColorCount CSCR
 ----
++
+image:Assets/Q2.png[]
 +
 3. Who is currently predicted to win according to the 7-11 poll?
-** 
+** Goal: We will also need the number of electoral votes each state gets.
 +
 ----
+// Cup-Reciept table
+CR = (Cup) ⨝(Cup.receiptID=Receipt.receiptID) (Receipt)
+// Store-Cup-Reciept table
+SCR = Store ⨝(Store.storeNum=Receipt.storeNum) CR
+// Color-Store-Cup-Receipt table
+CSCR = Color⨝Color.colorID=Cup.colorID SCR
+// State-Color-Store-Cup-Receipt table
+SCSCR = State⨝State.stateAbrv=Store.stateAbrv CSCR
+// Get StateAbrv, ElectorialVotes, CupColor, and ColorCount from SCSCR
+γ Store.stateAbrv,Color.cupColor,State.numElectorialVotes;count(Cup.colorID)->ColorCount SCSCR
 ----
-
++
+image:Assets/Q3.png[]
 
 == Problem 2
 Normalize student database.

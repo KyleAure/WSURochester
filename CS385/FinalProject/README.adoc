@@ -96,6 +96,9 @@ CREATE TABLE AgeRange (
 ----
 CREATE TABLE Fee (
     feeRate   INTEGER PRIMARY KEY
+
+    feeRate   INTEGER PRIMARY KEY,
+
                       UNIQUE,
     nonMember DOUBLE,
     member    DOUBLE
@@ -110,7 +113,6 @@ CREATE TABLE DateRange (
     endDate   DATE
 );
 ----
-
 .Camper Table
 ----
 CREATE TABLE Camper (

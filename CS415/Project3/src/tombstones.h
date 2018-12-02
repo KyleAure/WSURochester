@@ -8,24 +8,46 @@
 
 //Print pointer access error message and gracefully exit
 void pointer_error(int number) {
-    std::cerr << "Unaccessable pointer reference at tombstones.h line: " << number << std::endl;
+    std::cerr << "ERROR: Attempt to access a memory location that has been potentially reallocated - tombstones.h line: " << number << std::endl;
+    exit(1);
+}
+
+//Print uninitalized pointer error message and gracefully exit
+void uninitalized_error(int number) {
+    std::cerr << "ERROR: Attempt to remove a pointer that is uninitialized - tombstones.h line: " << number << std::endl;
     exit(1);
 }
 
 //Print memory leak error message and gracefully exit
 void leak_memory_error(int number) {
-    std::cerr << "Memory leak at tombstones.h line: " << number << std::endl;
+    std::cerr << "ERROR: Memory leak - tombstones.h line: " << number << std::endl;
     exit(1);
 }
 
-//Defintion of Tomb for larger pointer class
+//Print warning pointer error message and continue execution
+void double_delete_warning(int number) {
+    std::cerr << "WARNING: Attempt to remove a pointer that has already been removed - tombstones.h line: " << number << std::endl;
+}
+
+//Print dangling reference error message and continue execution
+void dangling_warning(int number, int count) {
+    std::cerr << "WARNING: possible dangling reference - tombstones.h line: " << number << std::endl;
+    std::cerr << "\tNumber of references remaining: " << count << std::endl;
+}
+
+/*
+    Defintion of Tomb for larger pointer class
+    Count = -1 indicates uninitialized Ptr
+    Count = 0 indicates no references to Ptr
+    Data = nullptr indicates unitialized OR reallocated memory
+*/
 template <class T>
 struct Tomb {
     T* data;    //pointer to where data is located.
     int count;  //count of pointers to this tomb.
 
     //Constructor with initialized basic values
-    Tomb<T>() : data(nullptr), count(0){}
+    Tomb<T>() : data(nullptr), count(-1){}
 
     //Deconstructor to put tomb back to default state
     ~Tomb<T>() {
@@ -34,6 +56,9 @@ struct Tomb {
     }
 };
 
+/*
+    Ptr class definition
+*/
 template <class T> class Ptr {
 private:
     Tomb<T>* tomb;  //Pointer to tombstone where reference count and data pointer is held
@@ -41,7 +66,7 @@ public:
     //Default constructor
     Ptr<T>() : tomb(nullptr){
         //Initialize using default tombstone constructor
-        //Data -> nullptr  count = 0     
+        //Data -> nullptr  count = -1     
         tomb = new Tomb<T>;
     }                           
     
@@ -51,9 +76,13 @@ public:
         //Increment count unless data is nullptr.
         //In this case assume we copied a Ptr that was initialized using the default constructor.
         if (!(tomb->data)) {
-            tomb->count = 0;
+            tomb->count = -1;
         } else {
-            tomb->count++;
+            if(tomb->count == -1){
+                tomb->count = 1;
+            } else {
+                tomb->count++;
+            }
         }
     }
 
@@ -67,7 +96,7 @@ public:
         //Set count to one unless data is nullptr.
         //In this case assume user is trying to create a Ptn in a similar fashion to the default constructor.
         if (!(tomb->data)) {
-            tomb->count = 0;
+            tomb->count = -1;
         } else {
             tomb->count = 1;
         }
@@ -100,15 +129,25 @@ public:
     //Delete pointed-at object
     friend void release (Ptr<T>& pt) {
         //If count != 1 this means either
-        //1. Tombstone has already been released
-        //2. Another reference has not been released and would result in dangling reference.
+        //1. Uninitalized Ptr
+        //2. Tombstone has already been released
+        //3. Another reference has not been released - warn about dangling references.
         if (pt.tomb->count != 1) {
-            pointer_error(__LINE__);
-        } else {
-            delete pt.tomb->data;
-            pt.tomb->count = 0;
-            (pt.tomb)->data = nullptr;
-        }
+            if(pt.tomb->count == -1){
+                uninitalized_error(__LINE__);
+                //EXIT
+            }
+            if(pt.tomb->count == 0){
+                double_delete_warning(__LINE__);
+                //CONTINUE + potential access error
+            } else {
+                dangling_warning(__LINE__, pt.tomb->count - 1);
+                //CONTINUE
+            }
+        } 
+        delete pt.tomb->data;
+        pt.tomb->count = 0;
+        (pt.tomb)->data = nullptr;
     }
 
     //Assignment
@@ -125,7 +164,11 @@ public:
         //Thrid: If tomb is non-zero and data is not nullptr then increment count.
         // else assume default constructor state.
         if (tomb && tomb->data) {
-            tomb->count++;
+            if(tomb->count == -1){
+                tomb->count = 1;
+            } else{
+                tomb->count++;
+            }
         }
 
         return *this;
