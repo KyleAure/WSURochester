@@ -1,0 +1,134 @@
+/*
+  Robotics Project
+  CS375:  Computer Systems
+  By:     Kyle Aure and Almedin Bajramovic
+  Date:   12/02/2018
+*/
+
+/* ******Constants****** */
+// globally defined const
+#define SPEED     50     //Coasting Speed
+#define FINDS1    35     //Finding Speed 1
+#define FINDS2    25     //Finding Speed 2
+#define MOVE      1000   //Move Time
+#define LEVEL     60     //Light threshold
+#define SOUND     50     //Sound threshold
+#define DIST      55    //Ultrasonic threshold
+
+/* ******Variables****** */
+// globally defined vars
+dseg segment
+  Touch    sword 0  //Touch sensor
+  Sound    sword 0  //Sound sensor
+  Level    sword 0  //Light sensor
+  Dist     sword 0  //Ultra sensor
+  Motor    mutex    //Control of Motors
+  Jigg     byte[] 'Jigg.rso'
+dseg ends
+
+/* *********Thread*******
+   Main program
+   Launches thread(s)
+   ********************* */
+thread main
+   precedes touch_sound
+   exit
+endt
+
+/* *********Thread*******
+   THREAD:  touch_sound
+   SENSORS: IN_1 = Touch
+            IN_2 = Sound
+   MOTORS:  OUT_B, OUT_C
+   CALLS:   rotate180
+   ********************* */
+thread touch_sound
+//Threads launched after execution
+  precedes find_line, sense_ultra
+//Set up sensors
+  SetSensorTouch(IN_1)
+  SetSensorSound(IN_2)
+//Start Motor
+  OnFwd(OUT_BC,SPEED)
+
+CheckSensors:
+//IF (CLAP was Heard)  => End
+  ReadSensor(IN_2,Sound)
+  brcmp GT, End, Sound, SOUND
+//IF   (No TOUCH)  => CheckSensors LOOP
+//ELSE rotate180   => CheckSensors LOOP
+  ReadSensor(IN_1,Touch)
+  brtst EQ, CheckSensors, Touch
+  call rotate180
+  jmp CheckSensors
+End:
+endt
+
+/* *********Thread*******
+   THREAD:  find_line
+   SENSORS: IN_3 = Light
+   MOTORS:  OUT_B, OUT_C
+   ********************* */
+thread find_line
+//Set up sensor
+  SetSensorLight(IN_3)
+//Slow down motor
+  OnFwd(OUT_BC,FINDS1)
+
+CheckSensor:
+//IF   (LEVEL is BLACK) => CheckSensor LOOP
+//ELSE  Rotate and find line again
+  acquire Motor  //Pause here if Ultra takes control of motor
+  release Motor
+  ReadSensor(IN_3,Level)
+  brcmp LT, CheckSensor, Level, LEVEL
+  OnRev(OUT_B,FINDS1)
+  OnFwd(OUT_C,FINDS2)
+FindLine:
+//IF   (LEVEL is not BLACK) => FindLine LOOP
+//ELSE  Continue forward    => CheckSensor LOOP
+  acquire Motor  //Pause here if Ultra takes control of motor
+  release Motor
+  ReadSensor(IN_3,Level)
+  brcmp GTEQ, FindLine, Level, LEVEL
+  OnFwd(OUT_BC,FINDS1)
+  jmp CheckSensor
+endt
+
+/* *********Thread*******
+   THREAD:  sense_ultra
+   SENSORS: IN_4 = Ultrasonic
+   MOTORS:  OUT_B, OUT_C
+   ********************* */
+thread sense_ultra
+//Set up sensor
+  SetSensorUltrasonic(IN_4)
+Forever:
+//IF   (HAND within DIST) => STOP
+//ELSE Repeat => Forever
+  ReadSensorUS(IN_4, Dist)
+  brcmp GT, Stop, Dist, DIST
+  jmp Forever
+Stop:
+//Acquire motor, Rotate, Move Forward, then Play Jigg
+  acquire Motor
+  OnFwd(OUT_BC,SPEED)
+  call rotate180
+  wait 1000
+  Off(OUT_BC)
+  wait 500
+  PlayFile(Jigg)
+  wait 5000
+  stop 1
+endt
+
+/* *****Subroutine**** */
+subroutine rotate180
+    OnRev(OUT_BC,SPEED)
+  wait MOVE
+    OnFwd(OUT_B,SPEED)
+  wait MOVE
+    OnFwd(OUT_BC,SPEED)
+  return
+ends
+
