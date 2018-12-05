@@ -11,9 +11,9 @@
 #define FINDS1    35     //Finding Speed 1
 #define FINDS2    25     //Finding Speed 2
 #define MOVE      1000   //Move Time
-#define LEVEL     60     //Light threshold
+#define LEVEL     55     //Light threshold
 #define SOUND     50     //Sound threshold
-#define DIST      55    //Ultrasonic threshold
+#define DIST      10     //Ultrasonic threshold
 
 /* ******Variables****** */
 // globally defined vars
@@ -87,8 +87,6 @@ CheckSensor:
 FindLine:
 //IF   (LEVEL is not BLACK) => FindLine LOOP
 //ELSE  Continue forward    => CheckSensor LOOP
-  acquire Motor  //Pause here if Ultra takes control of motor
-  release Motor
   ReadSensor(IN_3,Level)
   brcmp GTEQ, FindLine, Level, LEVEL
   OnFwd(OUT_BC,FINDS1)
@@ -103,12 +101,12 @@ endt
 thread sense_ultra
 //Set up sensor
   SetSensorUltrasonic(IN_4)
+  wait 2000
 Forever:
 //IF   (HAND within DIST) => STOP
 //ELSE Repeat => Forever
   ReadSensorUS(IN_4, Dist)
-  brcmp GT, Stop, Dist, DIST
-  jmp Forever
+  brcmp GT, Forever, Dist, DIST
 Stop:
 //Acquire motor, Rotate, Move Forward, then Play Jigg
   acquire Motor
