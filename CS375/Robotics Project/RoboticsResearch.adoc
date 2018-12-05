@@ -1,0 +1,73 @@
+= CS375 Robotics Research
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2018-12-05
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS375
+
+.Project Description
+****
+Compare and contrast computer system features of Lego NXT Robot and my computer by completing the table below.
+****
+
+|===
+| |My Computer |Lego NXT
+
+|CPU - Manufacturer
+|Intel
+|Atmel
+
+|CPU - Architecture
+|Nehalem microarchitecture
+|Advanced RISC Machine (ARM) architecture
+
+|CPU - Clock Rate
+|3.60 GHz
+|55 MHz
+
+|Volatile Memory - Type
+|Dual In-Line Memory Module (DIMM)
+|Integrated RAM in microcontroller
+
+|Volatile Memory - Capacity
+|8 GB
+|64 KB
+
+|Non-Volatile Memory - Type
+|Solid State Drive (SSD)
+|Integrated Flash memory in microcontroller
+
+|Non-Volatile Memory - Capacity
+|250 GB
+|256 KB
+
+|Input Devices
+|Ethernet, Bluetooth, WiFi, Keyboard, Mouse, and USB Drive
+|USB Data, Bluetooth, Physical Buttons, Touch Sensor, Sound Sensor, Ultrasonic Sensor, and Light Sensor
+
+|Output Devices
+|Ethernet, Bluetooth, WiFi, USB Drive, Monitor A, Monitor B, and Speakers
+|Motor A, Motor B, MotorC, Speaker, and LCD Screen
+
+|Data Communication Mechanisms
+|Ethernet, Bluetooth, WiFi, and USB Drives
+|USB Data Link, and Bluetooth
+
+|ISA - Instruction Style
+|Label: Mnemonic Arg1, Arg2, Arg3
+|Label: Mnemonic Arg1, Arg2, Arg3
+
+|ISA - Endian
+|Little Endian
+|Little Endian
+
+|CISC or RISC
+|CISC
+|RISC
+|===
+
+Sources:
+
+* http://www.keil.com/dd/docs/datashts/atmel/at91sam7s64_ds.pdf
+* https://en.wikipedia.org/wiki/Lego_Mindstorms_NXT
+* https://www.intel.com/content/www/us/en/architecture-and-technology/64-ia-32-architectures-software-developer-instruction-set-reference-manual-325383.html
