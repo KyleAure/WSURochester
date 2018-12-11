@@ -1,5 +1,7 @@
-= Quiz 4 Solutions
-9/9
+== Quiz 7 Solutions
+
+Score: 9/9
+
 1. Nonscalar types are usually called
 ** composite types
 2. What contain a sequence of elements, but there is no notion of mapping or indexing?

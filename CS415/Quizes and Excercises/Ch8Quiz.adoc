@@ -1,0 +1,27 @@
+== Quiz 8 Solutions
+
+Score: 11/11
+
+1. Which language does NOT support automatic garbage collection?
+** C
+2. What is the difference between a pointer and an address?
+** Pointer holds the memory address of a variable
+3. Which technique used to catch dangling references can be used on both stacks and queues?
+** Tombstone
+4. Why is it easier to implement assignment than comparison for records?
+** because of the complexity
+5. A live pointer that no longer points to a valid object is referred as a(n) ___
+** Dangling Reference
+6. What is a conformant array?
+** dynamic arrays as subroutine parameters, with shape fixed at subroutine call time
+7. What is an array slice?
+** an operation that extracts a subset of elements from an array and packages them into another array
+8. What mechanisms are sometimes used to catch dangling references at run time?
+** Tombstones
+** locks and keys
+9. Which following term(s) is not a garbage collection (GC) technique?
+** malloc & free
+10. Which technique used to catch dangling references uses compared values?
+** lock-and-key
+11. What is an advantage of garbage collection?
+** eliminates programmer from dealing with memory deallocation

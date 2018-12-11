@@ -1,5 +1,7 @@
-= Quiz 6 Solutions
-10/10
+== Quiz 6 Solutions
+
+Score: 10/10
+
 1. References that denote locations are references to as ___
 ** l-values
 2. Expressions that denote values are referred to as ___

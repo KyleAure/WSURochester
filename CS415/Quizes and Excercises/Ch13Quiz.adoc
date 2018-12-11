@@ -1,0 +1,32 @@
+== Quiz 13 Solutions
+
+Score: 10/14
+
+1. What is a race condition?
+** an undesirable situation that occurs when a device or system attempts to perform two or more operations at the same time, but because of the nature of the device or system, the operations must be done in the proper sequence to be done correctly.
+2. What is a thread?
+** refers to the active entity that the programmer thinks of as running concurrently with other threads
+3. A heavy weight processes ______________.
+** has its own address space
+4. In concurrent programming, Synchronization refers to:
+** any mechanism that allows one thread to obtain information produced by another
+5. What is quasiparallelism?
+** The execution of a collection of coroutines by a single processor that can work on only one coroutine at a time; the order of execution is arbitrary and each coroutine is executed independently of the rest.
+6. What is busy-waiting?
+** a thread technique in which a process repeatedly checks to see if a condition is true, such as whether keyboard input or a lock is available.
+7. What is a ready list?
+** queue list is sorted by the priority of the processes; the lowest priority process appears at the head of the list and the highest priority process is at the tail
+8. What is mutual exclusion (mutex)?
+** is a program object that prevents simultaneous access to a shared resource.
+9. What is a spin-then-yield lock?
+** if unable to acquire the lock in a fixed, short amount of time, a process calls the OS scheduler to yield its core and to lower its priority enough that other processes (if any) will be allowed to run.
+10. What is a semaphore?
+** is a simply a variable. This variable is used to solve minor  section problem and to achieve process synchronization in the multi processing environment. The two most common kinds of semaphores are counting semaphores and binary semaphore
+11. What is deadlock?
+** any situation in which a collection of threads are all waiting for each other, and none of them can proceed
+12. What is a monitor?
+** a device or arrangement for observing, detecting, or recording the operation of a machine or system, especially an automatic control system.
+13. What is a conditional critical region?
+** concurrent accesses to shared resources can lead to unexpected or erroneous behavior, so parts of the program where the shared resource is accessed are protected.
+14. What is transactional memory?
+** a concurrency control mechanism analogous to database transactions for controlling access to shared memory in concurrent computing
