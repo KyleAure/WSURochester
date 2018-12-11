@@ -1,0 +1,22 @@
+== Quiz 9 Solutions
+
+Score: 8/9
+
+1. In header files whether functions are declared or defined?
+** functions are declared within header file
+2. What is an argument?
+** an entity used to pass data from the calling to a called function
+3. What is the difference between a coroutine and a thread?
+** Thread - cooperatively multitasking. (usually). Coroutine - cooperatively preemptively multitasking.
+4. What is a thunk?
+** a hidden routine
+5. What are default parameters?
+** is a function parameter that has a default value provided to it
+6. With reference to a subroutine calling sequence, what references to code that executes at the end?
+** epilogue
+7. An unusual emergency type programming condition that must be handled outside the normal flow of the program is a(n)
+** exception
+8. What are the two most common parameter passing modes?
+** call by value and call by reference
+9. With reference to a subroutine calling sequence, what references to code that executes at the beginning?
+** prologue

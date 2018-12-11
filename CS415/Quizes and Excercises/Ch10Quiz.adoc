@@ -1,0 +1,22 @@
+== Quiz 10 Solutions
+
+Score: 9/9
+
+1. How do Java and C# make do without explicit class headers?
+** they do not use class headers
+2. What is the highest-level superclass in the Java language?
+** java.lang.Object
+3. What is the definition of "interface" in object oriented programming?
+** 	a programming structure/syntax that allows the computer to enforce certain properties on an object
+4. What is the definition of an "abstract" class?
+** classes that contain one or more abstract methods.
+5. What kind of class cannot be instantiated as an object?
+** abstract class
+6. Does a constructor allocate space for an object?
+** no, it simply initializes the members of a class to some valid initial state
+7. How does a C++ (or Java or C#) compiler tell which constructor to use for a given object?
+** name, then distinguished by their numbers and types of arguments
+8. What is escape analysis?
+** allow the compiler to determine that references to a given object will always be contained within (will never escape) a given method
+9. What is a vtable?
+** is a C++ & C# lookup table of functions used to resolve function calls in a dynamic/late binding manner

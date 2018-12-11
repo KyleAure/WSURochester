@@ -1,0 +1,245 @@
+== Student Presentation Solutions
+
+=== Groovy
+1. Who first talked about Groovy in 2003?
+** James Strachan
+2. What two languages is Groovy most alike?
+** Java
+** Python
+3. Groovy is optionally typed? (T/F)
+** True
+4. What framework is most likely associated with Groovy?
+** Grails
+5. What annotation can be added to a Groovy class so that it will be type-checked?
+** @TypeChecked
+
+=== Lua
+
+1. Lua was developed out of the need for:
+** Customizability
+2. How is the abscence of data represented in Lua?
+** Nil
+3. Can a function be passed as a parameter in Lua?
+** Yes
+4. Lua is:
+** Interpreted
+5. What is a portion of Lua code known as to the intepreter?
+** A chunk
+
+=== GoLang
+1. Employees of which company created the Go programming language?
+** Google
+2. Which of the following are NOT a built-in feature of the Go programming language?
+** Operator Overloading
+3. The syntax for Go is defined using which form?
+** Backus-Naur Form
+4. True/False Go is a compiled language.
+** True
+5. True/False Go uses dynamic scoping.
+** False
+
+=== Objective-C
+1. What is Objective-C primarily used for?
+** Mobile Apps
+2. Which company adopted Objective-C?
+** Apple
+3. Objective-C has what for Memory Management?
+** Automatic Reference Counting
+4. What is Required in the main function?
+** Return 0
+5. Objective-C includes type inference when declaring variables? (T/F)
+** True
+
+=== Dart
+1. Who kicked off the Dart effort?
+** Lars Bak and Kasper Lund
+2. When was Dart 2.0 released?
+** August 7, 2018
+3. Can you create you own Metadata annotations?
+** True
+4. What is the name of the framework written in dart?
+** Flutter
+5. What is a callable class?
+** Allows a dart class to be called like a function
+
+=== Elixir
+1. Elixir runs on what Virtual Machine?
+** Erlang
+2. What is the main programing piece of elixir?
+** Function
+3. In elixir Macro’s do what?
+** Code Transformations
+4. Elixir code complies to what?
+** Bytecode
+5. Elixir can use Erlang libraries and functions?
+** True
+
+=== C#
+1. What was C#’s original name?
+** Cool
+2. Which is true of C#’s compilation process?
+** Code is compiled into bytecode
+3. C# variables can be declared:
+** Explicit or implicitly
+4. C# is strongly-typed.
+** True
+5. Like C++, C# has no automatic garbage collection.
+** False
+
+=== Perl
+1. Which of the following is correct about Perl?
+** All of the above.
+2. Is Perl a case sensitive language?
+** true
+3. Which of the following variable type is supported in Perl?
+** All of the above.
+4. Which of the following is correct about Array in Perl?
+** All of the above.
+5. Which of the following function returns all values of a Hash?
+** values
+
+=== Scala
+1. Scala uses which virtual machine?
+** Java Virtual Machine
+2.  Scala uses the Hindley/Milner algorithm.
+** True
+3. Scala has checked exceptions.
+** False
+4. What is Scala short for?
+** Scalable Language
+5. When does Scala compile?
+** At runtime
+
+=== Prolog
+1. What is a fact?
+** A fact starts with a predicate and end with a period.
+2. which of the following is not a query?
+** ?- employee(Person, 5)
+3. which of the following is not a variable?
+** Numbers
+4. is SWI-prolog compiled or interpreted?
+** both
+5. when was the first prolog system deployed in?
+** 1972
+
+=== Kotlin
+
+1. Which of the following is correct about Kotlin?
+** All of the above.
+2.  Is Kotlin functional language?
+** true
+3.  What is the extension of a Kotlin file?
+** .kt
+4.  What are the modifiers available in Kotlin?
+** All of the above.
+5.  Where was Kotlin first developed?
+** St. Petersburg, Russia.
+
+=== Swift
+
+1. Swift is intended as a replacement for ____.
+** C-based languages
+2. Swift is an ____ language, which means anyone can take the code, build it, and contribute to the greater community.
+** Open-Source
+3. In Swift there are two kinds of data types: value types and ____ types.
+** Reference
+4. What are the collection types in Swift?
+** Dictionary and array
+5. Which keyword do you use to announce constants in Swift?
+** Let
+
+=== BASH
+1. What is BASH an acronym for?
+** Bourne Again SHell.
+2. A shell is a ___.
+** A Command Line Interface.
+3. Is BASH is a ?
+** Domain Specific.
+4. How are BASH variables typed?
+** BASH variables are untyped.
+5. The first line of a BASH file is the ___?
+** Shebang.
+
+=== PHP
+1. Which Variable is used to control the output of the text?
+** echo
+2. A canonical tag is?
+** <?PHP.....?>
+3. A variable outside the function can only be accessed outside the function. This describes what scope?
+** Global Scope
+4. What is PHP mostly used for?
+** Both
+5. When PHP just started, it was called what?
+** Personal Home Page
+
+=== Javascript
+1. Inside which HTML element do we put the JavaScript?
+** <script>
+2. How do you write "Hello World" in an alert box?
+** alert("Hello World");
+3. How can you add a comment in a JavaScript?
+** //This is a comment
+4. What is the correct way to write a JavaScript array?
+** var colors = ["red", "green", "blue"]
+5. JavaScript is the same as Java.
+** False
+
+=== Fortran
+1. What type of programming language is Fortran?
+** Imperative
+2. What is one data type that Fortran can use?
+** Real type
+3. Fortran supports object-oriented programming? T/F
+** True
+4. What is a keyword that denotes the beginning and end of a program in Fortran?
+** Program, end program
+5. What fields is Fortran mostly used in?
+** Science and Engineering
+
+=== Node.js
+1. Node.js uses __ as the JavaScript Engine.
+** V8
+2. Node.js is a __.
+** JavaScript Runtime
+3. Node.js core & V8 are written in ___.
+** C++
+4. Node.js is mainly used for __.
+** Server Side Programming
+5. Node.js was designed to perform I/O ___.
+** Asynchronously
+
+=== R
+1. R is a _____________ programming language
+** Functional
+2. R is a _________ typed language
+** Weak
+3. R is based on ________ programming language
+** S
+4. R’s initial, stable 1.0 was released on February 29, _______
+** 2000
+5. R was developed by statistics professors at:
+** University of Auckland
+
+=== Ceylon
+1. What does it mean to have a default value in a function?
+** [No Answer]
+2. What would a ‘?’ mean on declaration of a variable?
+** [No Answer]
+3. Who developed Ceylon?
+** Red Hat Software
+4. Who owns Ceylon?
+** The Eclipse Foundation
+5. What language is similar to Ceylon?
+** Java
+
+=== Ruby
+1. What isn’t a well-known feature of Ruby?
+** Fast processing
+2. True or False: In Ruby, not everything an object?
+** False
+3. Ruby was released in 1995, but became popular in 2006 thanks to ____.
+** Ruby on Rails
+4. Ruby is a ___ language.
+** All of the above
+5. The type of a variable…
+** Doesn’t need to be declared

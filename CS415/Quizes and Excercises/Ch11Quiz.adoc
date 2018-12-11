@@ -1,0 +1,18 @@
+== Quiz 11 Solutions
+
+Score: 7/7
+
+1. What mathematical formalism underlies functional programming?
+** Lambda calculus
+2. Which is NOT a distinguishing characteristics of functional programming languages:
+** robust interfaces with other languages
+3. What is a first-class value?
+** one that can be passed as a parameter, returned from a subroutine, or assigned into a variable.
+4. What is lazy evaluation?
+** an evaluation strategy which delays the evaluation of an expression until its value is needed
+5. What is memoization?
+** an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again
+6. What is currying?
+** is to replace a multiargument function with a function that takes a single argument and returns a function that expects the remaining arguments
+7. Why do functional languages make such heavy use of lists?
+** the ease with which functions can build new lists out of the components of old lists.
