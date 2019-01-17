@@ -21,6 +21,9 @@ README.html
 # Zip files
 *.zip
 
+# WindowsOS generated thumbnails
+*Thumbs.db
+
 #CS385 Final Presentation
 /CS385/FinalProject/Presentation/node_modules/
 /CS385/FinalProject/Presentation/*.html
@@ -29,5 +32,3 @@ README.html
 /CS385/FinalProject/Presentation/.bundle
 /CS385/FinalProject/Presentation/*.json
 /CS385/FinalProject/Presentation/reveal.js
-
-
