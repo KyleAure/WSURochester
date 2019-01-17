@@ -1,6 +1,6 @@
 = Student Introduction
 Kyle Aure <KAure09@winona.edu>
-v1.0, 2010-01-16
+v1.0, 2019-01-16
 :RepoURL: https://github.com/KyleAure/WSURochester
 :AuthorURL: https://github.com/KyleAure
 :DirURL: {RepoURL}/CS411
@@ -24,4 +24,4 @@ I also hope this course will allow me to obtain third-party certifications that 
 == Plans for Future
 I plan on working in backend software development for a while.
 I intend to continue my education fairly soon after completing my bachelors degree.
-I hope that in the future I will be able to teach undergraduate coursework in computer science. 
+I hope that in the future I will be able to teach undergraduate coursework in computer science.
