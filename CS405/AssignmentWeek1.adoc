@@ -1,0 +1,40 @@
+= Chapter 1 Questions
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-01-17
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS405
+
+== Course Details
+* **Course** - CS405
+* **Instructor** - Dr. Dennis Martin
+
+== Problem Set
+[start=12]
+12. How do clustered systems differ from multiprocessor systems?
+What is required for two machines belonging to a cluster to cooperate to provide a highly available service?
+
+A. A `clustered system` involves interconnecting multiple computers into a system of nodes.
+Whereas, a `multiprocessor system` is single computer with multiple processors within that computer.
+`Asymmetric clustering` is where one node is active and the other is waiting and monitoring the other node.
+If the active node goes down, the waiting node can take over to provide a more highly available service compared to `symmetric clustering`.
+The trade off here is that the waiting node's hardware is not being utilized optimally.
+
+[start=17]
+17. Some computer systems do not provide a privileged mode of operation in hardware.
+Is it possible to construct a secure operating system for these computer systems?
+Give arguments both that it is and that it is not possible.
+
+A. Yes, if there is no privileged mode of operation in hardware, then we could develop a privileged mode of operation in software.
+The operating system could decide which operations are too risky to allow user programs to run.
+
+B. No, even if the operating system makes these decisions, operating systems are still vulnerable since they are stored locally.
+Any corruption to the operating system or security holes in the operating system would allow for vulnerable I/O, Memory, and CPU.
+
+[start=22]
+22. Describe a mechanism for enforcing memory protection in order to prevent a program from modifying the memory associated with other programs.
+
+A. One way to protect memory is by using two special use registers.
+When a program is run, these registers are set to a `base` and `limit` address.
+This indicates the range of memory the program is able to edit, and everything else is `protected`.
+This range is checked for any read/write CPU instruction.

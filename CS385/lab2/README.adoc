@@ -1,6 +1,6 @@
 = CS385 Lab2
 Kyle Aure <KAure09@winona.edu>
-v1.0, 2018-09-07
+v1.0, 2019-01-17
 :RepoURL: https://github.com/KyleAure/WSURochester
 :AuthorURL: https://github.com/KyleAure
 :DirURL: {RepoURL}/CS385
