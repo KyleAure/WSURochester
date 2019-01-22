@@ -1,0 +1,120 @@
+= Assignment 2
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-01-22
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS410
+
+.Assignment Description
+****
+Chapter 1 and 2 review questions.
+****
+
+== Course Details
+* **Course** - CS410
+* **Instructor** - Dr. John Eberhard
+
+== Questions
+1. List and describe the five essential attributes of good software. (2 points)
++
+.Essential attributes of good software
+|===
+|Attribute |Description
+
+|Acceptability
+|Software being produced must meet the needs of the intended users.
+
+|Dependability
+|In the event of a system failure, dependable software should not cause harm.
+
+|Security
+|Only non-malicious users should be able to access or change the system.
+
+
+|Efficiency
+|A piece of software should not use an excess of system resources.
+
+|Maintainability
+|Software should be written in a way, such that, it can evolve to meet future customers needs.
+|===
++
+2. What is a software process?
+List and describe the four fundamental activities that are common to all software processes. (2 points)
+** Software Process: The sequence of activities that leads to the development of a software product.
++
+.Fundamental activities to the Software Process
+|===
+|Activity |Description
+
+|Software specification
+|Where consumers and developers define how the software is going to be produced, and define any constraints.
+
+|Software development
+|Where the software is designed and programmed.
+
+|Software validation
+|Where the software is tested to ensure it meets the specification.
+
+|Software evolution
+|Where the software is modified to meet changing customer requirements.
+|===
+3. Consider the four case studies presented in the book.
+Which do you think would be most expensive to develop?
+Discuss at least 4 reasons why it would be more expensive than the other case studies. (3 points)
+** I think the most expensive to develop would be the Wilderness Weather Station.
+*** Similar to the Insulin Pump this is an embedded system.
+But it needs to be able to operate with and without network connection, requiring the ability to cache data and transmit later.
+*** Not only does the system need to monitor the weather it also needs to monitor it's internal systems to ensure batteries and generator are operational.
+*** Unlike the other systems, communication with this system is done via satellite so extra optimization would need to be done to ensure communication can be done on minimum bandwidth.
+*** Lastly, this system would be difficult to update due to the location of the weather stations and the limited bandwidth.
+Therefore, more cost would need to be put into initial development, testing, etc. to ensure everything works prior to deployment.
+4. List and describe the five stages of the waterfall model.
+For each stage, name the corresponding fundamental activity from question 2. (3 points)
++
+.Stages of Waterfall Model
+|===
+|Stage |Activity
+
+|Requirement's Definition
+|Define system services, constraints, and goals from users.
+
+|System and Software Design
+|Define system architecture, allocate hardware/software systems, and complete software design.
+
+|Implementation and Unit Testing
+|Programs or units are created.  Tests for each program or unit are created to ensure requirements are meet.
+
+|Integration and System Testing
+|Programs or units are integrated as a system and tested to customer requirements. Then system is delivered to customer.
+
+|Operation and Maintenance
+|Error correction, improvements, and other change requests are integrated into the system.
+|===
+5. Describe the main activities in the software design process and the outputs of these activities.
+Using a diagram, show possible relationships between the outputs of these activities. (3 points)
++
+.Software Design Process
+|===
+|Activity |Outputs |Relationship
+
+|Architectural Design
+|Overall structure of system including; relationships, main components, and distribution.
+|Architecture may be influence by existing Database Systems or Components that are flagged for reuse.
+
+|Database Design
+|Creation of a new database or use of existing database. Design of data structures and database representation.
+|Architecture may limit database option and possible compatibility issues with other component systems.
+
+|Interface Design
+|Interface between system components and how communication between components will be handled.
+|Coupling of system components and interfaces may depend the main components defined in the architecture.
+
+|Component Selection and Design
+|Search for reusable components, design new components, and design modeling (UML).
+|Component compatibility will depend heavily on all the other design decisions.
+|===
+6. Explain why systems developed as prototypes should not normally be used as production systems. (2 points)
+
+Prototype systems typically provide limited service and are used for customers to try and redefine requirements.
+Typically, prototype systems do not provide the level of security and dependability required to be safely used as a production system.
+Additionally, this could lead to premature commitment to requirements, when customer requirements might change after prototype is produced.
