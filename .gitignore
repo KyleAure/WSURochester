@@ -21,6 +21,9 @@ README.html
 # Zip files
 *.zip
 
+#Visual studio files
+.vscode
+
 # WindowsOS generated thumbnails
 *Thumbs.db
 
