@@ -16,7 +16,7 @@ Practice assignments in Cryptography
 
 == Assignment1
 === Results
-image::Assets/Assignment1.png[]
+image:Assets/Assignment1.png[]
 
 === Questions
 What does the use of the mod function solve?
@@ -25,10 +25,10 @@ What does the use of the mod function solve?
 
 == Assignment2
 === Results
-image::Assets/Assignment2.png[]
+image:Assets/Assignment2.png[]
 
 === Conclusions
-The reasons this works is becuase when we are determining our new location both for encrypting and decrypting the same way.  
+The reasons this works is becuase when we are determining our new location both for encrypting and decrypting the same way.
 Therefore, we are adding 13 and performing modulus twice.
 
 Let x be the location of the character we are trying to encode.
@@ -40,23 +40,23 @@ Since 13 + 13 is 26 the end of this function is 0 and we end up with our origina
 
 == Assignment3
 === Results
-image::Assets/Assignment3.png[]
+image:Assets/Assignment3.png[]
 
 == Assignment4
 === Results
-image::Assets/Assignment4.png[]
+image:Assets/Assignment4.png[]
 
 == Assignment5
 === Results
 By creating a directory of PASSWORD -> HASHED_PASSWORD I was able to do a reverse-lookup to determine every person's password.
 The list of passwords is saved below:
 
-include::Assets/namepasswordlist.adoc[]
+include:Assets/namepasswordlist.adoc[]
 
 === Output
 The PASSWORD -> HASHED_PASSWORD directory was created from the output of the python program.
 Output:
-image::Assets/Assignment5.png[]
+image:Assets/Assignment5.png[]
 
 A link to this file can be found here:
 link:Assets/passwords.txt[]
@@ -66,13 +66,12 @@ link:Assets/passwords.txt[]
 By creating a directory of PASSWORD -> HASHED_PASSWORD I was able to do a reverse-lookup to determine every person's password.
 The list of passwords is saved below:
 
-include::Assets/namepasswordlist2.adoc[]
+include:Assets/namepasswordlist2.adoc[]
 
 === Output
 The PASSWORD -> HASHED_PASSWORD directory was created from the output of the python program.
 Output:
-image::Assets/Assignment6.png[]
+image:Assets/Assignment6.png[]
 
 A link to this file can be found here:
 link:Assets/passwords2.txt[]
-
