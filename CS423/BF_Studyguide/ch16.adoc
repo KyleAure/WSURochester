@@ -1,0 +1,13 @@
+== Chapter 16
+
+1. When faced with a security countermeasure, have to evaluate what?
+
+2. To some, iteration process may feel what?? What is the iteration process?
+
+3. Your security largely depends on what?
+
+4. Which method is most effective in any situation depends on what? What are the 4 items listed in the book?
+
+5. What is one way governments change player trade-offs?
+
+6. If you are interested in finding a security solution that more closely matches your agenda and your own perceptions of your risks, you need to learn what?

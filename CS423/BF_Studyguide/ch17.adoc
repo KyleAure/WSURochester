@@ -1,0 +1,23 @@
+== Chapter 17
+
+1. According to the author, security is more than important, it is what?
+
+2. Thinking sensibly about security requires that we develop what?
+
+3. Sensible security is commensurate with what?
+
+4. The idea that there is some Holy Grail of security is what?
+
+5. Real security requires people to what?
+
+6. Sometimes security failures occur even when we get the evaluation process and the security level right. What can we do?
+
+7. Accepting risks is something we _________________.
+
+8. If someone is living in fear – it’s because of what?
+
+9. Are there smart ways to be scared?
+
+10. What are the three final rules the author leaves us with?
+
+11. Fear is a barrier between what?

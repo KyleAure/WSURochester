@@ -1,0 +1,21 @@
+== Chapter 8
+
+1. Attackers are more likely to attack a system at _____ _______.
+
+2. What is Defense in depth?
+
+3. What does Compartmentalization do?
+
+4. What does a Choke point do?
+
+5. What is overengineering and what are the two basic ways it is accomplished?
+
+6. Many attacks can be traced to a failure to apply the principle of ____________________.
+
+7. What is a problem with choke points?
+
+8. Simplicity reduces the number and complexity of _______ _______.
+
+9. Most security engineering is ___________
+
+10. Most attackers are _________.

@@ -1,0 +1,29 @@
+== Chapter 13
+
+1. What is the problem with securing assets and their functionality?
+
+2. What is the shorthand guide to: Identification, authentication, and authorization?
+
+3. Do authorization tokens require any identification?
+
+4. What is the most important security system our species has (according to the author)?
+
+5. What are the three basic ways to authenticate someone?
+
+6. What advantage does biometrics have over passwords?
+
+7. What is needed for biometrics to work?
+
+8. Why have many authentication mechanisms failed?
+
+9. Do identification tokens need to expire?
+
+10. Why should tokens expire?
+
+11. Should tokens expire?
+
+12. According to the author, what does invoking trusted people have to do with the solution to authentication?
+
+13. When do authentication systems suffer?
+
+14. What is the weakest link in an authentication system?

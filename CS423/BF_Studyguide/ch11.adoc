@@ -1,0 +1,45 @@
+== Chapter 11
+
+1. What is the hardest aspect of security (and often the most expensive)?
+
+2. Is prevention active or passive? Why?
+
+3. When thinking what do people think of first Prevention, Detection, or Auditing?
+
+4. Prevention is best combined with what?
+
+5. How can detection be basic?
+
+6. Detection countermeasures typically are attached to what?
+
+7. Why are some detection and response systems deliberately made obvious?
+
+8. According to the author, what is needed for random detection to work? Do you agree?
+
+9. Failures are a critical problem for which system?
+
+10. Is it true that all detection systems have weaknesses? How could an attacker discover them?
+
+11. What are audits (and not just an evil IRS technique!) ?
+
+12. Double-entry bookkeeping systems have two main purposes, what are they?
+
+13. Are audits prospective or retrospective? Why?
+
+14. A system’s particular needs for audit depend on what?
+
+15. Can computers make auditing difficult?
+
+16. What is the prediction detection technique?
+
+17. Advance detection decisions are based on what two things?
+
+18. Do all criminal investigations examine audit records?
+
+19. Is it true that the more data the better?
+
+20. Advance detection allows defenders what?
+
+21. What is a second value of advance detection?
+
+22. What is the most common problem with advance detection?

@@ -1,0 +1,35 @@
+== Chapter 5
+
+1. What is a security’s job to do?
+
+2. What sort of security depends, in part, to what?
+
+3. How can attackers be categorized?
+
+4. If you mischaracterize your attackers, you are likely to misallocate your ____________.
+
+5. A criminal is someone who does what?
+
+6. Is the motivation of the criminal important? What are they mostly looking for?
+
+7. Are criminals willing to tolerate different levels of risk? Why?
+
+8. Criminals tend not to have good access, what is the exception? Are these persons more dangerous? Why?
+
+9. What are some motivates of insiders?
+
+10. What are opportunists?
+
+11. What are emotional attackers?
+
+12. Can the media be involved in attacks? How and why?
+
+13. Any list of potential attackers must include lawful governments, particularly police departments (according to our book). What are some reasons for this?
+
+14. What is the word terrorist a catchall term for?
+
+15. What is the primary aim of a terrorist?
+
+16. What are some characteristics of a terrorist?
+
+17. What relationship do terrorists consider themselves with their enemies?

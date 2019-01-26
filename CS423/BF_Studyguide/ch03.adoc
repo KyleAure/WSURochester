@@ -1,0 +1,25 @@
+== Chapter 3
+
+1. Are many security decisions complicated? What do they involve?
+
+2. What is a player?
+
+3. What is a policy?
+
+4. How many players does it take to create a security problem?
+
+5. What is a proxy? Are they a natural thing?
+
+6. What do non-security concerns often do to security concerns?
+
+7. What is a security theatre?
+
+8. What is the notion of agenda? What are some examples of it? Do you see any security trade-offs being made in them?
+
+9. In economics, what is an externality?
+
+10. At the foundation there is a security system protecting _________ from __________.
+
+11. Security is always a balancing game between what? How do you plan to deal with this on the job?
+
+12. Understanding the player with the power will get what?

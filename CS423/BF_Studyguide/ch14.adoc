@@ -1,0 +1,45 @@
+== Chapter 14
+
+1. Neither attackers nor defenders can afford to ________
+
+2. Attacks develop new ways to defeat _______________, which in turn leads defenders to ______ (and is a cycle).
+
+3. A rabbit’s primary defense is ______________________. It only works when?
+
+4. H _______ is another of the most obvious methods of defending against attack. It works best when?
+
+5. F ____  B ______ is a time-honored reaction to attack. What determines how much of this can be done?
+
+6. D _______________ are primarily an attacker’s tactic. How is this done ?
+
+7. D ______________ are more effective when combined with what?
+
+8. De _____________ is another important security countermeasure.
+
+9. What is a mainstay in the history of warfare?
+
+10. What Internet security tools is used as a decoy?
+
+11. The effectiveness of any deception depends on what two factors?
+
+12. Security ____________ are another kind of barriers. What is an example of one?
+
+13. As a rule what are they?
+
+14. Security notices are what ?
+
+15. Is being distasteful an appropriate defense? What is this?
+
+16. What is benefit denial? How is it used?
+
+17. What counter measure is not being a target?
+
+18. What is a security protocol?
+
+19. What is a security procedure?
+
+20. What is one of the hardest things in security?
+
+21. ________________ is where the rubber meets the road.
+
+22. Be ready to discuss the example on p. 231
