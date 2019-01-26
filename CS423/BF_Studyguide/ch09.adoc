@@ -1,0 +1,21 @@
+== Chapter 9
+
+1. A resilient system is __________
+
+2. Bad security is __________
+
+3. Good security systems are ____________
+
+4. Automated security is usually ___________
+
+5. Dynamic defenses that can adapt quickly provide _______
+
+6. Why is flexibility in security rules important?
+
+7. As a rule, homogeneity in systems tend to be what?
+
+8. Is diversity in security systems a good thing? Why?
+
+9. Most security requires secrets. What makes secrets brittle?
+
+10. What is default to insecure as described by the author?

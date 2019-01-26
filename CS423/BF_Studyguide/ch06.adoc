@@ -1,0 +1,43 @@
+== Chapter 6
+
+1. A defender must consider both ________ and ________ _________.
+
+2. Determining what is critical to evaluating a security system?
+
+3. Many types of attacks are timeless. What does change?
+
+4. What is fraud?
+
+5. What is the “I’m Sorry” attacks?
+
+6. What is plausible deniability?
+
+7. What is “Identity” theft?
+
+8. How does modern identity differ from our historical identity?
+
+9. Is identity theft on the rise? Why?
+
+10. What are the range of assaults?
+
+11. Are all attacks destructive?
+
+12. What is privacy? Is it important to you? Why?
+
+13. What is data aggregation and why is it dangerous?
+
+14. Why do we need to understand who an attacker is?
+
+15. What does the goal of the attacker matter? Why?
+
+16. What are many security systems designed to do?
+
+17. Does your prominence make you at more risk for an attack?
+
+18. Attackers are inventive. Do they cheat? How?
+
+19. Is it true that most attackers are copycats? Why?
+
+20. Define “threat analysis” or “risk analysis”.
+
+21. Threat analysis must apply to what?

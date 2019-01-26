@@ -1,0 +1,25 @@
+== Chapter 1
+
+1. What is this book about?
+
+2. The author discusses trade-offs, what trade-offs are you making today?
+
+3. What is the goal of this book?
+
+4. Other than money, what can security cost (4 things)?
+
+5. Security is about prevention, but prevention of what?
+
+6. What is a security system?
+
+7. What is an intentional action?
+
+8. What is unwarranted actions and is this always illegal?
+
+9. What is an attacker?
+
+10. What are assets?
+
+11. What are countermeasures?
+
+12. From the book, what are the 5 questions (steps) process to analyze and evaluate security systems, technologies, and practices (are they easy?)?

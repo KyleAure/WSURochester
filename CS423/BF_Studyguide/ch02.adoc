@@ -1,0 +1,27 @@
+== Chapter 2
+
+1. Is there such a thing as absolute security?
+
+2. How much security you have depends on what?
+
+3. Is there an agreed-upon way in which to define threats or evaluate risks?
+
+4. What is an example of an extreme trade-off and is it truly easy?
+
+5. What is the distinction between a “threat” and “risk”?
+
+6. There are threats in the world, what must balance the risk they hold?
+
+7. What is the point of the authors five-step process?
+
+8. Balancing risk and consequences depends on the situation. List examples of risks that are unacceptable because the consequences are unacceptable, risk is unacceptable and yet we go ahead, risks are unacceptable based on morality.
+
+9. Is there every any imprecision and uncertainty in calculating risk?
+
+10. Is there some natural intuition about risk and have you ever experienced it?
+
+11. For people in general, do our perceived risks rarely match the actual risks? Or do people often underestimate the risks of some things and overestimate the risks of others? What are some examples of this.
+
+12. In Modern society, has all our advances enhanced or clouded our ability to assess risk accurately? Discuss two examples.
+
+13. What is a problem about not understanding risk?
