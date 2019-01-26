@@ -1,0 +1,44 @@
+== Quiz 1 Solutions
+
+?/20 - Not graded automatically
+
+1. Masquerade, falsification, and repudiation are threat actions that cause __________ threat consequences.
+** deception
+2. Many security administrators view strong security as an impediment to efficient and user-friendly operation of an information system.
+** false
+3. The _________ prevents or inhibits the normal use or management of communications facilities.
+** denial of service
+4. Contingency planning is a functional area that primarily requires computer security technical measures.
+** false
+5. An example of __________ is an attempt by an unauthorized user to gain access to a system by posing as an authorized user.
+** masquerade
+6. A(n) __________ is an action, device, procedure, or technique that reduces a threat, a vulnerability, or an attack by eliminating or preventing it, by minimizing the harm it can cause, or by discovering and reporting it so that correct action can be taken.
+** countermeasure
+7. An assault on system security that derives from an intelligent act that is a deliberate attempt to evade security services and violate the security policy of a system is a(n) __________.
+** attack
+8. A flaw or weakness in a system’s design, implementation, or operation and management that could be exploited to violate the system’s security policy is a(n)  __________.
+** vulnerability
+9. A threat action in which sensitive data are directly released to an unauthorized entity is __________.
+** exposure
+10. The assurance that data received are exactly as sent by an authorized entity is __________.
+** data integrity
+11. A(n) _________ is an attempt to learn or make use of information from the system that does not affect system resources.
+** passive attack
+12. Computer security is protection of the integrity, availability, and confidentiality of information system resources.
+** True
+13. The first step in devising security services and mechanisms is to develop a security policy.
+** True
+14. __________ assures that individuals control or influence what information related to them may be collected and stored and by whom and to whom that information may be disclosed.
+** Privacy
+15. __________ is the insertion of bits into gaps in a data stream to frustrate traffic analysis attempts.
+** Traffic Padding
+16. Many security administrators view strong security as an impediment to efficient and user-friendly operation of an information system.
+** false
+17. A ________ level breach of security could be expected to have a severe or catastrophic adverse effect on organizational operations, organizational assets, or individuals.
+** high
+18. ________ assures that a system performs its intended function in an unimpaired manner, free from deliberate or inadvertent unauthorized manipulation of the system.
+** Availability
+19. A __________ is any action that compromises the security of information owned by an organization.
+** security attack
+20. A loss of _________ is the unauthorized disclosure of information.
+** confidentiality
