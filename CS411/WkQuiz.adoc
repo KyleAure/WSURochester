@@ -1,0 +1,27 @@
+== Week 2 Quiz
+Quality Improvement Chapters 1 and 2
+
+10/10
+
+1. A few of the benefits of lean enterprise are:
+** a and b
+2. A set of interrelated activities with specific inputs and outputs is called:
+** none of the above - process
+3. One piece flow facilitates the concept of:
+** JIT
+4. Continuous improvement of a process in small increments by a work group is called:
+** Kaizen
+5. Which of the following is not a clause of ISO 9000:
+** The five clauses of QMS are continual improvement, management responsibility, resource management, product/service realization, and measurement analysis and
+improvement.
+** Answer: performance measures
+6. Optimizing equipment utilization by the entire work force is called:
+** Total Productive Maintenance (TPM)
+7. Which of the following are not a basic concept of lean:
+** Six Sigma
+8. Taki time is:
+** rate of customer demand
+9. The perfect value stream is one where all operations are:
+** All of the above
+10. Which of the following is not a dimension of Q
+** Control
