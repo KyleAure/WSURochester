@@ -1,0 +1,48 @@
+= Chapter 3 Questions
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-01-26
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS405
+
+== Course Details
+* **Course** - CS405
+* **Instructor** - Dr. Dennis Martin
+
+== Problem Set
+[start=8]
+8. Describe the differences among short-term, medium-term, and long-term scheduling.
+** The `long-term` scheduler selects jobs that are waiting to be executed from the `Job Queue` on mass storage.
+It schedules when it will be loaded to memory, and then hands it over to the `Ready Queue`.
+** The `short-term` scheduler selects which process from the `Ready Queue` should be run on the CPU next.
+** A `medium-term` scheduler may be invoked when implementing a `multi-programming` system.
+This scheduler will make the decision on when to `swap out / swap in` processes.
+9. Describe the actions taken by a kernel to context-switch between processes.
+** When an `interrupt` is encountered by the operating system it has to handle it immediately.
+Therefore, the current process being run needs to be suspended, and then reloaded after the interrupt is handled.
+To do this, the kernel needs to save the `context` of the current process, this includes all the information stored in the processes `PCB (Process Control Block)`.
+Either, the PCB or a pointer to the PCB is stored, the interrupt is handled, then the PCB is reloaded.
+[start=18]
+18. What are the benefits and the disadvantages of each of the following?
+Consider both the system level and the programmer level.
+a. Synchronous and asynchronous communication
+** With `Synchronous` or `Blocking` communication the advantage is that the producer and consumer will never be trying to read/write to the shared location at the same time.
+** The disadvantage is that time is waisted, communication will not happen as quickly.
+** With `asynchronous` or `nonblocking` communication is quicker because there is no wait time for blocks to be removed.
+** The disadvantage is that there is a chance that the producer and consumer will attempt to read/write at the same time and incorrect data will be passed.
+b. Automatic and explicit buffering
+** `Automatic` buffering has a buffer size _n_ or infinite.
+The benefit is that the producer can always buffer a message without having to place a block, but has no guarantee that the message was received.
+** `Explicit` buffering has a buffer size of 0.
+The disadvantage is that the producer needs to place a block on the buffer and wait for the consumer to receive the message, but the producer knows whether the message was reicevied or not.
+c. Send by copy and send by reference
+** When sending a `copy` there needs to be extra space allocated, but the data can be modified without affecting the original data.
+** When sending a `reference` there is significantly less space needed, but reading/writing data needs to be done carefully as there is no backup.
+d. Fixed-sized and variable-sized message
+** `Fixed-sized` messages have the benefit of protocol.
+Producers and consumers expect the same size packets.
+The disadvantage is that if you are sending a message that big messages need to split up and hopefully received in the correct order.
+And small messages need to be padded to meet the size protocol.
+** `Variable-sized` messages have the benefit of no waisted space and entire messages are either received or lost.
+However, a disadvantage is that the consumer has no idea the size of packets it will receive.
+More space might need to be allocated if a large packet is sent unexpectedly, slowing down the transfer rate.
