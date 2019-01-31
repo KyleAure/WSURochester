@@ -1,0 +1,63 @@
+= Assignment 3
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-01-31
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS410
+
+.Assignment Description
+****
+Chapter 3 and 4 review questions.
+****
+
+== Course Details
+* **Course** - CS410
+* **Instructor** - Dr. John Eberhard
+
+== Questions
+1.  Explain why test-first development helps the programmer to develop a better understanding of the system requirements.
+Name two potential difficulties with test-first development?  (4 points)
+** Test-First development is the process of developing tests during the requirements process prior to developing the system itself.
+The result from this development strategy means that any ambiguity in system requirements is taken care of before system development.
+Once the test code is written it can be used during the system development process for verification.
+** One difficulty can arise when assumptions during the requirement process end up not working.
+So if a certain implementation ends up not being feasible then not only do the requirements need to be refactored, but tests also need to be rewritten.
+** Another difficulty can come from relying too much on tests.
+If some test code has a bug or is not working properly, then a programmer might not notice a part of the system is failing.
+2.  What is pair-programming?
+Name and describe three advantages of pair programming. (3 points)
+** Pair-programming is an agile method that has two programmers who work together (at the same computer) to develop a piece of software.
+** One advantage is that there is more ownership over the program.
+Instead of the responsibility being put on one person, a team is held responsible, resulting in more collaborate efforts.
+** A second advantage is that there are more then one set of eyes on every single line of code.
+This results in higher quality code.
+** Lastly, it encourages refactoring to improve software structure and efficiency.
+3.  Discover ambiguities or omissions in the following statement of requirements for part of a ticket-issuing system:
+(Find at least 5.  Hint:  Think of error conditions and user actions not identified in the requirements statement.) (4 points).
++
+___
+An automated ticket-issuing system sells rail tickets.
+Users select their destination and input a credit card and a personal identification number.
+The rail ticket is issued and their credit card account charged.
+When the user presses the start button, a menu display of potential destinations is activated, along with a message to the user to select a destination.
+Once a destination has been selected, users are requested to input their credit card.
+It's validity is checked and the user is then requested to input a personal identifier.
+When the credit transaction has been validated, the ticket is issued.
++
+___
+a. Ambiguity: Are all destination options going to be displayed on the start screen? Will users be able to search for a destination?
+b. Ambiguity: If a user selects a destination and starts putting in their credit card information is their seat saved?  What happens if in the mean time someone else buys the last ticket?
+c. Omission: What happens if the user types in the wrong credit card number or PIN? How many attempts do they get?
+d. Omission: Do users also need to choose their departure location?
+e. Omission: If a user enters in their credit card number, but decides to back out before entering their pin is that an option?  What is the point of no return?
+4.  Use natural language to create a set of requirements based on the above description.
+Make sure that requirements are numbered.
+Make sure your requirements resolve the ambiguities or omissions listed above.(4 points).
+a. An automatic ticket-issuing system sells rail tickets.
+b. When the user presses the start button, a menu displays with a search bar, a user is asked to search for their departure point either by name or location.
+c. The user is then presented with a list of potential destinations based on their departure point, if there are more than 10 destinations a similar search bar will be included.
+d. Once a destination has been selected, users are presented with the ticket amount and asked to provide a credit card number.
+e. Once a credit card number has been entered the ticket is reserved to prevent another user from buying the same ticket.
+f. The user is then asked to enter their pin, a message is displayed to let the user know that once their pin is entered they will not be able to change their departure or destination locations.
+g. Once the credit transaction has been validated, the ticket is issued.
+h. If the credit transaction fails or times out, the ticked is taken off of reserve, and the user is brought back to the screen from step (e) with an error notice.
