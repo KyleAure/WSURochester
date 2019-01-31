@@ -1,11 +1,11 @@
 == Quiz 1 Solutions
 
-?/20 - Not graded automatically
+20/20 - Not graded automatically
 
 1. Masquerade, falsification, and repudiation are threat actions that cause __________ threat consequences.
 ** deception
 2. Many security administrators view strong security as an impediment to efficient and user-friendly operation of an information system.
-** false
+** True
 3. The _________ prevents or inhibits the normal use or management of communications facilities.
 ** denial of service
 4. Contingency planning is a functional area that primarily requires computer security technical measures.
@@ -33,11 +33,11 @@
 15. __________ is the insertion of bits into gaps in a data stream to frustrate traffic analysis attempts.
 ** Traffic Padding
 16. Many security administrators view strong security as an impediment to efficient and user-friendly operation of an information system.
-** false
+** True
 17. A ________ level breach of security could be expected to have a severe or catastrophic adverse effect on organizational operations, organizational assets, or individuals.
 ** high
 18. ________ assures that a system performs its intended function in an unimpaired manner, free from deliberate or inadvertent unauthorized manipulation of the system.
-** Availability
+** System Integrity
 19. A __________ is any action that compromises the security of information owned by an organization.
 ** security attack
 20. A loss of _________ is the unauthorized disclosure of information.
