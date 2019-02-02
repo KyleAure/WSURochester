@@ -1,9 +1,9 @@
 == Chapter 4
 
-1. Security is more than a series of countermeasures- security is a ____________?
-
+1. Security is more than a series of countermeasures - security is a ____________?
+** Complex system that interacts with itself.
 2. Because security is designed to prevent attack, what knowledge is critical?
-
+** How the system(s) fail.  We want systems to fail gracefully.
 3. Is security a simple question?
 
 4. What is a system?
@@ -15,21 +15,22 @@
 7. What is an unintended consequence?
 
 8. How can an emergent property affect a security system?
-
+** Emergent property - new product.  Users will use the system in a way that it was not meant too.
 9. How do security systems differ from other types of systems?
-
+** Security systems are useful for what they prevent instead of what they do.
 10. What is the difference between safety and security?
-
+** Safety is concerned with normal failure, where as security is concerned with non-random failure / vulnerability.
 11. Where does security usually fail?
-
+** At the seams, where systems interact with each other.
 12. What are two ways security systems fail?
-
+** Active when systems fail by doing something it should not
+** Passive fails when it does not do something.
 13. Are rare attacks and too many false alarms important? Why?
-
+** If there is a lot of noise or false alarms then important alarms may get missed.
 14. Describe rare attacks and too many false alarms.
 
 15. Poorly designed systems are unprepared for _____________.
-
+** Failure.
 16. Good security systems are designed in ______________ of possible failure.
-
+** Anticipation
 17. Give an example of something that was “known” to be unbreakable or that cannot fail, and did fail.

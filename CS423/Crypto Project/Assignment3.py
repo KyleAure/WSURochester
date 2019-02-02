@@ -1,3 +1,4 @@
+#Encoding and Decoding using base64
 import base64
 
 #FUNCTIONS

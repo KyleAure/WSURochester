@@ -7,7 +7,9 @@ v1.0, 2019-01-23
 
 .Project Description
 ****
-Practice assignments in Cryptography
+Practice assignments in Cryptography.
+Assignments 1-6 done individually.
+Assignments 7-10 done with Joe Denzer.
 ****
 
 == Course Details
@@ -75,3 +77,6 @@ image:Assets/Assignment6.png[]
 
 A link to this file can be found here:
 link:Assets/passwords2.txt[]
+
+== Assignment 7
+
