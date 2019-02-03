@@ -53,7 +53,7 @@ image:Assets/Assignment4.png[]
 By creating a directory of PASSWORD -> HASHED_PASSWORD I was able to do a reverse-lookup to determine every person's password.
 The list of passwords is saved below:
 
-include:Assets/namepasswordlist.adoc[]
+include::Assets/namepasswordlist.adoc[]
 
 === Output
 The PASSWORD -> HASHED_PASSWORD directory was created from the output of the python program.
@@ -68,7 +68,7 @@ link:Assets/passwords.txt[]
 By creating a directory of PASSWORD -> HASHED_PASSWORD I was able to do a reverse-lookup to determine every person's password.
 The list of passwords is saved below:
 
-include:Assets/namepasswordlist2.adoc[]
+include::Assets/namepasswordlist2.adoc[]
 
 === Output
 The PASSWORD -> HASHED_PASSWORD directory was created from the output of the python program.
