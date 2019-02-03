@@ -1,3 +1,4 @@
+# Written for python 2
 import hashlib
 chars = "0123456789"
 file = open("Assets/passwords.txt", "w")

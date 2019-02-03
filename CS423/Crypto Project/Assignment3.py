@@ -1,3 +1,4 @@
+#Written for python 2
 #Encoding and Decoding using base64
 import base64
 

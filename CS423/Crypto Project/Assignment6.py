@@ -1,3 +1,5 @@
+#Written for python 2
+#For import run `pip install passlib`
 from passlib.hash import sha512_crypt
 
 chars = "0123456789"

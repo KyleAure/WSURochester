@@ -26,10 +26,10 @@ secret = "ThisIsASecret123"
 cipher = AES.new(secret)
 
 # encode a string
-encoded = EncodeAES(cipher, 'password')
+encoded = EncodeAES(cipher, 'This is a secret message with import information XD.')
 print 'Encrypted string:', encoded
 print 'Secret Key:', secret
 
 # decode the encoded string
-# decoded = DecodeAES(cipher, encoded)
-# print 'Decrypted string:', decoded
+decoded = DecodeAES(cipher, encoded)
+print 'Decrypted string:', decoded 

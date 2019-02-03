@@ -1,3 +1,4 @@
+#Written for phython 2
 def xor_crypt_string(data, key='awesomepassword', encode=False, decode=False):
     from itertools import izip, cycle
     import base64
