@@ -1,3 +1,4 @@
+#Written for python 2
 # ALPHABET - string (aka array of chars) representing english alphabet
 alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 

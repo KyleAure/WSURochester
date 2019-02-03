@@ -1,3 +1,4 @@
+#Written for python 2
 # CONSTANTS
 # ALPHA - string (aka array of chars) representing english alphabet
 # MOD - length of alphabet where rotation occures
