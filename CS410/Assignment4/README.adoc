@@ -1,0 +1,55 @@
+= Assignment 4
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-02-03
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS410
+
+.Assignment Description
+****
+Chapter 5 review questions.
+****
+
+== Course Details
+* **Course** - CS410
+* **Instructor** - Dr. John Eberhard
+
+== Diagrams
+=== Use Case Diagram
+You are developing an ATM machine.
+Create a use case diagram for when a customer withdraws money from the ATM.  
+This use case should have at least two actors.  
+Be use to provide a textual description of the use case.
+
+=== Activity Diagram
+Create an activity diagram that models the data processing involved when a customer withdraws cash from the machine. 
+
+=== Sequence Diagram
+Create a sequence diagram that models the steps taken by an ATM machine when a customer attempts to withdraw money from the ATM.  
+Make sure the diagram includes an alternative interaction options. 
+
+=== Class Diagram
+Create a class diagram to represent an “account” at a bank.  
+Include the following types of accounts:  
+- checking
+- savings
+- certificate of deposit.
+Include the following elements where appropriate:
+- balance
+- maturity date 
+- create()
+- deposit() 
+- withdraw() 
+- processCheck() 
+- addInterest() 
+- renew()
+- close()  
+Make sure the inheritance is utilized correctly in your diagram.
+
+=== State Diagram 
+Create a state diagram representing a stop watch.  
+The stop watch has the following buttons:
+- clear
+- start
+- stop
+Be careful:  Make sure you know what the STATES are.
