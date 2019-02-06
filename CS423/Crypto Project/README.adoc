@@ -84,6 +84,11 @@ I sent my encryped string along with my key to my teammate via Discord by using 
 
 image:Assets/Assignment7.png[]
 
+I recieved an encrypted message from my teammate that I was able to decrypt.
+
+image:Assets/Assignment7IncomingMessage.png[]
+image:Assets/Assignment7DecryptedMessage.png[]
+
 == Team Assignment 8
 I wanted to encrypt an image using AES_CBC and AEC_ECB so I looked around and found a good resource here: 
 
