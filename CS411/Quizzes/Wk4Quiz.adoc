@@ -1,0 +1,25 @@
+== Week 3 Quiz
+Quality Improvement Chapters 5 and 6
+
+Score: 80/100
+
+1. If only one measurement can be taken at a time, the chart to use is called:
+** Moving Average
+2. An R chart is used rather than an S chart because it is:
+** Easier to Understand
+3. The extreme or limit values of a cell are called:
+** Boundaries
+4. For the normal curve, approximately 68% of the data will fall between:
+** ±1 Standard Deviation.
+5. The numerator of the capability index equation is the:
+** Tolerance
+6. The peakedness of the data is called:
+** Kurtosis
+7. The number of cells in a frequency distribution is between:
+** 5 to 20
+8. The product of 3.10 * .015 is:
+** 0.046
+9. A user friendly chart for the operator to use is called:
+** Median
+10. Which of the following is a source of variation:
+** Materials

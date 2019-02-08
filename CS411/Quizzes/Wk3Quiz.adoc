@@ -1,7 +1,7 @@
 == Week 3 Quiz
 Quality Improvement Chapters 3 and 4
 
-80/10
+Score: 80/10
 
 1. One of the elements of the project charter is the:
 ** Organization (!)
