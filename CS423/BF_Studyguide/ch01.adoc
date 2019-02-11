@@ -1,7 +1,6 @@
 == Chapter 1
-
 1. What is this book about?
-
+** 
 2. The author discusses trade-offs, what trade-offs are you making today?
 
 3. What is the goal of this book?
