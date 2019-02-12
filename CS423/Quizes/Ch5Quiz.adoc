@@ -1,0 +1,42 @@
+== Quiz 5 Solutions
+
+Score: 17/19
+
+1. A(n) __________ is a structured collection of data stored for use by one or more applications
+** Database
+2. Site security of the data center itself includes barriers to entry, coupled with authentication techniques for gaining physical access.
+** False
+3. Network security is extremely important in a facility in which such a large collection of assets is concentrated in a single place and accessible by external network connections.
+** True
+4. The basic building block of a __________ is a table of data, consisting of rows and columns, similar to a spreadsheet
+** relational database
+5. A(n) __________ is a user who has administrative responsibility for part or all of the database
+** administrator
+6. __________ specifies the minimum requirements for telecommunications infrastructure of data centers.
+** TIA-492
+7. __________ is the process of performing authorized queries and deducing unauthorized information from the legitimate responses received
+** Inference
+8. A _________ is defined to be a portion of a row used to uniquely identify a row in a table.
+** primary key
+9. Encryption becomes the last line of defense in database security
+** True
+10. Two disadvantages to database encryption are key management and inflexibility
+** True
+11. In relational database parlance, the basic building block is a __________, which is a flat table.
+** relation
+12. An end user who operates on database objects via a particular application but does not own any of the database objects is the __________.
+** end user other than application owner
+13. __________ is an organization that receives the encrypted data from a data owner and makes them available for  distribution to clients.
+** Server
+14. In a relational database rows are referred to as _________.
+** Tuples
+15. A ___________ is the portion of the data center that houses data processing equipment
+** Computer Room
+16. __________ encompasses intrusion detection, prevention and response
+** Intrusion management
+17. _________ is an organization that produces data to be made available for controlled release, either within the organization or to external users.
+** Data owner
+18. A _________ is a virtual table
+** View
+19. __________ houses cross-connects and active equipment for distributing cable to the equipment distribution area
+** Horizontal distribution area

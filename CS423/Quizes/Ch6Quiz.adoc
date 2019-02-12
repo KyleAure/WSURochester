@@ -1,0 +1,42 @@
+== Quiz 6 Solutions
+
+Score: 18/19
+
+1. __________ will integrate with the operating system of a host computer and monitor program behavior in real time for malicious actions
+** Behavior-blocking software
+2. Unsolicited bulk e-mail is referred to as __________.
+** spam
+3. __________ is the first function in the propagation phase for a network worm
+** Fingerprinting
+4. The __________ is when the virus function is performed.
+** execution phase
+5. Malicious software aims to trick users into revealing sensitive personal data
+** True
+6. A bot propagates itself and activates itself, whereas a worm is initially controlled from some central facility.
+** False
+7. A __________ uses macro or scripting code, typically embedded in a document and triggered when the document is viewed or edited, to run and replicate itself into other such documents
+** macro virus
+8. The ideal solution to the threat of malware is __________.
+** prevention
+9. A __________ is code inserted into malware that lies dormant until a predefined condition, which triggers an unauthorized act, is met.
+** logic bomb
+10. A __________ attack is a bot attack on a computer system or network that causes a loss of service to users.
+** DDoS (Distributed Denial of Service)
+11. A program that is covertly inserted into a system with the intent of compromising the integrity or confidentiality of the victim’s data is __________.
+** malware
+12. Packet sniffers are mostly used to retrieve sensitive information like usernames and passwords.
+** True
+13. The __________ is what the virus “does”.
+** Payload
+14. The term “computer virus” is attributed to __________.
+** Fred Cohen
+15. Computer viruses first appeared in the early __________.
+** 1980's
+16. __________ is malware that encrypts the user’s data and demands payment in order to access the key needed to recover the information
+** Ransomware
+17. __________ are used to send large volumes of unwanted e-mail
+** Spammer programs
+18. A virus that attaches to an executable program can do anything that the program is permitted to do
+** True
+19. During the __________ the virus is idle.
+** dormant phase
