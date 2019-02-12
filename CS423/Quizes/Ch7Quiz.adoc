@@ -1,0 +1,42 @@
+== Quiz 7 Solutions
+
+Score: 19/19
+
+1. _______ bandwidth attacks attempt to take advantage of the disproportionally large resource consumption at a server
+** Application-based
+2. When a DoS attack is detected, the first step is to _______.
+** identify the attack
+3. The best defense against being an unwitting participant in a DDoS attack is to prevent your systems from being compromised
+** True
+4. A characteristic of reflection attacks is the lack of _______ traffic.
+** backscatter
+5. Using forged source addresses is known as _________.
+** source address spoofing
+6. The ______ attacks the ability of a network server to respond to TCP connection requests by overflowing the tables used to manage such connections.
+** SYN (synchronized) spoofing attack
+7. In a _______ attack the attacker creates a series of DNS requests containing the spoofed source address for the target system.
+** DNS amplification
+8. A ______ triggers a bug in the system’s network handling software causing it to crash and the system can no longer communicate over the network until this software is reloaded
+** poison packet
+9. It is possible to specifically defend against the ______ by using a modified version of the TCP connection handling code.
+** SYN spoofing attack
+10. Bots starting from a given HTTP link and then following all links on the provided Web site in a recursive way is called _______.
+** Spidering
+11. There is very little that can be done to prevent a flash crowd.
+** True
+12. In both direct flooding attacks and ______ the use of spoofed source addresses results in response packets being scattered across the Internet and thus detectable.
+** SYN spoofing attacks
+13. Modifying the system’s TCP/IP network code to selectively drop an entry for an incomplete connection from the TCP connections table when it overflows, allowing a new connection attempt to proceed is _______.
+** Random Drop
+14. SYN-ACK and ACK packets are transported using IP, which is an unreliable network protocol
+** True
+15. _______ is a text-based protocol with a syntax similar to that of HTTP
+** SIP ( Session Initiation Protocol)
+16. ______ attempts to monopolize all of the available request handling threads on the Web server by sending HTTP requests that never complete.
+** Slowloris
+17. A cyberslam is an application attack that consumes significant resources, limiting the server’s ability to respond to valid requests from other users
+** True
+18. ______ relates to the capacity of the network links connecting a server to the wider Internet.
+** Network bandwidth
+19. TCP uses the _______ to establish a connection
+** three-way handshake
