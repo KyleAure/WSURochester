@@ -18,8 +18,8 @@ Score: 80/100
 7. The number of cells in a frequency distribution is between:
 ** 5 to 20
 8. The product of 3.10 * .015 is:
-** 0.046
+** 0.046  !0.047
 9. A user friendly chart for the operator to use is called:
 ** Median
 10. Which of the following is a source of variation:
-** Materials
+** Materials  !Piece-to-piece
