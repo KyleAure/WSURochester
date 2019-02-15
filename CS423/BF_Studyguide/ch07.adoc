@@ -6,23 +6,23 @@
 2. Do advances in technology always “trump” sheer number?
 
 3. What do smarter attackers look for?
-
+** What is going to be effective
 4. Who does technology tend to favor and why?
-
+** The attacker - business is trying to get new stuff into production, attackers are trying to find exploits. 
 5. Why do systems often look simple?
 
 6. Why do consumers welcome complexity?
-
+** 
 7. What does the author think of complexity?
 
 8. Complex system have even more security problems when they are what?
 
 9. New technologies can create new ___________.
-
+** Vulnurabilities 
 10. What are helpers?
 
 11. What are class breaks and why are they so important to understand (or dangerous)?
-
+** An attack that can break every instance of a feature.
 12. What can automation and propagation do to class breaks?
 
 13. What is action at a distance?

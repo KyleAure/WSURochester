@@ -3,19 +3,22 @@
 1. Attackers are more likely to attack a system at _____ _______.
 
 2. What is Defense in depth?
-
+** This is an exam question!! 
+** Defense in Depth (DiD) is an approach to cybersecurity in which a series of defensive mechanisms are layered in order to protect valuable data and information. ... This multi-layered approach with intentional redundancies increases the security of a system as a whole and addresses many different attack vectors.
 3. What does Compartmentalization do?
-
+** Makes your systems separate so one vulunerability does not effect another system.
 4. What does a Choke point do?
-
+** Restrict passage to system.
 5. What is overengineering and what are the two basic ways it is accomplished?
-
+** More redudency and greater compacity 
+** Disadvantange - cannot be managed as well and might miss something that is significant. 
 6. Many attacks can be traced to a failure to apply the principle of ____________________.
-
+** Compartmentalization
 7. What is a problem with choke points?
-
-8. Simplicity reduces the number and complexity of _______ _______.
-
+** They become bottle necks and resduces speed
+8. Simplicity reduces the number and complexity of ______________.
+** Attack Points
 9. Most security engineering is ___________
-
+** reactive.
 10. Most attackers are _________.
+** Copy-cats

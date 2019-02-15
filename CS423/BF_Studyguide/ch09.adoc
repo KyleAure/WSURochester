@@ -1,15 +1,15 @@
 == Chapter 9
 
 1. A resilient system is __________
-
+** Dynamic - fail gracefully/partially.  Never completely down.
 2. Bad security is __________
-
+** Britle 
 3. Good security systems are ____________
-
+** Resiliant
 4. Automated security is usually ___________
-
+** Static
 5. Dynamic defenses that can adapt quickly provide _______
-
+** Better security than defences that can only perform a single way. 
 6. Why is flexibility in security rules important?
 
 7. As a rule, homogeneity in systems tend to be what?
