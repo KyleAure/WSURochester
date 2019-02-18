@@ -1,0 +1,25 @@
+== Week 5 Quiz
+Quality Improvement Chapters 7 and 8
+
+Score: 10/10
+
+1.The multiplicative theorem is concerned with:
+** independent events
+2.Then the occurrence of an event has no influence on the occurrence of a second event, it is called:
+** independent
+3. Which of the following type(s) of short-run control is/are based on specifications?
+** precontrol
+4. The chart that plots the difference from the target is called:
+** deviation chart
+5. Reproducibility is a term used to describe:
+** appraiser variation
+6. Which of the following is a method of counting events:
+** permutation
+7. Which of the following type(s) of short-run control is/are derived from the X and R charts?
+** Z and W
+8. When the word OR is verbalized in probability, it means to perform the arithmetic operation of:
+** addition
+9. Before changing from the set up mode to the run mode in precontrol, there must be:
+** 5 consecutive goods in the green zone
+10. When the word AND is verbalized in probability, it means to perform the arithmetic function of:
+** multiplication
