@@ -1,4 +1,4 @@
-package cpuscheduler;
+package edu.winona.cs.pcb;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -13,6 +13,8 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import edu.winona.cs.pcb.ProcessControlBlock;
 
 public class JsonTest {
 	//Json strings to be ingested
@@ -59,7 +61,6 @@ public class JsonTest {
 		}
 	}
 	
-	//TODO Add case when a CPU or IO burst is zero or negative
 	@Test(expected = com.fasterxml.jackson.databind.exc.InvalidDefinitionException.class)
 	public void ingestZeroPCBTest() throws Exception{
 		@SuppressWarnings("unused")

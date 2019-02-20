@@ -1,10 +1,8 @@
-package cpuscheduler;
+package edu.winona.cs.pcb;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-//TODO getters and setters should be able to handle null?
 
 public class ProcessControlBlock {
 	// JSON file properties
@@ -104,16 +102,15 @@ public class ProcessControlBlock {
 
 	@Override
 	public String toString() {
-		return "ProcessControlBlock\n"
-				+ "--------------------\n"
-				+ "[processID=" + processID 
-				+ ", cpuBursts=" + cpuBursts 
-				+ ", ioBursts=" + ioBursts
-				+ ", cpuIndex=" + cpuIndex 
-				+ ", ioIndex=" + ioIndex 
-				+ ", countCPU=" + countCPU 
-				+ ", countIO=" + countIO
-				+ "]";
+		String result = "";
+		result += processID + " -";
+		for(int i = 0; i < cpuBursts.size(); i++) {
+			for(int j = 0; i < ioBursts.size(); i++) {
+				result += " CPU " + cpuBursts.get(i);
+				result += " IO " + ioBursts.get(j);
+			}
+		}
+		return result;
 	}
 	
 }

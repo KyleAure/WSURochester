@@ -1,8 +1,9 @@
-package queue;
+package edu.winona.cs.queue;
 
-import cpuscheduler.ProcessControlBlock;
+import edu.winona.cs.pcb.ProcessControlBlock;
 
 public interface Queue {
+	
 	/**
 	 * Adds a job to the queue
 	 */
@@ -10,10 +11,18 @@ public interface Queue {
 	
 	/**
 	 * Removes a job from the top of the queue
-	 * 
-	 * @return pcb object
 	 */
 	public ProcessControlBlock removeJob();
+	
+	/**
+	 * Utility to determine if queue is full
+	 */
+	public boolean isFull();
+	
+	/**
+	 * Return queue count
+	 */
+	public int count();
 	
 
 }
