@@ -8,8 +8,8 @@ v1.0, 2019-01-23
 .Project Description
 ****
 Practice assignments in Cryptography.
-Assignments 1-6 done individually.
-Assignments 7-10 done with Joe Denzer.
+Assignments 1-6, 9 done individually.
+Assignments 7, 8, and 10 done with Joe Denzer.
 ****
 
 == Course Details
@@ -101,30 +101,36 @@ Below is a table that shows my original image, encryption, and decryption attemp
 |Description |Encrypted |Decrypted
 
 |Original Image 
-2+|image:Assets/Unencrypted.png[]
+2+|image:Assets/Unencrypted_self.png[]
 
 |AES_ECB Encryption
-|image:Assets/Encrypted1.png[]
-|image:Assets/Decrypted1.png[]
+|image:Assets/Encrypted1_self.png[]
+|image:Assets/Decrypted1_self.png[]
 
 |AES_CBC Decryption
-|image:Assets/Encrypted2.png[]
-|image:Assets/Decrypted2.png[]
+|image:Assets/Encrypted2_self.png[]
+|image:Assets/Decrypted2_self.png[]
 |===
 
 Encrypting and decrypting took minimal time. 
 The hardest part of this problem was figuring out how to get pixel data from the image and convert that to byte data that can then be encrypted.
-However, once that was figured out decrypting was the image was a nominal problem since we just had to do everything in reverse. 
+However, once that was figured out decrypting the image was a nominal problem since we just had to do everything in reverse. 
+
+The image that I received from my partner was this:
+image:Assets/Encrypted2.png[]
+
+And I was able to decrypt it to revel the following image.
+image:Assets/Decrypted2.png[]
 
 == Assignment 9
 1. Beyond this exercise: what are issues around public key distribution?
 ** When a public/private key pair are generated we need to distribute our public key to a certain recipient. 
-However, this introduces an issue of authencitity. 
+However, this introduces an issue of authenticity. 
 If we are distributing our public key via email, how can the recipient ensure that it was us that sent the email?
 2. What about aging keys (expiration dates) and issues around that?
-** Say you are in a situation where your computer's harddrive became corrupted.
+** Say you are in a situation where your computer's hard-drive became corrupted.
 You have now lost your private key and need to generate a new private/public key pair. 
-This can be problematic, since you might recieve encrypted messages in the interm that you cannot decrypt.
+This can be problematic, since you might receive encrypted messages in the interim that you cannot decrypt.
 Additionally, as mentioned in the last question how do you alert others that your old public key should no longer be used in an authentic way?
 3. How about key management?
 ** Implementing a Key Management System to store public keys and ensure they are authentic could be a solution to some of these problems.

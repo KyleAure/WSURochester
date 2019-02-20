@@ -22,19 +22,3 @@ def decrypt_message(encoded_encrypted_msg, privatekey):
 	decoded_encrypted_msg = base64.b64decode(encoded_encrypted_msg)
 	decoded_decrypted_msg = privatekey.decrypt(decoded_encrypted_msg)
 	return decoded_decrypted_msg
-
-########## BEGIN ##########
-
-a_message = 'This is a secret message with import information XD.'
-
-privatekey = RSA.importKey(open('Keys/id_rsa', 'rb'))
-publickey = RSA.importKey(open('Keys/id_rsa.pub', 'rb'))
-
-encrypted_msg = encrypt_message(a_message , publickey)
-decrypted_msg = decrypt_message(encrypted_msg, privatekey)
-
-print "%s - (%d)" % (privatekey.exportKey() , len(privatekey.exportKey()))
-print "%s - (%d)" % (publickey.exportKey() , len(publickey.exportKey()))
-print " Original content: %s - (%d)" % (a_message, len(a_message))
-print "Encrypted message: %s - (%d)" % (encrypted_msg, len(encrypted_msg))
-print "Decrypted message: %s - (%d)" % (decrypted_msg, len(decrypted_msg))
