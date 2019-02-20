@@ -4,7 +4,7 @@ from PIL import Image
 from Crypto.Cipher import AES
 
 # File formatting and key
-filename = "Assets/Unencryped.png"
+filename = "Assets/Unencrypted.png"
 filename_out_encryped = "Assets/Encrypted"
 filename_out_decrypted = "Assets/Decrypted"
 format = "png"
