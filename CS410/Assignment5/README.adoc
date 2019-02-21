@@ -1,0 +1,26 @@
+= Assignment 5
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-02-20
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS410
+
+.Assignment Description
+****
+Chapter 6 and 7 review questions.
+****
+
+== Course Details
+* **Course** - CS410
+* **Instructor** - Dr. John Eberhard
+
+1. Name and describe the five parts of Krutchen’s 4+1 view model of software architecture.
+2. Describe the following architecture patterns:
+	A. Model-View-Controller
+	B. Layered Architecture
+	C. Repository Architecture
+	D. Client-Server Architecture
+	E. Pipe and Filter Architecture
+3.  Name and describe three ways to identify object classes in an object-oriented system.
+4.  Using the UML graphical notation for object classes (i.e. UML class diagram), design the classes for a personal music system, identifying attributes and operations.  Use your own experience to decide on the attributes and operations that should be associated with the classes.
+5.  Name and describe the four essential elements of design patterns.
