@@ -24,17 +24,25 @@ def decrypt_message(encoded_encrypted_msg, privatekey):
 	return decoded_decrypted_msg
 
 ########## BEGIN ##########
-
+### Messages
 a_message = 'This is a secret message with import information XD.'
+em = 'RMpHwfVEDhyPra1XFFTEASGbcD4or56FqdbN7jnfkNo0OdCgHxVD5IM5/siepLfm9eS68onhRnEqOrTLXFQ1/J4yPcy8GzHyKZp1jsUdTg3DbmlZyugEe7mQfnh2YooixBjzbIWuz9EHpYdbAJ3fDbThf1VyOai8baVTgy9dtuc= - (172)'
 
-privatekey = RSA.importKey(open('Keys/id_rsa', 'rb'))
-publickey = RSA.importKey(open('Keys/id_rsa.pub', 'rb'))
+### My Keys
+myprivatekey = RSA.importKey(open('Keys/id_rsa', 'rb'))
+mypublickey = RSA.importKey(open('Keys/id_rsa.pub', 'rb'))
 
-encrypted_msg = encrypt_message(a_message , publickey)
-decrypted_msg = decrypt_message(encrypted_msg, privatekey)
+### Joe's public key
+joepublickey = RSA.importKey(open('Keys/id_rsa_joe.pub', 'rb'))
 
-print "%s - (%d)" % (privatekey.exportKey() , len(privatekey.exportKey()))
-print "%s - (%d)" % (publickey.exportKey() , len(publickey.exportKey()))
-print " Original content: %s - (%d)" % (a_message, len(a_message))
-print "Encrypted message: %s - (%d)" % (encrypted_msg, len(encrypted_msg))
+### To encode message
+#encrypted_msg = encrypt_message(a_message , joepublickey)
+
+### To decode a message.
+decrypted_msg = decrypt_message(em, myprivatekey)
+
+#print "%s - (%d)" % (privatekey.exportKey() , len(privatekey.exportKey()))
+#print "%s - (%d)" % (publickey.exportKey() , len(publickey.exportKey()))
+#print " Original content: %s - (%d)" % (a_message, len(a_message))
+#print "Encrypted message: %s - (%d)" % (encrypted_msg, len(encrypted_msg))
 print "Decrypted message: %s - (%d)" % (decrypted_msg, len(decrypted_msg))
