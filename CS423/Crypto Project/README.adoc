@@ -1,6 +1,6 @@
 = Cryptography Project
 Kyle Aure <KAure09@winona.edu>
-v1.0, 2019-01-23
+v1.0, 2019-02-21
 :RepoURL: https://github.com/KyleAure/WSURochester
 :AuthorURL: https://github.com/KyleAure
 :DirURL: {RepoURL}/CS423
@@ -18,6 +18,7 @@ Assignments 7, 8, and 10 done with Joe Denzer.
 
 == Assignment1
 === Results
+
 image:Assets/Assignment1.png[]
 
 === Questions
@@ -27,6 +28,7 @@ What does the use of the mod function solve?
 
 == Assignment2
 === Results
+
 image:Assets/Assignment2.png[]
 
 === Conclusions
@@ -42,10 +44,12 @@ Since 13 + 13 is 26 the end of this function is 0 and we end up with our origina
 
 == Assignment3
 === Results
+
 image:Assets/Assignment3.png[]
 
 == Assignment4
 === Results
+
 image:Assets/Assignment4.png[]
 
 == Assignment5
@@ -58,9 +62,11 @@ include::Assets/namepasswordlist.adoc[]
 === Output
 The PASSWORD -> HASHED_PASSWORD directory was created from the output of the python program.
 Output:
+
 image:Assets/Assignment5.png[]
 
 A link to this file can be found here:
+
 link:Assets/passwords.txt[]
 
 == Assignment6
@@ -73,9 +79,11 @@ include::Assets/namepasswordlist2.adoc[]
 === Output
 The PASSWORD -> HASHED_PASSWORD directory was created from the output of the python program.
 Output:
+
 image:Assets/Assignment6.png[]
 
 A link to this file can be found here:
+
 link:Assets/passwords2.txt[]
 
 == Team Assignment 7
@@ -87,6 +95,7 @@ image:Assets/Assignment7.png[]
 I recieved an encrypted message from my teammate that I was able to decrypt.
 
 image:Assets/Assignment7IncomingMessage.png[]
+
 image:Assets/Assignment7DecryptedMessage.png[]
 
 == Team Assignment 8
@@ -117,9 +126,11 @@ The hardest part of this problem was figuring out how to get pixel data from the
 However, once that was figured out decrypting the image was a nominal problem since we just had to do everything in reverse. 
 
 The image that I received from my partner was this:
+
 image:Assets/Encrypted2.png[]
 
 And I was able to decrypt it to revel the following image.
+
 image:Assets/Decrypted2.png[]
 
 == Assignment 9
@@ -140,6 +151,22 @@ I modified the provided code to allow me to generate a pair of keys and save the
 I then created a way to import the public and private keys for encryption and decryption.
 This meant that I was able to test my code using the same keys multiple times without having to generate new keys each time.
 
-Below is a link to my public RSA key:
-link:Keys/id_rsa.pub[]
+Below is the public RSA key I provided to Joe:
 
+```bash
+include::Keys/id_rsa.pub[]
+```
+
+I recieved the following public key from Joe:
+
+```bash
+include::Keys/id_rsa_joe.pub[]
+```
+
+With this we were able to encrypt messages to each other and sent them over discord:
+
+image:Assets/Assignment10message.png[]
+
+We successfully decrypted each other messages, the message Joe sent to me was, 'Decrypted message: It's time to have a serious conversation about Global Warming! - (62).'
+
+image:Assets/Assignment10results.png[]
