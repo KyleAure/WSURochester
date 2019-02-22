@@ -1,4 +1,4 @@
-== Chapter 12
+== Chapter 12 
 
 1. Detection is useless without __________________
 

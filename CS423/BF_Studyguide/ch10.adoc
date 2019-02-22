@@ -1,19 +1,20 @@
 == Chapter 10
 
-1. A good security system leverages the benefits of ________ _____
-
+1. A good security system leverages the benefits of ____________
+** trusted people. 
 2. Good security has people in charge. What are some advantages of having people in charge?
-
+** They can improvise and people are creative so they can develop on the spot solutions. People are resiliant. 
 3. What is profiling?
-
+** Profiling is generalizing a group of people and applying them to an invidiual to determine if someone is acting weird. This is specific to people.
 4. Ethnics aside, does institutionalized profiling succeed? Why?
-
+** No, rarley successes because attackers are rare and can subvert profiling mesures. 
 5. What is often the weakest security link and the main reason why security fails?
-
+** People can often be the weakest link because of insiders or lazy employees.
 6. The more trusted people a system employs, and the more we must trust them, the more _______ it is.
-
+** britle -> more points of failures. 
 7. What are the three basic ways to secure trusted people (or machines)?
-
+** Put trustworthy people in positions of trust.  Thourough compartmentalization. Defence in depth.
 8. Security is not about technology. Security is about what?
-
+** Risks and different ways to manage these risks.
 9. To make security work, we must have to make sure people understand what?
+** People need to understand the technology.

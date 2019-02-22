@@ -1,4 +1,4 @@
-== Chapter 13
+== Chapter 13 - Towering Buffalos
 
 1. What is the problem with securing assets and their functionality?
 
