@@ -1,0 +1,29 @@
+= Chapter 5 Questions
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-02-25
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS405
+
+== Course Details
+* **Course** - CS405
+* **Instructor** - Dr. Dennis Martin
+
+== Problem Set
+[start=10]
+10. Explain why implementing synchronization primitives by disabling interrupts is not appropriate in a single-processor system if the synchronization primitives are to be used in user-level programs.
+** If a user-level program is able to disable interrupts, then it would also be able to disable timer interrupts, which would prevent the CPU from performing a context switch.  This would allow a user-level program the ability to prevent other processes from executing.
+[start=11]
+11. Explain why interrupts are not appropriate for implementing synchronization primitives in multiprocessor systems.
+** It is not appropriate to use interrupts for sychronization of primitives in a multiprocessor system, since disabiling interrupts on one processor would not prevent another processor from accessing the same primitive.  Therefore, these is no guarentee of mutual exclusion.
+[start=16]
+16. The implementation of mutex locks provided in Section 5.5 suffers from busy waiting. Describe what changes would be necessary so that a process waiting to acquire a mutex lock would be blocked and placed into a waiting queue until the lock became available.
+** In these situations we would want to implement the mutex as a semaphore that keeps a queue as our sychronization tool.  When a process wants access to a mutex object it requests a lock from the semaphore.  If the lock is avaiable it is given to the process, and it continues execution.  If the lock is unavailable, the process is put into a waiting queue.  The process is stoped, and therefore not taking up CPU time as a "busy waiter."  Once a process releases their lock, the semaphore notifies the next process in the queue, and it is taken off of it's wait state, and given access to the lock.
+[start=17]
+17. Assume that a system has multiple processing cores. For each of the following scenarios, describe which is a better locking mechanism — a spinlock or a mutex lock where waiting processes sleep while waiting for the lock to become available:
+a. The lock is to be held for a short duration.
+** *Spinlock* is the better solution here because a minimum number of cycles will be waisted in the spinlock state.  This time might be less than the time it takes to suspend the process, awaken the process, and manage the process queue.
+b. The lock is to be held for a long duration.
+** *Mutex Lock* is a better solution here because it will allow the other processing cores to schedule additional processes while the lock process waits.  Depending on how long the lock is held by the other process this may sometimes waist time, but it the long run it is more efficent to use the resources to create a wait queue than to have a "busy waiter."
+c. The thread may be put to sleep while holding the lock.
+** *Mutex Lock* is the definetally the better solution here because we would not want a process to be using CPU time as a "busy waiter" when the lock may never be released.  Instead, using the extra resources to put it on a queue and suspend the process will be worth it.
