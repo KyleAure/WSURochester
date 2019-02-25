@@ -1,0 +1,25 @@
+== Week 6 Quiz
+Quality Improvement Chapters 9 and 10
+
+Score: 9/10
+
+1. The abbreviation AOQL stand for:
+** Average Outgoing Quality Limit
+2. In the formation of lots, a lot should be:
+** homogeneous
+3. Which of the following concerning the p chart is true?
+** can be used for many characteristics
+4. When the lower limit of a c chart is less than zero:
+** change it to 0
+5. The Producer's risk is the risk:
+** of rejecting lots of good quality
+6. Which of the following is not a valid method of sample selection?
+** first come first serve
+7. One of the reasons for using double sampling rather than single sampling is:
+** all of the above
+8. One of the OC curve properties is:
+** as the sample size increases, the curve becomes steeper
+9. A fraction nonconforming chart is frequently converted to a percent nonconforming chart:
+** so that employees can understand it better
+10. The problem of variable subgroup size for a p chart can be minimized by:
+** using an average subgroup size
