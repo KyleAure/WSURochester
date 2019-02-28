@@ -1,29 +1,40 @@
-== Chapter 13 - Towering Buffalos
+== Chapter 13
+Identification, Authentication, and Authorization
 
 1. What is the problem with securing assets and their functionality?
-
+** It restricts access from the authorized users, the owner, and the security system.
 2. What is the shorthand guide to: Identification, authentication, and authorization?
-
+** Identification: Who are you?
+** Authentication: Prove it.
+** Authorization: Here is what you are allowed to do.
 3. Do authorization tokens require any identification?
-
+** No, an authorization token is like a ticket - if you have it you have access.
+** Analogous to a software license key.
 4. What is the most important security system our species has (according to the author)?
-
+** Identification: once you identify someone you automatically know what level of trust to afford them.
 5. What are the three basic ways to authenticate someone?
-
+** By the knowledge they have, by an object they possess, or by something they are.
 6. What advantage does biometrics have over passwords?
-
+** Biometrics cannot be forgotten or lost.
 7. What is needed for biometrics to work?
-
+** The system must be able to match the biometric to the record
+** And, the system must be able to verify that the biometric was taken from the person at time of verification.
 8. Why have many authentication mechanisms failed?
-
+** Because they are not designed to be used remotely.
+** No matter how many safeguards you put into a license, if most places accept photo copies what is the point?
 9. Do identification tokens need to expire?
-
+** No, identification tokens should last until authentication is likely to fail.
+** For example, the picture on your passport is likely to be un-authentic after 10 years.
 10. Why should tokens expire?
-
+** To prevent the usefulness of forged or stolen authentication tokens.
 11. Should tokens expire?
-
+** Depends on what the token is used for, and the risk associated with the token being used in an un-authentic way.
 12. According to the author, what does invoking trusted people have to do with the solution to authentication?
-
+** It is hard to trust a computer since a computer will do whatever it is told, (either by you or someone else).
+** A trusted person, can help others determine if something is authentic.
 13. When do authentication systems suffer?
-
+** When they are rarely used, and when people are not trained to use them.
+** How do you verify the identify of an FBI agent at the front door?
 14. What is the weakest link in an authentication system?
+** The holes that are intentionally put in the barrier.
+** For example: The employee entrance of an airport does not go through TSA. 
