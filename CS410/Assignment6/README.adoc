@@ -1,0 +1,36 @@
+= Assignment 6
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-03-02
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS410
+
+.Assignment Description
+****
+Chapter 8 review questions.
+****
+
+== Course Details
+* **Course** - CS410
+* **Instructor** - Dr. John Eberhard
+
+== Problems
+
+1.  What are three advantages of software inspection over testing?
+** *Errors can Mask:* During system testing one error can mask another error, which will then avoid detection.  Inspection is a static process so we don't have to worry about potentially errorous components interacting with each other.
+** *Incomplete:* System can be inspected prior to completion without any more resources as a normal inspection.  Whereas, testing an incomplete system will require special test implementations to be developed to get a good result.
+** *Quality Attributes:* Inspections can be done on a broader scale and examine such things as complience, portability, and maintainability.
+2.  Name and describe the three stages of testing for commercial systems software.
+** *Development:* this is where the system is tested during the development process to correct bugs and defects.
+** *Release:* this is where the system is tested after development, but before deployment.  The system is tested by a testing team that was not involved in the development process.
+** *User:* this is where the system is tested by uses in their own environment to ensure that it meets their specifications and can run on different hardware.
+3.  Name and describe the three levels of granularity of development testing.
+** *Unit Testing:* is where individual units are tested in isolation from one another.  This ensures that the input/output of one unit is performing as expected/documented.
+** *Component Testing:* is where individual components are tested in isolation from one another.  Each component is made up of different units that interact with each other.  Components are typically accessed via an interface and these are what are tested at this level.
+** *System Testing:* is where the system is tested as an integrated system of components.  This is done by integrating certain versions of components and testing them as a system.  At this level we are testing the interactions of all components to ensure they are communicating correcting. These are more behavioral tests.
+4.  What is test driven development and what are its benefits?
+** *Test-Driven Development (TDD)* is where prior to development of units, components, and systems tests are written to specification.  Then, during development the goal is to complete a component, and pass that test, before moving onto the next component.
+5.  What is black box and white box testing?
+** *Black-Box:* is when a software system is tested by someone who has no knowledge of the implementation.  Instead, they only know the specification of what a system is supposed to do.
+** *White-Box:* is when a software system is tested by someone who does know how the system was implemented. This gives them a different perspective, since they can tell what component might be failing while testing.
+
