@@ -1,0 +1,25 @@
+== Week 7 Quiz
+Quality Improvement Chapters 11 and 12
+
+Score: 90/100
+
+1. Which of the following is used for the wear out phase:
+** wear out phase
+2. The technique that uses the positive and negative aspects of a situation to reinforce the positives and reduce or eliminate the negatives is called:
+** forced field analysis
+3. Which fo the following distributions is used in reliability analysis?
+** exponential
+4. The technique that allows the team to schedule a project efficiently is called:
+** activity network diagram
+5. The technique that allows the team to generate a large number of issues/ideas and logically group them for effective problem solving is called:
+** affinity diagram
+6. The technique that allows individuals or teams to identify, analyze, and rat the relationship between two or more variables is called:
+** 	matrix diagram
+7. One of the best ways to achieve reliability is by:
+** simplicity
+8. Which of the following life-test sampling plans is based on the test time:
+** time-terminated
+9. The technique that allows the team to classify the cause and effect factors in order for the key drivers and outcomes to help solve the problem is called:
+** interrelationship diagram
+10. The reliability of a system is the product of the individual components when they are arranged in:
+** series
