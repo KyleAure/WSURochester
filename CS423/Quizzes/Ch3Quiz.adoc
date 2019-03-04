@@ -1,38 +1,40 @@
-== Quiz 3 Solutions
+=== Quiz 3 Solutions
 
-1. A __________ attack involves an adversary repeating a previously captured user response.
+Score: 18/18
+
+1. A ---------- attack involves an adversary repeating a previously captured user response.
 ** Replay
-2. A __________ strategy is one in which the system periodically runs its own password cracker to find guessable passwords.
+2. A ---------- strategy is one in which the system periodically runs its own password cracker to find guessable passwords.
 ** reactive password checking
-3. Presenting or generating authentication information that corroborates the binding between the entity and the identifier is the ___________. 
+3. Presenting or generating authentication information that corroborates the binding between the entity and the identifier is the -----------.
 ** verification step
 4. User authentication is the fundamental building block and the primary line of defense.
 ** True
-5. A __________ is directed at the user file at the host where passwords, token passcodes, or biometric templates are stored
+5. A ---------- is directed at the user file at the host where passwords, token passcodes, or biometric templates are stored
 ** host attack
-6. Each individual who is to be included in the database of authorized users must first be __________ in the system
+6. Each individual who is to be included in the database of authorized users must first be ---------- in the system
 ** Enrolled
-7. __________ systems identify features of the hand, including shape, and lengths and widths of fingers
+7. ---------- systems identify features of the hand, including shape, and lengths and widths of fingers
 ** Hand geometry
-8. A __________ is a password guessing program
+8. A ---------- is a password guessing program
 ** password cracker
-9. A __________ is when an adversary attempts to achieve user authentication without access to the remote host or to the intervening communications path
+9. A ---------- is when an adversary attempts to achieve user authentication without access to the remote host or to the intervening communications path
 ** client attack
-10. The most common means of human-to-human identification are __________.
+10. The most common means of human-to-human identification are ----------.
 ** facial characteristics
-11. An institution that issues debit cards to cardholders and is responsible for the cardholder’s account and authorizing transactions is the _________.
+11. An institution that issues debit cards to cardholders and is responsible for the cardholder’s account and authorizing transactions is the ---------.
 ** issuer
-12. To counter threats to remote user authentication, systems generally rely on some form of ___________ protocol.
+12. To counter threats to remote user authentication, systems generally rely on some form of ----------- protocol.
 ** challenge-response
-13. __________ allows an issuer to access regional and national networks that connect point of sale devices and bank teller machines worldwide
+13. ---------- allows an issuer to access regional and national networks that connect point of sale devices and bank teller machines worldwide
 ** EFT
-14. The __________ strategy is when users are told the importance of using hard to guess passwords and provided with guidelines for selecting strong passwords
+14. The ---------- strategy is when users are told the importance of using hard to guess passwords and provided with guidelines for selecting strong passwords
 ** user education
 15. User authentication is a procedure that allows communicating parties to verify that the contents of a received message have not been altered and that the source is authentic
 ** false
-16. __________ defines user authentication as “the process of verifying an identity claimed by or for a system entity”.
+16. ---------- defines user authentication as “the process of verifying an identity claimed by or for a system entity”.
 ** RFC 4949
-17. Recognition by fingerprint, retina, and face are examples of __________.
+17. Recognition by fingerprint, retina, and face are examples of ----------.
 ** static biometries
 18. User authentication is the basis for most types of access control and for user accountability
 ** true

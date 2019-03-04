@@ -1,42 +1,42 @@
-== Quiz 4 Solutions
+=== Quiz 4 Solutions
 
-Grade: 19/19
+Score: 19/19
 
 1. The authentication function determines who is trusted for a given purpose
 ** False
-2. Subject attributes, object attributes and environment attributes are the three types of attributes in the __________ model.
+2. Subject attributes, object attributes and environment attributes are the three types of attributes in the ---------- model.
 ** ABAC (Attribute-based Access Control)
-3. __________ implements a security policy that specifies who or what may have access to each specific system resource and the type of access that is permitted in each instance.
+3. ---------- implements a security policy that specifies who or what may have access to each specific system resource and the type of access that is permitted in each instance.
 ** Access Control
-4. A(n) __________ is a resource to which access is controlled
+4. A(n) ---------- is a resource to which access is controlled
 ** object
-5. __________ is the traditional method of implementing access control
+5. ---------- is the traditional method of implementing access control
 ** DAC (Discretionary Access Control)
-6. __________ controls access based on comparing security labels with security clearances.
+6. ---------- controls access based on comparing security labels with security clearances.
 ** MAC (Mandatory Access Control)
-7. __________ is based on the roles the users assume in a system rather than the user’s identity
+7. ---------- is based on the roles the users assume in a system rather than the user’s identity
 ** RBAC (Role-Based Access Control)
-8. A __________ is an entity capable of accessing objects
+8. A ---------- is an entity capable of accessing objects
 ** Subject
 9. The principal objectives of computer security are to prevent unauthorized users from gaining access to resources, to  prevent legitimate users from accessing resources in an unauthorized manner, and to enable legitimate users to access resources in an authorized manner.
 ** True
-10. _________ is the granting of a right or permission to a system entity to access a system resource.
+10. --------- is the granting of a right or permission to a system entity to access a system resource.
 ** Authorization
-11. The final permission bit is the _________ bit.
+11. The final permission bit is the --------- bit.
 ** sticky
-12. __________ provide a means of adapting RBAC to the specifics of administrative and security policies in an organization
+12. ---------- provide a means of adapting RBAC to the specifics of administrative and security policies in an organization
 ** Constraints
-13. A __________ is a named job function within the organization that controls this computer system.
+13. A ---------- is a named job function within the organization that controls this computer system.
 ** Role
 14. Any program that is owned by, and SetUID to, the “superuser” potentially grants unrestricted access to the system to any user executing that program.
-** True 
-15. __________ refers to setting a maximum number with respect to roles
+** True
+15. ---------- refers to setting a maximum number with respect to roles
 ** Cardinality
 16. A user program executes in a kernel mode in which certain areas of memory are protected from the user’s use and certain instructions may not be executed
 ** False
-17. The __________ component deals with the management and control of the ways entities are granted access to resources.
+17. The ---------- component deals with the management and control of the ways entities are granted access to resources.
 ** access management
-18. __________ is verification that the credentials of a user or other system entity are valid
+18. ---------- is verification that the credentials of a user or other system entity are valid
 ** Authentication
-19. A concept that evolved out of requirements for military information security is ______
+19. A concept that evolved out of requirements for military information security is ------
 ** mandatory access control

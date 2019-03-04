@@ -1,24 +1,42 @@
-== Quiz 10 Solutions
+=== Quiz 10 Solutions
 
-Score:
+Score:18/19
 
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
-11.
-12.
-13.
-14.
-15.
-16.
-17.
-18.
-19.
-20.
+1. To exploit any type of buffer overflow the attacker needs to identify a buffer overflow vulnerability in some program that can be triggered using externally sourced data under the attackers control.
+** True
+2. The ---------- used a buffer overflow exploit in “fingerd” as one of its attack mechanisms
+** Morris Internet Worm
+3. --------- is a form of overflow attack.
+** All the above
+4. ----------  can prevent buffer overflow attacks, typically of global data, which attempt to overwrite adjacent regions in the processes address space, such as the global offset table
+** Guard pages
+5. Traditionally the function of ---------- was to transfer control to a user command-line interpreter, which gave access to any program available on the system with the privileges of the attacked program.
+** shellcode
+6. The function of -------- was to transfer control to a user command-line interpreter, which gave access to any program available on the system with the privileges of the attacked program
+** shellcode
+7. A stack buffer overflow is also referred to as -----------
+** stack smashing
+8. A consequence of a buffer overflow error is ----------
+** all the above
+9. The buffer overflow type of attack has been known since it was first widely used by the ---------- Worm in 1988
+** Morris Internet
+10. ---------- aim to prevent or detect buffer overflows by instrumenting programs when they are compiled
+** Compile-time defenses
+11. An attacker is more interested in transferring control to a location and code of the attacker’s choosing rather than immediately crashing the program
+** True
+12. In 2003 the --------- exploited a buffer overflow in Microsoft SQL Server 2000
+** Slammer worm
+13. The potential for a buffer overflow exists anywhere that data is copied or merged into a buffer, where at least some of the data are read from outside the program.
+** True
+14. The buffer is located ---------- .
+** all the above
+15. A buffer overflow in MicroSoft Windows 2000/XP Local Security Authority Subsystem Service was exploited by the ---------
+** Sasser worm
+16. Even though it is a high-level programming language, Java still suffers from buffer overflows because it permits more data to be saved into a    buffer than it has space for
+** 	False
+17. A buffer --------- is a condition at an interface under which more input can be placed into a buffer or data holding area than the capacity allocated, overwriting other information.
+** overflow (overwrite or all of the above)
+18. --------- is a tool used to automatically identify potentially vulnerable programs
+** Fuzzing
+19. The Packet Storm Web site includes a large collection of packaged shellcode, including code that can:
+** all the above

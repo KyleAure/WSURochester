@@ -1,24 +1,42 @@
-== Quiz 11 Solutions
+=== Quiz 11 Solutions
 
-Score:
+Score: 19/19
 
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
-11.
-12.
-13.
-14.
-15.
-16.
-17.
-18.
-19.
-20.
+1. A stead reduction in memory available on the heap to the point where it is completely exhausted is known as a --------.
+** memory leak
+2. “Improper Access Control (Authorization)” is in the --------- software error category
+** Porous Defenses
+3. Many computer security vulnerabilities result from poor programming practices
+** True
+4. A ------- attack is where the input includes code that is then executed by the attacked system
+** code injection
+5. Incorrect Calculation of Buffer Size” is in the ---------- software error category
+** Risky Resource Management
+6. Injection attacks variants can occur whenever one program invokes the services of another program, service, or function and passes to it externally sourced, potentially untrusted information without sufficient inspection and validation of it.
+** True
+7. ---------- attacks are vulnerabilities involving the inclusion of script code in the HTML content of a Web page displayed by a user’s browser.
+** XSS reflection
+8. Defensive programming is sometimes referred to as ---------.
+** Cross-site scripting
+9. Cross-site scripting attacks attempt to bypass the browser’s security checks to gain elevated access privileges to sensitive data belonging to another site.
+** Secure Programming
+10. --------- is a program flaw that occurs when program input data can accidentally or deliberately influence the flow of execution of the program.
+** True
+11. A --------- attack occurs when the input is used in the construction of a command that is subsequently executed by the system with the privileges of the Web server.
+** Injection attack
+12. A -------- is a pattern composed of a sequence of characters that describe allowable input variants
+** command injection
+13. The most common technique for using an appropriate synchronization mechanism to serialize the accesses to prevent errors is to acquire a ------- on the shared file, ensuring that each process has appropriate access in turn.
+** regular expression
+14. Blocking assignment of form field values to global variables is one of the defenses available to prevent a ---------- attack
+** lock
+15. To counter XSS attacks a defensive programmer needs to explicitly identify any assumptions as to the form of input and to verify that any input data conform to those assumptions before any use of the data
+** PHP remote code injection
+16. Incorrect handling of program ------- is one of the most common failings in software security.
+** 	False
+17. --------- are a collection of string values inherited by each process from its parent     that can affect the way a running process behaves
+** input
+18. The intent of -------- is to determine whether the program or function correctly handles all abnormal inputs or whether it crashes or otherwise fails to respond appropriately.
+** Environment variables
+19. The intent of -------- is to determine whether the program or function correctly handles all abnormal inputs or whether it crashes or otherwise fails to respond appropriately.
+** fuzzing

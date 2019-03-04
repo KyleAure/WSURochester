@@ -4,6 +4,8 @@
 50 questions
 Questions are from the chapter quizzes on D2L
 
+include::../Quizzes/README.adoc[]
+
 == Short Answer
 1. Describe and differentiate the difference between asymmetric and symmetric encryption.
 ** In *symmetric encryption*, the same key is used to encrypt and decrypt a message. This requires a string encryption algorithm.  The sender and receiver must have obtained a copy of the secret key in a secure fashion.
