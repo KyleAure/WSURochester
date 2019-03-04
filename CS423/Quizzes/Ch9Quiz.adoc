@@ -1,0 +1,42 @@
+== Quiz 9 Solutions
+
+Score: 19/19
+
+1. --------- control determines the types of Internet services that can be accessed, inbound or outbound.
+** Service
+2. --------- control controls how particular services are used.
+** Behavior
+3. --------- control determines the direction in which particular service requests may be initiated and allowed to flow through the firewall.
+** Direction
+4. -------- control controls access to a service according to which user is attempting to access it.
+** User
+5. The --------- defines the transport protocol.
+** IP protocol field
+6. A ---------- gateway sets up two TCP connections, one between itself and a TCP user on an inner host and one between itself and a TCP user on an outside host
+** circuit-level
+7. An example of a circuit-level gateway implementation is the ---------- package
+** SOCKS
+8. Typically the systems in the --------- require or foster external connectivity such as a corporate Web site, an e-mail server, or a DNS server.
+** DMZ
+9. A --------- consists of a set of computers that interconnect by means of a relatively unsecure network and makes use of encryption and special protocols to provide security
+** VPN
+10. A --------- configuration involves stand-alone firewall devices plus host-based firewalls working together under a central administrative control.
+** distributed firewall
+11. Typical for SOHO applications, a ---------- is a single router between internal and external networks with stateless or full packet filtering
+** screening router
+12. ---------- are attacks that attempt to give ordinary users root access
+** Privilege-escalation exploits
+13. ---------- scans for attack signatures in the context of a traffic stream rather than individual packets
+** Stateful matching
+14. ---------- looks for deviation from standards set forth in RFCs.
+** Protocol anomaly
+15. The --------- attack is designed to circumvent filtering rules that depend on TCP header information.
+** tiny fragment
+16. The firewall may be a single computer system or a set of two or more systems that cooperate to perform the firewall function
+** True
+17. A prime disadvantage of an application-level gateway is the additional processing overhead on each connection
+** True
+18. An important aspect of a distributed firewall configuration is security monitoring
+** True
+19. The primary role of the personal firewall is to deny unauthorized remote access to the computer
+** True
