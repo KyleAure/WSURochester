@@ -1,0 +1,42 @@
+=== Quiz 12 Solutions
+
+Score: 18/19
+
+1. The first step in deploying new systems is ---------.
+** planning
+2. Which of the following need to be taken into consideration during the system security planning process?
+** all of the above
+3. The first critical step in securing a system is to secure the ----------.
+** base operating system
+4. The following steps should be used to secure an operating system
+** all of the above
+5. ----------  applications is a control that limits the programs that can execute on the system to just those in an explicit list
+** White listing
+6. Cryptographic file systems are another use of -------.
+** encryption
+7. Once the system is appropriately built, secured, and deployed, the process of maintaining security is --------.
+** continuous
+8. The range of logging data acquired should be determined -------.
+** during the system planning stage
+9. The ------ process makes copies of data at regular intervals for recovery of lost or corrupted data over short time periods.
+** backup
+10. The ------ process retains copies of data over extended periods of time in order to meet legal and operational requirements
+** archive
+11. The needs and policy relating to backup and archive should be determined ------.
+** during the system planning stage
+12. ------ are resources that should be used as part of the system security planning process.
+** All of the above
+13. ------ systems should not run automatic updates because they may possibly introduce instability
+** Change controlled
+14. The most important changes needed to improve system security are to ------.
+** all of the above
+15. Security concerns that result from the use of virtualized systems include ------.
+** all of the above
+16. Each layer of code needs appropriate hardening measures in place to provide appropriate security services
+** True
+17. The default configuration for many operating systems usually maximizes security
+** False
+18. A very common configuration fault seen with Web and file transfer servers is for all the files supplied by the service to be owned by the same “user” account that the server executes as.
+** True
+19. Performing regular backups of data on a system is a critical control that assists with maintaining the integrity of the system and user
+** True

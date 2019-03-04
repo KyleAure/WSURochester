@@ -1,0 +1,42 @@
+=== Quiz 8 Solutions
+
+Score: 19/19
+
+1. The -------- is responsible for determining if an intrusion has occurred
+** analyzer
+2. --------- are either individuals or members of a larger group of outsider attackers who are motivated by social or political causes.
+** Activists
+3. Intrusion detection is based on the assumption that the behavior of the intruder differs from that of a legitimate user in ways that can be quantified
+** True
+4. A --------- monitors the characteristics of a single host and the events occurring     within that host for suspicious activity.
+** host-based IDS
+5. A (n) ---------- is a hacker with minimal technical skill who primarily uses existing attack toolkits.
+** Apprentice
+6. The ------- is the ID component that analyzes the data collected by the sensor for signs of unauthorized or undesired activity or for events that might be of interest to the security administrator.
+** analyzer
+7. Signature-based approaches attempt to define normal, or expected, behavior, whereas anomaly approaches attempt to define proper behavior.
+** False
+8. To be of practical use an IDS should detect a substantial percentage of intrusions while keeping the false alarm rate at an acceptable level
+** True
+9. The rule ------- tells Snort what to do when it finds a packet that matches the rule criteria.
+** action
+10. A -------- monitors network traffic for particular network segments or devices and analyzes network, transport, and application protocols to identify suspicious activity
+** network-based IDS
+11. The purpose of the -------- module is to collect data on security related events on the host and transmit these to the central manager.
+** host agent
+12. A --------- is a security event that constitutes a security incident in which an intruder gains access to a system without having authorization to do so.
+** security intrusion
+13. The --------- module analyzes LAN traffic and reports the results to the central manager.
+** LAN monitor agent
+14. --------- involves the collection of data relating to the behavior of legitimate users over a period of time
+** Anomaly detection
+15. A(n) -------- is inserted into a network segment so that the traffic that it is monitoring must pass through the sensor
+** inline sensor
+16. A(n) -------- event is an alert that is generated when the gossip traffic enables a platform to conclude that an attack is under way.
+** DDI
+17. --------- is a document that describes the application level protocol for exchanging data between intrusion detection entities.
+** RFC 4767
+18. ---------- involves an attempt to define a set of rules or attack patterns that can be used to decide if a given behavior is that of an intruder
+** Signature detection
+19. Activists are either individuals or members of an organized crime group with a goal of financial reward.
+** False
