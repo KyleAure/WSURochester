@@ -1,0 +1,30 @@
+= Chapter 4 Questions
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-03-06
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS405
+
+== Course Details
+* **Course** - CS405
+* **Instructor** - Dr. Dennis Martin
+
+== Problem Set
+[start=2]
+2. What are two differences between user-level threads and kernel-level threads? Under what circumstances is one type better than the other?
+** User-level thread: all threads are managed by the user. Better than kernel when there are many context switches, as this can be done quicker in the user space.
+** Kernel-level thread: all threads are managed by the kernel. Better than user when threads are likely to block each other, and can run threads on separate processors.
+3. Describe the actions taken by a thread library to context switch between user-level threads.
+** asdf
+4. What resources are used when a thread is created? How do they differ from those used when a process is created?
+** asdf
+[start=8]
+8. Which of the following components of program state are shared across threads in a multithreaded process?
+a. Register values
+** asdf
+b. Heap memory
+** asdf
+c. Global variables
+** asdf
+d. Stack memory
+** asdf
