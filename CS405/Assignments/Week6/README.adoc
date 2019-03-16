@@ -1,6 +1,6 @@
 = Chapter 4 Questions
 Kyle Aure <KAure09@winona.edu>
-v1.0, 2019-03-06
+v1.0, 2019-03-16
 :RepoURL: https://github.com/KyleAure/WSURochester
 :AuthorURL: https://github.com/KyleAure
 :DirURL: {RepoURL}/CS405
@@ -12,19 +12,20 @@ v1.0, 2019-03-06
 == Problem Set
 [start=2]
 2. What are two differences between user-level threads and kernel-level threads? Under what circumstances is one type better than the other?
-** User-level thread: all threads are managed by the user. Better than kernel when there are many context switches, as this can be done quicker in the user space.
-** Kernel-level thread: all threads are managed by the kernel. Better than user when threads are likely to block each other, and can run threads on separate processors.
+** User-level thread: all threads are managed by the user and are unknown to the kernel. Better than kernel-level when there are many context switches, as this can be done quicker in the user space.
+** Kernel-level thread: all threads are managed by the kernel. Better than user-level when threads are likely to block each other, and can run threads on separate processors.
 3. Describe the actions taken by a thread library to context switch between user-level threads.
-** asdf
+** Context switching between user-level threads is similar to switching between kernel-level threads.
+** When using a thread library, a local function call is invoked in the user space to switch threads.
+** This local function call will result in a contact switch where a user thread's LWP is replaced with
+another thread. This act typically involves saving and restoring the state of the registers.
 4. What resources are used when a thread is created? How do they differ from those used when a process is created?
-** asdf
+** Threads are typically smaller than a process, therefore thread creation will use fewer resources than process creation.
+** Creation of a process requires allocating a process control block (PCB), which is a large amount of data. The PCB includes a memory map, list of files, and environment variables.
+** Creating a user-level or kernel-level thread involves allocating a small data sturcture to hold a register set, stack, and priority.
 [start=8]
 8. Which of the following components of program state are shared across threads in a multithreaded process?
-a. Register values
-** asdf
-b. Heap memory
-** asdf
-c. Global variables
-** asdf
-d. Stack memory
-** asdf
+a. Register values: private
+b. **Heap memory:** shared
+c. **Global variables:** shared
+d. Stack memory: private
