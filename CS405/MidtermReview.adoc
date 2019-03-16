@@ -1,0 +1,93 @@
+= Midterm Review
+
+- History
+	-- Resident monitor
+	-- Types of operating systems
+- I/O-bound CPU-bound
+- Multiprogramming
+- Multiprocessors
+	-- Tightly coupled: Often there is a dependency. Super computers
+	-- Loosely coupled: All processors opperate the same way.
+- Synchronous / Asynchronous: Synchronous opperations need to wait unitl something is done or complete for it to proceed (I/O), asynchronous operations do not need to wait for one another.
+- Programmed I/O: Synchronous handeling of I/O where the CPU waits for I/O to complete.
+- Interrupts and interrupt handling: Interrupts are indentified by a number. There is an interrupt vector in memory that tells the CPU the LOCATION of code where instructions are stored to handle that specfic interrupt.
+- Interrupt-driven I/O: Asynchronous handelign of I/O where the CPU requests I/O, goes off an does other tasks, and then I/O interrupts the CPU later.
+- System calls, exceptions, traps:
+	-- System Calls: Software level interrupts.  User level requests kernel to do I/O.
+	-- Exceptions: Software generated signel to program or OS that something significat has happened.
+- DMA: Direct Memory Access - CPU does not need to read/write to memory a DMA controller can do it instead so I/O does not need to bother the CPU for memory access.
+- Messages and message driven systems: An alternative to interrupts for communication. Not as quick, but can handle more data.
+- Hardware protection of systems
+	-- I/O: Dual mode operation: There are user and kernel level instructions. I/O instructions can only be done by kernel level.  So user makes system call to kernal to do I/O and the kernal determines if the instruction is appropriate.
+	-- Memory: Base/limit registers: Stores the address of the base and limit for the memory space that the user level instruction has access too.
+	-- CPU: Timer: Amount of time a process is allowed to use the processor before timeout.
+- Processes and threads
+	-- Similarities and differences:
+	-- When to use
+	-- User-level and kernel-level threads
+	-- Thread mapping: 1:1, 1:N, N:N
+	-- *Interprocess communication*: Messages, message queue, blocking sends, non-blocking recieves.
+	-- Sockets
+	-- Remote Proccedure Calls (RPCs), Remote Method Invocations (RMIs), Marshalling, etc.: Process on SysA wants a Process on SysB to do work for it.  SysB will give SysA a port.  SysA will send request to port, to invoke a Method/Proccedure. Parameters are Marshalled into a format known by SysB.
+- CPU scheduling:
+	-- CPU - I/O burst cycle
+	-- Scheduling algorithm criteria
+	-- Scheduling (and other) queues
+	-- Schedulers, dispatcher, PCBs, etc.
+	-- Context switches
+	-- Process states
+	-- Process (and thread) creation / termination
+- *Scheduling algorithms*
+	-- Optimal
+	-- FCFS
+	-- SJF
+	-- SRTF
+	-- Priority
+	-- RR
+	-- MLQ
+	-- MLFQ
+- Scheduling terminology / criteria / evaluation
+	-- Preemptive / non-preemp0tive
+	-- Average Wait Time, Average Turnaround Time, Gantt charts
+	-- Time quantum
+	-- Time quantum, context switch
+- What is concurrency and why is it important?
+	-- Atomicity
+	-- Starvation / deadlock
+- Producer / consumer problem
+	-- Parallelism
+	-- Bounded / unbounded buffers
+	-- Various solutions
+	-- Why there are concurrency problems
+- Critical section problem
+	-- Various parts: Entry, CS, Exit
+		--- Critical Section:
+	-- Requirements for solutions
+		--- Mutual exclusion
+		--- Progress
+		--- Bounded wait
+	-- Flaws with attempted solutions: Mutual Exclusion or Starvation
+	-- Bakery Algorithm
+- Semaphores
+	-- Mutexes
+	-- Binary / Counting
+	-- Busy waits / spinlocks
+	-- Test-and-Set / Swap
+	-- signal() and wait()
+- Classical concurrency problems
+	-- Readers - Writers Problem
+		--- 1st / 2nd : solutions / problems
+	-- Dining Philosophers Problem
+- Critical regions
+- Monitors: Object that encapsolates the shared data and hides the synchronization from the person that implements it.
+
+Code: difference between what happens in a mutex with a wait and semaphore
+Code: Producer Consumer problem solutions vs Critical Section problem
+
+What is the test going to be like?
+Short answer questions: Explain bakery algo
+	what are solution to CS problem
+Bonus questions: never count against you but can only help you.
+	There are 8 questions you only need to answer 6.
+	Possible to get more than 100 on test.
+	Number of questions: 8 pages (Hour and a half)

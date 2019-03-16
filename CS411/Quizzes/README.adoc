@@ -15,3 +15,9 @@ include::Wk2Quiz.adoc[]
 include::Wk3Quiz.adoc[]
 
 include::Wk4Quiz.adoc[]
+
+include::Wk5Quiz.adoc[]
+
+include::Wk6Quiz.adoc[]
+
+include::Wk7Quiz.adoc[]
