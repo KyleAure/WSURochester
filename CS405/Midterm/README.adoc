@@ -1,0 +1,244 @@
+= Midterm Review
+
+== Midterm Structure
+* Coding questions:
+	** Difference between what happens in a <<bookmark-a, mutex with a wait and semaphore>>
+	** <<Producer / Consumer problem, Producer-Consumer problem solutions>> vs <<Critical Section problem, Critical-Section problem solutions>>
+* Short answer questions:
+	** Explain <<bookmark-b,bakery algorithm>>
+	** What are the solutions to the <<Critical Section problem, critical-section problem>>
+* Bonus questions: (never count against you but can only help you)
+	** There are 8 questions you only need to answer 6.
+	** Possible to get more than 100 on test.
+	** Number of questions: 8 pages (Hour and a half)
+
+== Midterm Review Material
+
+=== Vocabulary and Key Concepts
+* History
+	** *Resident monitor:* Introduced in 1953 at IBM. Earliest appearance of what would become an Operating System. Monitor decided what to do next which resulted in continuous operation and more automation.
+* Types of Operating Systems
+	** Mainframe or minicomputer systems - Apache, Windows Server, etc.
+	** Workstations connected to servers - Linux, MacOS, Windows
+	** Mobile computers - iOS, Android
+* *Multiprogramming*
+	** Goal is to keep CPU as busy as possible and increase throughput.
+	** Process: Job runs on CPU until it has to wait (usually I/O), CPU runs another job until that job needs to wait, CPU returns to previous job it if it ready to run again.
+	** Requires: Memory management, CPU scheduling, and Resource Allocation.
+* I/O-bound
+	** *I/O bound operations* are those that spend more time doing I/O than computations.
+	** This results in many, short CPU bursts.
+* CPU-bound
+	** *CPU-bound operations* are those that spend more time doing computations.
+	** This results in few very, long CPU bursts
+* Multiprocessors
+	** A *Multiprocessor* is a system that has more than one central processor.
+	** *Tightly coupled:* Often there is a dependency (master-slave relationship). The main processor tells the other processors what to do.  Common in super computers
+	** *Loosely coupled:* All processors operate in the same way as peers.  This offers redudency as any processor can run any process.  Common in servers.
+* Synchronous/Asynchronous
+	** *Synchronous operations* need to wait until something is done or complete for it to proceed.  Waiting in Synchronous operations is typically a result of I/O.
+	** *Asynchronous operations* do not need to wait for other operations to finish.
+* *Programmed I/O (PIO)*
+	** Synchronous handling of I/O where the CPU waits for I/O to complete.
+	** This is a wasteful use of CPU time.
+* *Direct Memory Access (DMA)*
+	** CPU does not need to be involved in read/write actions to memory.
+	** Instead a DMA controller can do it instead so I/O does not need to bother the CPU for memory access.
+	** This is an alternative to Programmed I/O.
+* Interrupts and interrupt handling:
+	** *Interrupts* in an interrupt driven operating system are identified by a number.
+	** There is an interrupt vector in memory that tells the CPU the _LOCATION_ of code where *interrupt handling* instructions are stored to handle that specific interrupt.
+	** Once interrupt handling is completed, CPU returns to the line of code after the interrupt.
+* *Interrupt-driven I/O*
+	** Asynchronous handling of I/O
+	** Process: CPU requests I/O, goes off an does other tasks, and then I/O interrupts the CPU later.
+* System calls, exceptions, traps:
+    ** A *trap* (or an *exception*) is a software-generated interrupt caused either by an error (for example, division by zero or invalid memory access) or by a specific request from a user program that an operating-system service be performed.
+	** *System calls* provide the means for a user program to ask the operating system to perform tasks reserved for the operating system on the user program’s behalf. Invoked via traps, exceptions, and interrupts.
+* Messages
+	** *Messages:* An alternative to interrupts for communication.
+	** *Message Driven Systems:* Not as quick as interrupt driven systems. They can, however, handle more data.
+* Monitors
+	** *Monitors:* are objects that encapsulates the shared data and hides the synchronization from the person that implements it.
+
+=== Hardware and Protections
+* *Dual mode operation:* protects I/O
+	** There are user and kernel level instructions.
+	** I/O instructions can only be done by kernel level.
+	** So users need to make a system call to kernel to do I/O, and the kernel determines if the instruction is appropriate.
+* *Base/limit registers:* protects Memory
+	**  Stores the address of the base and limit for the memory space that the user level instruction has access too.
+	**  Every access to memory includes a check of these registers.
+	**  If requested access is outside the range, then access is prohibited.
+* *Timer:* protects CPU
+	** Amount of time a process is allowed to use the processor before timeout.
+	** Ensures that busy waits, or deadlocked operations do not eat up CPU time.
+
+=== Processes vs Threads
+* *Process:* A process is the unit of work in a system. Such a system consists of a collection of concurrently executing processes, some of which are operating-system processes (those that execute system code) and the rest of which are user processes (those that execute user code).
+* *Thread:* The process model implies that a process is a program that performs a single thread of execution. Most modern operating systems have extended the process concept to allow a process to have multiple threads of execution and thus to perform more than one task at a time.
+* Similarities and differences:
+	** Both describe a unit of work.
+	** Processes do not share resources with other processes.
+	** Threads do share resources with other threads _WITHIN_ the same process.
+	** A thread is a light weight process that is the only comparison. Otherwise you cannot compare both.
+	** A program is made of 1-to-many interconnected systems, each system is 1-to-many processes, each process is 1-to-many threads of execution. This is the simple hierarchy.
+* When to use
+	** Asynchronous operations
+	** Operations that can be parallelized
+	** Continual running background operations
+	** Threads should not be used when operations are being done on a limited resource. This will increase contention for that resource, and lead to threads waiting and colliding.
+* User vs Kernel
+	** Book Description: Support for threads may be provided either at the user level, for user threads, or by the kernel, for kernel threads.
+	** *User threads* are supported above the kernel and are managed without kernel support.  Management of User Threads is typically done by a thread library.
+	** *Kernel threads* are supported and managed directly by the operating system.
+* Thread mapping:
+	** Ultimately, a relationship must exist between user threads and kernel threads.
+	** *Many-to-One (N:1):* Maps many user-level threads to one kernel thread.
+		*** Thread management is done by the thread library in user space, so it is efficient.
+		*** However, the entire process will block if a thread makes a blocking system call.
+		*** Also, because only one thread can access the kernel at a time, multiple threads are unable to run in parallel on multi-core systems.
+	** *One-to-One (1:1):* Maps a single user-level thread to one kernel thread.
+		*** It provides more concurrency than the many-to-one model by allowing another thread to run when a thread makes a blocking system call.
+		*** It also allows multiple threads to run in parallel on multiprocessors.
+		*** The only drawback to this model is that creating a user thread requires creating the corresponding kernel thread.
+	** *Many-to-Many (N:N):* Multiplexes many user-level threads to a smaller or equal number of kernel threads.
+		*** The number of kernel threads may be specific to either a particular application or a particular machine
+		*** An application may be allocated more kernel threads on a multiprocessor than on a single processor.
+
+=== Interprocess Communication
+* Messages
+	** Two or more processes share a region of memory where a *message queue* is stored.
+	** Each process can read and write *messages* to the message queue.
+	** This is how information is passed between processes.
+	** This communications style is the bases for the Producer-Consumer problem.
+* Sending messages
+	** *Blocking send:* Synchronous: The sending process is blocked until the message is received by the receiving process or by the mailbox.
+	** *Non-blocking send:* Asynchronous: The sending process sends the message and resumes operation.
+	** *Blocking receive:* Synchronous: The receiver blocks until a message is available.
+	** *Non-blocking receive:* Asynchronous:  The receiver retrieves either a valid message or a null.
+* Sockets
+	** A *socket* is defined as an endpoint for communication.
+	** A pair of processes communicating over a network employs a pair of sockets—one for each process.
+	** A socket is identified by an IP address concatenated with a port number.
+	** In general, sockets use a client–server architecture.
+	** The server waits for incoming client requests by listening to a specified port.
+	** Once a request is received, the server accepts a connection from the client socket to complete the connection
+* Remote Communication
+	** Remote Procedure Calls (RPCs), Remote Method Invocations (RMIs), Marshalling, etc.
+	** Process on SysA wants a Process on SysB to do work for it.
+	** SysB will give SysA a port.
+	** SysA will send request to port, to invoke a Method/Procedure.
+	** Parameters are Marshalled into a format known by SysB.
+
+=== CPU scheduling
+* CPU - I/O burst cycle
+	** Process execution begins with a CPU burst.
+	** That is followed by an I/O burst, which is followed by another CPU burst, then anotherI/O burst, and so on.
+	** Eventually, the final CPU burst ends with a system request to terminate execution.
+* Scheduling algorithm criteria
+	** *CPU Utilization* - UpTime / TotalTime
+	** *Throughput* - # of jobs completed
+	** *Turnaround Time* - Time To Complete Job
+	** *Waiting Time* - Time Waiting In Ready Queue
+	** *Response Time* - Time Until Processor Responds
+	** *Fairness* - AVG(# TimesOverlooked)
+* Scheduling queues
+	** *JobQueue* - Queue of all jobs from job pool
+	** *ReadyQueue* - Queue of jobs ready for CPU
+	** *DeviceQueue* - Queue of jobs ready for I/O
+	** *I/OQueue* - Jobs done with I/O waiting to get back in ready queue
+* Schedulers, dispatcher, PCBs, etc.
+	** *Long-Term Scheduler:* Job Queue to Ready Queue
+	** *Short-Term Scheduler:* Ready Queue to CPU
+	** *Medium-TermScheduler:* Partially executed processes to Ready Queue
+	** *ProcessControlBlock:* Keeps track of process data
+* Context switches
+	** Switching jobs in and out of CPU.
+* Process states
+	** Switches from *running* to *waiting* state (e.g., for I/O).
+	** Switches from *running* to *ready* state.­
+		*** Higher priority event needs attention­
+		*** Higher priority process needs to run­
+		*** Interrupted by timer
+	** Switches from *waiting* to *ready*.­  I/O completed – process wakes up
+	** *Terminates*.
+* Process (and thread) creation / termination
+* *Scheduling algorithms*
+	** Optimal - Scheduling algorithms are often used to maximize the scheduling criteria.
+	** FCFS - First Come First Serve
+	** SJF - Shortest Job First
+	** SRTF - Shortest Remaining Time First
+	** Priority - Each process is given a priority level and run based on that priority
+	** RR - Round Robin - Each process gets a specific amount time (quantum) to run on the CPU
+	** MLQ - Multi-Level Queue -  Jobs are categorized based on properties and put into separate queues before being able to run on the CPU.
+	** MLFQ - Multi-Level Feedback Queue - Similar to MLQ but processes can move between queues based on feedback.
+* Scheduling terminology
+	** *Preemptive:* A process keeps running on CPU until it goes into a waiting or terminated state.
+	** *Non-preemptive:* The CPU can be taken away from the currently running process.
+	** *Average Wait Time:* AVG(All Job's Wait Time)
+	** *Average Turnaround Time:* AVG(All Job's Turnaround Time)
+	** *Gantt charts:* Visual representation of processes running on CPU.
+	** *Time quantum:* Used in RR, amount of time a process can run on CPU.
+	** *Context switch:* Switching out one process for another on the CPU.
+
+=== Concurrency
+* What is concurrency and why is it important?
+	** *Atomicity:* Operations must be completed as a "unit."  Therefore, all of an operation must be completed, preventing data from being dirty-read part way through a write, and preventing data from being overwritten prat way through a read.
+	** *Deadlock:* When two processes are waiting for locks to be released that the other process holds.
+	** *Starvation:* When a process is put into a semaphore queue and may never get out.
+
+* Semaphores
+	** *Mutexes:* are mutually exclusive objects. They are used to mark a critical section of data that would be vulnerable to dirty-reads/writes.
+	** [[bookmark-a]]Difference between Semaphore and Mutex + Wait
+		*** *Mutex and Wait:* Before getting to the critical section a process checks if the mutex is available, if not it waits to execute until it is available, once available it locks the mutex, runs, and then signals that it is done.
+		*** *Semaphore:* Holds a queue of processes that are waiting a critical section of data to become available. Once available, the first process in the queue is allowed to run.
+	** *Binary Semaphore:* This semaphore only has 0 or 1 processes in it's queue.
+	** *Counting Semaphore:* This semaphore has more processes in it's queue and counts them.
+	** *Busy waits:* When a process is being run on the CPU, but all it is doing is waiting for a mutex to become available.
+	** *Spinlocks:* Same as a busy wait, this is when the CPU is spinning and just keeps checking to see if the lock is available.
+	** *Test-and-Set:* Testing and modifying a work atomically (in one step).
+	** *Swap:* Another atomic operation that swaps the contents of two variables.
+	** *signal()* Announces that process has released a lock.
+	** *wait()* Checks to see if lock is available, if not process waits, if it is process obtains lock and proceeds.
+* Classical concurrency problems
+	** Readers - Writers problem
+		*** Multiple reader and writer processes access shared data item
+		*** Readers have read-only access to item
+		*** Writers have read/write access to item
+		*** OK for multiple readers to access the same item at same time
+		*** When a writer has access, no other process may have access
+	** 1st / 2nd : solutions / problems
+	** Dining Philosophers Problem
+* *Critical regions:* Regions of data that are considered critical, because incorrect reading/writing this data would cause program to fail or perform incorrectly.
+
+==== Producer / Consumer problem
+* Problem Description
+	** A producer process produces data that is to be consumed by a consumer process.
+	** In order to coordinate this a *pool of buffers* is created.
+	** A producer can write a buffer, and a consumer can read from another buffer.
+	** But producers and consumers must be able to know which buffer is empty and which is full.
+* *Bounded Buffer:* Fixed number of buffers.  Producer must wait if all buffers are full.
+* *Unbounded Buffers:* Infinite number of buffers. Consumer must wait if all buffers are empty.
+* Solutions
+	** Using a cyclical bounded buffer.
+* Why there are concurrency problems
+	** Because we can never guarantee that two concurrent operations will not try to access/manipulate the same data at the same time.
+
+==== Critical Section problem
+* Various parts: Entry, CS, Exit
+	** Critical Section:
+* Requirements for solutions
+	** Mutual exclusion
+	** Progress
+	** Bounded wait
+* Flaws with attempted solutions: Mutual Exclusion or Starvation
+* [[bookmark-b]]*Bakery Algorithm*
+	** When a process wants to enter the critical section, it asks and receives a number.
+	** Holder of the smallest number is allowed to enter the critical section.
+	** Numbers are generated sequentially, but since operation is concurrent, the same number may be given to two processes.
+	** If two numbers have the same number, and that number is the smaller, the process with the smallest ProcessID is allowed to enter the critical section.
+
+
+
+
