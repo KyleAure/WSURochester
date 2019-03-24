@@ -1,0 +1,48 @@
+= Assignment 7
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-03-24
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS410
+
+.Assignment Description
+****
+Chapter 9, 10, 11 review questions.
+****
+
+== Course Details
+* **Course** - CS410
+* **Instructor** - Dr. John Eberhard
+
+== Problems
+1. Name and describe the three types of software maintenance.
+** *Fault Repairs:* This type of maintenance is used to fix bugs and vulnerabilities.
+** *Environmental Adaptation:* This type of maintenance is used to adapt the software to new platforms and environments.
+** *Functional Addition:* This type of maintenance is used to add new features and to support new requirements.
+2. Name and describe five “bad smells” that can be improved through refactoring.
+** *Duplicate code:* Where the same or similar code is found in multiple places in a program.  Solution: implement the repeating code in a single function/method.
+** *Long methods:* When one method is so big that it is hard to understand or has a scope that is too big. Solution: break method into a number of smaller methods that are more concise.
+** *Switch (case) statements:* When switch statements are used to represent the type of a value.  Solution: If using an object-oriented language you should be using polymorphism instead.
+** *Data clumping:* When the same group of data reoccurs in several places in a program. Solution: Replace data clumps with object that encapsulates all of the data.
+** *Speculative generality:* When a general class is only implemented once. Solution: get rid of the interface until it can be implemented by more than one other class.
+3. Name and describe the five principle dimensions to dependability.
+** *Availability:* is the probability of a system being able to deliver useful service to users.
+** *Reliability:* is the probability of a system to correctly deliver service as expected by a user.
+** *Safety:* is the probability that the system will cause damage to people or its environment.
+** *Security:* is the probability that the system will be able to resist accidental or deliberate intrusions.
+** *Resilience:* is the probability that the system will maintain the continuity of its critical services during disruptive events.
+4. Name and describe the three complementary approaches used to improve the reliability of a system.
+** *Fault Avoidance:* An approach to software development that focuses on minimizing the number of faults introduced into the system during the design and programming phases. Method: using strongly typed language to leverage programmatic error checking during compilation.
+** *Fault Detection and Correction:* An approach to software development that focuses on the discovery and removal of faults in a program. Method: Systematic testing, debugging, and static analysis.
+** *Fault Tolerance:* An approach to software development that focuses on managing faults or unexpected system behavior during runtime to avoid system failure. Method: Built-in runtime checking of critical systems.
+5. Name and briefly describe the three types of dependable system architectures described in Chapter 11.
+** *Protection Systems:* A system that independently monitors the environment it operates within, and takes action when a problem occurs that the normal control system is not dealing with. This typically results in the Protection system shutting down the process or equipment.
+** *Self-Monitoring:* A system that is designed to monitor its own equipment, and to take action if a problem is detected.
+** *N-Version Programming:* A system that is programmed with n-number of software versions all used to provide redundancy, in the case that one version fails.
+6. Name and briefly describe two of the many guidelines for dependable programming.  For each guideline, describe how to plan to use that guideline while developing your team project.
+** *_Guideline 2:_ Check all inputs for validity:*
+	*** Description: For every input into your program, checking to make sure that expected inputs produce expected results, and unexpected/malicious inputs are handled to prevent system derogation.
+	*** Usage: For our team project we have already started doing unit testing. As a part of our unit tests we can make sure that we are testing both for our expected inputs, but also for unexpected inputs.
+** *_Guideline 8:_ Name all constants that represent real-world values:*
+	*** Description: For any value that represents a real-world object a constant should be used.  For example, real-world constant such as PI, or real-world slowly changing variables such as Tax Rates.
+	*** Usage: For our team project we have not yet looked at our variables to determine if they could be made constant. We will need to review our data, determine the rate of change of any variables, and determine if making them constant would made sense for readability and dependability.
