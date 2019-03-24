@@ -1,6 +1,6 @@
-= Quiz Bank
+= Final Quiz Bank
 Kyle Aure <KAure09@winona.edu>
-v1.0, 2019-01-16
+v1.0, 2019-03-24
 :RepoURL: https://github.com/KyleAure/WSURochester
 :AuthorURL: https://github.com/KyleAure
 :DirURL: {RepoURL}/CS411
@@ -10,14 +10,16 @@ v1.0, 2019-01-16
 Bank of all quizzes, answers, and outcomes for CS411 - Software Quality.
 ****
 
-include::Wk2Quiz.adoc[]
+include::Wk10Quiz.adoc[]
 
-include::Wk3Quiz.adoc[]
+include::Wk11Quiz.adoc[]
 
-include::Wk4Quiz.adoc[]
+include::Wk12Quiz.adoc[]
 
-include::Wk5Quiz.adoc[]
+include::Wk13Quiz.adoc[]
 
-include::Wk6Quiz.adoc[]
+include::Wk14Quiz.adoc[]
 
-include::Wk7Quiz.adoc[]
+include::Wk15Quiz.adoc[]
+
+include::Wk16Quiz.adoc[]

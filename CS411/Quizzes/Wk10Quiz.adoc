@@ -1,0 +1,26 @@
+== Week 10 Quiz
+Software Quality Assurance Chapters
+
+Score: 9/10
+
+1. McCall's Product Revision Factors include all the following except:
+** Usability
+2. Which of the following are interface types that may be needed in a software package:
+** All of the above
+3. Contract review components include the evaluation of staff capacity to carry out the proposed project.  What document is best used for this evaluation
+** Master Contract
+4. It is necessary to quality check work that was done by subcontractors / outside entities prior to incorporating it into a project
+** True
+5. Which are included in the main components of a software system?
+** A & B
+6. McCall's Product Transition Factors include all the following except:
+** Flexibility
+7. What is the accepted standard for project processes:
+** all of the above
+8. A software fault is:
+**  a disruption in the use of the software , caused by a software fault. A software.
+9. Which of the following is not a problem of faulty requirements definition:
+** misunderstanding the requirements change request during development
+10. The software project team is responsible for staying in touch with the customer to ensure that changes are recorded and implemented
+** True
+
