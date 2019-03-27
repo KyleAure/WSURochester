@@ -1,11 +1,12 @@
 package edu.winona.cs.CS410;
 
 import static org.junit.Assert.assertEquals;
+
 import org.junit.jupiter.api.Test;
 
 class SumTest {
-	Sum s = new Sum();
-	PossiblyThrow thrower = new PossiblyThrow();
+	private static Sum s = new Sum();
+	private static PossiblyThrow thrower = new PossiblyThrow();
 	
 	//Expected Behavior
 	@Test
@@ -55,6 +56,7 @@ class SumTest {
 	}
 	
 	//Null pointer exception handling;
+	@Test
 	void nullPtr() {
 		int[] input = null;
 		int result = s.sum(input, thrower);
