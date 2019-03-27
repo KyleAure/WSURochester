@@ -2,37 +2,40 @@ package edu.winona.cs.queue;
 
 import java.util.List;
 
-import edu.winona.cs.clock.ClockListener;
 import edu.winona.cs.log.Log;
 import edu.winona.cs.log.Log.LogLevel;
-import edu.winona.cs.main.App;
 import edu.winona.cs.pcb.ProcessControlBlock;
 
-public class CPU implements Queue, ClockListener {
+public class CPU implements Queue {
 	private static final Log LOG = new Log(CPU.class.getName());
-	private static ProcessControlBlock job = null; //Currently running job
-	private static int count = 0; //Count of jobs in cpu 0 or 1
-	private static boolean done = false; //Job is free to be taken out of CPU
-	private static int timeInCPU = 0; //Time running on CPU to be checked with Quantum
+	private ProcessControlBlock job; 
+	private boolean haveJob; 
+	private boolean done; 
+	
+	public CPU() {
+		// Initial State: No job in CPU.
+		job = null;
+		haveJob = false;
+		done = false;
+	}
 
 	@Override
 	public void addJob(ProcessControlBlock pcb) {
-		if(count == 0) {
+		if(!haveJob) {
 			job = pcb;
+			haveJob = true;
 			done = false;
-			timeInCPU = 0;
-			count++;
 		} else {
-			LOG.log(LogLevel.SEVERE, "CPU cannot add a job is removed.");
+			LOG.log(LogLevel.SEVERE, "CPU already has a job.");
 		}
 	}
 
 	@Override
 	public ProcessControlBlock removeJob() {
-		if(count == 1) {
+		if(done) {
 			ProcessControlBlock temp = job;
 			job = null;
-			count--;
+			haveJob = false;
 			return temp;
 		} else {
 			LOG.log(LogLevel.SEVERE, "CPU does not have a job that can be removed.");
@@ -42,41 +45,50 @@ public class CPU implements Queue, ClockListener {
 
 	@Override
 	public boolean isFull() {
-		return count == 1;
+		return haveJob;
 	}
 
 	@Override
 	public int count() {
-		return count;
-	}
-
-	@Override
-	public void timeHasChanged() {
-		if(count == 1) {
-			//1. Decrement CPU burst for job in CPU
-			List<Integer> tempList = job.getCpuBursts();
-			Integer tempCount = tempList.get(job.getCpuIndex());
-			tempCount--;
-			timeInCPU++;
-			tempList.set(job.getCpuIndex(), tempCount);
-			
-			switch(App.getMode()) {
-				case SJF:
-					//Job keeps CPU until done.
-					if(tempCount == 0)
-						done = true;
-					break;
-				case RR:
-					//Job keeps CPU until timeQuantum is reached or job is done.
-					if(timeInCPU == App.getQuantum() || tempCount == 0) 
-						done = true;
-					break;
-			}//end switch
-		}
+		return haveJob ? 1 : 0;
 	}
 	
+	/**
+	 * When executing round robin mark a job done by using this method.
+	 */
+	public void setJobDone() {
+		done = true;
+	}
+
+	/**
+	 * When executing SJF job stays in CPU until completed.
+	 * Check if it is done by using this method.
+	 * @return boolean - job status.
+	 */
 	public boolean isJobDone() {
 		return done;
+	}
+	
+	public void notifyTime() {
+		if(!done) {
+			//Get burst time
+			List<Integer> temp = job.getCpuBursts();
+			int index = job.getCpuIndex();
+			int burst = temp.get(index);
+			//Decrement it
+			burst--;
+			//Check if job should be done
+			if(burst == 0) {
+				done = true;
+				job.setCpuIndex(index + 1);
+			}
+			//Put burst back
+			temp.set(index, burst);
+			job.setCpuBursts(temp);
+		} else {
+			LOG.log(LogLevel.SEVERE, "Job has finished but has not moved out of CPU.");
+		}
+
 	}
 	
 	@Override 
