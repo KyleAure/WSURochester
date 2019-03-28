@@ -7,11 +7,11 @@ import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
 
-public class Log {
+public class Output {
     private Logger logger;
-    private static final String LOGURL = "debug.log";
+    private static final String LOGURL = "output.log";
     
-	public Log(String className) {
+	public Output(String className) {
     	logger = Logger.getLogger(className);
     }
     

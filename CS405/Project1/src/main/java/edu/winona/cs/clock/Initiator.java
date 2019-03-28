@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.winona.cs.log.Log;
-import edu.winona.cs.log.Log.LogLevel;
+import edu.winona.cs.log.LogLevel;
 
 /**
  * An initiator is someone who wants to make the clock tick.

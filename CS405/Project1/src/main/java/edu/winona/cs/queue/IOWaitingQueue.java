@@ -3,7 +3,7 @@ package edu.winona.cs.queue;
 import java.util.LinkedList;
 
 import edu.winona.cs.log.Log;
-import edu.winona.cs.log.Log.LogLevel;
+import edu.winona.cs.log.LogLevel;
 import edu.winona.cs.pcb.ProcessControlBlock;
 
 public class IOWaitingQueue implements Queue {
@@ -47,13 +47,7 @@ public class IOWaitingQueue implements Queue {
 
 	@Override 
 	public String toString() {
-		String result = "\n \t IO Queue:\t";
-		
-		for(int i = 0; i < ioQueue.size(); i++) {
-			result += ioQueue.get(i).getProcessID() + " ";
-		}
-		
-		return result;
+		return "\n \t IO Queue:\t" + ioQueue;
 	}
 
 }

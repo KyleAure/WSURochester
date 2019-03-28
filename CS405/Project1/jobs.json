@@ -1,14 +1,17 @@
 [
 	{"processID":"p1",
-		"cpuBursts":[1,2,5],
-		"ioBursts":[1,2,5] },
+		"cpuBursts":[4,5,3],
+		"ioBursts":[3,2] },
 	{"processID":"p2",
-		"cpuBursts":[5,2,1],
-		"ioBursts":[5,2,1]},
+		"cpuBursts":[2,4],
+		"ioBursts":[1]},
 	{"processID":"p3",
-		"cpuBursts":[3,4,7],
-		"ioBursts":[3,4,7]},
+		"cpuBursts":[3,2,2],
+		"ioBursts":[3,2]},
 	{"processID":"p4",
-		"cpuBursts":[7,4,3],
-		"ioBursts":[7,4,3]}
+		"cpuBursts":[5,2],
+		"ioBursts":[2]},
+	{"processID":"p5",
+		"cpuBursts":[4,2],
+		"ioBursts":[2]}
 ]

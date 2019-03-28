@@ -6,7 +6,8 @@ import java.util.List;
 import edu.winona.cs.clock.ClockListener;
 import edu.winona.cs.clock.Time;
 import edu.winona.cs.log.Log;
-import edu.winona.cs.log.Log.LogLevel;
+import edu.winona.cs.log.LogLevel;
+import edu.winona.cs.log.Output;
 import edu.winona.cs.pcb.ProcessControlBlock;
 import edu.winona.cs.queue.CPU;
 import edu.winona.cs.queue.DiskQueue;
@@ -16,8 +17,7 @@ import edu.winona.cs.queue.ReadyQueue;
 
 public class Scheduler implements ClockListener {
 	private static final Log LOG = new Log(Scheduler.class.getName());
-	private ScheduleModes mode;
-	private int quantum;
+	private static final Output OUTPUT = new Output("OUTPUT");
 	private List<ProcessControlBlock> completedJobs;
 	private CPU cpu;
 	private DiskQueue diskQueue;
@@ -26,9 +26,7 @@ public class Scheduler implements ClockListener {
 	private ReadyQueue readyQueue;
 	
 	public Scheduler(ScheduleModes mode, int quantum, List<ProcessControlBlock> jobPool) {
-		this.mode = mode;
-		this.quantum = quantum;
-		cpu = new CPU();
+		cpu = new CPU(mode, quantum);
 		diskQueue = new DiskQueue();
 		ioQueue = new IOWaitingQueue();
 		jobQueue = new JobQueue();
@@ -55,21 +53,21 @@ public class Scheduler implements ClockListener {
 			//If CPU is full remove the job
 			if(cpu.isFull()) {
 				fromCPU = cpu.removeJob();
-				LOG.log(LogLevel.INFO, "Scheduler removed job from CPU." + fromCPU);
+				LOG.log(LogLevel.INFO, "Scheduler removed " + fromCPU.getProcessID() + " job from CPU.");
 			}
 			
 			//STEP 1.1: First take any process from the CPU (RR)
 			if(fromCPU != null) {
 				if(cpu.isPreemptive()) {
 					readyQueue.addJob(fromCPU);
-					LOG.log(LogLevel.INFO, "Scheduler put job fromCPU in ReadyQueue");
+					LOG.log(LogLevel.INFO, "Scheduler put "+ fromCPU.getProcessID() +" in ReadyQueue");
 				} else {
 					if(fromCPU.getCpuBursts().isEmpty()) {
 						completedJobs.add(fromCPU);
-						LOG.log(LogLevel.INFO, "Scheduler put job fromCPU in Completed Jobs");
+						LOG.log(LogLevel.INFO, "Scheduler put "+ fromCPU.getProcessID() +" in Completed Jobs");
 					}else{
 						diskQueue.addJob(fromCPU);
-						LOG.log(LogLevel.INFO, "Scheduler put job fromCPU in DiskQueue");
+						LOG.log(LogLevel.INFO, "Scheduler put "+ fromCPU.getProcessID() +" in DiskQueue");
 					}	
 				}
 			}
@@ -78,13 +76,13 @@ public class Scheduler implements ClockListener {
 			while(!readyQueue.isFull() && ioQueue.count() > 0) {
 				ProcessControlBlock fromIOQueue = ioQueue.removeJob();
 				readyQueue.addJob(fromIOQueue);
-				LOG.log(LogLevel.INFO, "Scheduler put job fromIOQueue into ReadyQueue");
+				LOG.log(LogLevel.INFO, "Scheduler put "+ fromIOQueue.getProcessID() +" into ReadyQueue");
 			}
 			//STEP 1.3: Third take first process in JobQueue
 			while(!readyQueue.isFull() && jobQueue.count() > 0) {
 				ProcessControlBlock fromJobQueue = jobQueue.removeJob();
 				readyQueue.addJob(fromJobQueue);
-				LOG.log(LogLevel.INFO, "Scheduler put job fromJobQueue into ReadyQueue");
+				LOG.log(LogLevel.INFO, "Scheduler put "+ fromJobQueue.getProcessID() +" into ReadyQueue");
 			}
 		}
 		
@@ -93,41 +91,47 @@ public class Scheduler implements ClockListener {
 			//Ready queue knows which job to return
 			ProcessControlBlock fromReadyQueue = readyQueue.removeJob();
 			cpu.addJob(fromReadyQueue);
-			LOG.log(LogLevel.INFO, "Scheduler took job fromReadyQueue and put it in CPU." + fromReadyQueue);
+			LOG.log(LogLevel.INFO, "Scheduler took "+ fromReadyQueue.getProcessID() +" and put it in CPU.");
 		}
 		
 		//STEP 3: Notify CPU and Disk (decrement bursts)
+		String status1, status2;
+		
+		status1 = cpu.toString();
 		cpu.notifyTime();
-		LOG.log(LogLevel.INFO, "CPU time slice run: " + cpu.toString());
+		status2 = cpu.toString();
+		LOG.log(LogLevel.INFO, "\nCPU time slice run:\n" 
+				+ "\nBefore: "+ status1 
+				+ "\nAfter: " + status2);
 		
+		status1 = diskQueue.toString();
 		ArrayList<ProcessControlBlock> fromDiskQueue = diskQueue.notifyTime();
-		LOG.log(LogLevel.INFO, "DiskQueue time slice run: " + diskQueue.toString());
-		
-		if(mode == ScheduleModes.RR && Time.getTime()%quantum == 0) {
-			//Job in CPU has reached it's quantum.  It should be removed next click tick
-			cpu.setJobDone();
-		}
+		status2 = diskQueue.toString();
+		LOG.log(LogLevel.INFO, "\nDiskQueue time slice run:" 
+				+ "\nBefore: "+ status1 
+				+ "\nAfter: " + status2 
+				+ "\nReturned from DiskQueue:\n\t" + fromDiskQueue);
 		
 		//STEP 4: Move from Disk to IOQueue
 		if(fromDiskQueue != null && !fromDiskQueue.isEmpty()) {
 			for(ProcessControlBlock job : fromDiskQueue) {
 				ioQueue.addJob(job);
+				LOG.log(LogLevel.INFO, "Scheduler moved "+ job.getProcessID() +" to IOWaiting Queue.");
 			}
 		}
 		
 		//STEP 5: Print State
-		//if(contextSwitch) {
+		if(contextSwitch) {
 			String print = "";
-			print += "Time: " + Time.getTime();
+			print += "\nTime: " + Time.getTime();
 			print += cpu.toString();
 			print += jobQueue.toString();
 			print += readyQueue.toString();
 			print += diskQueue.toString();
 			print += ioQueue.toString();
 			print += "\n \t" + "CompletedJobs: "+ completedJobs + "\n";
-			LOG.log(LogLevel.SEVERE, print);
-			//System.out.println(print);
-		//}
+			OUTPUT.log(LogLevel.CONFIG, print);
+		}
 	}
 	
 	/**
@@ -140,7 +144,7 @@ public class Scheduler implements ClockListener {
 		 * 1. A job will be in the CPU
 		 * 2. No job will be in the CPU because there are no jobs left to run.
 		 */
-		return !cpu.isFull();
+		return cpu.isEmpty() && diskQueue.isEmpty();
 	}
 
 }

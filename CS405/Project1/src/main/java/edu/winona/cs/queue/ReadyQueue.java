@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.LinkedList;
 
 import edu.winona.cs.log.Log;
-import edu.winona.cs.log.Log.LogLevel;
+import edu.winona.cs.log.LogLevel;
 import edu.winona.cs.main.ScheduleModes;
 import edu.winona.cs.pcb.ProcessControlBlock;
 
@@ -36,8 +36,6 @@ public class ReadyQueue implements Queue {
 				int shortestTime = Integer.MAX_VALUE;
 				for(int i = 0; i < readyQueue.size(); i++) {
 					List<Integer> bursts = readyQueue.get(0).getCpuBursts();
-					LOG.log(LogLevel.SEVERE, "KJADebug State of readyqueue before error.\n" 
-							+ "readyQueue.get(0)" + readyQueue.get(0));
 					if(bursts.get(0) < shortestTime) {
 						shortestTime = bursts.get(0);
 						shortestJobIndex = i;
@@ -65,10 +63,6 @@ public class ReadyQueue implements Queue {
 	
 	@Override 
 	public String toString() {
-		String result = "\n \t Ready Queue:\t";
-		for(int i = 0; i < readyQueue.size(); i++) {
-			result += readyQueue.get(i).getProcessID() + " ";
-		}
-		return result;
+		return "\n \t Ready Queue:\t" + readyQueue;
 	}
 }

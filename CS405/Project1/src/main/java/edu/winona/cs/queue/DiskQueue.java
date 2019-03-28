@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.winona.cs.log.Log;
-import edu.winona.cs.log.Log.LogLevel;
+import edu.winona.cs.log.LogLevel;
 import edu.winona.cs.pcb.ProcessControlBlock;
 
 public class DiskQueue implements Queue {
@@ -34,6 +34,10 @@ public class DiskQueue implements Queue {
 	public boolean isFull() {
 		//This queue cannot get full. Always return false.
 		return false;
+	}
+	
+	public boolean isEmpty() {
+		return diskQueue.isEmpty();
 	}
 
 	@Override
@@ -84,12 +88,6 @@ public class DiskQueue implements Queue {
 
 	@Override 
 	public String toString() {
-		String result = "\n \t Disk Queue:\t";
-		
-		for(int i = 0; i < diskQueue.size(); i++) {
-			result += diskQueue.get(i).getProcessID() + ":" + diskQueue.get(i).getIOBursts();
-		}
-		
-		return result;
+		return "\n \t Disk Queue:\t" + diskQueue;
 	}
 }

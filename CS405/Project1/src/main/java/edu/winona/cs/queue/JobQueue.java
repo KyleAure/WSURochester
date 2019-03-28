@@ -3,7 +3,7 @@ package edu.winona.cs.queue;
 import java.util.LinkedList;
 
 import edu.winona.cs.log.Log;
-import edu.winona.cs.log.Log.LogLevel;
+import edu.winona.cs.log.LogLevel;
 import edu.winona.cs.pcb.ProcessControlBlock;
 
 /**
@@ -52,12 +52,6 @@ public class JobQueue implements Queue {
 
 	@Override 
 	public String toString() {
-		String result = "\n \t Job Queue:\t";
-		
-		for(int i = 0; i < jobQueue.size(); i++) {
-			result += jobQueue.get(i).getProcessID() + " ";
-		}
-		
-		return result;
+		return "\n \t Job Queue:\t" + jobQueue;
 	}
 }

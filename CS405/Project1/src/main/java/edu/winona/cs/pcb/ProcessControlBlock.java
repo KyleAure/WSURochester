@@ -56,13 +56,9 @@ public class ProcessControlBlock {
 	@Override
 	public String toString() {
 		String result = "";
-		result += processID + " -";
-		for(int i = 0; i < cpuBursts.size(); i++) {
-			for(int j = 0; j < ioBursts.size(); j++) {
-				result += " CPU " + cpuBursts.get(i);
-				result += " IO " + ioBursts.get(j);
-			}
-		}
+		result += processID + ":";
+		result += "CPU" + cpuBursts + "|";
+		result += "IO" + ioBursts;
 		return result;
 	}
 	

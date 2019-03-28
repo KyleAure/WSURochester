@@ -3,29 +3,34 @@ package edu.winona.cs.queue;
 import java.util.List;
 
 import edu.winona.cs.log.Log;
-import edu.winona.cs.log.Log.LogLevel;
+import edu.winona.cs.log.LogLevel;
+import edu.winona.cs.main.ScheduleModes;
 import edu.winona.cs.pcb.ProcessControlBlock;
 
 public class CPU implements Queue {
 	private static final Log LOG = new Log(CPU.class.getName());
-	private ProcessControlBlock job; 
-	private boolean haveJob; 
+	private ProcessControlBlock job; //Job in CPU
+	private ScheduleModes mode; //Scheduling Mode
+	private int quantum; //Quantum if set
+	private int timeInCPU; //Time job has been in CPU
 	private boolean done; 
 	private boolean preemptive;
 	
-	public CPU() {
+	public CPU(ScheduleModes mode, int quantum) {
 		// Initial State: No job in CPU.
 		job = null;
-		haveJob = false;
+		this.mode = mode;
+		this.quantum = quantum;
+		timeInCPU = 0;
 		done = true;
 		preemptive = false;
 	}
 
 	@Override
 	public void addJob(ProcessControlBlock pcb) {
-		if(!haveJob) {
+		if(isEmpty()) {
 			job = pcb;
-			haveJob = true;
+			timeInCPU = 0;
 			done = false;
 			preemptive = false;
 		} else {
@@ -38,7 +43,7 @@ public class CPU implements Queue {
 		if(done) {
 			ProcessControlBlock temp = job;
 			job = null;
-			haveJob = false;
+			done = true;
 			return temp;
 		} else {
 			LOG.log(LogLevel.SEVERE, "Job is not done.  Scheduler does not have the right.");
@@ -48,20 +53,16 @@ public class CPU implements Queue {
 
 	@Override
 	public boolean isFull() {
-		return haveJob;
+		return !(job == null);
+	}
+	
+	public boolean isEmpty() {
+		return job == null;
 	}
 
 	@Override
 	public int count() {
-		return haveJob ? 1 : 0;
-	}
-	
-	/**
-	 * When executing round robin mark a job done by using this method.
-	 */
-	public void setJobDone() {
-		done = true;
-		preemptive = true;
+		return isFull() ? 1 : 0;
 	}
 
 	/**
@@ -94,11 +95,18 @@ public class CPU implements Queue {
 				done = true;
 				preemptive = false;
 				bursts.remove(0);
+			} else if (mode==ScheduleModes.RR && timeInCPU % quantum == 0){
+				done = true;
+				preemptive = true;
+				//Put burst back
+				bursts.set(0, burst);
 			} else {
 				//Put burst back
 				bursts.set(0, burst);
 			}
 			job.setCpuBursts(bursts);
+		} else if (isEmpty()){
+			LOG.log(LogLevel.INFO, "CPU was notified of time change, but does not have a job.");
 		} else {
 			LOG.log(LogLevel.SEVERE, "Job has finished but has not moved out of CPU.");
 		}
@@ -107,14 +115,7 @@ public class CPU implements Queue {
 	
 	@Override 
 	public String toString() {
-		String result = "\n \t CPU:\t";
-		
-		if(job != null) {
-			result += job.getProcessID() + ":";
-			result += job.getCpuBursts();
-		}
-		
-		return result;
+		return "\n \t CPU:\t\t" + job;
 	}
 
 }
