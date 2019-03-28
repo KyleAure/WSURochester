@@ -47,8 +47,7 @@ public class App {
 		while (running) {
 			clock.tickClock();
 
-			// TODO remove later
-			if (Time.getTime() > 5) {
+			if (scheduler.done()) {
 				running = false;
 			}
 		}

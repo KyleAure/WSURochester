@@ -49,26 +49,31 @@ public class DiskQueue implements Queue {
 	 */
 	public ArrayList<ProcessControlBlock> notifyTime() {
 		if(this.count() > 0) {
+			//List of completed jobs
 			ArrayList<ProcessControlBlock> completedJobs = new ArrayList<>();
-			for(ProcessControlBlock job : diskQueue){
+			
+			//Iterate through diskQueue
+			for(int i=0; i < diskQueue.size(); i++){
+				ProcessControlBlock job = diskQueue.get(i);
+				List<Integer> bursts = job.getIOBursts();
 				//Get IO time
-				List<Integer> temp = job.getIOBursts();
-				int index = job.getIOIndex();
-				int burst = temp.get(index);
+				int burst = bursts.get(0);
 				boolean done = false;
 				//Decrement it
 				burst--;
 				//Check if job should be done
 				if(burst == 0) {
 					done = true;
-					job.setCpuIndex(index + 1);
+					bursts.remove(0);
+				} else {
+					bursts.set(0, burst);
 				}
-				//Put burst back
-				temp.set(index, burst);
-				job.setCpuBursts(temp);
+				job.setIOBursts(bursts);
+				
+				//If done, add job to completed jobs, and remove it from DiskQueue
 				if ( done ) {
 					completedJobs.add(job);
-					diskQueue.remove(job);
+					diskQueue.remove(i);
 				}
 			}
 			return completedJobs;
@@ -79,10 +84,10 @@ public class DiskQueue implements Queue {
 
 	@Override 
 	public String toString() {
-		String result = "Disk Queue:\t";
+		String result = "\n \t Disk Queue:\t";
 		
 		for(int i = 0; i < diskQueue.size(); i++) {
-			result += diskQueue.get(i).getProcessID() + "\t";
+			result += diskQueue.get(i).getProcessID() + ":" + diskQueue.get(i).getIOBursts();
 		}
 		
 		return result;

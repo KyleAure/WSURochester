@@ -31,7 +31,7 @@ public class JobQueue implements Queue {
 
 	@Override
 	public ProcessControlBlock removeJob() {
-		if(this.count() > 1) {
+		if(this.count() >= 1) {
 			return jobQueue.pop();
 		} else {
 			LOG.log(LogLevel.WARNING, "Job Queue is Empty.  Invalid access.");
@@ -52,10 +52,10 @@ public class JobQueue implements Queue {
 
 	@Override 
 	public String toString() {
-		String result = "Job Queue:\t";
+		String result = "\n \t Job Queue:\t";
 		
 		for(int i = 0; i < jobQueue.size(); i++) {
-			result += jobQueue.get(i).getProcessID() + "\t";
+			result += jobQueue.get(i).getProcessID() + " ";
 		}
 		
 		return result;

@@ -26,7 +26,7 @@ public class IOWaitingQueue implements Queue {
 
 	@Override
 	public ProcessControlBlock removeJob() {
-		if(this.count() > 1) {
+		if(this.count() >= 1) {
 			return ioQueue.pop();
 		} else {
 			LOG.log(LogLevel.WARNING, "Job Queue is Empty.  Invalid access.");
@@ -47,10 +47,10 @@ public class IOWaitingQueue implements Queue {
 
 	@Override 
 	public String toString() {
-		String result = "IO Queue:\t";
+		String result = "\n \t IO Queue:\t";
 		
 		for(int i = 0; i < ioQueue.size(); i++) {
-			result += ioQueue.get(i).getProcessID() + "\t";
+			result += ioQueue.get(i).getProcessID() + " ";
 		}
 		
 		return result;

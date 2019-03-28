@@ -35,10 +35,6 @@ public class JsonTest {
 			assertEquals("pcb burst at index 0 should be 1", 1, pcb.getCpuBursts().get(0).intValue());
 			assertEquals("io burst at index 0 should be 1", 1, pcb.getIOBursts().get(0).intValue());
 			
-			//Ensure remaining CPU and IO burst times were correctly set
-			assertEquals("current cpu process burst time should be 1", 1, pcb.getCountCPU());
-			assertEquals("current io process burst time should be 1", 1, pcb.getCountIO());
-			
 		} catch (JsonParseException e) {
 			fail(e.toString());
 		} catch (JsonMappingException e) {
