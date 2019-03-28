@@ -1,1 +1,1 @@
-mvn exec:java -Dexec.mainClass="cpuscheduler.App"
+mvn exec:java -Dexec.mainClass="edu.winona.cs.main.App"
