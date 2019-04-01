@@ -1,0 +1,27 @@
+= Assignment 9
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-04-01
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS410
+
+.Assignment Description
+****
+Chapter 12, 13, 14 review questions.
+****
+
+== Course Details
+* **Course** - CS410
+* **Instructor** - Dr. John Eberhard
+
+== Problems
+1. Name and describe the three possible strategies to reduce risk.
+** asdf
+2. Choose three static analysis checks (not fault classes) shown in Figure 12.9 (on page 346) that may be present in the code you create for your project.   Name and describe each analysis check and describe why fixing the problem found by the check would benefit your code.
+** asdf
+3. Name and describe the three security dimensions in secure systems engineering.
+** asdf
+4. What do you consider to be the three most important design guidelines for secure systems engineering?  Name and describe these guidelines and justify why you think they are the most important.
+** asdf
+5. Name and describe the four resilience activities involved in the detection of and recovery from system problems.
+** asdf
