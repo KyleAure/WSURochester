@@ -24,6 +24,7 @@ public class Scheduler implements ClockListener {
 	private IOWaitingQueue ioQueue;
 	private JobQueue jobQueue;
 	private ReadyQueue readyQueue;
+	private Boolean contextSwitch;
 	
 	public Scheduler(ScheduleModes mode, int quantum, List<ProcessControlBlock> jobPool) {
 		cpu = new CPU(mode, quantum);
@@ -32,31 +33,46 @@ public class Scheduler implements ClockListener {
 		jobQueue = new JobQueue();
 		readyQueue = new ReadyQueue(mode);
 		completedJobs = new ArrayList<>();
+		contextSwitch = false;
 		
 		//Load jobs into JobQueue
 		for(ProcessControlBlock job : jobPool) {
 			jobQueue.addJob(job);
 		}
 	}
+	
+	public boolean isContextSwitch() {
+		return contextSwitch;
+	}
 
 	@Override
 	public void timeHasChanged() {
 		LOG.log(LogLevel.INFO, "Scheduler heard time change.");
-		boolean contextSwitch = false;
-		ProcessControlBlock fromCPU = null;
+		contextSwitch = cpu.isJobDone();
+		String status1, status2;
 		
-		//STEP 1: Load ready queue ONLY IF there is a context switch
-		if(cpu.isJobDone()) {
+		//STEP 1: Notify Disk, do IO, and move from Disk to IOQueue
+		ArrayList<ProcessControlBlock> fromDiskQueue = diskQueue.notifyTime();
+		if(fromDiskQueue != null && !fromDiskQueue.isEmpty()) {
+			for(ProcessControlBlock job : fromDiskQueue) {
+				ioQueue.addJob(job);
+				LOG.log(LogLevel.INFO, "Scheduler moved "+ job.getProcessID() +" to IOWaiting Queue.");
+			}
+		}
+		
+		//STEP 2: Load ready queue ONLY IF there is a context switch
+		if(contextSwitch) {
 			contextSwitch = true;
+			ProcessControlBlock fromCPU = null;
 			LOG.log(LogLevel.INFO, "Context Switch");
 			
-			//If CPU is full remove the job
+			//Remove job from CPU
 			if(cpu.isFull()) {
 				fromCPU = cpu.removeJob();
 				LOG.log(LogLevel.INFO, "Scheduler removed " + fromCPU.getProcessID() + " job from CPU.");
 			}
 			
-			//STEP 1.1: First take any process from the CPU (RR)
+			//STEP 2.1: First take any process from the CPU (RR)
 			if(fromCPU != null) {
 				if(cpu.isPreemptive()) {
 					readyQueue.addJob(fromCPU);
@@ -72,13 +88,14 @@ public class Scheduler implements ClockListener {
 				}
 			}
 			
-			//STEP 1.2: Second take first process from IOQueue
+			
+			//STEP 2.2: Second take first process from IOQueue
 			while(!readyQueue.isFull() && ioQueue.count() > 0) {
 				ProcessControlBlock fromIOQueue = ioQueue.removeJob();
 				readyQueue.addJob(fromIOQueue);
 				LOG.log(LogLevel.INFO, "Scheduler put "+ fromIOQueue.getProcessID() +" into ReadyQueue");
 			}
-			//STEP 1.3: Third take first process in JobQueue
+			//STEP 2.3: Third take first process in JobQueue
 			while(!readyQueue.isFull() && jobQueue.count() > 0) {
 				ProcessControlBlock fromJobQueue = jobQueue.removeJob();
 				readyQueue.addJob(fromJobQueue);
@@ -94,44 +111,19 @@ public class Scheduler implements ClockListener {
 			LOG.log(LogLevel.INFO, "Scheduler took "+ fromReadyQueue.getProcessID() +" and put it in CPU.");
 		}
 		
-		//STEP 3: Notify CPU and Disk (decrement bursts)
-		String status1, status2;
-		
+		//STEP 4: Print queue status
+		if(contextSwitch) {
+			OUTPUT.log(LogLevel.INFO, printState());
+		}
+
+		//STEP 3: Notify CPU (decrement bursts)
 		status1 = cpu.toString();
 		cpu.notifyTime();
 		status2 = cpu.toString();
 		LOG.log(LogLevel.INFO, "\nCPU time slice run:\n" 
 				+ "\nBefore: "+ status1 
 				+ "\nAfter: " + status2);
-		
-		status1 = diskQueue.toString();
-		ArrayList<ProcessControlBlock> fromDiskQueue = diskQueue.notifyTime();
-		status2 = diskQueue.toString();
-		LOG.log(LogLevel.INFO, "\nDiskQueue time slice run:" 
-				+ "\nBefore: "+ status1 
-				+ "\nAfter: " + status2 
-				+ "\nReturned from DiskQueue:\n\t" + fromDiskQueue);
-		
-		//STEP 4: Move from Disk to IOQueue
-		if(fromDiskQueue != null && !fromDiskQueue.isEmpty()) {
-			for(ProcessControlBlock job : fromDiskQueue) {
-				ioQueue.addJob(job);
-				LOG.log(LogLevel.INFO, "Scheduler moved "+ job.getProcessID() +" to IOWaiting Queue.");
-			}
-		}
-		
-		//STEP 5: Print State
-		if(contextSwitch) {
-			String print = "";
-			print += "\nTime: " + Time.getTime();
-			print += cpu.toString();
-			print += jobQueue.toString();
-			print += readyQueue.toString();
-			print += diskQueue.toString();
-			print += ioQueue.toString();
-			print += "\n \t" + "CompletedJobs: "+ completedJobs + "\n";
-			OUTPUT.log(LogLevel.CONFIG, print);
-		}
+
 	}
 	
 	/**
@@ -145,6 +137,18 @@ public class Scheduler implements ClockListener {
 		 * 2. No job will be in the CPU because there are no jobs left to run.
 		 */
 		return cpu.isEmpty() && diskQueue.isEmpty();
+	}
+	
+	public String printState() {
+		String print = "";
+		print += "\nTime: " + Time.getTime();
+		print += cpu.toString();
+		print += jobQueue.toString();
+		print += readyQueue.toString();
+		print += diskQueue.toString();
+		print += ioQueue.toString();
+		print += "\n \t" + "CompletedJobs: "+ completedJobs + "\n";
+		return print;
 	}
 
 }

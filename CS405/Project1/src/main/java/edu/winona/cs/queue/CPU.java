@@ -90,6 +90,7 @@ public class CPU implements Queue {
 			int burst = bursts.get(0);
 			//Decrement it
 			burst--;
+			timeInCPU++;
 			//Check if job should be done
 			if(burst == 0) {
 				done = true;

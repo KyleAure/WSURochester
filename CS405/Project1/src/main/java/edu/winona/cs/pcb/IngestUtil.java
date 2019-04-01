@@ -9,11 +9,11 @@ import java.util.List;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import edu.winona.cs.log.Log;
 import edu.winona.cs.log.LogLevel;
+import edu.winona.cs.log.Output;
 
 public class IngestUtil {
-	private static final Log LOG = new Log(IngestUtil.class.getName());
+	private static final Output OUTPUT = new Output("Output");
 	
 	public static List<ProcessControlBlock> ingestJobs() {
 		List<ProcessControlBlock> pcbs = null;
@@ -29,21 +29,21 @@ public class IngestUtil {
 		    try {
 		    	file = new File(dialog.getFile());
 		    } catch (Exception e) {
-		    	LOG.log(LogLevel.WARNING, "No file chosen. Try again.");
+		    	OUTPUT.log(LogLevel.WARNING, "No file chosen. Try again.");
 		    }   
 		}
 		
-		LOG.log(LogLevel.INFO, "File chosen to ingest: " + file.getAbsolutePath());
+		OUTPUT.log(LogLevel.INFO, "File chosen to ingest: " + file.getAbsolutePath());
 		
 		//Try to ingest JSON data as PCB POJOs
 		try {
 			ObjectMapper m = new ObjectMapper();
 			pcbs = m.readValue(file, new TypeReference<List<ProcessControlBlock>>() {});
-			LOG.log(LogLevel.INFO, "Ingest of JSON file successful.\n"
+			OUTPUT.log(LogLevel.INFO, "Ingest of JSON file successful.\n"
 					+ "List of PCBs created:\n" 
 					+ pcbs);
 		} catch (IOException e) {
-			LOG.log(e, LogLevel.SEVERE, e.toString());
+			OUTPUT.log(e, LogLevel.SEVERE, e.toString());
 		}
 		
 		return pcbs;
