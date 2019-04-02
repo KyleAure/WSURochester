@@ -1,0 +1,178 @@
+01/04/2019 07:00:07:600 - [INFO] - Scheduling Mode = RR
+01/04/2019 07:00:12:007 - [INFO] - Time Quantum Set: 4
+01/04/2019 07:00:20:520 - [INFO] - File chosen to ingest: /Users/wu7472qj/Desktop/WSURochester/CS405/Project1/data/assignmentData.json
+01/04/2019 07:00:20:848 - [INFO] - Ingest of JSON file successful.
+List of PCBs created:
+[p1:CPU[5, 6, 3]|IO[2, 3], p2:CPU[3, 2, 4, 3]|IO[1, 2, 1], p3:CPU[2, 2, 2]|IO[6, 6], p4:CPU[3, 2]|IO[4], p5:CPU[6, 6]|IO[5]]
+01/04/2019 07:00:20:882 - [INFO] - 
+Time: 0
+ 	 CPU:		p1:CPU[5, 6, 3]|IO[2, 3]
+ 	 Job Queue:	[p4:CPU[3, 2]|IO[4], p5:CPU[6, 6]|IO[5]]
+ 	 Ready Queue:	[p2:CPU[3, 2, 4, 3]|IO[1, 2, 1], p3:CPU[2, 2, 2]|IO[6, 6]]
+ 	 Disk Queue:	[]
+ 	 IO Queue:	[]
+ 	CompletedJobs: []
+
+01/04/2019 07:00:20:939 - [INFO] - 
+Time: 4
+ 	 CPU:		p2:CPU[3, 2, 4, 3]|IO[1, 2, 1]
+ 	 Job Queue:	[p4:CPU[3, 2]|IO[4], p5:CPU[6, 6]|IO[5]]
+ 	 Ready Queue:	[p3:CPU[2, 2, 2]|IO[6, 6], p1:CPU[1, 6, 3]|IO[2, 3]]
+ 	 Disk Queue:	[]
+ 	 IO Queue:	[]
+ 	CompletedJobs: []
+
+01/04/2019 07:00:20:974 - [INFO] - 
+Time: 7
+ 	 CPU:		p3:CPU[2, 2, 2]|IO[6, 6]
+ 	 Job Queue:	[p5:CPU[6, 6]|IO[5]]
+ 	 Ready Queue:	[p1:CPU[1, 6, 3]|IO[2, 3], p4:CPU[3, 2]|IO[4]]
+ 	 Disk Queue:	[p2:CPU[2, 4, 3]|IO[1, 2, 1]]
+ 	 IO Queue:	[]
+ 	CompletedJobs: []
+
+01/04/2019 07:00:20:995 - [INFO] - 
+Time: 9
+ 	 CPU:		p1:CPU[1, 6, 3]|IO[2, 3]
+ 	 Job Queue:	[p5:CPU[6, 6]|IO[5]]
+ 	 Ready Queue:	[p4:CPU[3, 2]|IO[4], p2:CPU[2, 4, 3]|IO[2, 1]]
+ 	 Disk Queue:	[p3:CPU[2, 2]|IO[6, 6]]
+ 	 IO Queue:	[]
+ 	CompletedJobs: []
+
+01/04/2019 07:00:21:019 - [INFO] - 
+Time: 10
+ 	 CPU:		p4:CPU[3, 2]|IO[4]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p2:CPU[2, 4, 3]|IO[2, 1], p5:CPU[6, 6]|IO[5]]
+ 	 Disk Queue:	[p3:CPU[2, 2]|IO[5, 6], p1:CPU[6, 3]|IO[2, 3]]
+ 	 IO Queue:	[]
+ 	CompletedJobs: []
+
+01/04/2019 07:00:21:054 - [INFO] - 
+Time: 13
+ 	 CPU:		p2:CPU[2, 4, 3]|IO[2, 1]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p5:CPU[6, 6]|IO[5], p1:CPU[6, 3]|IO[3]]
+ 	 Disk Queue:	[p3:CPU[2, 2]|IO[2, 6], p4:CPU[2]|IO[4]]
+ 	 IO Queue:	[]
+ 	CompletedJobs: []
+
+01/04/2019 07:00:21:080 - [INFO] - 
+Time: 15
+ 	 CPU:		p5:CPU[6, 6]|IO[5]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p1:CPU[6, 3]|IO[3], p3:CPU[2, 2]|IO[6]]
+ 	 Disk Queue:	[p4:CPU[2]|IO[3], p2:CPU[4, 3]|IO[2, 1]]
+ 	 IO Queue:	[]
+ 	CompletedJobs: []
+
+01/04/2019 07:00:21:120 - [INFO] - 
+Time: 19
+ 	 CPU:		p1:CPU[6, 3]|IO[3]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p3:CPU[2, 2]|IO[6], p5:CPU[2, 6]|IO[5]]
+ 	 Disk Queue:	[]
+ 	 IO Queue:	[p2:CPU[4, 3]|IO[1], p4:CPU[2]|IO[]]
+ 	CompletedJobs: []
+
+01/04/2019 07:00:21:146 - [INFO] - 
+Time: 23
+ 	 CPU:		p3:CPU[2, 2]|IO[6]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p5:CPU[2, 6]|IO[5], p1:CPU[2, 3]|IO[3]]
+ 	 Disk Queue:	[]
+ 	 IO Queue:	[p2:CPU[4, 3]|IO[1], p4:CPU[2]|IO[]]
+ 	CompletedJobs: []
+
+01/04/2019 07:00:21:166 - [INFO] - 
+Time: 25
+ 	 CPU:		p5:CPU[2, 6]|IO[5]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p1:CPU[2, 3]|IO[3], p2:CPU[4, 3]|IO[1]]
+ 	 Disk Queue:	[p3:CPU[2]|IO[6]]
+ 	 IO Queue:	[p4:CPU[2]|IO[]]
+ 	CompletedJobs: []
+
+01/04/2019 07:00:21:181 - [INFO] - 
+Time: 27
+ 	 CPU:		p1:CPU[2, 3]|IO[3]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p2:CPU[4, 3]|IO[1], p4:CPU[2]|IO[]]
+ 	 Disk Queue:	[p3:CPU[2]|IO[4], p5:CPU[6]|IO[5]]
+ 	 IO Queue:	[]
+ 	CompletedJobs: []
+
+01/04/2019 07:00:21:200 - [INFO] - 
+Time: 29
+ 	 CPU:		p2:CPU[4, 3]|IO[1]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p4:CPU[2]|IO[]]
+ 	 Disk Queue:	[p3:CPU[2]|IO[2], p5:CPU[6]|IO[3], p1:CPU[3]|IO[3]]
+ 	 IO Queue:	[]
+ 	CompletedJobs: []
+
+01/04/2019 07:00:21:229 - [INFO] - 
+Time: 33
+ 	 CPU:		p4:CPU[2]|IO[]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p3:CPU[2]|IO[], p1:CPU[3]|IO[]]
+ 	 Disk Queue:	[p2:CPU[3]|IO[1]]
+ 	 IO Queue:	[p5:CPU[6]|IO[]]
+ 	CompletedJobs: []
+
+01/04/2019 07:00:21:253 - [INFO] - 
+Time: 35
+ 	 CPU:		p3:CPU[2]|IO[]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p1:CPU[3]|IO[], p5:CPU[6]|IO[]]
+ 	 Disk Queue:	[]
+ 	 IO Queue:	[p2:CPU[3]|IO[]]
+ 	CompletedJobs: [p4:CPU[]|IO[]]
+
+01/04/2019 07:00:21:271 - [INFO] - 
+Time: 37
+ 	 CPU:		p1:CPU[3]|IO[]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p5:CPU[6]|IO[], p2:CPU[3]|IO[]]
+ 	 Disk Queue:	[]
+ 	 IO Queue:	[]
+ 	CompletedJobs: [p4:CPU[]|IO[], p3:CPU[]|IO[]]
+
+01/04/2019 07:00:21:291 - [INFO] - 
+Time: 40
+ 	 CPU:		p5:CPU[6]|IO[]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p2:CPU[3]|IO[]]
+ 	 Disk Queue:	[]
+ 	 IO Queue:	[]
+ 	CompletedJobs: [p4:CPU[]|IO[], p3:CPU[]|IO[], p1:CPU[]|IO[]]
+
+01/04/2019 07:00:21:320 - [INFO] - 
+Time: 44
+ 	 CPU:		p2:CPU[3]|IO[]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p5:CPU[2]|IO[]]
+ 	 Disk Queue:	[]
+ 	 IO Queue:	[]
+ 	CompletedJobs: [p4:CPU[]|IO[], p3:CPU[]|IO[], p1:CPU[]|IO[]]
+
+01/04/2019 07:00:21:339 - [INFO] - 
+Time: 47
+ 	 CPU:		p5:CPU[2]|IO[]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[]
+ 	 Disk Queue:	[]
+ 	 IO Queue:	[]
+ 	CompletedJobs: [p4:CPU[]|IO[], p3:CPU[]|IO[], p1:CPU[]|IO[], p2:CPU[]|IO[]]
+
+01/04/2019 07:00:21:356 - [INFO] - 
+Time: 49
+ 	 CPU:		null
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[]
+ 	 Disk Queue:	[]
+ 	 IO Queue:	[]
+ 	CompletedJobs: [p4:CPU[]|IO[], p3:CPU[]|IO[], p1:CPU[]|IO[], p2:CPU[]|IO[], p5:CPU[]|IO[]]
+
+01/04/2019 07:00:21:360 - [INFO] - Scheduler has finished running Successfully. All jobs completed.

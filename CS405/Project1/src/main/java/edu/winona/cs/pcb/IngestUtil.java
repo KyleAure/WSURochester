@@ -27,7 +27,7 @@ public class IngestUtil {
 		    dialog.setMode(FileDialog.LOAD);
 		    dialog.setVisible(true);
 		    try {
-		    	file = new File(dialog.getFile());
+		    	file = new File(dialog.getDirectory() + dialog.getFile());
 		    } catch (Exception e) {
 		    	OUTPUT.log(LogLevel.WARNING, "No file chosen. Try again.");
 		    }   
