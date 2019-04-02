@@ -1,0 +1,141 @@
+01/04/2019 06:50:11:672 - [INFO] - Scheduling Mode = SJF
+01/04/2019 06:50:22:062 - [INFO] - File chosen to ingest: /Users/wu7472qj/Desktop/WSURochester/CS405/Project1/data/assignmentData-reverse.json
+01/04/2019 06:50:22:347 - [INFO] - Ingest of JSON file successful.
+List of PCBs created:
+[p1:CPU[6, 6]|IO[5], p2:CPU[3, 2]|IO[4], p3:CPU[2, 2, 2]|IO[6, 6], p4:CPU[3, 2, 4, 3]|IO[1, 2, 1], p5:CPU[5, 6, 3]|IO[2, 3]]
+01/04/2019 06:50:22:377 - [INFO] - 
+Time: 0
+ 	 CPU:		p3:CPU[2, 2, 2]|IO[6, 6]
+ 	 Job Queue:	[p4:CPU[3, 2, 4, 3]|IO[1, 2, 1], p5:CPU[5, 6, 3]|IO[2, 3]]
+ 	 Ready Queue:	[p1:CPU[6, 6]|IO[5], p2:CPU[3, 2]|IO[4]]
+ 	 Disk Queue:	[]
+ 	 IO Queue:	[]
+ 	CompletedJobs: []
+
+01/04/2019 06:50:22:402 - [INFO] - 
+Time: 2
+ 	 CPU:		p2:CPU[3, 2]|IO[4]
+ 	 Job Queue:	[p5:CPU[5, 6, 3]|IO[2, 3]]
+ 	 Ready Queue:	[p1:CPU[6, 6]|IO[5], p4:CPU[3, 2, 4, 3]|IO[1, 2, 1]]
+ 	 Disk Queue:	[p3:CPU[2, 2]|IO[6, 6]]
+ 	 IO Queue:	[]
+ 	CompletedJobs: []
+
+01/04/2019 06:50:22:431 - [INFO] - 
+Time: 5
+ 	 CPU:		p4:CPU[3, 2, 4, 3]|IO[1, 2, 1]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p1:CPU[6, 6]|IO[5], p5:CPU[5, 6, 3]|IO[2, 3]]
+ 	 Disk Queue:	[p3:CPU[2, 2]|IO[3, 6], p2:CPU[2]|IO[4]]
+ 	 IO Queue:	[]
+ 	CompletedJobs: []
+
+01/04/2019 06:50:22:479 - [INFO] - 
+Time: 8
+ 	 CPU:		p3:CPU[2, 2]|IO[6]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p1:CPU[6, 6]|IO[5], p5:CPU[5, 6, 3]|IO[2, 3]]
+ 	 Disk Queue:	[p2:CPU[2]|IO[2], p4:CPU[2, 4, 3]|IO[1, 2, 1]]
+ 	 IO Queue:	[]
+ 	CompletedJobs: []
+
+01/04/2019 06:50:22:499 - [INFO] - 
+Time: 10
+ 	 CPU:		p4:CPU[2, 4, 3]|IO[2, 1]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p1:CPU[6, 6]|IO[5], p5:CPU[5, 6, 3]|IO[2, 3]]
+ 	 Disk Queue:	[p3:CPU[2]|IO[6]]
+ 	 IO Queue:	[p2:CPU[2]|IO[]]
+ 	CompletedJobs: []
+
+01/04/2019 06:50:22:522 - [INFO] - 
+Time: 12
+ 	 CPU:		p2:CPU[2]|IO[]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p1:CPU[6, 6]|IO[5], p5:CPU[5, 6, 3]|IO[2, 3]]
+ 	 Disk Queue:	[p3:CPU[2]|IO[4], p4:CPU[4, 3]|IO[2, 1]]
+ 	 IO Queue:	[]
+ 	CompletedJobs: []
+
+01/04/2019 06:50:22:544 - [INFO] - 
+Time: 14
+ 	 CPU:		p4:CPU[4, 3]|IO[1]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p1:CPU[6, 6]|IO[5], p5:CPU[5, 6, 3]|IO[2, 3]]
+ 	 Disk Queue:	[p3:CPU[2]|IO[2]]
+ 	 IO Queue:	[]
+ 	CompletedJobs: [p2:CPU[]|IO[]]
+
+01/04/2019 06:50:22:578 - [INFO] - 
+Time: 18
+ 	 CPU:		p3:CPU[2]|IO[]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p1:CPU[6, 6]|IO[5], p5:CPU[5, 6, 3]|IO[2, 3]]
+ 	 Disk Queue:	[p4:CPU[3]|IO[1]]
+ 	 IO Queue:	[]
+ 	CompletedJobs: [p2:CPU[]|IO[]]
+
+01/04/2019 06:50:22:606 - [INFO] - 
+Time: 20
+ 	 CPU:		p4:CPU[3]|IO[]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p1:CPU[6, 6]|IO[5], p5:CPU[5, 6, 3]|IO[2, 3]]
+ 	 Disk Queue:	[]
+ 	 IO Queue:	[]
+ 	CompletedJobs: [p2:CPU[]|IO[], p3:CPU[]|IO[]]
+
+01/04/2019 06:50:22:640 - [INFO] - 
+Time: 23
+ 	 CPU:		p5:CPU[5, 6, 3]|IO[2, 3]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[p1:CPU[6, 6]|IO[5]]
+ 	 Disk Queue:	[]
+ 	 IO Queue:	[]
+ 	CompletedJobs: [p2:CPU[]|IO[], p3:CPU[]|IO[], p4:CPU[]|IO[]]
+
+01/04/2019 06:50:22:677 - [INFO] - 
+Time: 28
+ 	 CPU:		p1:CPU[6, 6]|IO[5]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[]
+ 	 Disk Queue:	[p5:CPU[6, 3]|IO[2, 3]]
+ 	 IO Queue:	[]
+ 	CompletedJobs: [p2:CPU[]|IO[], p3:CPU[]|IO[], p4:CPU[]|IO[]]
+
+01/04/2019 06:50:22:720 - [INFO] - 
+Time: 34
+ 	 CPU:		p5:CPU[6, 3]|IO[3]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[]
+ 	 Disk Queue:	[p1:CPU[6]|IO[5]]
+ 	 IO Queue:	[]
+ 	CompletedJobs: [p2:CPU[]|IO[], p3:CPU[]|IO[], p4:CPU[]|IO[]]
+
+01/04/2019 06:50:22:765 - [INFO] - 
+Time: 40
+ 	 CPU:		p1:CPU[6]|IO[]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[]
+ 	 Disk Queue:	[p5:CPU[3]|IO[3]]
+ 	 IO Queue:	[]
+ 	CompletedJobs: [p2:CPU[]|IO[], p3:CPU[]|IO[], p4:CPU[]|IO[]]
+
+01/04/2019 06:50:22:801 - [INFO] - 
+Time: 46
+ 	 CPU:		p5:CPU[3]|IO[]
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[]
+ 	 Disk Queue:	[]
+ 	 IO Queue:	[]
+ 	CompletedJobs: [p2:CPU[]|IO[], p3:CPU[]|IO[], p4:CPU[]|IO[], p1:CPU[]|IO[]]
+
+01/04/2019 06:50:22:822 - [INFO] - 
+Time: 49
+ 	 CPU:		null
+ 	 Job Queue:	[]
+ 	 Ready Queue:	[]
+ 	 Disk Queue:	[]
+ 	 IO Queue:	[]
+ 	CompletedJobs: [p2:CPU[]|IO[], p3:CPU[]|IO[], p4:CPU[]|IO[], p1:CPU[]|IO[], p5:CPU[]|IO[]]
+
+01/04/2019 06:50:22:826 - [INFO] - Scheduler has finished running Successfully. All jobs completed.

@@ -1,0 +1,17 @@
+[
+	{"processID":"p1",
+		"cpuBursts":[5,6,3],
+		"ioBursts":[2,3]},
+	{"processID":"p2",
+		"cpuBursts":[3,2,4,3],
+		"ioBursts":[1,2,1]},
+	{"processID":"p3",
+		"cpuBursts":[2,2,2],
+		"ioBursts":[6,6]},
+	{"processID":"p4",
+		"cpuBursts":[3,2],
+		"ioBursts":[4]},
+	{"processID":"p5",
+		"cpuBursts":[6,6],
+		"ioBursts":[5]}
+]

@@ -1,6 +1,5 @@
 package edu.winona.cs.queue;
 
-import java.util.List;
 import java.util.LinkedList;
 
 import edu.winona.cs.log.Log;
@@ -32,16 +31,16 @@ public class ReadyQueue implements Queue {
 	public ProcessControlBlock removeJob() {
 		if(this.count() >= 1) {
 			if(mode == ScheduleModes.SJF) {
-				int shortestJobIndex = 0;
 				int shortestTime = Integer.MAX_VALUE;
-				for(int i = 0; i < readyQueue.size(); i++) {
-					List<Integer> bursts = readyQueue.get(0).getCpuBursts();
-					if(bursts.get(0) < shortestTime) {
-						shortestTime = bursts.get(0);
-						shortestJobIndex = i;
+				ProcessControlBlock temp = null;
+				for (ProcessControlBlock job : readyQueue) {
+					if(job.getCpuBursts().get(0) < shortestTime) {
+						shortestTime = job.getCpuBursts().get(0);
+						temp = job;
 					}
 				}
-				return readyQueue.remove(shortestJobIndex);
+				readyQueue.remove(temp);
+				return temp;
 			} else {
 				return readyQueue.pop();
 			}
