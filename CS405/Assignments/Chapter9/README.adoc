@@ -1,0 +1,55 @@
+= Chapter 9 Questions
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-04-03
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS405
+
+== Course Details
+* **Course** - CS405
+* **Instructor** - Dr. Dennis Martin
+
+== Problem Set
+Problem 21::
+Question::::
+Consider the following page reference string:
++
+```
+7, 2, 3, 1, 2, 5, 3, 4, 6, 7, 7, 1, 0, 5, 4, 6, 2, 3, 0 , 1
+```
++
+Assuming demand paging with three frames, how many page faults would occur for the following replacement algorithms?
+Answer::::
+* *LRU replacement*
+* *FIFO replacement*
+* *Optimal replacement*
+Problem 27::
+Question::::
+Consider a demand-paging system with the following time-measured utilizations:
++
+|===
+|CPU utilization |20%
+|Paging disk |97.7%
+|Other I/O devices |5%
+|===
++
+For each of the following, say whether it will (or is likely to) improve CPU utilization.
+Explain your answers.
+Answer::::
+a. Install a faster CPU .
+b. Install a bigger paging disk.
+c. Increase the degree of multiprogramming.
+d. Decrease the degree of multiprogramming.
+e. Install more main memory.
+f. Install a faster hard disk or multiple controllers with multiple hard disks.
+g. Add pre-paging to the page fetch algorithms.
+h. Increase the page size.
+Problem 32::
+Question::::
+What is the cause of thrashing?
+How does the system detect thrashing?
+Once it detects thrashing, what can the system do to eliminate this problem?
+Answers::::
+* asdf
+* asdf
+* asdf
