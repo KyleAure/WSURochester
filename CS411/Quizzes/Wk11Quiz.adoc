@@ -1,18 +1,34 @@
 == Week 11 Quiz
-Software Quality Assurance Chapters 
+Software Quality Assurance Chapters 5 and 6
 
-Score: 0/10
+Score: 10/10
 
-1.Small or simple projects contract review may be unnecessary?
+1. It is necessary to translate qualitative goals into quantitative goals to assess the quality of a product regarding acceptance criteria
 ** True
-2. Which of the following is not a customer risk of loose relationship project definition for internal projects
-** Cost Over-runs
-3. Which of the following is not a developer risk of "loose relationship" project definition for internal projects
-** Missed Delivery Dates
-4. During proposal draft review, which of the following subjects must be validated in the customer requirement clarification
+2. Which of the following is not a contract review stage:
+** requirements draft review
+3. It is advisable to plan "small" projects with the SQA framework, though possibly with a streamlined process
+** True
+4. During the proposal draft review stage, which of the following is not an activity that needs to be completed:
+** all of the above need to be completed
+5. Development and quality plans are major components of project compliance for:
+** None of the above
+6. In the development plan, development facilities refers to:
 ** all of the above
-5. During proposal draft review which of the following subjects must be validated
+7. Acceptance testing for software developed by outside entities should cover
+** all of the above
+8. For internal projects, contract reviews are unnecessary
+** False
+9. Which tool is used for tracking of project timelines and milestones:
+** Gantt chart
+10. During proposal draft review, which of the following subjects must be validated in the customer requirement clarification phase:
+** all of the above
+11. Which of the following is not a developer risk of "loose relationship" project definition for internal projects
+** Missed Delivery Dates
+12. Which of the following is not a customer risk of loose relationship project definition for internal projects
+** Cost Over-runs
+13.Small or simple projects contract review may be unnecessary?
+** True
+14. During proposal draft review which of the following subjects must be validated
 ** System Documentation
-6. Major project compliance - ISO vs IEEE
-** none of the above
 
