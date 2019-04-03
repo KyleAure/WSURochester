@@ -1,0 +1,51 @@
+= Assignment 9
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-04-03
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS410
+
+.Assignment Description
+****
+Chapter 12, 13, 14 review questions.
+****
+
+== Course Details
+* **Course** - CS410
+* **Instructor** - Dr. John Eberhard
+
+== Problems
+1. Name and describe the three possible strategies to reduce risk.
+** *Hazard avoidance:* The system is designed so that hazards are avoided.
+** *Hazard detection and removal:* The system is designed so that hazards are detected and removed before they result in an accident.
+** *Damage limitation:* The system may include protection features that minimize the damage that may result from an accident.
+2. Choose three static analysis checks shown in Figure 12.9  that may be present in the code you create for your project.
+Name and describe each analysis check and describe why fixing the problem found by the check would benefit your code.
+** *Uncalled functions and procedures:* This analysis check makes sure that any function/procedure that has been created is called.
+Fixing this is important because even if the function is not called by your program, it could still be called from an outside program.
+Never calling a function ensures that it's behavior will be unpredictable.
+** *Unreachable code:* This analysis check makes sure that the code that has been written is reachable given certain circumstances.
+Fixing this is important because unreachable code takes up memory, and provide unpredictable behavior.
+** *Unconditional branches into loops:* This analysis check makes sure that entrance to a loop is solely determined by the loop check.
+Fixing this is important unconditional branch into a loop can invalidate the loop check, result in infinite looping, and provide unpredictable behavior.
+3. Name and describe the three security dimensions in secure systems engineering.
+** *Confidentiality:* Information is only provided by the system to authorized users.
+** *Integrity:* Information provided by the system is reliable.
+** *Availability:* Access to a system or its data is available to be accessed.
+4. What do you consider to be the three most important design guidelines for secure systems engineering?
+Name and describe these guidelines and justify why you think they are the most important.
+** *Use defense in depth* - Defense in Depth ensures that there is no single point of failure.
+If one security system fails, there is another system to ensure that the system is still secure.
+I think this is one of the most important design guidelines, because it forces the developer to plan for system failure.
+This will result in _Hazard avoidance_.
+** *Compartmentalize your assets* - Assets (data/information) are kept in separate areas, and users only have access to the information that they need rather than all the system information.
+I think this is one of the most important design guidelines, because it insures that if unauthentic access to assets is achieved, that only a subset of assets can be accessed.
+This will result in _Damage Limitation_.
+** *Design for recoverability* - Design a system so that it is simple to recover after a successful attack.
+I think this is one of the most important design guidelines, because it offers a worst case scenario option whereby if the system is attacked it can quickly be recovered.
+This will result in _Hazard detection and removal_.
+5. Name and describe the four resilience activities involved in the detection of and recovery from system problems.
+** *Recognition:* The system should be able to recognize the signs of a system failure early.
+** *Resistance:* The system should be able to reduce the probability that the system will fail once recognized.
+** *Recovery:* The system should be able to recover critical system services after a failure occurs, so that users are not badly affected.
+** *Reinstatement:* The system should be able to restore normal system operations.
