@@ -1,0 +1,82 @@
+= Chapter 9 Questions
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-04-03
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS405
+
+== Course Details
+* **Course** - CS405
+* **Instructor** - Dr. Dennis Martin
+
+== Problem Set
+Problem 21::
+Question::::
+Consider the following page reference string:
++
+```
+7, 2, 3, 1, 2, 5, 3, 4, 6, 7, 7, 1, 0, 5, 4, 6, 2, 3, 0, 1
+```
++
+Assuming demand paging with three frames, how many page faults would occur for the following replacement algorithms?
+Answer::::
+* *LRU replacement:* 18
++
+|===
+|FrameID |S1 |S2 |S3 |S4 |S5 |S6 |S7
+
+|F1 |7 |1 |3 |7 |5 |2 |1
+|F2 |2 |4 |1 |4 |3 |  |
+|F3 |3 |5 |6 |0 |6 |0 |
+|===
++
+* *FIFO replacement count:* 17
++
+|===
+|FrameID |S1 |S2 |S3 |S4 |S5 |S6
+
+|F1 |7 |1 |6 |0 |6 |0
+|F2 |2 |5 |7 |5 |2 |1
+|F3 |3 |4 |1 |4 |3 |
+|===
++
+* *Optimal replacement count:* 13
++
+|===
+|FrameID |S1 |S2 |S3 |S4 |S5 |S6
+
+|F1 |7 |1 |  |  |  |
+|F2 |2 |5 |4 |6 |2 |3
+|F3 |3 |4 |6 |7 |0 |
+|===
++
+Problem 27::
+Question::::
+Consider a demand-paging system with the following time-measured utilizations:
++
+|===
+|CPU utilization |20%
+|Paging disk |97.7%
+|Other I/O devices |5%
+|===
++
+For each of the following, say whether it will (or is likely to) improve CPU utilization.
+Explain your answers.
+Answer::::
+a. *Install a faster CPU:* This would do little to increase CPU utilization because it is already under utilized.
+b. *Install a bigger paging disk:* This would increase our CPU utilization since a bigger paging disk will have a higher likelyhood of having the correct page when the CPU asks for it.
+c. *Increase the degree of multiprogramming:* This would decrease our CPU utilization since it would increase the number of processes, resulting in more pages, futher contributing to the paging disk bottleneck.
+d. *Decrease the degree of multiprogramming:* This would increase our CPU utilization since it would decrease the number of processes, decreasing pages, and resulting in more hits to the paging disk which means quicker CPU access.
+e. *Install more main memory:* This would do little to increase CPU utilization because installing more memory would just result in the ability to create more pages.
+f. *Install a faster hard disk or multiple controllers with multiple hard disks:* This would do little to increase CPU utilization since there does not seem to be a starvation of pages in main memory, nor a bottleneck in I/O access.
+g. *Add pre-paging to the page fetch algorithms:* This would do little to increase CPU utilization since pre-paging would just increase the number of pages, and the paging disk won't be able to handle it.
+h. *Increase the page size:* This would do little to increase CPU utilization since the system seems to be thrashing and is due to the total size of localities of all active processes.  This total will not change.
+Problem 32::
+Question::::
+What is the cause of thrashing?
+How does the system detect thrashing?
+Once it detects thrashing, what can the system do to eliminate this problem?
+Answers::::
+* *Cause:* Too many processes are "active" at once.
+* *Detection:* When the sum of the size of localities of all active processes is greater than the total memory size.  Thrashing is due to occur.
+* *Elimination:* Control multiprogramming, use a local rather than global page-replacement algorithm, and determine how many pages a process "needs".
