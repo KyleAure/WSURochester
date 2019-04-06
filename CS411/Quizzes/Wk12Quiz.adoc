@@ -1,26 +1,26 @@
 == Week 12 Quiz
-Software Quality Assurance Chapters
+Software Quality Assurance Chapters 7, 8, 9, and 10
 
-Score: ?/10
+Score: 80/10
 
-1.
-** asdf
-2.
-** asdf
-3.
-** asdf
-4.
-** asdf
-5.
-** asdf
-6.
-** asdf
-7.
-** asdf
-8.
-** asdf
-9.
-** asdf
-10.
-** asdf
+1. What situation does not qualify for a high severity error
+** user productivity loss
+2. Path coverage testing is best used in situations where:
+** the development shop wants to reduce their error rate
+3. Which software testing method examines the internal paths of calculations in order to identify bugs:
+** white box testing
+4. Pressman lists 13 golden rules for successful design review.  Which of the following does not deal with the infrastructure elements:
+** Keep to the review agenda
+5. Path coverage testing is more comprehensive than line coverage testing
+** false
+6. Risks associated with a design review team that is too large include:
+** all of the above
+7. Which of the following does not fall into the test schedule portion of the software testing plan;
+** validation
+8. In general, adding real-life cases to testing plans is more effective than random sampling alone
+** True
+9. In the waterfall method, which step falls between requirements definition and coding;
+** analysis
+10. Quality risks from non-compliance to standards include all except:
+** higher costs for additional software tools
 
