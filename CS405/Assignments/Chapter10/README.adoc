@@ -1,0 +1,37 @@
+= Chapter 10 Questions
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-04-08
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS405
+
+== Course Details
+* **Course** - CS405
+* **Instructor** - Dr. Dennis Martin
+
+== Problem Set
+Problem 11::
+Question::::
+HEAD IS MOVING FROM LOW TO HIGH NUMBERED CYLINDERS.
+Suppose that a disk drive has 500 cylinders, numbered 0 to 499.
+The drive is currently serving a request at cylinder 215, and the previous request was at cylinder 1805.
+The queue of pending requests, in FIFO order, is:
++
+```
+206, 121, 229, 280, 54, 161, 35, 152, 496, 368
+```
++
+Starting from the current head position, what is the total distance (in cylinders) that the disk arm moves to satisfy all the pending requests for each of the following disk-scheduling algorithms?
+Answer::::
+a. FCFS
+b. SSTF
+c. SCAN
+d. LOOK
+e. C-SCAN
+f. C-LOOK
+
+Problem 19::
+Question::::
+Compare the performance of write operations achieved by a RAID Level 5 organization with that achieved by a RAID Level 1 organization.
+Answer::::
+asdf
