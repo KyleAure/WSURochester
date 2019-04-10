@@ -1,0 +1,72 @@
+= Assignment 10
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-04-08
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS410
+
+.Assignment Description
+****
+Chapter 22, 23, 24, and 25 review questions.
+****
+
+== Course Details
+* **Course** - CS410
+* **Instructor** - Dr. John Eberhard
+
+== Problems
+Problem 1::
+Question::::
+Name and describe the five types of activities done by software project managers.
+(Hint:  One of the activities is proposal writing).
+Answer::::
+asdf
+Problem 2::
+Question::::
+Name and describe the three related categories of risk.
+Answer::::
+asdf
+Problem 3::
+Question::::
+Describe at least one element of risk you encountered while working on the project.
+Which category from question 2 does that risk fall under?
+Answer::::
+asdf
+Problem 4::
+Question::::
+The following chart sets out a number of tasks, their durations, and their dependencies.  Draw a bar chart showing the project schedule.
++
+|===
+|Task |Duration(days) |Dependencies
+
+|T1 |10 |
+|T2 |15 |T1
+|T3 |10 |T1,T2
+|T4 |20 |
+|T5 |10 |
+|T6 |15 |T3,T4
+|T7 |20 |T3
+|T8 |35 |T7
+|T9 |15 |T6
+|T10 |5 |T5, T8, T9
+|===
+Answer::::
+asdf
+Problem 5::
+Question::::
+For the previous exercise, suppose that a developer is available for 15 days and is able to do 30 days worth of work.
+Which work tasks would you have the developer work on?
+By how many days are you able to reduce the total time required for the project?
+Answer::::
+asdf
+Problem 6::
+Question::::
+Describe the most important elements of a high quality program inspection.
+Include a description of the participants as well as the procedure used.
+Answer::::
+asdf
+Problem 7::
+Question::::
+Name and describe the four closely related activities involved with the configuration management of a software system product.
+Answer::::
+asdf
