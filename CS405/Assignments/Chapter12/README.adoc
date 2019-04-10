@@ -1,0 +1,33 @@
+= Chapter 12 Questions
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-04-17
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS405
+
+== Course Details
+* **Course** - CS405
+* **Instructor** - Dr. Dennis Martin
+
+== Problem Set
+Problem 1::
+Question::::
+* Consider a file currently consisting of 100 blocks.
+* Assume that the file control block (and the index block, in the case of indexed allocation) is already in memory.
+* Calculate how many disk I/O operations are required for contiguous, linked, and indexed (single-level) allocation strategies, if, for one block, the following conditions hold:
+** In the contiguous-allocation case, assume that there is no room to grow in the beginning, but there is room to grow in the end.
+** Also, assume that the block information to be added is stored in memory.
+** Assume there is a "tail" pointer to the last block in a linked file
+** Assume that when delete a block at beginning of contiguously allocated file, must move all subsequent blocks "down," so file starts with same block number.
+Answer::::
+a. The block is added at the beginning
+b. The block is added in the middle
+c. The block is added at the end
+d. The block is removed from the beginning
+e. The block is removed from the middle
+f. The block is removed from the end
+Problem 10::
+Question::::
+Contrast the performance of the three techniques for allocating disk blocks (contiguous, linked, and indexed) for both sequential and random file acces
+Answer::::
+asdf
