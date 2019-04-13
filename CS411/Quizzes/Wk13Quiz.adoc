@@ -1,26 +1,26 @@
 == Week 13 Quiz
-Software Quality Assurance Chapters
+Software Quality Assurance Chapters 11, 12, 13
 
-Score: ?/10
+Score: 10/10
 
-1.
-** asdf
-2.
-** asdf
-3.
-** asdf
-4.
-** asdf
-5.
-** asdf
-6.
-** asdf
-7.
-** asdf
-8.
-** asdf
-9.
-** asdf
-10.
-** asdf
+1. A risk of utilizing external participants in the software creation process is:
+** all of the above
+2. Which of the following would not be considered an external participant in a software project:
+** the operating system vendor
+3. Which is not included in the typical functions of a CASE tool:
+** user provisioning
+4. Which is not a defined type of software maintenance
+** Objective
+5. If a subcontractor decides to send a portion of their work to a sub-subcontractor, what risks does the project take on:
+** all of the above
+6. CASE tools can contribute to maintenance quality in which area:
+** all of the above
+7. During the maintenance plan review, it is necessary to consider all the following except:
+** all of these are important
+8. In which of the following use cases are classic CASE tools best applied:
+** prevention/correction of coding errors
+9. When checking a software package for high quality, which of the following is not a factor being examined:
+** performance
+10. A benefit for the customer when utilizing external participants in the software creation process is:
+** all of the above
 
