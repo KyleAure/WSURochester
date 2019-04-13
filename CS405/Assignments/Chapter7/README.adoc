@@ -17,22 +17,44 @@ Consider the traffic deadlock depicted in the figure below:
 image:assets/figure.png[]
 Answer::::
 a. Show that the four necessary conditions for deadlock indeed hold in this example.
+** *Mutual Exclusion:* In this scenario the resources are the intersections.  If a car is in an intersection it holds that resource and no other car can use it.
+** *Hold and Wait:* In this scenario a car that holds an intersection can only release it if a spot opens up in the queue for the next intersection.  If there is no room in this queue the resource must hold and wait.
+** *No Preemption:* In this scenario if a car is in an intersection nothing can be done for it give up this resource.  Even a fire truck trying to use the intersection will not be able to unless the car releases it.
+** *Circular Wait:* In this scenario there are 4 intersections and 4 cars. C1 holds I1, C2 holds I2, C3 holds I3, and C4 holds I4.  In order for C1 to release I1, C2 must release I2 for there to be room in the queue for C1 to release I1.  This goes into a circle where C1 is waiting for C2 is waiting for C3 is waiting for C4 is waiting for C1.
 b. State a simple rule for avoiding deadlocks in this system.
+** A car may only take an intersection if there is also room in the queue waiting for the next intersection.  This will get rid of the *Hold and Wait* condition.
 Problem 23::
-Qusetion::::
+Question::::
 Consider the following snapshot of a system
 +
 |===
-| 	|Allocation |Max 		|Available
-| 	|A B C D 	|A B C D 	|A B C D
-|P0 |2 0 0 1 	|4 2 1 2 	|3 3 2 1
-|P1 |3 1 2 1 	|5 2 5 2 	|
-|P2 |2 1 0 3 	|2 3 1 6 	|
-|P3 |1 3 1 2 	|1 4 2 4 	|
-|P4 |1 4 3 2 	|3 6 6 5 	|
+| 			|Allocation |Max 		|Available
+|Resources 	|A B C D 	|A B C D 	|A B C D
+|P0 		|2 0 0 1 	|4 2 1 2 	|3 3 2 1
+|P1 		|3 1 2 1 	|5 2 5 2 	|
+|P2 		|2 1 0 3 	|2 3 1 6 	|
+|P3 		|1 3 1 2 	|1 4 2 4 	|
+|P4 		|1 4 3 2 	|3 6 6 5 	|
 |===
 Answer the following questions using the banker's algorithm
 Answer::::
-a. Illustrate that the system is in a safe state by demonstrating an order in which the processesmay complete
+a. Illustrate that the system is in a safe state by demonstrating an order in which the processes may complete.
++
+|===
+|State 	|Process 	|Need	 	|Now Available
+
+|S0		|			|			|3 2 2 1
+|S1		|P0			|2 2 1 1	|5 3 2 2
+|S2		|P3			|0 1 1 2	|6 6 3 5
+|S3		|P1			|2 1 3 1	|9 7 5 6
+|S4		|P2			|0 2 1 3	|11 8 5 9
+|S5		|P4			|2 2 3 3	|12 12 8 11
+|===
++
 b. If a request from process P1 arrives for (1,1,0,0), can the request be granted immediately?
+** Yes, the request can be granted using the sequence from question A: <P0, P3, P1, P2, P4>.
+** Resource A: 6 (Available) >= 5 (Original Request) + 1 (Additional Request)
+** Resource B: 6 (Available) >= 3 (Original Request) + 1 (Additional Request)
 c. If a request from Process P4 arrives for (0,0,2,0), can the request be granted immediately?
+** Yes, the request can be granted using the sequence from question A: <P0, P3, P1, P2, P4>.
+** Resource C: 5 (Available) + 3 (Already Allocated) >= 6 (Original Request) + 2 (Additional Request)
