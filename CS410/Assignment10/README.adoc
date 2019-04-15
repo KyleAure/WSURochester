@@ -72,7 +72,10 @@ Question::::
 Describe the most important elements of a high quality program inspection.
 Include a description of the participants as well as the procedure used.
 Answer::::
-asdf
+* Program inspections include a cross functional team.
+* This team does Line-by-Line code review of the program source code.
+* The team looks for defects which may be logical errors, anomalies in the code, or features that have been omitted from the code.
+* The inspection team may also use a checklist of common programming errors. This checkist will often be specific to the programming language, or program type.
 Problem 7::
 Question::::
 Name and describe the four closely related activities involved with the configuration management of a software system product.
