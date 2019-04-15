@@ -1,5 +1,5 @@
 == Week 14 Quiz
-Software Quality Assurance Chapters
+Software Quality Assurance Chapters 14, 15, 16, 17, 18, 19
 
 Score: ?/10
 
