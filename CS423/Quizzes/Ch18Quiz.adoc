@@ -1,44 +1,42 @@
 === Quiz 18 Solutions
 
-Score: 0/10
+Score: 18/19
 
-1.
-**
-2.
-**
-3.
-**
-4.
-**
-5.
-**
-6.
-**
-7.
-**
-8.
-**
-9.
-**
-10.
-**
-11.
-**
-12.
-**
-13.
-**
-14.
-**
-15.
-**
-16.
-**
-17.
-**
-18.
-**
-19.
-**
-20.
-**
+1. Although important, security auditing is not a key element in computer security
+** False
+2. Severe messages, such as immediate system shutdown, is a(n) _____  severity
+** emerg
+3. ______ software is a centralized logging software package similar to, but much more complex than, syslog
+** SIEM
+4. The ________ is a module on a centralized system that collects audit trail records from other systems and creates a combined audit trail
+** audit trail collector
+5. With _________ the linking to shared library routines is deferred until load time so that if changes are made any program that references the library is unaffected
+** dynamically linked shared libraries
+6. Windows allows the system user to enable auditing in _______ different categories
+** nine
+7. A _______ is conducted to determine the adequacy of system controls, ensure compliance with established security policy and procedures, detect breaches in security services, and recommend any changes that are indicated for countermeasures
+** security audit
+8. Applications, especially applications with a certain level of privilege, present security problems that may not be captured by system-level or user-level auditing data
+** True
+9. System conditions requiring immediate attention is a(n) _______ severity
+** alert
+10. _________ audit trails are generally used to monitor and optimize system performance
+** System-level
+11. According to ISO 27002, the person(s) carrying out the audit should be independent of the activities audited
+** True
+12. Security auditing can:
+** all of the above
+13. ___ audit trails may be used to detect security violations within an application or to detect flaws in the application’s interaction with the system
+** Application-level
+14. The ________ is a module that transmits the audit trail records from its local system to the centralized audit trail collector
+** audit dispatcher
+15. The _________ is logic embedded into the software of the system that monitors system activity and detects security-related events that it has been configured to detect
+** event discriminator
+16. ______ is the identification of data that exceed a particular baseline value
+** Real-time analysis (thresholding)
+17. Audit trails are different from audit logs
+** False
+18. _________ identifies the level of auditing, enumerates the types of auditable events, and identifies the minimum set of audit-related information provided
+** Data generation
+19. Data items to capture for a security audit trail include:
+** all of the above

@@ -1,44 +1,42 @@
 === Quiz 14 Solutions
 
-Score: 0/10
+Score: 17/19
 
-1.
-**
-2.
-**
-3.
-**
-4.
-**
-5.
-**
-6.
-**
-7.
-**
-8.
-**
-9.
-**
-10.
-**
-11.
-**
-12.
-**
-13.
-**
-14.
-**
-15.
-**
-16.
-**
-17.
-**
-18.
-**
-19.
-**
-20.
-**
+1. The intent of the ________ is to provide a clear overview of how an organization’s IT infrastructure supports its overall business objectives
+** corporate security policy
+2. The _________ approach involves conducting a risk analysis for the organization’s IT systems that exploits the knowledge and expertise of the individuals performing the analysis
+** informal
+3. A ________ is anything that might hinder or present an asset from providing appropriate levels of the key security services
+** threat
+4. The purpose of ________ is to determine the basic parameters within which the risk assessment will be conducted and then to identify the assets to be examined
+** establishing the context
+5. The results of the risk analysis should be documented in a _________.
+** risk register
+6. The assignment of responsibilities relating to the management of IT security and the organizational infrastructure is not addressed in a  corporate security policy
+** False
+7. _________ include management, operational, and technical processes and procedures that act to reduce the exposure of the organization to some risks by reducing the ability of a threat source to exploit some vulnerabilities
+** Security controls
+8. _________ is choosing to accept a risk level greater than normal for business reasons.
+** Risk acceptance
+9. Implementing the risk treatment plan is part of the ______ step
+** do
+10. Detecting and reacting to incidents is not a function of IT security management
+** False
+11. IT security management consists of first determining a clear view of an  organization’s IT security objectives and general risk profile
+** 	True
+12. __________ ensures that critical assets are sufficiently protected in a cost-effective manner.
+** IT security management
+13. It is not critical that an organization’s IT security policy have full approval or buy-in by senior management
+** False
+14. The advantages of the _________ approach are that it doesn’t require the expenditure of additional resources in conducting a more formal risk assessment and that the same measures can be replicated over a range of systems
+** baseline
+15. Maintaining and improving the information security risk management process in response to incidents is part of the _________ step
+** act
+16. The ________ has revised and consolidated a number of national and international standards into a consensus of best practice
+** ISO
+17. IT security management functions include
+** all of the above
+18. Establishing security policy, objectives, processes and procedures is part of the ______ step
+** plan
+19. ________ specification indicates the impact on the organization should the particular threat in question actually eventuate
+** Consequence

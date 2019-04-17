@@ -1,44 +1,44 @@
 === Quiz 16 Solutions
 
-Score: 0/10
+Score: 20/20
 
-1.
-**
-2.
-**
-3.
-**
-4.
-**
-5.
-**
-6.
-**
-7.
-**
-8.
-**
-9.
-**
-10.
-**
-11.
-**
-12.
-**
-13.
-**
-14.
-**
-15.
-**
-16.
-**
-17.
-**
-18.
-**
-19.
-**
-20.
-**
+1. The role of physical security is affected by the operating location of the information system, which can be characterized as ______
+** all of the ab
+2. Human-caused threats are less predictable than other types of physical threats
+** true
+3. A prevalent concern that is often overlooked is ________.
+** dust
+4. _______ includes destruction of equipment and data
+** Vandalism
+5. Eavesdropping and wiretapping fall into the ________ category
+** theft
+6. The direct flame is the only threat from fire
+** False
+7. Misuse of the physical infrastructure includes vandalism, theft of equipment, theft by copying, theft of services, and unauthorized entry
+** True
+8. Physical security must also prevent any type of physical access or intrusion that can compromise logical security
+** True
+9. ________ security provides perimeter security, access control, smoke and fire detection, fire suppression, some environmental protection, and usually surveillance systems, alarms, and guards
+** Premises
+10. ________ includes data processing and storage equipment, transmission and networking facilities, and offline storage media
+** Information system hardware
+11. _______ should be located on the floor of computer rooms as well as under raised floors, and should cut off power automatically in the event of a flood
+** Water sensors
+12. A restricted area within close proximity of a security interest has a classification of ______.
+** limited
+13. Low-intensity devices such as cellular telephones do not interfere with electronic equipment.
+** False
+14. ________ threats are specifically designed to overcome prevention measures and seek the most vulnerable point of attack
+** Human-caused
+15. _______ facilities include electrical power, communication services, and environmental controls such as heat and humidity
+** Supporting
+16. The ______ is an optional key that may be present on any PIV card, does not require PIN entry, and whose purpose is to authenticate the card and therefore its possessor
+** CAK
+17. ________ security protects computer-based data from software-based and communication-based threats
+** Logical
+18. Relative humidity should be maintained between ________ to avoid the threats from both low and high humidity
+** 40% and 60%
+19. An area of a facility that has no security interest is classified as _________.
+** unrestricted
+20. The security classification for a restricted area containing a security interest is _____.
+** exclusion

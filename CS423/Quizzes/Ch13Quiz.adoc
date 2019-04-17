@@ -1,44 +1,40 @@
 === Quiz 13 Solutions
 
-Score: 0/10
+Score: 17/18
 
-1.
-**
-2.
-**
-3.
-**
-4.
-**
-5.
-**
-6.
-**
-7.
-**
-8.
-**
-9.
-**
-10.
-**
-11.
-**
-12.
-**
-13.
-**
-14.
-**
-15.
-**
-16.
-**
-17.
-**
-18.
-**
-19.
-**
-20.
-**
+1. _________ is the management software module that controls VMs within the IaaS cloud computing platform
+** Nova
+2. __________ has two operating modes, one tailored for single-source communication, and another tailored for multi-source broadcast communication
+** MiniSec
+3. The most vulnerable part of an IoT is the __________
+** smart objects/embedded systems
+4. __________ is the monitoring, protecting, and verifying the security of data at rest, in motion, and in use.
+** Data loss prevention
+5. Measured service and rapid elasticity are essential characteristics of _________.
+** cloud computing
+6. The use of __________ avoids the complexity of software installation, maintenance, upgrades, and patches
+** SaaS
+7. Examples of services delivered through the __________ include database on demand, e-mail on demand, and storage on demand
+** private cloud
+8. The core of ___________ is the implementation of intrusion detection systems and intrusion prevention systems at entry points to the cloud and on servers in the cloud
+** Intrusion management
+9. The term platform as a service has generally meant a package of       security services offered by a service provider that offloads much of the security responsibility from an enterprise to the security service provider
+** False
+10. Cloud computing gives you the ability to expand and reduce resources according to your specific service requirement
+** True
+11. A __________ is an entity that manages the use, performance and delivery of cloud services, and negotiates relationships between CSPs and cloud consumers
+** cloud broker
+12. A __________ infrastructure is made available to the general public or a large industry group and is owned by an organization selling cloud services
+** public cloud
+13. A __________ cloud provides service to customers in the form of a platform on which the customer’s applications can run.
+** platform as a service
+14. __________ comprise measures and mechanisms to ensure operational resiliency in the event of any service interruptions
+** Business continuity and disaster recovery
+15. NIST recommends selecting cloud providers that support strong encryption, have appropriate redundancy mechanisms in place, employ authentication mechanisms, and offer subscribers sufficient visibility about mechanisms used to protect subscribers from other subscribers and the provider.
+** 	True
+16. The _________ cloud deployment model is the most secure option
+** private
+17. A __________ is a person or organization that maintains a business relationship with, and uses service from, cloud providers
+** cloud service consumer
+18. A __________ interconnects the IoT-enabled devices with the higher-level communication networks
+** Gateway
