@@ -1,0 +1,68 @@
+= Chapter 10 Questions
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-04-17
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS405
+
+== Course Details
+* **Course** - CS405
+* **Instructor** - Dr. Dennis Martin
+
+== Problem Set
+Problem 11::
+Question::::
+HEAD IS MOVING FROM LOW TO HIGH NUMBERED CYLINDERS.
+Suppose that a disk drive has 500 cylinders, numbered 0 to 499.
+The drive is currently serving a request at cylinder 215, and the previous request was at cylinder 1805.
+The queue of pending requests, in FIFO order, is:
++
+|===
+|Queue 	|Position 	|Distance
+
+|prev 	|1805 		|
+|curr 	|215		|1590
+|Q1 	|206		|9
+|Q2		|121		|85
+|Q3		|229		|108
+|Q4		|280		|51
+|Q5		|54			|226
+|Q6		|161		|107
+|Q7		|35			|126
+|Q8		|152		|117
+|Q9		|496		|344
+|Q10	|368		|128
+|===
++
+Starting from the current head position, what is the total distance (in cylinders) that the disk arm moves to satisfy all the pending requests for each of the following disk-scheduling algorithms?
+Answer::::
+a. FCFS
+** Order: <curr, Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10>
+** Distance: 1301
+b. SSTF
+** Order: <curr, Q1, Q3, Q4, Q10, Q9, Q6, Q8, Q2, Q5, Q7>
+** Distance: 760
+c. SCAN
+** Moving high to low
+** Order: <curr, Q1, Q6, Q8, Q2, Q5, Q7, GOTO-0, Q3, Q4, Q10, Q9>
+** Distance: 711
+d. LOOK
+** Moving high to low
+** Order: <curr, Q1, Q6, Q8, Q2, Q5, Q7, Q3, Q4, Q10, Q9>
+** Distance: 641
+e. C-SCAN
+** Moving high to low
+** Order: <curr, Q1, Q6, Q8, Q2, Q5, Q7, GOTO-0, GOTO-499, Q9, Q10, Q4, Q3>
+** Distance: 984
+f. C-LOOK
+** Moving high to low
+** Order: <curr, Q1, Q6, Q8, Q2, Q5, Q7, Q9, Q10, Q4, Q3>
+** Distance: 908
+
+Problem 19::
+Question::::
+Compare the performance of write operations achieved by a RAID Level 5 organization with that achieved by a RAID Level 1 organization.
+Answer::::
+** For RAID Level 1, writes can be perform by simply issuing the writes to mirrored data concurrently.
+** For RAID Level 5, writes would require the old contents of the parity block to be read before it is updated based on the new contents of the target block.
+** This results in more overhead for the write operations on a RAID Level 5 system.
