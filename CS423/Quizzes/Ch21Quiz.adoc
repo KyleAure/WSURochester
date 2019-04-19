@@ -1,44 +1,42 @@
 === Quiz 21 Solutions
 
-Score: 0/10
+Score: 19/19
 
-1.
-**
-2.
-**
-3.
-**
-4.
-**
-5.
-**
-6.
-**
-7.
-**
-8.
-**
-9.
-**
-10.
-**
-11.
-**
-12.
-**
-13.
-**
-14.
-**
-15.
-**
-16.
-**
-17.
-**
-18.
-**
-19.
-**
-20.
-**
+1. The _________ scheme has reigned supreme as the most widely accepted and implemented approach to public-key encryption
+** RSA
+2. Issued as RFC 2104, __________ has been chosen as the mandatory-to-implement MAC for IP Security
+** HMAC
+3. Although the _________ attack is a serious threat, there are simple countermeasures that can be used such as constant time calcs, random delays or blinding computations
+** timing
+4. The one-way hash function is important not only in message authentication but also in digital signatures
+** True
+5. Cryptographic hash functions generally execute faster in software than conventional encryption algorithms such as DES
+** True
+6. The DSS makes use of the _________ and presents a new digital signature technique, the Digital Signature Algorithm (DSA).
+** SHA-1
+7. The key exchange protocol is vulnerable to a man-in-the-middle attack because it does not authenticate the participants
+** True
+8. The __________ uses an algorithm that is designed to provide only the digital signature function and cannot be used for encryption or key exchange
+** DSS
+9. A ________ attack involves trying all possible private keys
+** brute-force
+10. A __________ type of attack exploits properties of the RSA algorithm
+** chosen ciphertext
+11. SHA-1 is considered to be very secure
+** False
+12. SHA-1 produces a hash value of __________ bits
+** 160
+13. ___________ was the first published public-key algorithm
+** Diffie-Hellman
+14. The principal attraction of __________  compared to RSA is that it appears to offer equal security for a far smaller bit size, thereby reducing processing overhead
+** ECC
+15. In 2005, NIST announced the intention to phase out approval of _______ and move to a reliance on the other SHA versions by 2010
+** SHA-1
+16. The National Institute of Standards and Technology has published Federal Information Processing Standard FIPS PUB 186, known as the __________.
+** DSS
+17. _________ are analogous to a burglar guessing a safe combination by observing how long it takes to turn the dial from number to number
+** Timing attacks
+18. The _________ attack exploits the common use of a modular exponentiation algorithm in RSA encryption and decryption, but can be adapted to work with any implementation that does not run in fixed time
+** timing
+19. _________ attacks have several approaches, all equivalent in effort to factoring the product of two primes
+** Mathematical

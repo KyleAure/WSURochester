@@ -1,44 +1,42 @@
 === Quiz 22 Solutions
 
-Score: 0/10
+Score: 18/19
 
-1.
-**
-2.
-**
-3.
-**
-4.
-**
-5.
-**
-6.
-**
-7.
-**
-8.
-**
-9.
-**
-10.
-**
-11.
-**
-12.
-**
-13.
-**
-14.
-**
-15.
-**
-16.
-**
-17.
-**
-18.
-**
-19.
-**
-20.
-**
+1. The basic tool that permits widespread use of S/MIME is  ________.
+** the public-key certificate
+2. The ______ is responsible for transferring the message from the MHS to the MS
+** MDA
+3. ESP supports two modes of use:  transport and _________.
+** tunnel
+4. IPsec can assure that _________.
+** all of the above
+5. Recipients without S/MIME capability can view the message content, although they cannot verify the signature
+** True
+6. _______ is a list that contains the combinations of cryptographic algorithms supported by the client.
+** CipherSuite
+7. Most browsers come equipped with SSL and most Web servers have implemented the protocol
+** True
+8. The result of S/MIME encrypting the digest using DSS and the sender’s private DSS key is the ________.
+** digital signature
+9. The _______ field in the outer IP header indicates whether the association is an AH or ESP security association
+** protocol identifier
+10. MIME provides the ability to sign and/or encrypt e-mail messages.
+** 	False
+11. In the case of ________ only the digital signature is encoded using base64
+** clear-signed data
+12. To protect the data, either the signature alone or the signature plus the message are mapped into printable ASCII characters using a scheme known as ________ or base64 mapping
+** radix-64
+13. The ________ function consists of encrypted content of any type and encrypted-content encryption keys for one or more recipients
+** enveloped data
+14. The most complex part of TLS is the __
+** handshake protocol
+15. SMTP is used between the message user agent and the mail submission agent
+** True
+16. The ________ accepts the message submitted by a message user agent and enforces the policies of the hosting domain and the requirements of Internet standards
+** mail submission agent
+17. At its most fundamental level the Internet mail architecture consists of a user world in the form of _________.
+** MUA
+18. _____ defines a number of content formats, which standardize representations for the support of multimedia e-mail
+** MIME
+19. A benefit of IPsec is __________.
+** all of the above
