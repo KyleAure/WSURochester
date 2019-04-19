@@ -1,0 +1,42 @@
+=== Quiz 15 Solutions
+
+Score: 19/19
+
+1. The IT security management process ends with the implementation of controls and the training of personnel
+** False
+2. The objective of the ________ control category is to counteract interruptions to business activities and to protect critical business processes from the effects of major failures of information systems or disasters and to ensure their timely resumption
+** business continuity management
+3. _______ controls focus on security policies, planning, guidelines, and standards that influence the selection of operational and technical controls to reduce the risk of loss and to protect the organization’s mission
+** Management
+4. Management should conduct a ________ to identify those controls that are most appropriate and provide the greatest benefit to the organization given the available resources.
+** cost-benefit analysis
+5. Periodically reviewing controls to verify that they still function as intended, upgrading controls when new requirements are discovered, ensuring that changes to systems do not adversely affect the controls, and ensuring new threats or vulnerabilities have not become known are all ________ tasks.
+** maintenance
+6. ________ controls focus on the response to a security breach, by warning of violations or attempted violations of security policies
+** Detection and recovery
+7. Water damage protection is included in security controls
+** 	True
+8. The follow-up stage of the management process includes _________.
+** all of the above
+9. The implementation process is typically monitored by the organizational ______.
+** security officer
+10. Maintenance of security controls, security compliance checking, change and configuration management, and incident handling are all included in the follow-up stage of the _________ process
+** management
+11. To ensure that a suitable level of security is maintained, management must follow up the implementation with an evaluation of the effectiveness of the security controls
+** True
+12. A contingency plan for systems critical to a large organization would be _________ than that for a small business
+** larger, more detailed
+13. The objective of the ________ control category is to avoid breaches of any law, statutory, regulatory, or contractual obligations, and of any security requirements
+** compliance
+14. An IT security plan should include details of _________.
+** all of the above
+15. Identification and authentication is part of the _______ class of security controls
+** technical
+16. Physical access or environmental controls are only relevant to areas housing the relevant equipment
+** True
+17. _______ controls are pervasive, generic, underlying technical IT security capabilities that are interrelated with, and used by, many other controls
+** Supportive
+18. _________ is a formal process to ensure that critical assets are sufficiently protected in a cost-effective manner
+** IT security management
+19. An IT security ________ helps to reduce risks
+** all of the above

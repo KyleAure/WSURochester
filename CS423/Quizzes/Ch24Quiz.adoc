@@ -1,0 +1,44 @@
+=== Quiz 24 Solutions
+
+Score: 20/20
+
+1. The MPDU exchange for distributing pairwise keys is known as the _______.
+** 4-way handshake
+2. The most significant source of risk in wireless networks in the underlying communications medium
+** True
+3. The function of the ________ layer is to control access to the transmission medium and to provide an orderly and efficient use of that capacity
+** MAC
+4. An extended service set (ESS) is a set of stations controlled by a single coordination function
+** False
+5. WPA2 incorporates all of the features of the IEEE 802.11i WLAN security specifications
+** True
+6. A wireless client can be _______.
+** All of the above
+7. An example of a(n) __________ attack is one in which bogus reconfiguration commands are used to affect routers and switches to degrade network performance
+** network injection
+8. A system used to interconnect a set of basic service sets and LANs to create an extended service set is a _________.
+** Distribution System
+9. The smallest building block of a wireless LAN is a ______.
+** BSS
+10. The final form of the 802.11i standard is referred to as ________.
+** RSN
+11. Any device that contains an IEEE 802.11 conformant MAC and physical layer is a basic service set
+** False
+12. A ________ is a secret key shared by the AP and a STA and installed in some fashion outside the scope of IEEE 802.11i.
+** pre-shared key
+13. In order to accelerate the introduction of strong security into WLANs the Wi-Fi Alliance promulgated ________, a set of security mechanisms that eliminates most 802.11 security issues, as a Wi-Fi standard
+** WPA
+14. The specification of a protocol, along with the chosen key length, is known as a ___.
+** cipher suite
+15. A wireless access point is a _______.
+** all of the above
+16. The concerns for wireless security, in terms of threats, and countermeasures, are different to those found in a wired environment, such as an Ethernet LAN or a wired wide-area network
+** False
+17. ______ is the recommended technique for wireless network security
+** All of the above
+18. The wireless environment lends itself to a ______ attack because it is so easy for the attacker to direct multiple wireless messages at the target
+** DoS
+19. A(n) __________ is any entity that has station functionality and provides access to the distribution system via the wireless medium for associated stations
+** access point
+20. The unit of data exchanged between two peer MAC entities using the services of the physical layer is a(n) ____________.
+** MPDU

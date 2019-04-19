@@ -1,0 +1,42 @@
+=== Quiz 20 Solutions
+
+Score: 19/19
+
+1. For general-purpose block-oriented transmission you would typically use _______ mode
+** CBC
+2. If the analyst is able to get the source system to insert into the system a message chosen by the analyst, then a ________ attack is possible
+** chosen-plaintext
+3. For stream-oriented transmission over noisy channel you would typically use _______ mode
+** OFB
+4. Cryptographic systems are generically classified by _________.
+** all of the above
+5. The _________ is the encryption algorithm run in reverse
+** decryption algorithm
+6. Symmetric encryption is also referred to as secret-key or single-key encryption
+** True
+7. The most widely used encryption scheme is based on the _________ adopted in 1977 by the National Bureau of Standards
+** DES
+8. __________ is a term that refers to the means of delivering a key to two parties that wish to exchange data without allowing others to see the key
+** Key distribution technique
+9. ______  mode is typically used for a general-purpose block-oriented transmission and is useful for high-speed requirements
+** CTR
+10. If both sender and receiver use the same key the system is referred to as asymmetric
+** False
+11. Public-key encryption was developed in the late ________.
+** 1970s
+12. A ________ is a key used between entities for the purpose of distributing session keys
+** permanent key
+13. In using encryption, we need to decide what to encrypt and where the encryption gear should be located
+** True
+14. Key distribution can be achieved for two parties A and B by a third party selecting the key and physically delivering it to A and B
+** True
+15. There are _____ modes of operation defined by NIST that are intended to cover virtually all the possible applications of encryption for which a block cipher could be used.
+** five
+16. The _______ module performs end-to-end encryption and obtains session keys on behalf of users
+** SSM
+17. The exact substitutions and transformations performed by the algorithm depend on the ________.
+** secret key
+18. _________ is the original message or data that is fed into the algorithm as input
+** Plaintext
+19. For general-purpose stream-oriented transmission you would typically use _______ mode.
+** CFB

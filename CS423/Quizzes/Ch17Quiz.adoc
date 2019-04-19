@@ -1,0 +1,42 @@
+=== Quiz 17 Solutions
+
+Score: 18/19
+
+1. ________ is explicitly required for all employees
+** Security awareness
+2. Complying with regulations and contractual obligations is a benefit of security awareness, training, and education programs
+** True
+3. A _______ policy states that violation of this policy may result in immediate termination of employment or other discipline deemed appropriate by the company
+** disciplinary action
+4. CERT stands for ___________.
+** Computer Emergency Response Team
+5. ________ can include computer viruses, Trojan horse programs, worms, exploit scripts, and toolkits
+** Artifacts
+6. The education and experience learning level provides the foundation for subsequent training by providing a universal baseline of key security terms and concepts
+** False
+7. Programmers, developers, and system maintainers require less advanced security training than other employees
+** 	False
+8. A capability set up for the purpose of assisting in responding to computer security-related incidents that involve sites within a defined constituency is called a ______.
+** all of the above
+9. ___________ scan critical system files, directories, and services to ensure they have not been changed without proper authorization
+** System integrity verification tools
+10. From a security point of view, which of the following actions should be done upon  the termination of an employee?
+** all of the above
+11. A _______ policy states that the company may access, monitor, intercept, block access, inspect, copy, disclose, use, destroy, or recover using computer forensics any data covered by this policy
+** company rights
+12. _______ is a benefit of security awareness, training, and education programs to organizations
+** All of the above
+13. An employer cannot be held liable for negligent hiring if an employee causes harm to a third party while acting as an employee
+** 	False
+14. Security awareness, training, and education programs can serve as a deterrent to fraud and actions by disgruntled employees by increasing employees’ knowledge of their ________ and of potential penalties
+** accountability
+15. The _________ level focuses on developing the ability and vision to perform complex, multidisciplinary activities and the skills needed to further the IT security profession and to keep pace with threat and technology changes
+** education and experience
+16. The _______ category is a transitional stage between awareness and training
+** security basics and literacy
+17. _______ are ways for an awareness program to promote the security message to employees.
+** All of the above
+18. ________ need training on the development of risk management goals, means of measurement, and the need to lead by example in the area of security awareness
+** Executives
+19. ________ is the process of receiving, initial sorting, and prioritizing of information to facilitate its appropriate handling
+** Triage

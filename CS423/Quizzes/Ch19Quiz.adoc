@@ -1,0 +1,40 @@
+=== Quiz 19 Solutions
+
+Score: 18/18
+
+1. Personal effects, moveable property and goods, such as cars, bank accounts, wages, securities, a small business, furniture, insurance policies, jewelry, patents, and pets are all examples of _________.
+** personal property
+2. _____ can be copyrighted
+** All of the above
+3. ________ is a method for minimizing exposure of individual information while enabling continuous analysis of potentially interconnected data
+** Selective revelation
+4. _______ is a form of crime that targets a computer system to acquire information stored on that computer system, to control the target system without authorization or payment, or to alter the integrity of data or interfere with the availability of the computer or server
+** Computers as targets
+5. Any intangible asset that consists of human knowledge and ideas is _______.
+** intellectual property
+6. ______ is intended to permit others to perform, show, quote, copy, and otherwise distribute portions of the work for certain purposes
+** Fair use
+7. A ______ is a word, name, symbol, or device that is used in trade with goods to indicate the source of the goods and to distinguish them from the goods of others.
+** trademark
+8. ________ ensures that a user may make multiple uses of resources or services without others being able to link these uses together
+** Unlinkability
+9. Land and things permanently attached to the land, such as trees, buildings, and stationary mobile homes are _______.
+** real property
+10. The copyright owner has which exclusive right(s)?
+** all of the above
+11. ________ is a function that removes specific identifying information from query results, such as last name and telephone number, but creates some sort of unique identifier so that analysts can detect connections between queries
+** Anonymization
+12. The success of cybercriminals, and the relative lack of success of law enforcement, influence the behavior of _______.
+** cybercrime victims
+13. A _______ for an invention is the grant of a property right to the inventor
+** patent
+14. Concerns about the extent to which personal privacy has been and may be compromised have led to a variety of legal and technical approaches to reinforcing privacy rights.
+** True
+15. The legal and ethical aspects of computer security encompass a broad range of topics
+** True
+16. A ________ provides distribution channels, such as an online shop or a Web retailer
+** distributor
+17. _____ strengthens the protection of copyrighted materials in digital format
+** DMCA
+18. No cybercriminal databases exist that can point investigators to likely suspects
+** True

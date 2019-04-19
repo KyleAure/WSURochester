@@ -1,0 +1,44 @@
+=== Quiz 23 Solutions
+
+Score: 20/20
+
+1. The ticket-granting ticket is encrypted with a secret key known only to the AS and the TGS
+** True
+2. A principal element of an identity management system is _______.
+** all of the above
+3.  _____ is a markup language that uses sets of embedded tags or labels to characterize text elements within a document so as to indicate their appearance, function, meaning, or context.
+** XML
+4.  _______ is a minimal set of conventions for invoking code using XML over HTTP that enables applications to request services from one another with XML-based requests and receive responses as data formatted with XML
+** SOAP
+5. A _______ is a generic term used to denote any method for storing certificates and CRLs so that they can be retrieved by end entities
+** repository
+6. Initialization begins the process of enrolling in a PKI
+** False
+7. Kerberos uses the _______ encryption algorithm
+** DES
+8. The _______ consists of two dates: the first and last on which the certificate is valid
+** period of validity
+9. _______ certificates are used in most network security applications, including IP security, secure sockets layer, secure electronic transactions, and S/MIME
+** X.509
+10. _______ is the process in which a CA issues a certificate for a user’s public key and returns that certificate to the user’s client system and/or posts that certificate in a repository.
+** Certification
+11. X.509 provides a format for use in revoking a key before it expires
+** True
+12. ________ requires that a user prove his or her identity for each service invoked and, optionally, requires servers to prove their identity to clients
+** Kerberos
+13. _______  is movement of data in a business process
+** Workflow automation
+14. ________ is a process where authentication and permission will be passed on from one system to another, usually across multiple enterprises, reducing the number of authentications needed by the user.
+** Federation
+15. Federated identity management makes use of a number of standards that provide the building blocks for secure identity information exchange across different domains or heterogeneous systems
+** True
+16. One of the earliest and most widely used services is _________.
+** Kerberos
+17. An integer value unique within the issuing CA that is unambiguously associated with the certificate is the ________.
+** serial number
+18. The approach taken by Kerberos is using authentication software tied to a secure authentication server
+** True
+19. _______ is the process whereby a user first makes itself known to a CA prior to that CA issuing a certificate or certificates for that user
+** Registration
+20. _______ is important as part of the directory service that it supports and is also a basic building block used in other standards
+** X.509

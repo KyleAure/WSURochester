@@ -1,3 +1,5 @@
+= Quiz Bank
+
 include::Ch1Quiz.adoc[]
 
 include::Ch2Quiz.adoc[]
@@ -21,3 +23,27 @@ include::Ch10Quiz.adoc[]
 include::Ch11Quiz.adoc[]
 
 include::Ch12Quiz.adoc[]
+
+include::Ch13Quiz.adoc[]
+
+include::Ch14Quiz.adoc[]
+
+include::Ch15Quiz.adoc[]
+
+include::Ch16Quiz.adoc[]
+
+include::Ch17Quiz.adoc[]
+
+include::Ch18Quiz.adoc[]
+
+include::Ch19Quiz.adoc[]
+
+include::Ch20Quiz.adoc[]
+
+include::Ch21Quiz.adoc[]
+
+include::Ch22Quiz.adoc[]
+
+include::Ch23Quiz.adoc[]
+
+include::Ch24Quiz.adoc[]
