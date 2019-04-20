@@ -1,0 +1,95 @@
+19/04/2019 11:14:20:408 - [INFO] - PAGING SIMULATOR
+19/04/2019 11:14:22:693 - [INFO] - Selected Paging Algorithm:
+LRU
+19/04/2019 11:14:23:813 - [INFO] - Main Store Size:
+6
+19/04/2019 11:14:26:643 - [INFO] - File Selected: /home/kaure/WSURochester/CS405/Project3/data.json
+19/04/2019 11:14:26:755 - [INFO] - Page Table Created:
+PageTable [pages=[1, 2, 3, 4, 2, 1, 5, 6, 2, 1, 2, 3, 7, 6, 3, 2, 1, 2, 3, 6]]
+19/04/2019 11:14:26:756 - [INFO] - Attempting to get 1
+19/04/2019 11:14:26:756 - [INFO] - Fault #1
+Frame	 Page	 lastUsed
+0	1	0
+1	EMPTY	2147483647
+2	EMPTY	2147483647
+3	EMPTY	2147483647
+4	EMPTY	2147483647
+5	EMPTY	2147483647
+
+19/04/2019 11:14:26:757 - [INFO] - Attempting to get 2
+19/04/2019 11:14:26:758 - [INFO] - Fault #2
+Frame	 Page	 lastUsed
+0	1	1
+1	2	0
+2	EMPTY	2147483647
+3	EMPTY	2147483647
+4	EMPTY	2147483647
+5	EMPTY	2147483647
+
+19/04/2019 11:14:26:759 - [INFO] - Attempting to get 3
+19/04/2019 11:14:26:759 - [INFO] - Fault #3
+Frame	 Page	 lastUsed
+0	1	2
+1	2	1
+2	3	0
+3	EMPTY	2147483647
+4	EMPTY	2147483647
+5	EMPTY	2147483647
+
+19/04/2019 11:14:26:760 - [INFO] - Attempting to get 4
+19/04/2019 11:14:26:762 - [INFO] - Fault #4
+Frame	 Page	 lastUsed
+0	1	3
+1	2	2
+2	3	1
+3	4	0
+4	EMPTY	2147483647
+5	EMPTY	2147483647
+
+19/04/2019 11:14:26:763 - [INFO] - Attempting to get 2
+19/04/2019 11:14:26:763 - [INFO] - Attempting to get 1
+19/04/2019 11:14:26:764 - [INFO] - Attempting to get 5
+19/04/2019 11:14:26:764 - [INFO] - Fault #5
+Frame	 Page	 lastUsed
+0	1	1
+1	2	2
+2	3	4
+3	4	3
+4	5	0
+5	EMPTY	2147483647
+
+19/04/2019 11:14:26:765 - [INFO] - Attempting to get 6
+19/04/2019 11:14:26:765 - [INFO] - Fault #6
+Frame	 Page	 lastUsed
+0	1	2
+1	2	3
+2	3	5
+3	4	4
+4	5	1
+5	6	0
+
+19/04/2019 11:14:26:766 - [INFO] - Attempting to get 2
+19/04/2019 11:14:26:766 - [INFO] - Attempting to get 1
+19/04/2019 11:14:26:767 - [INFO] - Attempting to get 2
+19/04/2019 11:14:26:767 - [INFO] - Attempting to get 3
+19/04/2019 11:14:26:767 - [INFO] - Attempting to get 7
+19/04/2019 11:14:26:768 - [INFO] - Fault #7
+Frame	 Page	 lastUsed
+0	1	3
+1	2	2
+2	3	1
+3	7	0
+4	5	6
+5	6	5
+
+19/04/2019 11:14:26:768 - [INFO] - Attempting to get 6
+19/04/2019 11:14:26:769 - [INFO] - Attempting to get 3
+19/04/2019 11:14:26:769 - [INFO] - Attempting to get 2
+19/04/2019 11:14:26:770 - [INFO] - Attempting to get 1
+19/04/2019 11:14:26:770 - [INFO] - Attempting to get 2
+19/04/2019 11:14:26:770 - [INFO] - Attempting to get 3
+19/04/2019 11:14:26:771 - [INFO] - Attempting to get 6
+19/04/2019 11:14:26:771 - [INFO] - 
+Paging Simulation with 6 page(s) of mainstore
+Using LRU algorithm
+Total page faults = 7

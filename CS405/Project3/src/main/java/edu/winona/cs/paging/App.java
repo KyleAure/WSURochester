@@ -48,8 +48,8 @@ public class App {
     	int faults = 0;
     	if(pt.arePagesCreated()) {
         	int nextPage = pt.pop();
-
         	while(nextPage > 0) {
+        		log.log(LogLevel.INFO, "Attempting to get " + nextPage);
         		if(!mainstore.get(nextPage)) {
         			faults++;
         			log.log(LogLevel.INFO, "Fault #" + faults + "\n" + mainstore.toString());
