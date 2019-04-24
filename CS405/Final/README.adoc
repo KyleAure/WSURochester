@@ -7,22 +7,29 @@
 
 == Final Review Material
 
-=== Deadlocks
+=== Chapter 7: Deadlocks
+* Definition
+  ** A set of *blocked processes* each holding a resource and waiting to acquire a resource
 * Four conditions
-  ** Mutual exclusion
-  ** hold & wait
-  ** no preemption
-  ** circular wait
-* Deadlock resolution
-  ** prevention
-  ** avoidance
-  ** detection
-  ** recovery methods
+  ** Mutual exclusion: Only one process at a time can use a resource.
+  ** hold & wait: A process that is holding at least one resource is waiting to acquire an additional resource.
+  ** No preemption: A resource can be released only voluntarily by the process holding it, after that process has completed it's task.
+  ** circular wait: There exists a set of waiting processes such that their is a circular wait.
+* Handling Deadlock
+  ** prevention - ensure that one of the four required conditions cannot exist.
+  ** avoidance - develop a protocol to ensure deadlock will never occur.  Requires system to have additional priori information available.
+    *** See Banker's Algorithm
+  ** detection - Allow the system to enter a deadlock state, detect the deadlock, and recover from the deadlock.
+    *** See resource allocation graph
+  ** recovery methods - Recovering from deadlock.
 * Safe / unsafe states
   ** How to tell
   ** Resource matrices and graphs
   ** Banker's algorithm
 * Resource allocation graphs
+  ** asdf
+  +
+  image:assets/rag.png[]
 
 === Memory management
 * Paging the entire program
@@ -92,7 +99,7 @@
   ** FCFS, SSTF, SCAN, C-SCAN, LOOK, C-LOOK
 * Disk protection
   ** Difference between RAID(5) and mirroring and striping
-* Tertiary and heirarchical storage management
+* Tertiary and hierarchical storage management
 * I/O Systems and subsystems
   ** Hardware, polling, interrupts, interrupt-driven I/O, DMA, blocking/non-blocking I/O, synchronous/asynchronous I/O
   ** Interface, block and character devices, network devices
