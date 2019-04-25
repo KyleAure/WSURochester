@@ -1,12 +1,12 @@
 == Week 14 Quiz
 Software Quality Assurance Chapters 14, 15, 16, 17, 18, 19
 
-Score: 8/10
+Score: 8/10 + 2
 
 1. Which of the following might be included in a software configuration management audit:
 ** all of the above
 2. Which SQA quality management documents might be controlled:
-** All of the above
+** software metrics report
 3. Emergency bug fix changes should never go through SQA processes before implementation
 **	False
 4. This action is defined as regularly applied feedback that includes collection of information on potential quality problems, identification of departures from quality standards, and development and assimilation of improved practices and procedures:
@@ -18,7 +18,7 @@ Score: 8/10
 7. What is the purpose of maintaining project documentation throughout the software development process?
 ** All of the above
 8. Change control is used to document:
-** Proposed changes to the configuration
+** all of the above
 9. SQA Infrastructure audits for corrective or preventive action include which sources:
 ** All of the above
 10. Which pre-project documents might be controlled:
