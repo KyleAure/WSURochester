@@ -111,17 +111,47 @@
 
 === Chapter 10: Disks
 * Disk structure
-  ** Track, sector, cylinder, seek, latency, transfer, device directory
-* Free space management -- characteristics, advantages / disadvantages
-  ** Bitmap, linked lists, grouping (index), counting
-* File allocation -- characteristics, advantages / disadvantages
-  ** Contiguous, linked, indexed,
-  ** What happens if index block is full?
-* Disk scheduling -- characteristics, advantages / disadvantages
-  ** FCFS, SSTF, SCAN, C-SCAN, LOOK, C-LOOK
+  ** Track - round on a platter
+  ** Tector - Section of track
+  ** Cylinder - Combination of all the same tracks on all platters
+  ** Seek - Time it takes for arm to get to desired cylinder
+  ** Latency - Time it takes to rotate to correct section
+  ** Transfer - Rate at which data flows between drive and computer
+  ** Device directory
+* Disk scheduling
+  ** characteristics, advantages / disadvantages
+  ** FCFS - First-Come-First-Served: simple but often results in excessive arm movement.
+  ** SSTF - Shortest-Seek-Time-First: choose request that is closest to the current head position. Could result in starvation
+  ** SCAN - Starts at one end and moves around disk servicing all requests along the way, then makes it way back.
+  ** C-SCAN - Same as scan except the head will go all the way back to the begining and then start scanning again.
+  ** LOOK - Same as scan except the arm only goes as far as the last request in each direction.
+  ** C-LOOK - Same as c-scan except the arm only goes as far as the last request in each direction.
 * Disk protection
-  ** Difference between RAID(5) and mirroring and striping
+  ** RAID - Redundant Array of Independent Disks
+  ** RAID 0 - No redundency. Space Complexity (N)
+  ** RAID 1 - Mirroring - Duplicate copy of each disk. Space complexity (2N)
+  **  RAID 5 - Data spead across disks.  Parity bit and data spread across all disks.  All data from a failed disk can be recoved, but nothing can be recoved if more than 2 disks fail. Space Complexity (N + M) where M is the number of drives.
 * Tertiary and hierarchical storage management
+  ** Tertiary: Level below secondary storage typically on tapes
+  ** Hierarchical: Move data between high-cost and low-cost storage media
+
+=== Chapter 12: File System
+* File allocation
+  *** characteristics, advantages / disadvantages
+  ** Contiguous - Each file occupies a set of contiguous blocks on the disk.  Simple, random access is quick.  But files cannot grow, and there is a lot of external frag.
+  ** Linked - Each block links to the next block in the chain.  Blocks can be scattered anywhere. Files can grow, and there is no frag.  Random access is harder, and need to allocate space for pointers.
+  ** Indexed - each file has an index block that contains pointers to all blocks in file.  Random access is easy, easy to expand, not fragmentation.  But need extra space for index tables.
+  ** What happens if index block is full? Create a new index that points to the old index.
+* Free space management
+  ** characteristics, advantages / disadvantages
+  ** Bitmap - bit at the begining of each block to say whether or not it is free or blocked. Simple and fast.  But takes up much space.
+  ** Linked Lists - maintiain a pointer in each free block to point to the next free block. Little wasted space. But cannot get continguous space easily, and very slow.
+  ** Grouping (index) - Directory in a series of blocks/sectors.
+  ** Counting - improvement of grouping.
+
+
+
+
 * I/O Systems and subsystems
   ** Hardware, polling, interrupts, interrupt-driven I/O, DMA, blocking/non-blocking I/O, synchronous/asynchronous I/O
   ** Interface, block and character devices, network devices
