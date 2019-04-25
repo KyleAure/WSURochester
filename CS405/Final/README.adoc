@@ -1,0 +1,160 @@
+= Final Review
+
+== Final Structure
+* Coding questions
+* Short answer questions
+* Bonus questions: (never count against you but can only help you)
+
+== Final Review Material
+
+=== Chapter 7: Deadlocks
+* Definition
+  ** A set of *blocked processes* each holding a resource and waiting to acquire a resource
+* Four conditions
+  ** Mutual exclusion: Only one process at a time can use a resource.
+  ** hold & wait: A process that is holding at least one resource is waiting to acquire an additional resource.
+  ** No preemption: A resource can be released only voluntarily by the process holding it, after that process has completed it's task.
+  ** circular wait: There exists a set of waiting processes such that their is a circular wait.
+* Handling Deadlock
+  ** prevention - ensure that one of the four required conditions cannot exist.
+  ** avoidance - develop a protocol to ensure deadlock will never occur.  Requires system to have additional priori information available.
+    *** See Banker's Algorithm
+  ** detection - Allow the system to enter a deadlock state, detect the deadlock, and recover from the deadlock.
+    *** See resource allocation graph
+  ** recovery methods - Recovering from deadlock.
+* Safe / unsafe states
+  ** How to tell
+  ** Resource matrices and graphs
+  ** Banker's algorithm
+* Resource allocation graphs
+  ** asdf
+  +
+  image:assets/rag.png[]
+
+=== Chapter 8: Memory management
+* Paging the entire program
+  ** Base and limit registers: When a program is loaded into memory also load the programs base and limit register.  Every line execution make sure the program is only trying to access data between the registers.
+  ** Swapping (if program won't fit): A process can be swapped temporarily out of memory to a backing store, and then brought back into memory for continued execution.
+  ** Overlays: Keep in memory only those instructions and data that are needed at any given time.  Implemented by user.
+* Memory partitioning -- contiguous memory allocation
+  ** Single - Dedicated system
+  ** Two - System and User
+  ** Multiple and variable - Allows loading of extra operating system code. May use system overlays.
+* Partition allocation
+  ** First fit - Allocate to the first hole that is big enough
+  ** Best fit - Allocate to the smallest hole that is big enough
+  ** Worst fit - Allocate to the largest hole
+* Fragmentation
+  ** Internal - Memory is typically allocated in standard sizes which means there are holes (unused space) within allocated area.
+  ** External - When there are holes between allocated areas
+* Compaction
+  ** Process of moving code blocks together getting rid of fragmentation.
+
+=== Chapter 8: Paging
+* Paging - helps to resolve the issue of large, variable sized partitions causing fragmentation
+  ** Frames - Equal sized partitions used to divide physical memory.
+  ** Pages - Equal sized blocks used to divide logical memory (program).
+  ** Page table - Translates local to physical addresses.
+  ** TLB: Translation Look-Aside Buffer - cashed page data used to make accessing page table quicker.
+* Address translation
+  ** Logical to physical and back
+* Shared pages
+  ** Pages can be used to share code between processes (think of a subroutine).
+* Segmentation
+  ** A program is a collection of segments.
+  ** A segment is a logical unit (method, function, object, variable, etc.)
+  ** Segmentation is similar to irregular sized partitions.
+
+=== Chapter 9: Virtual Memory
+* Virtual memory
+  ** Basic concepts: Separation of user logical memory from physical memory.
+  ** Only part of program in memory at one time
+  ** Logical address space > physical address space
+  ** Needs to allow pages to be swapped in and out
+* Paging
+  ** Valid/invalid bit - marks every frame as either valid (v) or invalid (i) to tell the MMU whether or not the frame
+* Page fault
+  ** What and why: Happens when there is a reference to a page not in memory.
+  ** Notifies OS who then needs to handle the page fault and load the page into memory.
+* Page replacement algorithms
+  ** Handles the situation where there is a page fault, and our memory is full.
+  ** FIFO - First in First Out
+  ** LRU - Least Recently Used: Victim is page that has not been used for the longest period of time.
+  ** 2nd Chance - Implementation of LRU
+  ** Optimal - Replace page that will not be used for longest period of time.
+  ** Implementations
+    *** LRU (time stamp, stack, reference bit)
+    *** 2nd Chance -- reference bit and modify (dirty) bit
+* Frame allocation (to processes)
+  ** Equal - Each process gets an equal number of frames
+  ** Proportional - Allocate frames according to the size of the process
+  ** Priority - Allocate frames based on the priority of the process
+  ** Combination - Size and Priority
+  ** Also minimum -- all affected by multiprogramming level
+* Thrashing
+  ** What / why - Too many processes are "active" at once and may not have "enough" pages.  Fault rate becomes high and CPU usage suffers.
+  ** Local / global page replacement
+    *** Global - process selects a replacement frame from the set of all frames.
+    *** Local - process selects a replacement frame from only its own set of allocated frames.
+  ** How to detect
+    *** Sudden increase in page fault frequency
+  ** How to handle
+    *** Control maximum multiprogramming level
+    *** Use local rather than global page replacement
+* Locality / working set
+  ** General concept / why important - Processes tend to execute instructions near to one another.
+  ** Locality - set of pages used together.
+  ** What if too large or too small - if the size of all localities of all active processes > total memory size then thrashing occures.
+* Pre-paging - bringing all pages process will need.
+* Pinned pages - Ensure that a frame does not get paged out no matter what.
+* Inverted page table - use single page table not one for each process.
+
+=== Chapter 10: Disks
+* Disk structure
+  ** Track - round on a platter
+  ** Tector - Section of track
+  ** Cylinder - Combination of all the same tracks on all platters
+  ** Seek - Time it takes for arm to get to desired cylinder
+  ** Latency - Time it takes to rotate to correct section
+  ** Transfer - Rate at which data flows between drive and computer
+  ** Device directory
+* Disk scheduling
+  ** characteristics, advantages / disadvantages
+  ** FCFS - First-Come-First-Served: simple but often results in excessive arm movement.
+  ** SSTF - Shortest-Seek-Time-First: choose request that is closest to the current head position. Could result in starvation
+  ** SCAN - Starts at one end and moves around disk servicing all requests along the way, then makes it way back.
+  ** C-SCAN - Same as scan except the head will go all the way back to the begining and then start scanning again.
+  ** LOOK - Same as scan except the arm only goes as far as the last request in each direction.
+  ** C-LOOK - Same as c-scan except the arm only goes as far as the last request in each direction.
+* Disk protection
+  ** RAID - Redundant Array of Independent Disks
+  ** RAID 0 - No redundency. Space Complexity (N)
+  ** RAID 1 - Mirroring - Duplicate copy of each disk. Space complexity (2N)
+  **  RAID 5 - Data spead across disks.  Parity bit and data spread across all disks.  All data from a failed disk can be recoved, but nothing can be recoved if more than 2 disks fail. Space Complexity (N + M) where M is the number of drives.
+* Tertiary and hierarchical storage management
+  ** Tertiary: Level below secondary storage typically on tapes
+  ** Hierarchical: Move data between high-cost and low-cost storage media
+
+=== Chapter 12: File System
+* File allocation
+  *** characteristics, advantages / disadvantages
+  ** Contiguous - Each file occupies a set of contiguous blocks on the disk.  Simple, random access is quick.  But files cannot grow, and there is a lot of external frag.
+  ** Linked - Each block links to the next block in the chain.  Blocks can be scattered anywhere. Files can grow, and there is no frag.  Random access is harder, and need to allocate space for pointers.
+  ** Indexed - each file has an index block that contains pointers to all blocks in file.  Random access is easy, easy to expand, not fragmentation.  But need extra space for index tables.
+  ** What happens if index block is full? Create a new index that points to the old index.
+* Free space management
+  ** characteristics, advantages / disadvantages
+  ** Bitmap - bit at the begining of each block to say whether or not it is free or blocked. Simple and fast.  But takes up much space.
+  ** Linked Lists - maintiain a pointer in each free block to point to the next free block. Little wasted space. But cannot get continguous space easily, and very slow.
+  ** Grouping (index) - Directory in a series of blocks/sectors.
+  ** Counting - improvement of grouping.
+
+
+
+
+* I/O Systems and subsystems
+  ** Hardware, polling, interrupts, interrupt-driven I/O, DMA, blocking/non-blocking I/O, synchronous/asynchronous I/O
+  ** Interface, block and character devices, network devices
+  ** Kernel I/O subsystem
+  ** Streams
+  ** Performance
