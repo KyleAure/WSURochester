@@ -19,7 +19,7 @@
 ** *Replace:* with existing system
 4. Draw a chart showing how business value / system quality guide choice of the strategic option for dealing with legacy systems. Verbally describe the chart.
 +
-image:assets/9.3[]
+image:assets/9.3.png[]
 +
 ** Scrap (Low business value, Low quality)
 ** Maintain or scrap (Low business value, High quality)
@@ -130,113 +130,119 @@ image:assets/11.png[]
 ** *Preliminary risk assessment:* identify generic risks that are applicable to the system and to decide if an adequate level of security can be achieved at a reasonable cost.
 ** *Design risk assessment:* Takes place during the system development life cycle and is informed by the technical system design and implementation decisions.
 ** *Operational risk assessment:* should continue after a system has been installed to take account of how the system is used and proposals for new and changed requirements.
-6.	List on the board the eight security design guidelines. Verbally describe them.
-** Base security designs on a security policy
-** Use defense in depth
-** Fail securely
-** Balance security and usability
-** Specify the format of all inputs
-** Compartmentalization of assets
-** design for defense
-** design for recoverability
+6.	List on the board the seven security design guidelines. Verbally describe them.
+** *Explicit Security Policy:* Base security decisions on this high-level statement that sets out fundamental security conditions for an organization.
+** *Defense in Depth:* to avoid a single point of failure.
+** *Fail securely:* means to have fall-back procedures that are as secure as the original procedures.
+** *Balance Security and Usability:* there comes a point when it is counterproductive to keep adding on new security features at the expense of usability.
+** *Specify the Format of System Inputs:* Restrict names to 40 characters, addresses to 100 characters, alphabetic or numeric, etc.
+** *Compartmentalization of Assets:* Users should only have access to info that they need for their work. Minimizes damage.
+** *Design for Deployment:* Always provide support for deployment that reduces the chances of users and system administrators making mistakes when configuring the software.
+** *Design for Recovery:* Design with the assumption that a security failure could occur. Think about how to recover from possible failures and restore the system to a secure operational state.
 7. List on the board the four types of security testing. Verbally describe them.
-** experience based
-** penetration testing
-** tool based testing
-** formal verification
+** *Experience Based:* The system is analyzed against types of attacks that are known to the validation team.
+** *Penetration Testing:* Draw on experience from outside the development team to test an application. Penetration testing teams are given the objective to breach the system’s security.
+** *Tool based Testing:* Security tools such as password checkers are used to analyze the system. Static analysis checks for areas of a program that may be vulnerable.
+** *Formal Verification:* Making formal mathematical arguments that demonstrate a program conforms to its specification. Not widely used because it requires and expert.
 
 == Chapter 14
 
 1.	List on the board  the four resilience activities. Verbally describe them.
-** Recognition
-** Resistance
-** Recovery
-** Reinstatement
+** *Recognition:* The system or its operators should recognize early indications of system failure.
+** *Resistance:* If the symptoms of a problem or cyberattack are detected early, then resistance strategies may be used to reduce the probability that the system will fail.
+** *Recovery:* If a failure occurs, the recovery activity ensures that critical system services are restored quickly so that system users are not badly affected by failure.
+** *Reinstatement:* In this final activity, all of the system services are restored and normal system operation can continue.
 2.	List on the board the 6 stages in cyber-resilience planning. Verbally describe them.
 +
 image:assets/29.png[]
 +
+** *Asset Classification:* The organization’ hardware, software, and human assets are examined and classified depending on how essential they are to normal operations. critical, important or useful.
+** *Threat Identification:* For each of the critical and important assets, you should identify and classify threats to that asset.
+** *Threat Recognition:* For each threat or sometimes threat/asset pair, you should identify how an attack based on that threat might be recognized.
+** Threat Resistance: For each threat or asset/threat pair, you should identify possible resistance strategies. These either may be embedded in the system(technical) or may rely on operational procedures.
+** *Asset Recovery:* for each critical asset or asset/threat pair, you should work out how that asset could be recovered in the event of a successful cyberattack.
+** *Asset Reinstatement:* A general process of asset recovery where you define procedures to bring the system back into normal operation. Should be concerned with all assets and not just the assets that are critical to the operation.
+
 3. Draw on the board a picture of the Swiss cheese model of system failure.  Verbally discuss it.
++
+image:assets/14.3.png[]
++
 ** Layers of defense each with a hole. Only when the holes line up do you have a failure.
 
 == In-Class Activity
 
-1.	Maintainability:  List on the board 4 maintainability tips. Verbally describe them.
+1.	*Maintainability:*  List on the board maintainability tips. Verbally describe them.
 ** Bad Smells
 ** Duplicate Code
 ** Long Methods
 ** Low Cohesion
 ** High Coupling
-2.	Maintainability:  List on the board 4 maintainability tips. Verbally describe them.
-** See 31
-3.	Efficiency:  List on the board 4 efficiency tips. Verbally describe them.
+2.	*Efficiency:*  List on the board efficiency tips. Verbally describe them.
 ** Reduce object creations
 ** Tighten Loops
 ** Pool expensive objects
 ** Cache computed values
-4.	Efficiency: List on the board 4 efficiency tips. Verbally describe them.
-** see 33
-5.	Acceptability: List on the board 4 usability tips. Verbally describe them.
+3.	*Acceptability:* List on the board usability tips. Verbally describe them.
 ** Be consistent
-** Button placement
 ** Simple navigation
 ** Use color appropriately
-** Contract font color
-6.	Acceptability:  List on the board usability tips. Verbally describe them.
-** Easy to read language
-** Works with their system
+** Understandable - Easy to read
+** Works with customer's system
 ** Easy and quick to learn
 
 == Chapter 22
 
-1.	Chapter 22:  List on the board the five activities of project managers.  Verbally describe them.
-** Project Planning
-** Risk Management
-** People Management
-** Reporting
-** Proposal Writing
-2.	Chapter 22:  List on the board the three categories of project risk management strategies. Verbally describe them.
-** Avoidance
-** Minimization
-** Contingency
+1. List on the board the five activities of project managers.  Verbally describe them.
+** *Project Planning:* are responsible for planning, estimating, and scheduling project, assigning people to tasks, ensure work is carried out to required standards, and that the development is on time and within budget.
+** Risk Management: have to access the risks that may affect a project, monitor these risks and take action when problems arise.
+** *People Management:* are responsible for managing a team of people. They have to choose people for their team and motivate them for effective team performance.
+** *Reporting:* Project managers are usually responsible for reporting on progress of project to customers and to the managers of the company developing the software.
+** *Proposal Writing:* the first stage of a software project may involve writing a proposal to win a contract to carry out an item of work. Critical to the success of a company.
+
+2.	List on the board the three categories of project risk management strategies. Verbally describe them.
+** *Avoidance:* following these strategies means that the probability that the risk will arise is reduced (dealing with defective components)
+** *Minimization:* following these strategies means that the impact of the risk is reduced. (Strategy for staff illness)
+** *Contingency:* following these strategies means that you are prepared for the worst and have a strategy in place to deal with it. (Org financial problems).
 
 == Chapter 23
 
-1.	List on the board  the two measurements do you need for each task when putting together a schedule. Verbally describe them.
-** Duration and calendar days or months
-** Effort Estimate - person months / person days
-** Prerequisites
+1.	List on the board the two measurements do you need for each task when putting together a schedule. Verbally describe them.
+** Duration in calendar days/months
+** Effort Estimate - person months, or person days
 2. Draw on the board a sample project schedule chart (activity and staff allocation). Verbally describe them.
 +
 image:assets/40.png[]
 +
 3. Draw on the board the the basic formula for algorithmic cost modeling.  Verbally discuss the meaning of  A, B, and M, and their meaningful values.
-** Effort = A * Size \^ B * M
+** *Effort = A•Size^B^•M*
 ** A: Constant - unique to company
-** B: Exponent - Large project take exponentially longer
+** B: Exponent - Large projects take exponentially longer
 ** M: Multiplier - determined by product and process
 4. List on the board story points, value points, Fibonacci numbers, BFTB, and velocity.  Verbally discuss how these are used in agile estimating.
-** During agile estimate we use stories to describe user needs, value points are assigned to stories when they are being sized.  Values that are assigned are typically Fibonacci numbers as they represent the inherent uncertainty in estimating larger items. After a while velocity is used to
-** BFTB - Bang for the buck - value / story
-** Value points - what the customer thinks is most valuable
+** *Story points:* Relative points associated with a development project to estimate difficulty.
+** *Value points:* Relative points associated with a development project to represent what the customer thinks is the most valuable.
+** *Fibonacci numbers:* Values assigned are in the form of Fibonacci numbers to represent the inherent uncertainty in estimating larger items.
+** *Bang for the buck =* Value Points / Story Points
+** *Velocity:* Trend over time of how many story points a team is able to accomplish during an iteration.
 5. List on the board the fault classes found on an inspection checklist. Verbally describe them.
-** Data Faults
-** Control Faults
-** Input/Output Faults
-** Interface Fault
-** Storage Management Fault
-** Exception Management Fault
++
+image:assets/23.5.png[]
++
+image:assets/23.5.2.png[]
 
 == Chapter 24
 
 1. List on the board the agile development quality practices. Verbally describe them.
-** Check before check-in
-** Never break the build
-** Fix problems when you see them
+** *Check Before Check-In:* Programmers are responsible for organizing their own code reviews with other team members before the code is checked in to the build system.
+** *Never Break the Build:* It is not acceptable for team members to check in code that causes the system as a whole to fail.
+** *Fix Problems When you See Them:* The code of the system belongs to the team rather than to individuals.
 2.  List on the board the two types of metrics used for software measurement. Verbally describe them.
-** Dynamic - time resources
-** Static - see 46
+** *Dynamic:* which are collected by measurements made of a program in execution.
+** *Static:*  which are collected by measurements made of representations of the system, such as the design, program, or documentation.
 3.  List on the board  examples of static metrics for measuring software. Verbally describe them.
++
+image:assets/24.2.png[]
++
 ** Fan In - high coupling number of calls to a function
 ** Fan Out - low cohesion number of calls out of a function
 ** Length of Code - more complex
