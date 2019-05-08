@@ -3,144 +3,143 @@
 == Chapter 9
 
 1. List on the board the three types of software maintenance. Verbally describe them.
-** Fault Repair
-** Environmental Adaptation
-** Feature addition - most efforts here
+** *Fault Repair:* to fix bugs and vulnerabilities.
+** *Environmental Adaptation:* to adapt software to new platforms and environments. Required when hardware, the platform operating system, or other support software changes.
+** *Feature Addition:* to add new features and to support new requirements.
 2. List on the board the 5 “Bad smells” improvable by software refactoring. Verbally describe them.
-** duplicate code - put into method
-** long methods - break up
-** switch case statements - polymorphism
-** data clumping - combine into object
-** speculative generality - remove unused interfaces
+** *Duplicate Code:* the same or very similar code can be removed and implemented as a single method that is called when required.
+** *Long Methods:* Redesign long methods into a number of shorter methods. Should only do one thing.
+** *Switch-Case Statements:* These often involve duplication, where the switch depends on the type of a value. In object-oriented language, you can use polymorphism to achieve the same thing.
+** *Data Clumping:* Data clumps occur when the same group of data items (fields in classes, parameters in methods) reoccurs in several places in a program. Replace with an object that encapsulates all of the data.
+** *Speculative Generality:* This occurs when developers include generality in a program in case it is required in the future. This can often simply be removed.
 3. List on the board the four strategic options for dealing legacy systems. Verbally describe them.
-** scrap - get rid of it
-** maintain - keep using it
-** re-engineer - rework
-** replace - with existing system
+** *Scrap:* get rid of it
+** *Maintain:* keep using it
+** *Reengineer:* rework
+** *Replace:* with existing system
 4. Draw a chart showing how business value / system quality guide choice of the strategic option for dealing with legacy systems. Verbally describe the chart.
-** scrap (1,1)
-** maintain or scrap (1,2)
-** Re-engineer or replace (2,1)
-** Maintain (2,2)
++
+image:assets/9.3[]
++
+** Scrap (Low business value, Low quality)
+** Maintain or scrap (Low business value, High quality)
+** Reengineer or replace (High business value, Low quality)
+** Maintain (High business value, high quality)
 
 == Chapter 10
 
-[start=5]
 1. List on the board the five principle dimensions to dependability. Verbally describe them.
-** Availability - can be used
-** reliability - provides accurate data
-** safety - protects against harm to others
-** security - protected again malicious harm
-** Resistance - recovers after failure
+** *Availability:* system is available to do something
+** *Reliability:* system does what its supposed to
+** *Safety:* system won’t cause damage
+** *Security:* system cannot be infiltrated
+** *Resistance:* system is able to come back up in case of problems
 2. List on the board the two fundamental strategies for dependability. Verbally describe them.
-** Redundancy - keeps more than one system up
-** diversity - provides same functionality through different components
+** *Redundancy:* provide same functionality in different places
+** *Diversity:* provide same functionality in different ways
 3. List on the board an example of redundancy and diversity in a non-software context.  Verbally describe this example.
-** Auto breaking system
-** Example Redundancy - regular break + emergency break
-** Example Diversity - regular break uses hydraulics, emergency break uses friction.
+** *Redundancy:* Door to a house. A keyed deadbolt and knob lock.
+** *Diversity:* Breaks on a car. Hydraulics and cable breaks.
 
 == Chapter 11
 
-[start=8]
 1. List on the board the three complementary approaches to improve reliability. Verbally describe them.
-** fault avoidance
-** fault detection and removal
-** fault tolerance
+** *Fault Avoidance:* design system so faults do not happen
+** *Fault Detection and Removal:* design system to see fault and remove it.
+** *Fault Tolerance:* design system to have faults, but still be in stable working order.
 2. Draw a diagram representing a protection system.  Verbally discuss the diagram.
 +
 image:assets/9.png[]
 +
+** Sensors monitor the system environment.  Detect issues and pass instructions to the control system which can get the system back into working order.
 3. Draw a diagram representing a Self-monitoring system.  Verbally discuss the diagram.
 +
 image:assets/10.png[]
 +
+** Typically related to hardware failures.  Inputs are passed to identical systems.  The outputs are examined to determine if there was a hardware fault in either of the systems. If a fault is detected and status code is returned.  That output value is ignored and the redundant system is used.
 4. Draw a diagram representing N-version programming.  Verbally discuss the diagram.
 +
 image:assets/11.png[]
 +
-5.	List on the board the first four of the eight dependable programming guidelines. Verbally describe them.
-** Check all imports for validity
-** provide a handler for all exceptions
-** provide restart capabilities
-** check array bounds
-6.	List on the board the last four of the eight dependable programming guidelines. Verbally describe them.
-** Provide restart capabilities
-** timeout when calling external components
-** Name constants
-** Limit the visibility of information
-7. List on the board the key points for creating the sum method that satisfies the requirements for the Summing interface in homework 8.
-** Catch all throw-ables
-** Use a correct data type
+** Input is passed to multiple identical software versions.  The outputs of all versions are compared to ensure they match.  If they do not match a software fault is assumed to be the cause.
+5.	List on the board the eight dependable programming guidelines. Verbally describe them.
+** Limit the *visibility* of information. Do not crowd the name-space and ensure that data is only accessible to components that need them.
+** Check all inputs for *validity*. Type checking, range checking, regular expressions, etc.
+** Provide a *handler for all exceptions*. If an exception occurs it should be handled without system failure.
+** Minimize the use of *Error-Prone constructs*. Language or system specific constructs that tend to fail such as the accuracy of floating point numbers.
+** Provide *restart* capabilities. If system fails, provide a means to restart while loosing a minimum amount of data.
+** Check *array bounds*. Ensure that when accessing an array that the index is within the bounds of the array.
+** *Timeout* when calling external components.  If an external system call is made, provide a timeout period so that system function does not cease due to a faulty external system.
+** Name *constants*. Meaningfully especially when they represent real-world values.
+6. List on the board the key points for creating the sum method that satisfies the requirements for the Summing interface in homework 8.
+** Catch all throwables. Not just exceptions.
+** Validate input. Know the limitations of certain data types.
 
 == Chapter 12
 
-[start=15]
 1.	List the following safety terms on the board and verbally describe them.
-** Hazard - condition that will cause an error
-** Hazard Probability - how likely it is to happen
-** Hazard Severity - how bad it will be if it does happen
-** Risk - measure of probability
-** Accident -
-** Damage - what resulted
+** *Hazard:* condition with a potential for causing an accident
+** *Hazard Probability:* probability of events occurring that create a hazard
+** *Hazard Severity:* assessment of a worse possible case
+** *Risk:* probability that a hazard would cause an accident
+** *Accident:* unplanned event that results in damage
+** *Damage:* loss resulting from an accident
 2.	List on the board four steps for hazard-driven safety specification. Verbally describe them.
-** Hazard Identification
-** Hazard Assessments
-** Hazard Analysis
-** Reduction via Safety Requirements Specification
+** *Hazard Identification:* Identifies hazards that may threaten the system.
+** *Hazard Assessments:* Decides which hazards are the most dangerous and/or the most likely to occur.
+** *Hazard Analysis:* a root-cause analysis that identifies the events that can lead to the occurrence of a hazard.
+** *Risk Reduction:* The requirements may be concerned with ensuring the hazard does not arise or lead to an accident, or to minimize the damage if an accident does occur.
 3.	List on the board  the three strategies for Risk (Hazard) reduction. Verbally describe them.
-** Hazard Avoidance
-** Hazard Detection & Removal
-** Damage Limitation
+** *Hazard Avoidance:* where a system is designed so that the hazard cannot occur.
+** *Hazard Detection & Removal:* where a system is designed so that hazards are detected and neutralized before they result in an accident.
+** *Damage Limitation:* where a system is designed so that the consequences of an accident are minimized.
 4.	List on the board  the three levels of static analysis. Verbally describe them.
 ** *Characteristic Error Checking:* Error checker knows about common errors given the language and highlights these errors for the programmer
 ** *User-defined Error Checking:* Programmer defines error patters to be detected.
 ** *Assertion Checking:* Developers include formal assertions in their program that state relationships that must hold at the point of program execution.
 5.	List on the board the five types of static analysis checks. Verbally describe them.
-** Data Faults
-** Control faults
-** Input/Output faults
-** Interface Faults
-** Storage Management Faults
+** *Data Faults:* variables used before initialization, variables declared but never used, possible array bound violations.
+** *Control Faults:* unreachable code, unconditional branches into loops.
+** *Input/Output Faults:* variables output twice with no intervening assignment
+** *Interface Faults:* Parameter type mismatches, number mismatches, no usage of the results of functions uncalled functions and procedures.
+** *Storage Management Faults:* unassigned pointers, pointer arithmetic, memory leaks.
 
 == Chapter 13
 
-[start=20]
 1.	List on the board the three security dimensions. Verbally describe them.
-** Confidentiality
-** Integrity
-** Availability
+** *Confidentiality:* data is only exposed to the correct users
+** *Integrity:* data is not corrupt and only modified by authorized users
+** *Availability:* access to the system
 2.	List on the board  the four types of security threats. Verbally describe them and discuss how  they relate to security dimensions.
-** Interception - confidentiality
-** Interruption - available
-** Modification - integrity
-** Fabrication - integrity
+** *Interception:* (affects confidentiality) threats that allow an attacker to gain access to an asset.
+** *Interruption:* (affects available) threat that allow an attacker to make part of the system unavailable.
+** *Modification:* (affects integrity) threat that allow an attacker to tamper with a system asset.
+** *Fabrication:* (affects integrity) threat that allow an attacker to insert false information into a system.
 3.	List on the board  the 3 three main strategies or controls for dealing with security threats. Verbally describe them.
-** Vulnerability avoidance
-** attack detection and naturalization
-** exposure limitation and recovery
+** *Vulnerability Avoidance:* controls that are intended to ensure that attacks are unsuccessful.
+** *Attack Detection and Naturalization:* controls that are intended to detect and repel attacks. Involves functionality in a system that monitors its operation and checks for unusual patterns of activity.
+** *Exposure Limitation and Recovery:* controls that support recovery from problems. Can range from automated backup strategies to insurance policies that cover the costs associated with a successful attack.
 4.	List the board the following terms and verbally describe them.
-** Asset - something of value
-** Exposure - possible loss
-** Vulnerability - weakness in computer based system
-** Attack - exploitation of vulnerability
-** Threats - circumstances to cause loss or harm
-** Control - protective measure to lessen vulnerability
+** *Asset:* something of value that must be protected
+** *Exposure:* possibly loss or harm to a system
+** *Vulnerability:* weakness that may be exploited to cause loss or harm
+** *Attack:* exploitation of system vulnerability from outside the system
+** *Threats:* circumstances that have potential to cause loss or harm
+** *Control:* protective measure to reduce system vulnerability
 5.	List on the board the three stages of security risk assessment. Verbally describe them.
-** preliminary risk assessment - what are the risks
-** design risk assessment - extra requirements
-** operational risk assessment - human behavior
-6.	List on the board the first four security design guidelines. Verbally describe them.
+** *Preliminary risk assessment:* identify generic risks that are applicable to the system and to decide if an adequate level of security can be achieved at a reasonable cost.
+** *Design risk assessment:* Takes place during the system development life cycle and is informed by the technical system design and implementation decisions.
+** *Operational risk assessment:* should continue after a system has been installed to take account of how the system is used and proposals for new and changed requirements.
+6.	List on the board the eight security design guidelines. Verbally describe them.
 ** Base security designs on a security policy
 ** Use defense in depth
 ** Fail securely
 ** Balance security and usability
-7.	List on the board the last four security design guidelines. Verbally describe them.
 ** Specify the format of all inputs
 ** Compartmentalization of assets
 ** design for defense
 ** design for recoverability
-8. List on the board the four types of security testing. Verbally describe them.
+7. List on the board the four types of security testing. Verbally describe them.
 ** experience based
 ** penetration testing
 ** tool based testing
@@ -148,7 +147,6 @@ image:assets/11.png[]
 
 == Chapter 14
 
-[start=28]
 1.	List on the board  the four resilience activities. Verbally describe them.
 ** Recognition
 ** Resistance
@@ -163,7 +161,6 @@ image:assets/29.png[]
 
 == In-Class Activity
 
-[start=31]
 1.	Maintainability:  List on the board 4 maintainability tips. Verbally describe them.
 ** Bad Smells
 ** Duplicate Code
@@ -192,7 +189,6 @@ image:assets/29.png[]
 
 == Chapter 22
 
-[start=37]
 1.	Chapter 22:  List on the board the five activities of project managers.  Verbally describe them.
 ** Project Planning
 ** Risk Management
@@ -206,7 +202,6 @@ image:assets/29.png[]
 
 == Chapter 23
 
-[start=39]
 1.	List on the board  the two measurements do you need for each task when putting together a schedule. Verbally describe them.
 ** Duration and calendar days or months
 ** Effort Estimate - person months / person days
@@ -234,7 +229,6 @@ image:assets/40.png[]
 
 == Chapter 24
 
-[start=44]
 1. List on the board the agile development quality practices. Verbally describe them.
 ** Check before check-in
 ** Never break the build
@@ -251,7 +245,6 @@ image:assets/40.png[]
 
 == Project
 
-[start=47]
 1.	List on the board a problem faced on your project:  Verbally discuss it.
 ** RSA
 ** People's schedules
