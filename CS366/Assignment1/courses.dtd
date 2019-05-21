@@ -1,0 +1,45 @@
+<!--
+	Name: courses.dtd
+	Description: DTD for courseList.xml validation
+	Author: Kyle Jon Aure
+	Date: 5/19/2019
+-->
+<!-- ROOT: courses -->
+<!ELEMENT courses (course+)>
+<!ATTLIST courses xmlns CDATA #FIXED "https://cs.winona.edu/cs366/assignment1/KyleAure">
+
+<!-- LEVEL1: course -->
+<!ELEMENT course (subject, title, section+)>
+<!ATTLIST course number CDATA #REQUIRED>
+<!ATTLIST course credits CDATA #REQUIRED>
+
+<!-- LEVEL2: subject, title, section -->
+<!ELEMENT subject (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT section (enrollment, date, days?, time?, room?, instructor+)>
+<!ATTLIST section number CDATA #REQUIRED>
+<!ATTLIST section id ID #REQUIRED>
+<!ATTLIST section delivery (Classroom|Online|ITV) #REQUIRED>
+
+<!-- LEVEL3: enrollment, date, days, time, room, instructor -->
+<!ELEMENT enrollment (#PCDATA)>
+<!ELEMENT days (#PCDATA)>
+<!ELEMENT time (startTime, endTime)>
+<!ELEMENT room (#PCDATA)>
+<!ATTLIST room campus CDATA #REQUIRED>
+
+<!-- Reference date dtd -->
+<!ENTITY % date SYSTEM "date.dtd">
+%date;
+
+<!ELEMENT instructor (first, last)>
+
+<!-- LEVEL4:  start, end, first, last -->
+<!ELEMENT startTime (#PCDATA)>
+<!ELEMENT endTime (#PCDATA)>
+<!ELEMENT first (#PCDATA)>
+<!ELEMENT last (#PCDATA)>
+
+<!-- ENTITIES -->
+<!ENTITY instructor-first "Chi-Cheng">
+<!ENTITY instructor-last "Lin">

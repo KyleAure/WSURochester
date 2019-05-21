@@ -1,0 +1,9 @@
+<!--
+	Name: date.dtd
+	Description: date entity for courses.dtd
+	Author: Kyle Jon Aure
+	Date: 5/19/2019
+-->
+<!ELEMENT date (startDate, endDate)>
+<!ELEMENT startDate (#PCDATA)>
+<!ELEMENT endDate (#PCDATA)>
