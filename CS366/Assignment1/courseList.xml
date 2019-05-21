@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Name: courseList.xml
+	Description: XML file for college courses
+	Author: Kyle Jon Aure
+	Date: 5/19/19
+
+	Emmet construct: 
+	course[number credits]>subject+title+section[number id delivery]>enrollment+(date>startDate+endDate)+days+(time>startTime+endTime)+room+(instructor>first+last)
+-->
+<!DOCTYPE courses SYSTEM "courses.dtd">
+<courses xmlns="https://cs.winona.edu/cs366/assignment1/KyleAure">
+	<course number="341" credits="4">
+		<subject>CS</subject>
+		<title>Data Structures</title>
+		<section number="01" id="X001780" delivery="Classroom">
+			<enrollment>15</enrollment>
+			<date>
+				<startDate>8/25/2020</startDate>
+				<endDate>12/04/2020</endDate>
+			</date>
+			<days>T TH</days>
+			<time>
+				<startTime>4:00PM</startTime>
+				<endTime>5:50PM</endTime>
+			</time>
+			<room campus="Rochester">EA244</room>
+			<instructor>
+				<first>Nicole</first>
+				<last>Anderson</last>
+			</instructor>
+		</section>
+		<section number="02" id="X001784" delivery="Online">
+			<enrollment>10</enrollment>
+			<date>
+				<startDate>8/24/2020</startDate>
+				<endDate>12/4/2020</endDate>
+			</date>
+			<instructor>
+				<first>Nicole</first>
+				<last>Anderson</last>
+			</instructor>
+			<instructor>
+				<first>&instructor-first;</first>
+				<last>&instructor-last;</last>
+			</instructor>
+		</section>
+		<section number="03" id="X001788" delivery="Classroom">
+			<enrollment>12</enrollment>
+			<date>
+				<startDate>8/25/2020</startDate>
+				<endDate>12/4/2020</endDate>
+			</date>
+			<days>T TH</days>
+			<time>
+				<startTime>6:00PM</startTime>
+				<endTime>7:50PM</endTime>
+			</time>
+			<room campus="Rochester">SH102</room>
+			<instructor>
+				<first>Dennis</first>
+				<last>Martin</last>
+			</instructor>
+		</section>
+	</course>
+	<course number="368" credits="4">
+		<subject>CS</subject>
+		<title>Introduction to Bioinformatics</title>
+		<section number="01" id="X001781" delivery="ITV">
+			<enrollment>9</enrollment>
+			<date>
+				<startDate>8/26/2020</startDate>
+				<endDate>12/4/2020</endDate>
+			</date>
+			<days>W</days>
+			<time>
+				<startTime>6:00PM</startTime>
+				<endTime>8:40PM</endTime>
+			</time>
+			<room campus="Rochester">AT102</room>
+			<instructor>
+				<first>Mingrui</first>
+				<last>Zhang</last>
+			</instructor>
+			<instructor>
+				<first>&instructor-first;</first>
+				<last>&instructor-last;</last>
+			</instructor>
+		</section>
+	</course>
+	<course number="375" credits="4">
+		<subject>CS</subject>
+		<title>Computer Systems</title>
+		<section number="01" id="X001782" delivery="Classroom">
+			<enrollment>18</enrollment>
+			<date>
+				<startDate>8/24/2020</startDate>
+				<endDate>12/4/2020</endDate>
+			</date>
+			<days>M W</days>
+			<time>
+				<startTime>4:00PM</startTime>
+				<endTime>5:50PM</endTime>
+			</time>
+			<room campus="Rochester">EA224</room>
+			<instructor>
+				<first>&instructor-first;</first>
+				<last>&instructor-last;</last>
+			</instructor>
+		</section>
+	</course>
+	<course number="385" credits="3">
+		<subject>CS</subject>
+		<title>Applied Database Management Systems</title>
+		<section number="01" id="X001783" delivery="Classroom">
+			<enrollment>25</enrollment>
+			<date>
+				<startDate>8/25/2020</startDate>
+				<endDate>12/4/2020</endDate>
+			</date>
+			<days>T TH</days>
+			<time>
+				<startTime>11:00AM</startTime>
+				<endTime>12:20PM</endTime>
+			</time>
+			<room campus="Rochester">ST108</room>
+			<instructor>
+				<first>Nicole</first>
+				<last>Anderson</last>
+			</instructor>
+		</section>
+	</course>
+	<course number="440" credits="3">
+		<subject>CS</subject>
+		<title>Theory of Algorithms</title>
+		<section number="01" id="X001786" delivery="Online">
+			<enrollment>15</enrollment>
+			<date>
+				<startDate>8/24/2020</startDate>
+				<endDate>12/4/2020</endDate>
+			</date>
+			<instructor>
+				<first>&instructor-first;</first>
+				<last>&instructor-last;</last>
+			</instructor>
+		</section>
+	</course>
+</courses>
