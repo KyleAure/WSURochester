@@ -208,3 +208,32 @@ Entities are direct string substitution.
 <element name="name" type="type" id=ID ref="global element declaration" form="qualified|unqualified" minOccurs="min" maxOccurs="max" default="default value"  fixed="fixed value" /> 
 ```
 
+## Content Models and Types
+General Definitions
+* XML Schema distinguishes Structure and Data Types
+* Structures: Elements and attributes
+* Data Types: Strings, Dates, and Numbers
+* Content Models: based on DTDs, but extend them. Part of a element's type.
+* **Elements have both structure and content**
+
+Content Models
+* Schema provides three main content models.
+  * Sequence: Like (,) in DTD
+  * Choice: Like (|) in DTD
+  * All: No equivalent in DTD
+* Used to require all elements, but in any order.
+
+## Design Models
+* Salami Slice
+  * Issue: All elements are in global scope, no enforcement of structure
+  * Useful: Highly reusable since everything is in global scope
+
+* Russian Doll
+  * Issue: Not reusable since only the root is in global scope
+  * Useful: Ensures structure
+
+* Venetian Blind **Used for assignment 2**
+  * Issue: Less readable, and harder to develop.
+  * Useful: Allows modularity but still enforces structure.
+
+
