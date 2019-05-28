@@ -1,0 +1,147 @@
+1. The structure of XML documents is hierarchical.
+** True
+2. Metadata are the special characters used to organized XML data.
+** False
+3. XML is an extension of HTML.
+** False
+4. XML is self describing.
+** True
+5. XML is for small files only.
+** False
+6. An XML parser is a program that will ---.  (Choose the best answer.)
+** ?? validate XML data
+7. All non-empty XML elements need ---.  (Choose the best answer.)
+** start tags and end tags
+8. Both XML and HTML documents need to be well formed.
+** False
+9. How many start and end tags are there in the following example?
++
+[souce,xml]
+----
+<name>
+  <first>John</first>
+  <middle>Fitzgerald Johansen</middle>
+  <last>Doe</last>
+</name>
+----
++
+** 4 start tags and 4 end tags
+10. In the following example what is called the element content? `<B>This is bold.</B>`
+** This is bold.
+11. Which of the following is not an accepted XML rule?
+** XML is not case sensitive.
+12. In the following example, which element is the root element?
++
+[souce,xml]
+----
+<names>
+  <name>John</name>
+  <name>Jane</name>
+</names>
+----
++
+** names
+13.Which of the following element(s) are invalid?
++
+[souce,xml]
+----
+1. <firstName>
+2. <résumé>
+3. <xml-tag>
+4. <123>
+5. <fun=xml>
+6. <my tag>
+----
++
+** 3, 4, 5, and 6
+14.
++
+[souce,xml]
+----
+<parts>
+<part>gears</p>
+<part>nails</p>
+</parts>
+
+is the same as
+
+<parts>
+<part>nails</p>
+<part>gears</p>
+</parts>
+----
++
+** False
+15.
++
+[souce,xml]
+----
+<part id="123" available="true">gears</p>
+
+is the same as
+
+<part available="true" id="123">gears</p>
+----
++
+** True
+16. Namespaces are required because ---.
+** it enables the separation of XML vocabularies.
+17. The QName consists of two parts. What are they?
+** 	Namespace prefix and local part
+18. A default namespace is used to ---.
+** clean up the look of the document
+19. All namespace prefixes have to be described on the root element.
+** 	False
+20. In the following example the bolded line is an example of ---.
++
+[source,xml]
+----
+<employee>
+  <name>Jane Doe</name>
+  <notes>
+    <p xmlns=“http://www.w3.org/1999/xhtml”>I’ve worked
+    with <name xmlns=“”>Jane Doe</name> for over a <em>year</em>
+    now.</p>
+  </notes>
+</employee>
+----
++
+** cancelling the namespace
+21. Namespaces do not work the same for attributes as they do for the elements.
+** True
+22. From a namespace perspective, these three examples mean the same thing.
++
+[source,xml]
+---
+Example 1.
+
+<pers:person xmlns:pers=“http://sernaferna.com/pers”
+             xmlns:xhtml=“http://www.w3.org/1999/xhtml”>
+  <pers:name/>
+  <xhtml:p>This is XHTML</xhtml:p>
+</pers:person>
+
+
+Example 2.
+
+<person xmlns=“http://sernaferna.com/pers”
+        xmlns:xhtml=“http://www.w3.org/1999/xhtml”>
+  <name/>
+  <xhtml:p>This is XHTML</xhtml:p>
+</person>
+
+
+Example 3.
+
+<person xmlns=“http://sernaferna.com/pers”>
+  <name/>
+  <p xmlns=“http://www.w3.org/1999/xhtml”>This is XHTML</p>
+---
++
+** True
+23. A default namespace is exactly like a regular namespace, except that you don’t have to specify a prefix for all of the elements that use it.
+**	True
+24. What are the two types of URIs?
+** URL and URN
+25. The URL in the namespace declaration in XML is used to access data from the Internet.
+** 	False
