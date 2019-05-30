@@ -8,19 +8,83 @@
 	Design Pattern: Venetian Blind
 -->
 <schema xmlns="http://www.w3.org/2001/XMLSchema" 
-  targetNamespace="https://cs.winona.edu/cs366/aure/presentations" 
+	targetNamespace="https://cs.winona.edu/cs366/aure/presentations" 
 	xmlns:target="https://cs.winona.edu/cs366/aure/presentations" 
 	elementFormDefault="qualified">
+
+	<!-- SIMPLE TYPE DEFINITIONS -->
+	<simpleType name="genreOpts">
+	  <restriction base="string">
+	    <enumeration value="Art"/>
+	    <enumeration value="Music"/>
+	    <enumeration value="Science"/>
+	    <enumeration value="Technology"/>
+	  </restriction>
+	</simpleType>
+
+	<simpleType name="nameOpts">
+	  <restriction base="string">
+	    <enumeration value="Mr."/>
+	    <enumeration value="Mrs."/>
+	    <enumeration value="Ms."/>
+	    <enumeration value="Miss"/>
+	  </restriction>
+	</simpleType>
+
+	<!-- COMPLEX TYPE DEFINITIONS -->
+	<complexType name="topicType">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="genre" type="target:genreOpts"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<complexType name="nameType">
+		<sequence>
+			<elementGroup ref="target:nameElems"/>
+		</sequence>
+		<attributeGroup ref="target:nameAttr"/>
+	</complexType>
+
+	<complexType name="presentersType">
+		<sequence>
+			<element name="name" type="target:nameType" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+
+	<complexType name="presentationType">
+		<sequence>
+			<element name="topic" type="target:topicType"/>
+			<element name="presenters" type="target:presentersType"/>
+		</sequence>
+		<attributeGroup ref="target:presentationAttr"/>
+	</complexType>
+
+	<!-- ATTRIBUTE GROUP DEFINITIONS -->
+	<attributeGroup name="presentationAttr">
+		<attribute name="date" type="date"/>
+		<attribute name="length" type="duration"/>
+	</attributeGroup>
+
+	<attributeGroup name="nameAttr">
+		<attribute name="title" type="target:genreOpts"/>
+		<attribute name="id" type="string"/>
+	</attributeGroup>
+
+	<!-- ELEMENT GROUP DEFINITIONS -->
+	<elementGroup name="nameElems">
+		<element name="first" type="string" maxOccurs="unbounded"/>
+		<element name="middle" type="string" minOccurs="0" maxOccurs="1"/>
+		<element name="last" type="string"/>
+	</elementGroup>
 	
+	<!-- ROOT ELEMENT DEFINITION -->
 	<element name="presentations">
-  
+		<complexType>
+			<sequence>
+				<element name="presentation" type="target:presentationType" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
 	</element>
-
-	<!-- Presentations' Attributes >
-	<attributeGroup name="presentationsAttr">
-		<attribute name="date" type="date" use="required"/>
-		<attribute name="length" type="string" use="required"/>
-	</attributeGroup-->
-
-
 </schema>
