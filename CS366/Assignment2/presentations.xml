@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Name: Presentation.xml
+  Description: XML file for presentations
+  Author: Chi-Cheng Lin
+  Edited by: Kyle Jon Aure
+  Date: 5/29/19
+-->
+
+<presentations xmlns="https://cs.winona.edu/cs366/aure/presentations"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="https://cs.winona.edu/cs366/aure/presentations presentations.xsd">
+  <presentation date="2013-07-31" length="PT30M">
+    <topic genre="Music">PianoML</topic>
+    <presenters>
+      <name title="Mr." id="Y258">
+        <first>Elvis</first>
+        <middle>A</middle>
+        <last>Presley </last>
+      </name>
+      <name title="Miss" id="X365">
+        <first>Lady</first>
+        <last>Gaga</last>
+      </name>
+    </presenters>
+  </presentation>
+    <presentation date="2013-08-05" length="PT35M">
+    <topic genre="Science">AlienML</topic>
+    <presenters>
+         <name title="Mr." id="Y007">
+        <first>Will</first>
+        <last>Smith</last>
+      </name>
+      <name title="Mr." id="Y360">
+        <first>Tommy</first>
+        <first>Lee</first>
+        <last>Jones</last>
+      </name>
+    </presenters>
+  </presentation>
+</presentations>
