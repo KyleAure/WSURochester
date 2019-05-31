@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Name: topic.xsd
+	Description: Schema definition for topic element
+	Author: Kyle Jon Aure
+	Date: 5/31/19
+
+	Notes: To be imported into presentations.xsd
+-->
+<xs:schema 
+	xmlns="https://cs.winona.edu/cs366/aure/topic"
+	targetNamespace="https://cs.winona.edu/cs366/aure/topic"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:this="https://cs.winona.edu/cs366/aure/topic"
+	elementFormDefault="qualified">
+	<xs:simpleType name="genreOpts">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Art"/>
+			<xs:enumeration value="Music"/>
+			<xs:enumeration value="Science"/>
+			<xs:enumeration value="Technology"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="topicType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="genre" type="this:genreOpts"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>
