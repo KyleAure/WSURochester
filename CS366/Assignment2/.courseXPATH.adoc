@@ -1,0 +1,283 @@
+= XPath queries for courses.xml
+:Author:    Kyle Jon Aure
+:Email:     KAure09@winona.edu
+:Date:      05/31/2019
+:Revision:  1.0
+
+== Questions and Output
+* The third course (not the third section).
+** Expression: `/courses/course[3]`
+** Output:
++
+[source, text]
+----
+Element='<course credits="4.0" number="368">
+    <title>Introduction to Bioinformatics</title>
+    <section delivery="Classroom" number="01">
+      <enrollment>9</enrollment>
+      <room>AT102</room>
+      <instructor>
+        <first>Chi-Cheng</first>
+        <last>Lin</last>
+      </instructor>
+      <instructor>
+        <first>Mingrui</first>
+        <last>Zhang</last>
+      </instructor>
+    </section>
+  </course>'
+----
++
+* The second 4 credits course.
+** Expression: `/courses/course[@credits=4.0][2]`
+** Output:
++
+[source, text]
+----
+Element='<course credits="4.0" number="368">
+    <title>Introduction to Bioinformatics</title>
+    <section delivery="Classroom" number="01">
+      <enrollment>9</enrollment>
+      <room>AT102</room>
+      <instructor>
+        <first>Chi-Cheng</first>
+        <last>Lin</last>
+      </instructor>
+      <instructor>
+        <first>Mingrui</first>
+        <last>Zhang</last>
+      </instructor>
+    </section>
+  </course>'
+----
++
+* All the sections using “Classroom” delivery.
+** Expression: `/courses/course/section[@delivery='Classroom']`
+** Output:
++
+[source, text]
+----
+Element='<section delivery="Classroom" number="01">
+      <enrollment>15</enrollment>
+      <room>EA244</room>
+      <instructor>
+        <first>Nicole</first>
+        <last>Anderson</last>
+      </instructor>
+    </section>'
+
+Element='<section delivery="Classroom" number="03">
+      <enrollment>12</enrollment>
+      <room>SH102</room>
+      <instructor>
+        <first>Mark</first>
+        <last>Funk</last>
+      </instructor>
+    </section>'
+
+Element='<section delivery="Classroom" number="01">
+      <enrollment>26</enrollment>
+      <room>ST108</room>
+      <instructor>
+        <first>Nicole</first>
+        <last>Anderson</last>
+      </instructor>
+    </section>'
+
+Element='<section delivery="Classroom" number="01">
+      <enrollment>9</enrollment>
+      <room>AT102</room>
+      <instructor>
+        <first>Chi-Cheng</first>
+        <last>Lin</last>
+      </instructor>
+      <instructor>
+        <first>Mingrui</first>
+        <last>Zhang</last>
+      </instructor>
+    </section>'
+----
++
+* All the courses taught by instructor with last name Anderson.
+** Expression: `/courses/course[section/instructor/last/text()='Anderson']`
+** Output:
++
+[source, text]
+----
+Element='<course credits="4.0" number="341">
+    <title>Data Structures</title>
+    <section delivery="Classroom" number="01">
+      <enrollment>15</enrollment>
+      <room>EA244</room>
+      <instructor>
+        <first>Nicole</first>
+        <last>Anderson</last>
+      </instructor>
+    </section>
+    <section delivery="Online" number="02">
+      <enrollment>10</enrollment>
+      <instructor>
+        <first>Nicole</first>
+        <last>Anderson</last>
+      </instructor>
+      <instructor>
+        <first>Chi-Cheng</first>
+        <last>Lin</last>
+      </instructor>
+    </section>
+    <section delivery="Classroom" number="03">
+      <enrollment>12</enrollment>
+      <room>SH102</room>
+      <instructor>
+        <first>Mark</first>
+        <last>Funk</last>
+      </instructor>
+    </section>
+  </course>'
+
+Element='<course credits="3.0" number="385">
+    <title>Applied Database Management Systems</title>
+    <section delivery="Classroom" number="01">
+      <enrollment>26</enrollment>
+      <room>ST108</room>
+      <instructor>
+        <first>Nicole</first>
+        <last>Anderson</last>
+      </instructor>
+    </section>
+  </course>'
+----
++
+* All the sections that has an enrollment smaller than 14.
+** Expression: `/courses/course/section[enrollment/text()<14]`
+** Output:
++
+[source, text]
+----
+Element='<section delivery="Online" number="02">
+      <enrollment>10</enrollment>
+      <instructor>
+        <first>Nicole</first>
+        <last>Anderson</last>
+      </instructor>
+      <instructor>
+        <first>Chi-Cheng</first>
+        <last>Lin</last>
+      </instructor>
+    </section>'
+
+Element='<section delivery="Classroom" number="03">
+      <enrollment>12</enrollment>
+      <room>SH102</room>
+      <instructor>
+        <first>Mark</first>
+        <last>Funk</last>
+      </instructor>
+    </section>'
+
+Element='<section delivery="Classroom" number="01">
+      <enrollment>9</enrollment>
+      <room>AT102</room>
+      <instructor>
+        <first>Chi-Cheng</first>
+        <last>Lin</last>
+      </instructor>
+      <instructor>
+        <first>Mingrui</first>
+        <last>Zhang</last>
+      </instructor>
+    </section>'
+
+Element='<section delivery="Online" number="01">
+      <enrollment>10</enrollment>
+      <instructor>
+        <first>Chi-Cheng</first>
+        <last>Lin</last>
+      </instructor>
+    </section>'
+----
++
+* All the instructors teaching the course titled “Data Structures.”
+** Expression: `/courses/course/section/instructor[/courses/course/title/text()='Data Structures']`
+** Output:
++
+[source, text]
+----
+Element='<instructor>
+        <first>Nicole</first>
+        <last>Anderson</last>
+      </instructor>'
+
+Element='<instructor>
+        <first>Nicole</first>
+        <last>Anderson</last>
+      </instructor>'
+
+Element='<instructor>
+        <first>Chi-Cheng</first>
+        <last>Lin</last>
+      </instructor>'
+
+Element='<instructor>
+        <first>Mark</first>
+        <last>Funk</last>
+      </instructor>'
+
+Element='<instructor>
+        <first>Nicole</first>
+        <last>Anderson</last>
+      </instructor>'
+
+Element='<instructor>
+        <first>Chi-Cheng</first>
+        <last>Lin</last>
+      </instructor>'
+
+Element='<instructor>
+        <first>Mingrui</first>
+        <last>Zhang</last>
+      </instructor>'
+
+Element='<instructor>
+        <first>Chi-Cheng</first>
+        <last>Lin</last>
+      </instructor>'
+
+Element='<instructor>
+        <first>Chi-Cheng</first>
+        <last>Lin</last>
+      </instructor>'
+----
++
+* All the sections that are co-taught by two instructors.
+** Expression: `/courses/course/section[count(instructor)=2]`
+** Output:
++
+[source, text]
+----
+Element='<section delivery="Online" number="02">
+      <enrollment>10</enrollment>
+      <instructor>
+        <first>Nicole</first>
+        <last>Anderson</last>
+      </instructor>
+      <instructor>
+        <first>Chi-Cheng</first>
+        <last>Lin</last>
+      </instructor>
+    </section>'
+
+Element='<section delivery="Classroom" number="01">
+      <enrollment>9</enrollment>
+      <room>AT102</room>
+      <instructor>
+        <first>Chi-Cheng</first>
+        <last>Lin</last>
+      </instructor>
+      <instructor>
+        <first>Mingrui</first>
+        <last>Zhang</last>
+      </instructor>
+    </section>'
+----
++

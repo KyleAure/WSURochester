@@ -1,90 +1,91 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--
-	Name: presentation.xml
+	Name: presentations.xsd
 	Description: Schema definition for presentation.xml
 	Author: Kyle Jon Aure
-	Date: 5/29/19
+	Date: 5/31/19
 
-	Design Pattern: Venetian Blind
+	Design xs:Pattern: Venetian Blind
 -->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" 
-	targetNamespace="https://cs.winona.edu/cs366/aure/presentations" 
-	xmlns:target="https://cs.winona.edu/cs366/aure/presentations" 
+<xs:schema 
+	xmlns="https://cs.winona.edu/cs366/aure/presentations"
+	targetNamespace="https://cs.winona.edu/cs366/aure/presentations"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:this="https://cs.winona.edu/cs366/aure/presentations" 
+ 	xmlns:tpc="https://cs.winona.edu/cs366/aure/topic"
 	elementFormDefault="qualified">
 
-	<!-- SIMPLE TYPE DEFINITIONS -->
-	<simpleType name="genreOpts">
-	  <restriction base="string">
-	    <enumeration value="Art"/>
-	    <enumeration value="Music"/>
-	    <enumeration value="Science"/>
-	    <enumeration value="Technology"/>
-	  </restriction>
-	</simpleType>
+	<!-- IMPORT -->
+	<xs:import
+		namespace="https://cs.winona.edu/cs366/aure/topic"
+		schemaLocation="topic.xsd"/>
 
-	<simpleType name="nameOpts">
-	  <restriction base="string">
-	    <enumeration value="Mr."/>
-	    <enumeration value="Mrs."/>
-	    <enumeration value="Ms."/>
-	    <enumeration value="Miss"/>
-	  </restriction>
-	</simpleType>
+	<!-- SIMPLE TYPE DEFINITIONS -->
+	<xs:simpleType name="nameOpts">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Mr."/>
+			<xs:enumeration value="Mrs."/>
+			<xs:enumeration value="Ms."/>
+			<xs:enumeration value="Miss"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="presenterID">
+		<xs:restriction base="xs:ID">
+			<xs:pattern value="(X|Y)\d\d\d"/>
+		</xs:restriction>
+	</xs:simpleType>
 
 	<!-- COMPLEX TYPE DEFINITIONS -->
-	<complexType name="topicType">
-		<simpleContent>
-			<extension base="string">
-				<attribute name="genre" type="target:genreOpts"/>
-			</extension>
-		</simpleContent>
-	</complexType>
+	<xs:complexType name="nameType">
+		<xs:group ref="this:nameElems"/>
+		<xs:attributeGroup ref="this:nameAttr"/>
+	</xs:complexType>
 
-	<complexType name="nameType">
-		<sequence>
-			<elementGroup ref="target:nameElems"/>
-		</sequence>
-		<attributeGroup ref="target:nameAttr"/>
-	</complexType>
+	<xs:complexType name="presentersType">
+		<xs:sequence>
+			<xs:element name="name" type="this:nameType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
 
-	<complexType name="presentersType">
-		<sequence>
-			<element name="name" type="target:nameType" maxOccurs="unbounded"/>
-		</sequence>
-	</complexType>
+	<xs:complexType name="presentationType">
+		<xs:sequence>
+			<xs:element name="topic" type="tpc:topicType"/>
+			<xs:element name="presenters" type="this:presentersType"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="this:presentationAttr"/>
+	</xs:complexType>
 
-	<complexType name="presentationType">
-		<sequence>
-			<element name="topic" type="target:topicType"/>
-			<element name="presenters" type="target:presentersType"/>
-		</sequence>
-		<attributeGroup ref="target:presentationAttr"/>
-	</complexType>
+	<xs:complexType name="presentationsType">
+		<xs:sequence>
+			<xs:element name="presentation" type="this:presentationType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
 
 	<!-- ATTRIBUTE GROUP DEFINITIONS -->
-	<attributeGroup name="presentationAttr">
-		<attribute name="date" type="date"/>
-		<attribute name="length" type="duration"/>
-	</attributeGroup>
+	<xs:attributeGroup name="presentationAttr">
+		<xs:attribute name="date" type="xs:date"/>
+		<xs:attribute name="length" type="xs:duration"/>
+	</xs:attributeGroup>
 
-	<attributeGroup name="nameAttr">
-		<attribute name="title" type="target:genreOpts"/>
-		<attribute name="id" type="string"/>
-	</attributeGroup>
+	<xs:attributeGroup name="nameAttr">
+		<xs:attribute name="title" type="this:nameOpts"/>
+		<xs:attribute name="id" type="xs:string"/>
+	</xs:attributeGroup>
 
 	<!-- ELEMENT GROUP DEFINITIONS -->
-	<elementGroup name="nameElems">
-		<element name="first" type="string" maxOccurs="unbounded"/>
-		<element name="middle" type="string" minOccurs="0" maxOccurs="1"/>
-		<element name="last" type="string"/>
-	</elementGroup>
+	<xs:group name="nameElems">
+		<xs:sequence>
+			<xs:element name="first" type="xs:string" maxOccurs="unbounded"/>
+			<xs:element name="middle" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="last" type="xs:string"/>
+		</xs:sequence>
+	</xs:group>
 	
-	<!-- ROOT ELEMENT DEFINITION -->
-	<element name="presentations">
-		<complexType>
-			<sequence>
-				<element name="presentation" type="target:presentationType" minOccurs="0" maxOccurs="unbounded"/>
-			</sequence>
-		</complexType>
-	</element>
-</schema>
+	<!-- 
+		ROOT ELEMENT DEFINITION 
+		(only global element defined) 
+	-->
+	<xs:element name="presentations" type="presentationsType"/>
+	
+</xs:schema>
