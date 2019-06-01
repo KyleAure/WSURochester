@@ -1,3 +1,8 @@
+== Quiz 1
+
+Chapters: 1, 2, 3
+Score: 24/25
+
 1. The structure of XML documents is hierarchical.
 ** True
 2. Metadata are the special characters used to organized XML data.
