@@ -1,0 +1,56 @@
+== Quiz 2
+
+Chapters: 4, 5, 6
+Score: 23/25
+
+1. DTD is an acronym for ---.
+** Document Type Definition
+2. DTDs are primarily used to ---.
+** validate documents
+3. What is the name of the element defined in the following example? `<!ELEMENT dinosaurs (carnivore, herbivore, omnivore)>`
+** All the above
+4. What is the content model of the element defined in the following example? `<!ELEMENT dinosaurs (carnivore, herbivore, omnivore)>`
+** sequence
+5. What is not one of the three basic parts of an element declaration in DTD?
+** The element value
+6. What are the two fundamental ways of specifying element children in DTD?
+** Choices, Sequences
+7. What is not one of the four rules that a mixed content model in DTD must follow?
+** The ID, IDREF, and IDREFS must appear in the list of elements.
+8. In DTD, cardinality defines
+** how many times an element will appear in a content model.
+9. What is not one of the three parts of the attribute declaration in DTD?
+** The list of declared ID, IDFREF, and IDREFS
+10. What is clearly not a benefit of using XML schemas instead of DTD?
+** XML Schemas are going to replace DTDs in the future
+11. What is clearly not a benefit of using XML schemas instead of DTD?
+** XML Schemas are easier to learn than DTDs.
+12. Which is true in an XSD?
+** The URI "http://www.w3.org/2001/XMLSchema" needs to be declared as the default namespace.
+13. Which XML Schema design style has a poor reusability support?
+** Russian doll
+14. Which XML Schema design style does not specify which element must be the root element in an instance document?
+** Salami slice
+15. The following XML element is a simpleType element: `<simple type=“simpleType”/>`
+** False
+16. Attributes like elements are divided into simpleTypes and complexTypes.
+** False
+17. In XML Schema, the extension element is used to add elements or attributes to an existing type.
+** True
+18. In XML Schema, the restrict element is used to remove elements or attributes from an existing type.
+** False
+19. When declaring an element in XML Schema, there are two primary tasks. What are they?
+** Element Name, Allowable Content
+20. RELAX NG schemas are based on ---.
+** patterns
+21. Which of the following statements about RELAX NG is not true?
+** RELAX NG supports namespace poorly.
+22. The following RELAX NG code in XML format to is equivalent to --- in the compact syntax. `<oneOrMore><element name="a"><text/></element></oneOrMore>`
+** `element a { text }+`
+23. The following RELAX NG code in XML format to is equivalent to --- in XML Schema. `<oneOrMore><element name="a"><text/></element></oneOrMore>`
+** `<element name="a" type="string"
+ minOccurs="1" maxOccurs="unbounded"/>`
+24. RELAX NG uses --- to support code resue.
+** the define and ref elements
+25. RELAX NG treats elements and attributes equally as far as possible.
+** True
