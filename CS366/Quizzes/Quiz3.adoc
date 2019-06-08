@@ -1,0 +1,74 @@
+== Quiz 3
+
+Chapters: 7, 8, 18
+Score: 23/25
+
+1. XML is intrinsically ---.
+** hierarchical
+2. DOM is a tool used mostly by ---.
+** programmers
+3. DOM will create a logical model for purposes of --- the data.
+** parsing
+4. The DOM provides ---.
+** a logical view on the in-memory structure that represents an XML document
+5. An Attr node in DOM is associated with an Element node but is considered different from a child element node of the Element node.
+** True
+6. In the XPath data model, a root node represents ---.
+** the document itself
+7. What is not a valid XPath data model node?
+** Document type declaration
+8. Which of the following lines is the abbreviated syntax of attribute::attributename?
+** @attributename
+9. Axes are used to ---.
+** navigate node trees
+10. The brackets in the following is an example of ---. `//Section[@security="public"][@version="final"]`
+** using predicates
+11. The proper structure of XPath expressions includes ---.
+** an axis, node test, optional predicate
+12. The input document to an XSLT processor is called the ---.
+** input tree
+13. XSLT processors can retrieve data based upon which of the following?
+** xsl:templates element and its match attribute
+14. XSLT is a procedural programming language.
+** False
+15. The select attribute is a mandatory part of the xsl:value-of element.
+** True
+16. The xsl:copy-of element copies all descendants’ nodes and attributes.
+** 	True
+17. The <xsl:for-each> element loops through each node in the result nodelist.
+Question 17 options:
+** 	False
+18. Which statement best describes the benefit of using the following code with SAX? `public class MyClass extends DefaultHandler`
+** By extending the DefaultHandler we can selectively choose which methods defined in the interfaces to implement.
+19. Which of the following statements does not offer a good reason to use SAX?
+** ??The parser itself typically has a smaller footprint than that of its DOM cousin. In fact, DOM implementations are often built on top of SAX.
+** ??It’s quick, because it doesn’t need to read in the whole document before you start work on it.
+20. How many startDocument events and how many startElement events will be fired when the following XML document is parsed by the SAX parser?
++
+[source,xml]
+----
+<a>
+  <b q=”yyy”>zzz</b>
+  <c>nnn</c>
+  <d>ppp</d>
+</a>
+----
++
+** 1 startDocument events and 3 startElement events
+21. SAX was developed to work with data that is too large to remain resident in memory.
+** True
+22. SVG output is bitmapped like JPEG and GIF.
+** False
+23. Which statement about SVG is not true?
+** SVG works very well with photographic images
+24.
+** Answer:
++
+[source,xml]
+----
+<circle cx="50" cy="50" r="30" fill="red" />
+<line x1="10" y1="10" x2="90" y2="90" stroke="blue"/>
+----
++
+25. The --- within the SVG canvas defines the rectangular region into which SVG content is rendered/viewable.
+** viewport
