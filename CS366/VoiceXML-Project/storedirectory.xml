@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml xmlns="http://www.w3.org/2001/vxml"
+      version="2.1"
+      xml:lang="en-US"
+      xml:base="https://studio.tellme.com/vxml-tutorial/">
+      
+   <script> <![CDATA[
+         var doNewPlaneRes = false;
+         var doNewHotelRes = false;
+         var doNewCarRes = false;
+         var doChangePlaneRes = false;
+         var doChangeHotelRes = false;
+         var doChangeCarRes = false;
+         var doRestaurantRec = false;
+      ]]> </script>
+
+   <form id="main">
+      <field name="main_selection">
+         <prompt>
+            Welcome to Contoso Travel. Say new reservation, change
+                             reservation, or restaurant recommendation.
+         </prompt>
+         <grammar version="1.0" root="top">
+            <rule id="top">
+               <one-of>
+                  <item>new reservation</item>
+                  <item>change reservation</item>
+                  <item>restaurant recommendation</item>
+               </one-of>
+            </rule>
+         </grammar>
+
+         <catch event="noinput nomatch">
+            Sorry. Didn't get that. Please try again.
+            <reprompt/>
+         </catch>
+
+         <filled>
+            <script> <![CDATA[
+                  var next_destination = "";
+                  switch (main_selection){
+
+                  case "new reservation" :
+                    next_destination = "#new_reservation";
+                    break;
+                    
+                  case "change reservation" :
+                    next_destination = "change-reservation.vxml";
+                    break;
+                    
+                  case "restaurant recommendation" :
+                    next_destination = "restaurant.vxml";
+                    break;
+                    
+                  default:
+                    next_destination = "error.vxml";
+                    break;
+                 }
+               ]]> </script>
+            <goto expr="next_destination"/>
+         </filled>
+      </field>
+   </form>
+   <form id ="new_reservation">
+      <field name="new_reservation_type">
+         <prompt>
+            What type of reservation do you want to make? Say plane, hotel,
+            or car. You can combine types by saying plane and hotel for
+            example.
+         </prompt>
+         <grammar version="1.0" root="top">
+            <rule id="top">
+               <one-of>
+                  <item>plane</item>
+                  <item>hotel</item>
+                  <item>car</item>
+                  <item>plane and hotel</item>
+                  <item>hotel and car</item>
+                  <item>plane and car</item>
+                  <item>plane and hotel and car</item>
+               </one-of>
+            </rule>
+         </grammar>
+
+         <catch event="noinput nomatch">
+            Sorry. Didn't get that. Please try again.
+            <reprompt/>
+         </catch>
+
+         <filled>
+            <script> <![CDATA[
+                  var next_destination = "";
+                  switch (new_reservation_type){
+
+                  case "plane" :
+                    next_destination = "new-plane.vxml";
+                    break;
+
+                  case "hotel" :
+                    next_destination = "new-hotel.vxml";
+                    break;
+
+                  case "car" :
+                    next_destination = "new-car.vxml";
+                    break;
+                    
+                  case "plane and hotel" :
+                    next_destination = "new-plane.vxml";
+                    doNewHotelRes = true;
+                    break;
+
+                  case "plane and car" :
+                    next_destination = "new-plane.vxml";
+                    doNewCarRes = true;
+                    break;
+
+                  case "hotel and car" :
+                    next_destination = "new-hotel.vxml";
+                    doNewCarRes = true;
+                    break;
+                    
+                  case "plane and hotel and car" :
+                    next_destination = "new-plane.vxml";
+                    doNewHotelRes = true;
+                    doNewCarRes = true;
+                    break;
+
+                  default:
+                    next_destination = "error.vxml";
+                    break;
+                 }
+               ]]> </script>
+
+            <goto expr="next_destination"/>
+         </filled>
+      </field>
+   </form>
+</vxml>
