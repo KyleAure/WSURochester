@@ -8,7 +8,7 @@ Score: 23/25
 2. DTDs are primarily used to ---.
 ** validate documents
 3. What is the name of the element defined in the following example? `<!ELEMENT dinosaurs (carnivore, herbivore, omnivore)>`
-** All the above
+** *dinosaurs*
 4. What is the content model of the element defined in the following example? `<!ELEMENT dinosaurs (carnivore, herbivore, omnivore)>`
 ** sequence
 5. What is not one of the three basic parts of an element declaration in DTD?
@@ -26,7 +26,7 @@ Score: 23/25
 11. What is clearly not a benefit of using XML schemas instead of DTD?
 ** XML Schemas are easier to learn than DTDs.
 12. Which is true in an XSD?
-** The URI "http://www.w3.org/2001/XMLSchema" needs to be declared as the default namespace.
+** *The keyword targetNamespace is required to specify the target namespce.*
 13. Which XML Schema design style has a poor reusability support?
 ** Russian doll
 14. Which XML Schema design style does not specify which element must be the root element in an instance document?
