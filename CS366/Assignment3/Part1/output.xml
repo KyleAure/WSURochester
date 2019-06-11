@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        Name: output.xml
+        Description: Generated output from courses.xml transformation
+        Author: Kyle Jon Aure
+        Date: 6/10/19
+        -->
+<classes count="4">
+  <class credits="4.0" room="AT102">
+    <number>368</number>
+    <title>Introduction to Bioinformatics</title>
+    <enrollment>9</enrollment>
+    <instructor>
+        <first>Chi-Cheng</first>
+        <last>Lin</last>
+      </instructor>
+    <instructor>
+        <first>Mingrui</first>
+        <last>Zhang</last>
+      </instructor>
+  </class>
+  <class credits="4.0" room="SH102">
+    <number>341</number>
+    <title>Data Structures</title>
+    <enrollment>12</enrollment>
+    <instructor>
+        <first>Mark</first>
+        <last>Funk</last>
+      </instructor>
+  </class>
+  <class credits="4.0" room="EA244">
+    <number>341</number>
+    <title>Data Structures</title>
+    <enrollment>15</enrollment>
+    <instructor>
+        <first>Nicole</first>
+        <last>Anderson</last>
+      </instructor>
+  </class>
+  <class credits="3.0" room="ST108">
+    <number>385</number>
+    <title>Applied Database Management Systems</title>
+    <enrollment>26</enrollment>
+    <instructor>
+        <first>Nicole</first>
+        <last>Anderson</last>
+      </instructor>
+  </class>
+</classes>

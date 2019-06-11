@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Name: courses.xml
+  Description: WSU CS Course Data
+  Author: Chi-Cheng Lin
+  This is the input of transformation.
+-->
+<courses>
+  <course number="341" credits="4.0">
+    <title>Data Structures</title>
+    <section number="01" delivery="Classroom">
+      <enrollment>15</enrollment>
+      <room>EA244</room>
+      <instructor>
+        <first>Nicole</first>
+        <last>Anderson</last>
+      </instructor>
+    </section>
+    <section number="02" delivery="Online">
+      <enrollment>10</enrollment>
+      <instructor>
+        <first>Nicole</first>
+        <last>Anderson</last>
+      </instructor>
+      <instructor>
+        <first>Chi-Cheng</first>
+        <last>Lin</last>
+      </instructor>
+    </section>
+    <section number="03" delivery="Classroom">
+      <enrollment>12</enrollment>
+      <room>SH102</room>
+      <instructor>
+        <first>Mark</first>
+        <last>Funk</last>
+      </instructor>
+    </section>
+  </course>
+  <course number="368" credits="4.0">
+      <title>Introduction to Bioinformatics</title>
+    <section number="01" delivery="Classroom">
+      <enrollment>9</enrollment>
+      <room>AT102</room>
+      <instructor>
+        <first>Chi-Cheng</first>
+        <last>Lin</last>
+      </instructor>
+      <instructor>
+        <first>Mingrui</first>
+        <last>Zhang</last>
+      </instructor>
+    </section>
+  </course>
+  <course number="375" credits="4.0">
+      <title>Computer Systems</title>
+    <section number="01" delivery="ITV">
+      <enrollment>18</enrollment>
+            <room>EA244</room>
+      <instructor>
+        <first>Chi-Cheng</first>
+        <last>Lin</last>
+      </instructor>
+    </section>
+  </course>
+  <course number="385" credits="3.0">
+      <title>Applied Database Management Systems</title>
+    <section number="01" delivery="Classroom">
+      <enrollment>26</enrollment>
+            <room>ST108</room>
+      <instructor>
+        <first>Nicole</first>
+        <last>Anderson</last>
+      </instructor>
+    </section>
+  </course>
+  <course number="413" credits="3.0">
+      <title>Advanced Networking</title>
+    <section number="01" delivery="Online">
+      <enrollment>10</enrollment>
+      <instructor>
+        <first>Chi-Cheng</first>
+        <last>Lin</last>
+      </instructor>
+    </section>
+  </course>
+</courses>

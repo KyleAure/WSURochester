@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+		Name: output.svg
+        Description: Generated output from courses.xml transformation
+        Author: Kyle Jon Aure
+        Date: 6/10/19
+		-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="500">
+  <a xlink:href="courses.xml">
+    <text x="0" y="25" fill="black">Fall 2018 Enrollment</text>
+  </a>
+  <line x1="0" y1="50" x2="0" y2="450" style="stroke:rgb(255,0,0);stroke-width:10"/>
+  <line x1="0" y1="450" x2="500" y2="450" style="stroke:rgb(255,0,0);stroke-width:10"/>
+  <text x="25" y="475" fill="black">341-01</text>
+  <text x="89.2857142857143" y="475" fill="black">341-02</text>
+  <text x="153.571428571429" y="475" fill="black">341-03</text>
+  <text x="217.857142857143" y="475" fill="black">368-01</text>
+  <text x="282.142857142857" y="475" fill="black">375-01</text>
+  <text x="346.428571428571" y="475" fill="black">385-01</text>
+  <text x="410.714285714286" y="475" fill="black">413-01</text>
+  <rect x="25" y="219.230769230769" width="39.2857142857143" height="230.769230769231" style="fill:blue;stroke:black;stroke-width:2"/>
+  <rect x="89.2857142857143" y="296.153846153846" width="39.2857142857143" height="153.846153846154" style="fill:blue;stroke:black;stroke-width:2"/>
+  <rect x="153.571428571429" y="265.384615384615" width="39.2857142857143" height="184.615384615385" style="fill:blue;stroke:black;stroke-width:2"/>
+  <rect x="217.857142857143" y="311.538461538462" width="39.2857142857143" height="138.461538461538" style="fill:blue;stroke:black;stroke-width:2"/>
+  <rect x="282.142857142857" y="173.076923076923" width="39.2857142857143" height="276.923076923077" style="fill:blue;stroke:black;stroke-width:2"/>
+  <rect x="346.428571428571" y="50" width="39.2857142857143" height="400" style="fill:blue;stroke:black;stroke-width:2"/>
+  <rect x="410.714285714286" y="296.153846153846" width="39.2857142857143" height="153.846153846154" style="fill:blue;stroke:black;stroke-width:2"/>
+</svg>
