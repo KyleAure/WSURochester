@@ -4,27 +4,24 @@
       xml:lang="en-US">
       
    <script> <![CDATA[
-         var doNewPlaneRes = false;
-         var doNewHotelRes = false;
-         var doNewCarRes = false;
-         var doChangePlaneRes = false;
-         var doChangeHotelRes = false;
-         var doChangeCarRes = false;
-         var doRestaurantRec = false;
+         var doNewChocobo = false;
+         var doNewInn = false;
+         var doNewGlider = false;
+         var doChangeChocobo = false;
+         var doChangeInn = false;
+         var doChangeGlider = false;
       ]]> </script>
 
    <form id="main">
       <field name="main_selection">
          <prompt>
-            Welcome to Rin's Travel Agency. Say new reservation, change
-                             reservation, or restaurant recommendation.
+            Welcome to Rin's Travel Agency. Say new reservation, or change reservation.
          </prompt>
          <grammar version="1.0" root="top">
             <rule id="top">
                <one-of>
                   <item>new reservation</item>
                   <item>change reservation</item>
-                  <item>restaurant recommendation</item>
                </one-of>
             </rule>
          </grammar>
@@ -44,15 +41,11 @@
                     break;
                     
                   case "change reservation" :
-                    next_destination = "change-reservation.vxml";
-                    break;
-                    
-                  case "restaurant recommendation" :
-                    next_destination = "restaurant.vxml";
+                    next_destination = "change-reservation.xml";
                     break;
                     
                   default:
-                    next_destination = "error.vxml";
+                    next_destination = "error.xml";
                     break;
                  }
                ]]> </script>
@@ -63,20 +56,18 @@
    <form id ="new_reservation">
       <field name="new_reservation_type">
          <prompt>
-            What type of reservation do you want to make? Say plane, hotel,
-            or car. You can combine types by saying plane and hotel for
-            example.
+            What type of reservation do you want to make? Say chocobo, inn, or glider.
          </prompt>
          <grammar version="1.0" root="top">
             <rule id="top">
                <one-of>
-                  <item>plane</item>
-                  <item>hotel</item>
-                  <item>car</item>
-                  <item>plane and hotel</item>
-                  <item>hotel and car</item>
-                  <item>plane and car</item>
-                  <item>plane and hotel and car</item>
+                  <item>chocobo</item>
+                  <item>inn</item>
+                  <item>glider</item>
+                  <item>chocobo and inn</item>
+                  <item>chocobo and glider</item>
+                  <item>inn and glider</item>
+                  <item>chocobo and inn and glider</item>
                </one-of>
             </rule>
          </grammar>
@@ -91,41 +82,41 @@
                   var next_destination = "";
                   switch (new_reservation_type){
 
-                  case "plane" :
-                    next_destination = "new-plane.vxml";
+                  case "chocobo" :
+                    next_destination = "new-chocobo.xml";
                     break;
 
-                  case "hotel" :
-                    next_destination = "new-hotel.vxml";
+                  case "inn" :
+                    next_destination = "new-inn.xml";
                     break;
 
-                  case "car" :
-                    next_destination = "new-car.vxml";
+                  case "glider" :
+                    next_destination = "new-glider.xml";
                     break;
                     
-                  case "plane and hotel" :
-                    next_destination = "new-plane.vxml";
-                    doNewHotelRes = true;
+                  case "chocobo and inn" :
+                    next_destination = "new-chocobo.xml";
+                    doNewInn = true;
                     break;
 
-                  case "plane and car" :
-                    next_destination = "new-plane.vxml";
-                    doNewCarRes = true;
+                  case "chocobo and glider" :
+                    next_destination = "new-chocobo.xml";
+                    doNewGlider = true;
                     break;
 
-                  case "hotel and car" :
-                    next_destination = "new-hotel.vxml";
-                    doNewCarRes = true;
+                  case "inn and glider" :
+                    next_destination = "new-inn.xml";
+                    doNewGlider = true;
                     break;
                     
-                  case "plane and hotel and car" :
-                    next_destination = "new-plane.vxml";
-                    doNewHotelRes = true;
-                    doNewCarRes = true;
+                  case "chocobo and inn and glider" :
+                    next_destination = "new-chocobo.xml";
+                    doNewInn = true;
+                    doNewGlider = true;
                     break;
 
                   default:
-                    next_destination = "error.vxml";
+                    next_destination = "error.xml";
                     break;
                  }
                ]]> </script>

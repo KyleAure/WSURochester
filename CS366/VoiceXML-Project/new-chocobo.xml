@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml xmlns="http://www.w3.org/2001/vxml"
+      version="2.1"
+      xml:lang="en-US">
+
+   <form id="new-chocobo">
+      <field name="resDate" type="date">
+         <prompt>
+            What date would you like to ride a chocobo?
+         </prompt>
+
+         <catch event="noinput nomatch">
+            Sorry. Didn't get that. Please try again.
+            <reprompt/>
+         </catch>
+
+         <filled>
+            <prompt>
+              Your reservation has been booked for <say-as type="date:mdy"><value expr="resDate"/></say-as>!
+            </prompt>
+            <submit next="https://voicexml.free.beeceptor.com/my/api/path" method="post"/>
+         </filled>
+      </field>
+   </form>
+</vxml>
