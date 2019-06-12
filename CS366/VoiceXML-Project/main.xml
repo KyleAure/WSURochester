@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	SAMPLE CONVERSATION 
+	Server:  Welcome to Rin's Travel Agency. Say new reservation, change 
+	         reservation, or restaurant recommendation.
+	User: New
+	Server: Sorry. Didn't get that. Please try again.
+	Server:  Welcome to Rin's Travel Agency. Say new reservation, change 
+	         reservation, or restaurant recommendation.
+	User: New Reservation
+	Server: What type of reservation do you want to make? Say plane, hotel,
+            or car. You can combine types by saying plane and hotel for
+            example.
+
+
+-->
 <vxml xmlns="http://www.w3.org/2001/vxml"
       version="2.1"
       xml:lang="en-US">
-      
+    
+   <!-- ECMAscript -->   
    <script> <![CDATA[
          var doNewChocobo = false;
          var doNewInn = false;
