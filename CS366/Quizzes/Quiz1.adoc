@@ -14,7 +14,7 @@ Score: 24/25
 5. XML is for small files only.
 ** False
 6. An XML parser is a program that will ---.  (Choose the best answer.)
-** ?? validate XML data
+** get information from XML files for us
 7. All non-empty XML elements need ---.  (Choose the best answer.)
 ** start tags and end tags
 8. Both XML and HTML documents need to be well formed.
