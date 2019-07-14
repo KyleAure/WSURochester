@@ -1,0 +1,18 @@
+= Assignment 1
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-07-13
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS440
+
+.Assignment Description
+****
+Analysis of algorithms from chapters 1-3.
+****
+
+== Course Details
+* **Course** - CS440
+* **Instructor** - Dr. Shimin Li
+
+== Questions
+1. 
