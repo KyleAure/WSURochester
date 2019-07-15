@@ -4,6 +4,7 @@ v1.0, 2019-07-13
 :RepoURL: https://github.com/KyleAure/WSURochester
 :AuthorURL: https://github.com/KyleAure
 :DirURL: {RepoURL}/CS440
+:stem: asciimath
 
 .Assignment Description
 ****
@@ -14,5 +15,43 @@ Analysis of algorithms from chapters 1-3.
 * **Course** - CS440
 * **Instructor** - Dr. Shimin Li
 
-== Questions
-1. 
+== Assignment / Results
+1. Algorithm _A_ has a running time of asciimath:[O(2^n)]. How long will it take for a computer that can run asciimath:[2*10^17 frac{text(instructions)}{text(second)}], to finish algorithm _A_? NOTE: there are asciimath:[3.156x10^9 frac{text(seconds)}{text{century}}].
+a. Where asciimath:[n=100] in *centuries*:
++
+asciimath:[2^100 cancel(text(instructions)) * frac{1 cancel(text(second))}{2*10^17 cancel(text(instructions))} * frac{1 text(century)}{3.156*10^9 cancel(text(seconds))} ~~ 2008.3184 text(centuries)]
++ 
+b. Where asciimath:[n=1000] in *centuries*:
++
+asciimath:[2^1000 cancel(text(instructions)) * frac{1 cancel(text(second))}{2*10^17 cancel(text(instructions))} * frac{1 text(century)}{3.156*10^9 cancel(text(seconds))} ~~ 1.69757*10^274 text(centuries)]
++
+c. Where our computer can run asciimath:[2*10^20 frac{text(instructions)}{text(second)}] recalculate the previous running times:
++
+asciimath:[2^100 cancel(text(instructions)) * frac{1 cancel(text(second))}{2*10^20 cancel(text(instructions))} * frac{1 text(century)}{3.156*10^9 cancel(text(seconds))} ~~ 2.008318 text(centuries)]
++
+asciimath:[2^1000 cancel(text(instructions)) * frac{1 cancel(text(second))}{2*10^20 cancel(text(instructions))} * frac{1 text(century)}{3.156*10^9 cancel(text(seconds))} ~~ 1.69757*10^271 text(centuries)]
++
+2. Order functions from smallest to largest based on growth rate:
++
+asciimath:[2^1000 < log(logn)^2 < log_(4)n < logn < log^(3)n < sqrt(n) < 2^(logn) ~~ n < n*logn < n^(2)*log^5n < n^3 < 2^n < n!]
++
+3. Determine if asciimath:[f(n)=O(g(n)), f(n)=Omega(g(n)), text(or ) f(n)=Theta(g(n))]
+a. asciimath:[f(n) = n^2 + nlog^(3)n text( and ) g(n) = 6n^3 + log^(2)n]
++
+asciimath:[text(Therefore: ) f(n)=O(g(n))]
++
+b. asciimath:[f(n) = 5^n text( and ) g(n) = n^2 * 2^n]
++
+asciimath:[text(Therefore: ) f(n)=Omega(g(n))]
++
+c. asciimath:[f(n) = n*log^(2)n text( and ) g(n) = frac{n^2}{log^(3)n}]
++
+asciimath:[text(Therefore: ) f(n)=O(g(n))]
++
+d. asciimath:[f(n) = sqrt(n)*logn text( and ) g(n) = log^(8)n + 25]
++
+asciimath:[text(Therefore: ) f(n)=Omega(g(n))]
++
+4. Assume we have a min-heap stored in an array _A[1...n]_. Given a value _x_ and an integer _k_ with asciimath:[1 <= k <= n], design an algorithm to determine whether the _k_ -th smallest key in the heap is smaller than _x_. The running time of this algorithm should be _O(k)_, independent of the size of the heap.
+
+
