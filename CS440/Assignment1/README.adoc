@@ -16,7 +16,7 @@ v1.0, 2019-07-16
 a. Where asciimath:[n=100] in *centuries*:
 +
 asciimath:[2^100 cancel(text( instructions)) * frac{1 cancel(text( second))}{2*10^17 cancel(text( instructions))} * frac{1 text( century)}{3.1536*10^9 cancel(text( seconds))} ~~ 2009.8468 text( centuries)]
-+ 
++
 b. Where asciimath:[n=1000] in *centuries*:
 +
 asciimath:[2^1000 cancel(text( instructions)) * frac{1 cancel(text( second))}{2*10^17 cancel(text( instructions))} * frac{1 text( century)}{3.1536*10^9 cancel(text( seconds))} ~~ 1.6989*10^274 text( centuries)]
@@ -49,7 +49,8 @@ d. asciimath:[f(n) = sqrt(n)*logn text( and ) g(n) = log^(8)n + 25]
 asciimath:[text( Therefore: ) f(n)=Omega(g(n))]
 +
 4. Assume we have a min-heap stored in an array _A[1...n]_. Given a value _x_ and an integer _k_ with asciimath:[1 <= k <= n], design an algorithm to determine whether the _k_ -th smallest key in the heap is smaller than _x_. The running time of this algorithm should be _O(k)_, independent of the size of the heap.
-* For this problem I created an implementation of the simple algorithm which has a running time of _O(klogn)_.  I Then I developed the efficient algorithm that has a running time of _O(k)_ and performed automated testing to ensure that both the simple algorithm and the efficient algorithm produced the same results. 
+* For this problem I created an implementation of the simple algorithm which has a running time of _O(klogn)_.  I Then I developed the efficient algorithm that has a running time of _O(k)_ and performed automated testing to ensure that both the simple algorithm and the efficient algorithm produced the same results.
+* Link to source code: link:q4/src/MinHeap.py[MinHeap.py]
 +
 .Python Source Code
 [source,python,numbered]
