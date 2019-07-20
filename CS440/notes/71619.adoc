@@ -1,0 +1,103 @@
+= Notes July 16 2019
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-07-16
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS440
+:stem: asciimath
+
+== Course Details
+* **Course** - CS440
+* **Instructor** - Dr. Shimin Li
+
+== Graph Alogrithms
+
+=== General
+* asciimath:[G=(V,E)]
+* *V*: is the set of nodes
+* *E*: is the set of edges _e_
+* asciimath:[e = {u,v}]
+
+== Direction
+* A Graph can be either *undirected* or *directed*
+* *Directed*: asciimath:[e={u,v}={v,u}]
+* *Undirected* asciimath:[e={u,v}!={v,u}=e']
+
+=== Examples
+Examples of graph useages:
+* Networks
+* Flight Info
+* Chess Game
+
+=== Veticies Edges and Degree
+* asciimath:[n = abs(V)]: n is the number of verticies
+* asciimath:[m = abs(E)]: m is the number of edges such that asciimath:[0<=m<=(n*(n-1))/2]
+* A graph always has asciimath:[m = sum_(i=1)^n d_i = 2*m] edges. Where asciimath:[d_i] is the degree at node _i_.
+* Degree of a node is the number of edges connecting to that node.
+* A graph is a *sparce graph* if asciimath:[m=O(n) or m=c*n]
+* A graph is a *complete graph* if asciimath:[m=n(n-1)/2]
+
+=== Paths
+* A *path* is a sequence of nodes, such that, each consecutive pair is connected by an edge.
+* The *length* of a path is equal to the number of edges connecting two nodes
+* The *shortest path* between _s_ and _t_ is the path with the least length
+* The *distance* between _s_ and _t_ is the length of the shortest path
+
+=== Connectivity
+* A graph is a *connected graph* if for any pair of nodes {_v_,_u_} there exists a path _p_ that connects _v_ and _u_
+
+=== Trees
+* A *tree* is a subset of a graph
+
+Properties::
+. Has no cycles
+. is connected
+. has n-1 edges
+
+=== Graph Reprsentations
+Adjacent Lists::
+* Space asciimath:[O(n+m)]
+* 0: 1,2,3,4
+* 1: 0,5
+* 2: 0,5,6
++
+...
++
+* 6: 2,3
+
+Adjacent Matrix::
+* Space asciimath:[O(n^2)]
+|===
+|  |0 |1 |2 |3 |4 |5 |6
+
+|0 |1 |1 |1 |1 |1 |0 |0
+
+|1 |1 |1 |0 |0 |0 |1 |0
+
+8+|...
+
+|6 |0 |0 |1 |1 |0 |0 |1
+|===
+
+Operations::
+. Determine if an edge asciimath:[(u,v)] exists.
+.. adjacent list: asciimath:[O(d)]
+.. adjacent matrix: asciimath:[O(1)]
+. Report the neighbors of node u.
+.. adjacent list: asciimath:[O(d)]
+.. adjacent matrix: asciimath:[O(n)]
+
+Bredth-First-Search::
+* see example in notes
+* adjacent list: asciimath:[O(n+m)]
+* adjacent matrix: asciimath:[O(n^2)]
+
+Depth-First-Search::
+* see example in notes
+* adjacent list: asciimath:[O(n+m)]
+* adjacent matrix: asciimath:[O(n^2)]
+
+
+
+
+
