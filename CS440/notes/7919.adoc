@@ -1,0 +1,59 @@
+= Notes July 9 2019
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-07-09
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS440
+:stem: asciimath
+:source-highlighter: coderay
+
+== The Example Problems
+
+Assume we have a list of numbers in an array A[l..n]
+
+The smallest number in A::
+[source,psuedocode]
+----
+min <- A[0]
+
+for(i <- 1; i<n; i++)
+  if min > A[i]
+    min <- A[i]
+
+return min;
+----
+
+The smallest and largest number in A::
+[source,psuedocode]
+----
+max <- A[0]
+min <- A[0]
+
+for(i <- 1; i<n; i++)
+  if min > A[i]
+    min <- A[i]
+  if max < A[i]
+    max <- A[i]
+
+return min, max;
+----
+
+The largest and the second largest number in A::
+[source,psuedocode]
+----
+max <- A[0]
+sec <- A[1]
+
+for(i <- 1; i<n; i++)
+  if max <= A[i]
+    max <- A[i]
+    sec <- max
+
+return max, sec;
+----
+
+Better option for finding min and max::
+- Compare each pair of elements, and split each pair into min or max subarray.
+- Then find the max in the max subarray, and the min in the min subarray.
+- Original Solution: O(2n)
+- Optimized solution: O(3/2 n)
