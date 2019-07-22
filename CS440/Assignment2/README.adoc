@@ -1,0 +1,157 @@
+= Assignment 2
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-07-20
+:RepoURL: https:#github.com/KyleAure/WSURochester
+:AuthorURL: https:#github.com/KyleAure
+:DirURL: {RepoURL}/CS440
+:source-highlighter: coderay
+:stem: asciimath
+
+== Assignment Details
+**Name** - Kyle Jon Aure
+
+**Date** - 07/20/2019
+
+**Course** - CS440: Theory of Algorithms
+
+**Instructor** - Dr. Shimin Li
+
+
+== Assignment/Results
+Question 1::
+Given::::
+* Undirected Graph _G_ of nodes _n_ and edges _m_
+* _s_ and _t_ are nodes in _G_
+
+Goals::::
+* Design an Alogrithm with run time of asciimath:[O(m+n)] that will compute the _number_ of shortest paths from _s_ to _t_.
+
+Answer 1::
+Since in this problem we are trying to find the number of shortest paths between source (_s_) and target (_t_) we are going to be using a BFS type algorithm.  BFS algorithms are appropriate here since they will allow us to keep track of distance from the source, and determine which distance is the sortest path. 
++
+*psudocode used to explain algorithm*
++
+<<<
++
+[source,python,numbered]
+----
+def Node:
+    #Variables
+    Node.count = 0  #Num of shortest paths from source to Node
+    Node.dist = 0   #Shortest distance from source to Node
+    Node.visits = 0 #Num of times this node has been visited
+
+    #Functions
+    Node.adjacent() #Returns set of all nodes connected to this node by an edge
+
+def numOfPaths(Graph G, Node source, Node target):
+    #For BFS Algorithm we need
+    Initialize Stack<Node> : stack   #for processing  
+
+    #Add source to stack
+    stack.push(source)
+
+    #!! BFS ALGORITHM !!
+    if(!stack.isEmpty()):
+        currNode = stack.pop()
+
+        #Loop through each adjNode
+        for(Node adjNode : currNode.adjacent()):
+            #If adjNode has not been visited before
+            if(adjNode.visits < 1):
+                #Number of paths from src to this node should 
+                #be the same as from the current node
+                adjNode.count = currNode.count
+
+                #Adjacent node distance is one more than current
+                adjNode.dist = currNode.dist + 1
+
+                #Set number of visits
+                adjNode.visit = 1
+            
+            #If adjNode has been visited before
+            else:
+                # [currNode.dist + 1] is the distance of the current path we are following
+                # adjNode.dist is what was previously found distance
+                # Therefore there are two cases we need to consider
+
+                #If we have found an alternative "shortest path"
+                if(currNode.dist + 1 == adjNode.dist):
+                    #Add all the paths from the current node to this node as well.
+                    adjNode.count += currNode.count 
+
+                #If we have found a shorter path
+                if(currNode.dist + 1 < adjNode.dist):
+                    adjNode.dist = currNode.dist + 1
+                    adjNode.count = currNode.count
+                
+                #If we find a longer alternative path ignore it
+
+                #Increment number of visits
+                adjNode.visit++
+            
+            //Push adjNode to stack
+            stack.push(adjNode)
+        
+    #Once the BFS algorithm has completed just return the distance from source to target
+    return G.get(target).count
+----
++
+Since this algorithm follows the BFS algorithm it's time compexity will be equivalent, that is, asciimath:[O(n+m)]
+
+Question 2::
+Given:::: 
+* Directed-Acyclic-Graph (DAG) _G_ of _n_ nodes and _m_ edges
+* _s_ and _t_ are nodes in _G_
+
+Goal::::
+* Design an Algorithm with run time of asciimath:[O(m+n)] that will computer the _number_ of paths from _s_ to _t_ 
+
+Solution::
+Since this algorithm is just trying to find the number of paths and we do not care about the distance, we should start from the target (_t_) node, and work backwards to the source (_s_) node.  Again we will be using an algorithm similar to BFS.
++
+*psudocode used to explain algorithm*
++
+[source,python,numbered]
+----
+def Node:
+    #Variables
+    node.count = 0     #Number of paths from node to target
+    node.visit = False #Boolean if this node has been visited
+
+    #Functions
+    node.adjacent() #Returns all nodes that connect to this node
+
+def numOfPaths(Graph G, Node source, Node target):
+    #For BFS Algorithm we need
+    Initialize Stack<Node> : stack   #for processing  
+
+    #Add target to stack
+    stack.push(target)
+
+    #!! BFS ALGORITHM !!
+    if(!stack.isEmpty()):
+        currNode.pop()
+    
+        #Skip node if we have visited it before
+        if(!currNode.visit):
+            currNode.visit = True
+            
+            #For each of this node's connected nodes
+            for(Node connectedNode: currNode.adjacent()):
+                #We have found a new path, 
+                #since this is a DAG and we started at the target 
+                #we know this path leads to the target.
+                #Therefore, this connected node will have a 
+                #path count to the target of 
+                #currNode.count + 1
+                connectedNode.count = currNode.count + 1
+                stack.push(connectedNode)
+    
+    #Once we have visited all nodes
+    #the count of the source node 
+    return G.get(source).count
+----
++
+Again we have used the same algorithm structre as BFG so the runtime of this algorithm will be asciimath:[O(n+m)]
+
