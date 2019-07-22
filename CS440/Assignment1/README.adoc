@@ -8,7 +8,7 @@ v1.0, 2019-07-16
 :stem: asciimath
 
 == Course Details
-* **Course** - CS440
+* **Course** - CS440: Theory of Algorithms
 * **Instructor** - Dr. Shimin Li
 
 == Assignment / Results
