@@ -1,0 +1,41 @@
+= Notes July 23 2019
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-07-23
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS440
+:stem: asciimath
+
+== Dijkstra's Algorithm
+Input::
+* A directed graph G
+* A start node _s_
+* Each edge has a length > 0
+Output::
+* The shortest paths from _s_ to all the other nodes in G
+
+----
+Dijkstra(G,s):							#TOTAL: O((n+m)logn)
+	for each node v:    				#O(n)
+		v.d = INFINITY
+		v.pre = NULL
+	s.d=0
+	Q <- all nodes in G  				#O(n)
+	while Q NOT Empty:
+		u <- Extract-Min(Q)  			#O(nlogn) #Min-heap key distance from s
+		for each v in adj(u):			#O(mlogn)
+			if u.d + len(u,v) < v.d
+				v.d = u.d + len(u,v)
+				DecreaseKey(Q.v, u.d)	#O(logn)
+				v.pre = u
+----
+
+== Minimum Spanning Tree
+Definition::
+* Given a graph G=(V,E), G is connected
+* Each edge has a positive cost/length
+* i.e. (e(u,v))>0
+Goal::
+* to find a subset of edges T SUB E
+* So that G'=(V,T) is connected
+* The total cost/length is as small as possible

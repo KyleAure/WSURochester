@@ -1,8 +1,0 @@
-= Notes July 18 2019
-Kyle Aure <KAure09@winona.edu>
-v1.0, 2019-07-18
-:RepoURL: https://github.com/KyleAure/WSURochester
-:AuthorURL: https://github.com/KyleAure
-:DirURL: {RepoURL}/CS440
-:stem: asciimath
-
