@@ -1,0 +1,112 @@
+= Lab 1
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-07-24
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS440
+:source-highlighter: coderay
+:stem: asciimath
+
+.Assignment Description
+****
+Implement a program that can test whether an input directed graph is a DAG
+****
+
+== Course Details
+* **Course** - CS440: Theory of Algorithms
+* **Instructor** - Dr. Shimin Li
+
+== Results
+I created a Directed Graph class that uses the *dictonary* data structure as the 
+underlying data structure for the graph.  This is similar to the *adjacent lists*
+data structure discussed in class. 
+
+Link to source code: link:src/DirectedGraph.py[]
+
+.Directed Graph Class
+[source, python, numbered]
+----
+include::src/DirectedGraph.py[tags=class;!findCycle;!getTopologicalOrdering]
+----
+
+Then I created a function to determine in a Directed Graph is a Directed Acyclic Graph.
+This was done by determining if the graph had a cycle.
+I recursively iterated through the graph, following path from each node, and breaking out
+once a cycle is found.  
+
+.Is Directed Graph a DAG?
+[source, python, numbered]
+----
+include::src/DirectedGraph.py[tags=findCycle]
+----
+
+Finally, I created a function to construct the topological ordering of a Directed Acyclic Graph.
+This was also done by recursively iterating through the graph, and push nodes onto a stack to get
+the final topological order.
+
+.Topological Order of DAG
+[source, python, numbered]
+----
+include::src/DirectedGraph.py[tags=getTopologicalOrdering]
+----
+
+I also created automated tests for each path.  
+Test code can be found here: link:src/test.py[]
+
+.Results from Unit Tests
+[source, bash, numbered]
+----
+kyleaure WSURochester (WSURochester) (cs440-notes)  python CS440/Lab1/src/test.py
+testAlwaysTrue (__main__.testDirectedGraph) ... ok
+testCyclicGraph (__main__.testDirectedGraph) ... ok
+testEmptyGraph (__main__.testDirectedGraph) ... ok
+testNonCyclicGraph (__main__.testDirectedGraph) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK
+----
+
+.Example Output
+[source, json, numbered]
+----
+{
+ "Acyclic Graph": [
+  {
+   "Evaulation": [
+    {
+     "cycle": "[]", 
+     "isDAG": true
+    }
+   ], 
+   "Properties": [
+    {
+     "Edges": "[(0, 5), (0, 6), (0, 1), (2, 0), (2, 3), (3, 5), (5, 4), (6, 4), (6, 9), (7, 6), (8, 7), (9, 10), (9, 11), (9, 12), (11, 12)]", 
+     "Nodes": "{0: [5, 6, 1], 1: [], 2: [0, 3], 3: [5], 4: [], 5: [4], 6: [4, 9], 7: [6], 8: [7], 9: [10, 11, 12], 10: [], 11: [12], 12: []}"
+    }
+   ], 
+   "Topological Exception": null, 
+   "Topological Ordering": "[8, 7, 2, 3, 0, 1, 6, 9, 11, 12, 10, 5, 4]"
+  }
+ ], 
+ "Cyclic Graph": [
+  {
+   "Evaulation": [
+    {
+     "cycle": "[2, 3, 1, 0]", 
+     "isDAG": false
+    }
+   ], 
+   "Properties": [
+    {
+     "Edges": "[(0, 1), (0, 2), (0, 6), (1, 3), (2, 1), (3, 2), (3, 4), (3, 5), (5, 0), (5, 4), (6, 4)]", 
+     "Nodes": "{0: [1, 2, 6], 1: [3], 2: [1], 3: [2, 4, 5], 4: [], 5: [0, 4], 6: [4]}"
+    }
+   ], 
+   "Topological Exception": "This directed graph is not a Directed Acyclic Graph (DAG) and therefore does not have a toplogical ordering", 
+   "Topological Ordering": "None"
+  }
+ ]
+}
+----
