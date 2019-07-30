@@ -24,12 +24,12 @@ Given::::
 * _s_ and _t_ are nodes in _G_
 
 Goals::::
-* Design an Alogrithm with run time of asciimath:[O(m+n)] that will compute the _number_ of shortest paths from _s_ to _t_.
+* Design an Algorithm with run time of asciimath:[O(m+n)] that will compute the _number_ of shortest paths from _s_ to _t_.
 
 Answer 1::
-Since in this problem we are trying to find the number of shortest paths between source (_s_) and target (_t_) we are going to be using a BFS type algorithm.  BFS algorithms are appropriate here since they will allow us to keep track of distance from the source, and determine which distance is the sortest path. 
+Since in this problem we are trying to find the number of shortest paths between source (_s_) and target (_t_) we are going to be using a BFS type algorithm.  BFS algorithms are appropriate here since they will allow us to keep track of distance from the source, and determine which distance is the shortest path. 
 +
-*psudocode used to explain algorithm*
+*pseudoscope used to explain algorithm*
 +
 <<<
 +
@@ -110,7 +110,7 @@ Goal::::
 Solution::
 Since this algorithm is just trying to find the number of paths and we do not care about the distance, we should start from the target (_t_) node, and work backwards to the source (_s_) node.  Again we will be using an algorithm similar to BFS.
 +
-*psudocode used to explain algorithm*
+*pseudoscope used to explain algorithm*
 +
 [source,python,numbered]
 ----
@@ -153,5 +153,5 @@ def numOfPaths(Graph G, Node source, Node target):
     return G.get(source).count
 ----
 +
-Again we have used the same algorithm structre as BFG so the runtime of this algorithm will be asciimath:[O(n+m)]
+Again we have used the same algorithm structure as BFG so the runtime of this algorithm will be asciimath:[O(n+m)]
 

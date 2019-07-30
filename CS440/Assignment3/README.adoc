@@ -1,0 +1,88 @@
+= Assignment 3
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-07-29
+:RepoURL: https:#github.com/KyleAure/WSURochester
+:AuthorURL: https:#github.com/KyleAure
+:DirURL: {RepoURL}/CS440
+:source-highlighter: coderay
+:stem: asciimath
+
+== Assignment Details
+* **Name** - Kyle Jon Aure
+* **Date** - 07/29/2019
+* **Course** - CS440: Theory of Algorithms
+* **Instructor** - Dr. Shimin Li
+
+== Assignment/Results
+Question 1::
+Given::::
+* Directed Graph _G_ of nodes _n_ and edges _m_
+* Each edge asciimath:[(u,v)] has a cost asciimath:[C_e(u,v)]
+* asciimath:[C_e] can be positive, negative, or zero
+* _Bottleneck-cost_ of any path in _G_ is the **largest** cost of all edges in the path
+* _Minimum bottleneck-cost_ from any two nodes _s_ and _t_ is the path with the least _bottleneck-cost_
+
+Goals::::
+* Design an Algorithm to find the _minimum bottleneck-cost_ from _s_ to _t_ in _G_
+* Use a modified Dijkstra's Algorithm
+
+Answer 1::
+* This dijkstra's algorithm will use a minHeap to keep track of the minimum .
+* The cost of edge asciimath:[(u,v)] = asciimath:[C_e(u,v)] = A[u][v]
+
+.pseudoscope used to explain algorithm
+[source,python,numbered]
+----
+# Dijkstra - like algorithm that starts at a source node
+def minBottleneck(graph, source, target):
+    Initialize maxHeap                  # Max heap (key,value) = (node, weight)
+    minHeap.put(source, NEG INFINITY)   # Put source on top of heap
+
+    #Iterate through each node, add each node to heap, and set parent to None
+    for v in range(graph):
+        if v != source:
+            minHeap.put(v,0)
+        v.parent = None
+
+    #Go through heap
+    while(!maxHeap.isEmpty()):
+        #Get the least costly element in the heap and it's cost
+        u = minHeap.peek()
+        u.cost = minHeap.pop()
+
+        # If we have popped the target then we have found 
+        # the minimum bottle-neck path, and the cost of 
+        # the target node will be the bottleneck
+        if u == target:
+            return u.cost
+
+        # Iterate through u's neighbors
+        for v in u.outgoing():
+            # If v is in the heap 
+            # and the current cost of v is less than either the cost of u or the current edge
+            # That means we have found a new bottleneck
+            if v.inHeap() and v.cost < MAX(u.cost, C(u,v))
+                #Update v in the heap and set v.parent = u
+                minHeap.update(v, MAX(u.cost, C(u,v)))
+                v.parent = u
+----
+
+Question 2::
+Given::::
+* Graph asciimath:[G=(V,E)]: undirected connected graph
+* Edge asciimath:[(u,v)] has a positive cost asciimath:[C_e(u,v)>0]
+* Let _s_ and _t_ be two nodes in _G_
+* Let asciimath:[pi(s,t)] denote the shortest path from _s_ to _t_ in _G_
+* Let _T_ be a minimum spanning tree of _G_
+* Suppose we increase the cost of every edge of _G_ by a positive value asciimath:[delta>0] called _G'_.
+
+Part A::::
+Then, is asciimath:[pi(s,t)] still a shortest path from _s_ to _t_? +
+Not Necessarily, say there are two paths from s to t: +
+A{s, a, b, c, d, e, t}, asciimath:[C_e(A)=6] each edge is length 1 +
+B{s, z, t}, asciimath:[C_e(A)=8] each edge is length 4 +
+In this scenario A is the sorter path to begin with, but if asciimath:[delta=1] then asciimath:[C_e(A')=12] and asciimath:[C_e(A')=10].
+
+Part B::::
+Then, is _T_ still a minimum spanning tree of _G_? +
+Yes, since all of the paths in _G_ were incremented by the same amount, that means that all the spanning trees of _G_ were also increased by a constant amount.  Therefore, since _T_ was the **minimum** spanning tree of _G_ it will also be the minimum spanning tree of _G'_.
