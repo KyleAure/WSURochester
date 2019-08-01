@@ -1,6 +1,6 @@
-= Lab 1
+= Lab 2
 Kyle Aure <KAure09@winona.edu>
-v1.0, 2019-07-24
+v1.0, 2019-07-31
 :RepoURL: https://github.com/KyleAure/WSURochester
 :AuthorURL: https://github.com/KyleAure
 :DirURL: {RepoURL}/CS440
@@ -9,7 +9,7 @@ v1.0, 2019-07-24
 
 .Assignment Description
 ****
-Implement a program that can test whether an input directed graph is a DAG
+Implement a program that perform Dijkstra's algorithm on a weighted directed graph
 ****
 
 == Course Details
@@ -17,96 +17,112 @@ Implement a program that can test whether an input directed graph is a DAG
 * **Instructor** - Dr. Shimin Li
 
 == Results
-I created a Directed Graph class that uses the *dictonary* data structure as the 
-underlying data structure for the graph.  This is similar to the *adjacent lists*
+I created a Weighted Directed Graph class that uses an n*n array as the 
+underlying data structure for the graph.  This is similar to the *adjacent matrix*
 data structure discussed in class. 
 
-Link to source code: link:src/DirectedGraph.py[]
+Link to source code: link:src/WeightedDirectedGraph.py[]
 
-.Directed Graph Class
+.Weighted Directed Graph Class
 [source, python, numbered]
 ----
-include::src/DirectedGraph.py[tags=class;!findCycle;!getTopologicalOrdering]
+include::src/WeightedDirectedGraph.py[tags=class;!helper;!dijkstra]
 ----
 
-Then I created a function to determine in a Directed Graph is a Directed Acyclic Graph.
-This was done by determining if the graph had a cycle.
-I recursively iterated through the graph, following path from each node, and breaking out
-once a cycle is found.  
+Then I created a helper function to find the index of
+the next node to be processed.  This will always be
+the node that has not yet been processed, and has the next
+shortest distance.
 
-.Is Directed Graph a DAG?
+.Min Distance Function
 [source, python, numbered]
 ----
-include::src/DirectedGraph.py[tags=findCycle]
+include::src/WeightedDirectedGraph.py[tags=helper]
 ----
 
-Finally, I created a function to construct the topological ordering of a Directed Acyclic Graph.
-This was also done by recursively iterating through the graph, and push nodes onto a stack to get
-the final topological order.
+Finally, I created a function to perform the main
+dijkstra algorithm.  In addition to keeping track of a list
+of the shortest distances from the source to a node.
+I also kept a list of the shortest path from the source to each node.
 
-.Topological Order of DAG
+.Dijkstra's Algorithm
 [source, python, numbered]
 ----
-include::src/DirectedGraph.py[tags=getTopologicalOrdering]
+include::src/WeightedDirectedGraph.py[tags=dijkstra]
 ----
 
-I also created automated tests for each path.  
+I also created automated tests to ensure that my helper function and the main algorithm functioned correctly.  
 Test code can be found here: link:src/test.py[]
+
+.Test Code
+[source, python, numbered]
+----
+include::src/test.py[tags=test]
+----
+
+Here are the results from testing
 
 .Results from Unit Tests
 [source, bash, numbered]
 ----
-kyleaure WSURochester (WSURochester) (cs440-notes)  python CS440/Lab1/src/test.py
-testAlwaysTrue (__main__.testDirectedGraph) ... ok
-testCyclicGraph (__main__.testDirectedGraph) ... ok
-testEmptyGraph (__main__.testDirectedGraph) ... ok
-testNonCyclicGraph (__main__.testDirectedGraph) ... ok
+kaure  (WSURochester) (cs440-lab2) $  python test.py
+testAlwaysTrue (__main__.testWeightedDirectedGraph) ... ok
+testDijkstra (__main__.testWeightedDirectedGraph) ... ok
+testDistances (__main__.testWeightedDirectedGraph) ... ok
 
 ----------------------------------------------------------------------
-Ran 4 tests in 0.000s
+Ran 3 tests in 0.000s
 
 OK
 ----
 
-.Example Output
-[source, json, numbered]
+
+Lastly, the name source file `WeightedDirectedGraph.py` has a main function that will run a hard-coded example.
+
+.Main Function
+[source, python, numbered]
 ----
-{
- "Acyclic Graph": [
-  {
-   "Evaulation": [
-    {
-     "cycle": "[]", 
-     "isDAG": true
-    }
-   ], 
-   "Properties": [
-    {
-     "Edges": "[(0, 5), (0, 6), (0, 1), (2, 0), (2, 3), (3, 5), (5, 4), (6, 4), (6, 9), (7, 6), (8, 7), (9, 10), (9, 11), (9, 12), (11, 12)]", 
-     "Nodes": "{0: [5, 6, 1], 1: [], 2: [0, 3], 3: [5], 4: [], 5: [4], 6: [4, 9], 7: [6], 8: [7], 9: [10, 11, 12], 10: [], 11: [12], 12: []}"
-    }
-   ], 
-   "Topological Exception": null, 
-   "Topological Ordering": "[8, 7, 2, 3, 0, 1, 6, 9, 11, 12, 10, 5, 4]"
-  }
- ], 
- "Cyclic Graph": [
-  {
-   "Evaulation": [
-    {
-     "cycle": "[2, 3, 1, 0]", 
-     "isDAG": false
-    }
-   ], 
-   "Properties": [
-    {
-     "Edges": "[(0, 1), (0, 2), (0, 6), (1, 3), (2, 1), (3, 2), (3, 4), (3, 5), (5, 0), (5, 4), (6, 4)]", 
-     "Nodes": "{0: [1, 2, 6], 1: [3], 2: [1], 3: [2, 4, 5], 4: [], 5: [0, 4], 6: [4]}"
-    }
-   ], 
-   "Topological Exception": "This directed graph is not a Directed Acyclic Graph (DAG) and therefore does not have a toplogical ordering", 
-   "Topological Ordering": "None"
-  }
- ]
-}
+include::src/WeightedDirectedGraph.py[tags=main]
+----
+
+.Main Output
+[source, bash, numbered]
+----
+kaure  (WSURochester) (cs440-lab2) $ python WeightedDirectedGraph.py
+
+----Graph----
+
+Node: 0	Map: [-1, 4, -1, -1, -1, -1, -1, 8, -1]
+Node: 1	Map: [4, -1, 8, -1, -1, -1, -1, 11, -1]
+Node: 2	Map: [-1, 8, -1, 7, -1, 4, -1, -1, 2]
+Node: 3	Map: [-1, -1, 7, -1, 9, 14, -1, -1, -1]
+Node: 4	Map: [-1, -1, -1, 9, -1, 0, -1, -1, -1]
+Node: 5	Map: [-1, -1, 4, 14, 0, -1, 2, -1, -1]
+Node: 6	Map: [-1, -1, -1, -1, -1, 2, -1, 1, 6]
+Node: 7	Map: [8, 11, -1, -1, -1, -1, 1, -1, 7]
+Node: 8	Map: [-1, -1, 2, -1, -1, -1, 6, 7, -1]
+
+----Shortest Path----
+
+Node: 0	Path: [0]
+Node: 1	Path: [0, 1]
+Node: 2	Path: [0, 1, 2]
+Node: 3	Path: [0, 1, 2, 3]
+Node: 4	Path: [0, 7, 6, 5, 4]
+Node: 5	Path: [0, 7, 6, 5]
+Node: 6	Path: [0, 7, 6]
+Node: 7	Path: [0, 7]
+Node: 8	Path: [0, 1, 2, 8]
+
+----Minimum Distance----
+
+Node: 0	Distance: 0
+Node: 1	Distance: 4
+Node: 2	Distance: 12
+Node: 3	Distance: 19
+Node: 4	Distance: 11
+Node: 5	Distance: 11
+Node: 6	Distance: 9
+Node: 7	Distance: 8
+Node: 8	Distance: 14
 ----

@@ -17,7 +17,7 @@ Implement a program that can test whether an input directed graph is a DAG
 * **Instructor** - Dr. Shimin Li
 
 == Results
-I created a Directed Graph class that uses the *dictonary* data structure as the 
+I created a Directed Graph class that uses the *dictionary* data structure as the 
 underlying data structure for the graph.  This is similar to the *adjacent lists*
 data structure discussed in class. 
 
