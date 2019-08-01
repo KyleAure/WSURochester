@@ -1,0 +1,47 @@
+= Notes July 25 2019
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-07-25
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS440
+:stem: asciimath
+
+== Kruskal's Algorithm
+
+Graph: G
+Minimum Spanning Tree: T
+Edge: _e_ from (x,y)
+
+Sort all edges _e_ in G (shortest to longest)
+T = {}
+For all _e_ in G
+	If T UNION {e} has no cycle			//if find(x) != find(y)
+		T = T Union {e}					//using Union Find union(x,y)
+
+== Union Find
+
+Array of edges: A
+Number of nodes: n
+Array of height: H
+
+Initialize A[i] = -1 for all n
+
+find(x)
+	if A[x] = -1
+		return x
+	else:
+		return find(A[x])
+
+union(x, y)
+	rootx = find(x)
+	rooty = find(y)
+
+	if(h[rootx] < h[rooty])
+		A[rootx] = rooty
+	else
+		A[rooty] = rootx
+	if h[rootx] == h[rooty]
+		h[rootx]++
+		h[rooty]++
+
+

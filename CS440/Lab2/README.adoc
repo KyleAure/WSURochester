@@ -1,0 +1,128 @@
+= Lab 2
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-07-31
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS440
+:source-highlighter: coderay
+:stem: asciimath
+
+.Assignment Description
+****
+Implement a program that perform Dijkstra's algorithm on a weighted directed graph
+****
+
+== Course Details
+* **Course** - CS440: Theory of Algorithms
+* **Instructor** - Dr. Shimin Li
+
+== Results
+I created a Weighted Directed Graph class that uses an n*n array as the 
+underlying data structure for the graph.  This is similar to the *adjacent matrix*
+data structure discussed in class. 
+
+Link to source code: link:src/WeightedDirectedGraph.py[]
+
+.Weighted Directed Graph Class
+[source, python, numbered]
+----
+include::src/WeightedDirectedGraph.py[tags=class;!helper;!dijkstra]
+----
+
+Then I created a helper function to find the index of
+the next node to be processed.  This will always be
+the node that has not yet been processed, and has the next
+shortest distance.
+
+.Min Distance Function
+[source, python, numbered]
+----
+include::src/WeightedDirectedGraph.py[tags=helper]
+----
+
+Finally, I created a function to perform the main
+dijkstra algorithm.  In addition to keeping track of a list
+of the shortest distances from the source to a node.
+I also kept a list of the shortest path from the source to each node.
+
+.Dijkstra's Algorithm
+[source, python, numbered]
+----
+include::src/WeightedDirectedGraph.py[tags=dijkstra]
+----
+
+I also created automated tests to ensure that my helper function and the main algorithm functioned correctly.  
+Test code can be found here: link:src/test.py[]
+
+.Test Code
+[source, python, numbered]
+----
+include::src/test.py[tags=test]
+----
+
+Here are the results from testing
+
+.Results from Unit Tests
+[source, bash, numbered]
+----
+kaure  (WSURochester) (cs440-lab2) $  python test.py
+testAlwaysTrue (__main__.testWeightedDirectedGraph) ... ok
+testDijkstra (__main__.testWeightedDirectedGraph) ... ok
+testDistances (__main__.testWeightedDirectedGraph) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK
+----
+
+
+Lastly, the name source file `WeightedDirectedGraph.py` has a main function that will run a hard-coded example.
+
+.Main Function
+[source, python, numbered]
+----
+include::src/WeightedDirectedGraph.py[tags=main]
+----
+
+.Main Output
+[source, bash, numbered]
+----
+kaure  (WSURochester) (cs440-lab2) $ python WeightedDirectedGraph.py
+
+----Graph----
+
+Node: 0	Map: [-1, 4, -1, -1, -1, -1, -1, 8, -1]
+Node: 1	Map: [4, -1, 8, -1, -1, -1, -1, 11, -1]
+Node: 2	Map: [-1, 8, -1, 7, -1, 4, -1, -1, 2]
+Node: 3	Map: [-1, -1, 7, -1, 9, 14, -1, -1, -1]
+Node: 4	Map: [-1, -1, -1, 9, -1, 0, -1, -1, -1]
+Node: 5	Map: [-1, -1, 4, 14, 0, -1, 2, -1, -1]
+Node: 6	Map: [-1, -1, -1, -1, -1, 2, -1, 1, 6]
+Node: 7	Map: [8, 11, -1, -1, -1, -1, 1, -1, 7]
+Node: 8	Map: [-1, -1, 2, -1, -1, -1, 6, 7, -1]
+
+----Shortest Path----
+
+Node: 0	Path: [0]
+Node: 1	Path: [0, 1]
+Node: 2	Path: [0, 1, 2]
+Node: 3	Path: [0, 1, 2, 3]
+Node: 4	Path: [0, 7, 6, 5, 4]
+Node: 5	Path: [0, 7, 6, 5]
+Node: 6	Path: [0, 7, 6]
+Node: 7	Path: [0, 7]
+Node: 8	Path: [0, 1, 2, 8]
+
+----Minimum Distance----
+
+Node: 0	Distance: 0
+Node: 1	Distance: 4
+Node: 2	Distance: 12
+Node: 3	Distance: 19
+Node: 4	Distance: 11
+Node: 5	Distance: 11
+Node: 6	Distance: 9
+Node: 7	Distance: 8
+Node: 8	Distance: 14
+----
