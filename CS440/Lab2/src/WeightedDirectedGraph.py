@@ -51,7 +51,7 @@ class WeightedDirectedGraph:
         path = [[] for i in range(self.n)]  # path[x] will give path from source to x in order
         path[source].append(source)         # Initialize the path from source to source
 
-        for node in range(self.n):
+        for _ in range(self.n):
             # Use our helper function to find next node
             # to be processed.  That is the node with the least distance
             # that is not already on the shortest distance path.

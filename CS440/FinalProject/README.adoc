@@ -1,0 +1,112 @@
+= Final Project
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-08-05
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS440
+:source-highlighter: coderay
+:stem: asciimath
+
+.Assignment Description
+****
+Output the Minimum Spanning Tree (MST) of a graph.
+Implement the MST algorithm using the Union-Find data structure.
+Evaluate performance.
+****
+
+== Course Details
+* **Course** - CS440: Theory of Algorithms
+* **Instructor** - Dr. Shimin Li
+
+== Implementation Decisions
+When creating a `Minimum Spanning Tree (MST)` we need to complete the following tasks:
+
+1. Sort all the edges by weight from shortest to longest.
+2. Pick the smallest edge. Check if it forms a cycle with the spanning tree formed so far. If cycle is not formed, include this edge. Else, discard it.
+3. Repeat until there are (V-1) edges in the spanning tree.
+
+I created a `WeightedUndirectedGraph` class to hold the graph, 
+then I created an additional `MinimumSpanningTree` file to process
+the graph and get the resulting MST.
+
+== Results
+
+First I created the `WeightedUndirectedGraph` class.
+This class had helper functions to add an edge.
+Additionally, I added the helper functions required for the **Union-Find** data structure.
+This was done exactly the same way as we did in class.
+
+Link to source code: link:src/WeightedUndirectedGraph.py[]
+
+.Weighted Directed Graph Class
+[source, python, numbered]
+----
+include::src/WeightedUndirectedGraph.py[tags=class;!notes]
+----
+
+.Union-Find Helper Functions
+[source, python, numbered]
+----
+include::src/WeightedUndirectedGraph.py[tags=helper;!notes]
+----
+
+Then I created the `MinimumSpanningTree` file.
+This file defined a main MST() function that follows **Kruskal's algorithm** of finding a minimum spanning tree. 
+This was done following the discussion and notes taken in class.
+
+Test code can be found here: link:src/MinimumSpanningTree.py[]
+
+.Minimum Spanning Tree
+[source, python, numbered]
+----
+include::src/MinimumSpanningTree.py[tags=MST;!notes]
+----
+
+I also created automated tests to ensure that my helper functions and the main algorithm functioned correctly. 
+
+Test code can be found here: link:src/test.py[]
+
+.Test Code
+[source, python, numbered]
+----
+include::src/test.py[tags=test]
+----
+
+Here are the results from testing
+
+.Results from Unit Tests
+[source, bash, numbered]
+----
+kyleaure WSURochester (WSURochester) (cs440-final-project) $ python CS440/FinalProject/src/test.py
+testAlwaysTrue (__main__.testMST) ... ok
+testDistances (__main__.testMST) ... ok
+testFind (__main__.testMST) ... ok
+testMST (__main__.testMST) ... ok
+testUnion (__main__.testMST) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK
+----
+
+Lastly, the named source file `MinimumSpanningTree.py` has a main function that will run a hard-coded example.
+
+.Main Function
+[source, python, numbered]
+----
+include::src/MinimumSpanningTree.py[tags=main]
+----
+
+.Main Output
+[source, bash, numbered]
+----
+kyleaure WSURochester (WSURochester) (cs440-final-project) $  python CS440/FinalProject/src/MinimumSpanningTree.py
+
+-----Minimum Spanning Tree-----
+Example: u ---(weight)---> v 
+-------------------------------
+0 ---( 1)---> 1
+1 ---( 2)---> 3
+0 ---( 4)---> 2
+----

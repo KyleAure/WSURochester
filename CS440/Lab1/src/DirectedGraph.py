@@ -6,7 +6,7 @@
 #####  DESCRIPTION  #####
 # This class represents a directed graph
 # it uses a dictionary as the underlying 
-# data structre to keep track of nodes
+# data structure to keep track of nodes
 # and edges
 # Reference Material: https://www.geeksforgeeks.org/detect-cycle-in-a-graph/
 from collections import defaultdict
@@ -101,7 +101,7 @@ class DirectedGraph:
     def getTopologicalOrdering(self):
         # Make sure we are working with a DAG
         if self.isDAG() == None:
-            raise Exception("This directed graph needs to be evalauted as a Directed Acyclic Graph (DAG) before a topological ordering can be determined")
+            raise Exception("This directed graph needs to be evaluated as a Directed Acyclic Graph (DAG) before a topological ordering can be determined")
         if not self.isDAG():
             raise Exception("This directed graph is not a Directed Acyclic Graph (DAG) and therefore does not have a toplogical ordering")
         
@@ -119,7 +119,7 @@ class DirectedGraph:
         # return resulting stack
         return stack
         
-    # helper function for topological ordering recusion
+    # helper function for topological ordering recursion
     def topologicalOrderHelper(self, node, visited, stack):
         # Mark the current node as visited. 
         visited[node] = True
@@ -157,7 +157,7 @@ def main():
                 "Nodes": "{}".format(graphs.nonCyclicGraph.graph),
                 "Edges": "{}".format(graphs.nonCyclicGraph.generateEdges())
             }],
-            "Evaulation": [
+            "Evaluation": [
             {
                 "isDAG":nonCyclicResult,
                 "cycle":str(nonCyclicCycle)
@@ -172,7 +172,7 @@ def main():
                 "Nodes": "{}".format(graphs.cyclicGraph.graph),
                 "Edges": "{}".format(graphs.cyclicGraph.generateEdges())
             }],
-            "Evaulation": [
+            "Evaluation": [
             {
                 "isDAG":cyclicResults,
                 "cycle":str(cyclicCycle)

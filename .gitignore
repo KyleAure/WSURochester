@@ -35,3 +35,6 @@ README.html
 /CS385/FinalProject/Presentation/.bundle
 /CS385/FinalProject/Presentation/*.json
 /CS385/FinalProject/Presentation/reveal.js
+
+#Python compiled files
+*.pyc
