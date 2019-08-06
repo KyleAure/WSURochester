@@ -28,7 +28,9 @@ Goals::::
 
 Answer 1::
 * This dijkstra's algorithm will use a minHeap to keep track of the minimum .
-* The cost of edge asciimath:[(u,v)] = asciimath:[C_e(u,v)] = A[u][v]
+* The cost of edge asciimath:[(u,v)] = asciimath:[C(u,v)]
+
+<<<
 
 .pseudoscope used to explain algorithm
 [source,python,numbered]
@@ -50,15 +52,15 @@ def minBottleneck(graph, source, target):
         u = minHeap.peek()
         u.cost = minHeap.pop()
 
-        # If we have popped the target then we have found 
-        # the minimum bottle-neck path, and the cost of 
+        # If we have popped the target then we have found
+        # the minimum bottle-neck path, and the cost of
         # the target node will be the bottleneck
         if u == target:
             return u.cost
 
         # Iterate through u's neighbors
         for v in u.outgoing():
-            # If v is in the heap 
+            # If v is in the heap
             # and the current cost of v is less than either the cost of u or the current edge
             # That means we have found a new bottleneck
             if v.inHeap() and v.cost < MAX(u.cost, C(u,v))
