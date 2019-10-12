@@ -1,0 +1,66 @@
+= Homework 3
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-10-09
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS435
+:stem: asciimath
+
+.Homework Description
+****
+Regular Expressions
+****
+
+== Course Details
+* **Course** - CS435
+* **Instructor** - Dr. Chi-Cheng Lin
+
+== Homework Results
+
+Problem Set 1::
+Exercises from Chapter 6.
+- Provide answer.
+- Explanation of how regular expression was constructed.
+
+Problem 2b:::
+asciimath:[{w in {a,b}^*** : text(w does not end in ba) }]
+
+Answer::::
+asciimath:[epsilon uu a uu (a uu b)^*** (b uu aa)]
+
+Explanation::::
+Accepting State 1: empty string in accepted
+Case 2: String can end in a when a is by itself -> include a
+Case 3: String can end in a when 
+
+Problem 2d:::
+
+Problem 2e:::
+
+Problem 2k:::
+
+Problem 2o:::
+
+
+Problem Set 2::
+Exercises from Chapter 5
+- JFLAP file for the NDFSM
+- A picture of diagram and accepting/rejecting runs
+
+Problem 6a:::
+{asciimath:[a^n b a^m : n, m >= 0, n -=_3 m]}.
+
+JFLAP file:::: 
+link:jflap/6a.jff[]
+
+Results::::
+image:img/6a.png[]
+
+Problem 6b:::
+{asciimath:[w in {a, b}^***] : _w_ contains at least one instance of _aaba_, _bbb_ or _ababa_}.
+
+JFLAP file:::: 
+link:jflap/6b.jff[]
+
+Results::::
+image:img/6b.png[]
