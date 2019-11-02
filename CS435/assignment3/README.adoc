@@ -136,9 +136,6 @@ image:img/3.3.png[]
 Step 6::::
 Rip out states until only a starting state and final state remain.
 
-RIP D:::::
-image:img/3.4.png[]
-
 RIP q1:::::
 image:img/3.5.png[]
 
@@ -148,8 +145,22 @@ image:img/3.6.png[]
 Step 7::::
 Return regular expression
 + 
-asciimath:[epsilon uu (b uu aa)*]
+asciimath:[epsilon uu (b uu aa)^***]
 
 
 Problem 4::
+
+Standardized State:::
+image:img/4.1.png[]
+
+RIP Q2:::
+image:img/4.2.png[]
+
+RIP Q1:::
+image:img/4.3.png[]
+
+Final Answer:::
+asciimath:[epsilon uu b(b uu ab)^***]
+
+
 
