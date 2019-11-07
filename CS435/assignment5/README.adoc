@@ -1,0 +1,77 @@
+= Homework 5
+Kyle Aure <KAure09@winona.edu>
+v1.0, 2019-11-07
+:RepoURL: https://github.com/KyleAure/WSURochester
+:AuthorURL: https://github.com/KyleAure
+:DirURL: {RepoURL}/CS435
+:stem: asciimath
+
+.Homework Description
+****
+
+****
+
+== Course Details
+* **Course** - CS435
+* **Instructor** - Dr. Chi-Cheng Lin
+
+== Homework Results
+
+=== Problem Set 1
+Complete excercise 1b from Chapter 11
+
+asciimath:[Sigma = {a,b}]
+
+asciimath:[G = {S -> aSa | bSb | a | b}]
+
+Part I::
+List 5 strings that are in L: 
+
+Part II::
+List 5 strings that are not in L: 
+
+Part III::
+Describe L concisely.  You can use regular expressions, expressions using variables, etc:
+
+=== Problem Set 2
+Excercise 3b of Chapter 11
+
+Problem::
+Consider grammar asciimath:[G = { S -> 0S1 | SS | 10}]
++
+Show a parse tree produced by G for string `00101101`
+
+
+=== Problem Set 3
+The CFL asciimath:[L = {a^i b^j c^k, k >= 0 and (K <= i or k<= j)}] can be defined by the CFG asciimath:[G = (V, Sigma, R, S)], where:
+
+[stem]
+++++
+R = { 
+S -> A | B,
+A -> aAc | aA | M, 
+B -> aB | F, 
+F -> bFc | bF | epsilon, 
+M -> bM | epsilon}
+++++
+
+Part A::
+What is the value of V?
+
+Part B::
+What is the value of asciimath:[Sigma]?
+
+=== Problem Set 4
+Show context free grammar for each of the following languages.  You only need to show the rule part ( R ) of the grammar.
+
+Part A::
+asciimath:[{a^i b^j: i,j >= 0, 3i = 5j+1}]
+
+Part B::
+asciimath:[{a^m b^n c^k: n,k >= 0, m = n+k}]
+
+Part C::
+asciimath:[{a^m b^n: m,n > 0, m - n text(is even if) m >= n, n - m text(is odd if) m < n}]
+
+Part D::
+asciimath:[{w in {a,b}^***: #_a(w)=#_b(w)+2}]
