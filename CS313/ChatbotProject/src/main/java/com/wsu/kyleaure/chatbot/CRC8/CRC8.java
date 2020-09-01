@@ -1,4 +1,4 @@
-package CRC8;
+package com.wsu.kyleaure.chatbot.CRC8;
 
 // The generator is x^8 + x^2 + x + 1
 // The only method is checksum() which takes the byte array data,

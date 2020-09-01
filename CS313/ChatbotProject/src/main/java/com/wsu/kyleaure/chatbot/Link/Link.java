@@ -1,4 +1,5 @@
-package Link;
+package com.wsu.kyleaure.chatbot.Link;
+
 /**
  * LINK API provided by instructor
  */

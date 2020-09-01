@@ -3,9 +3,6 @@ target/
 
 # Eclipse generated
 .apt_generated/
-.settings/
-.project
-.classpath
 .factorypath
 .metadata
 RemoteSystemsTempFiles

@@ -1,3 +1,5 @@
+package com.wsu.kyleaure.chatbot;
+
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -18,10 +20,9 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.FormSpecs;
 import com.jgoodies.forms.layout.RowSpec;
-
-import CRC8.CRC8;
-import Link.Link;
-import Link.SimpleLink;
+import com.wsu.kyleaure.chatbot.CRC8.CRC8;
+import com.wsu.kyleaure.chatbot.Link.Link;
+import com.wsu.kyleaure.chatbot.Link.SimpleLink;
 
 /**
  * Client GUI - Runs all client activities

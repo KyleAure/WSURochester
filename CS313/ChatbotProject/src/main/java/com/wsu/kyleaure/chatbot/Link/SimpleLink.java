@@ -1,4 +1,4 @@
-package Link;
+package com.wsu.kyleaure.chatbot.Link;
 
 // A Link class for data communication between two processes on the same host.
 import java.net.DatagramPacket;

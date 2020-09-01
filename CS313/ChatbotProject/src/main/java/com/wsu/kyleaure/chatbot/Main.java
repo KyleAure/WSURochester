@@ -1,3 +1,5 @@
+package com.wsu.kyleaure.chatbot;
+
 /**
  * Launches both Client and Server JFrame Instances
  * 

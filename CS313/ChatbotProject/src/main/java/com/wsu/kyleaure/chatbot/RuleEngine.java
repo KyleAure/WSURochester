@@ -1,3 +1,5 @@
+package com.wsu.kyleaure.chatbot;
+
 /**
  * Rule Engine
  * 

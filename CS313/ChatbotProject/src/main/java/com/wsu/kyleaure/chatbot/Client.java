@@ -1,3 +1,5 @@
+package com.wsu.kyleaure.chatbot;
+
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -21,9 +23,10 @@ import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.FormSpecs;
 import com.jgoodies.forms.layout.RowSpec;
 
-import CRC8.CRC8;
-import Link.Link;
-import Link.SimpleLink;
+import com.wsu.kyleaure.chatbot.CRC8.CRC8;
+import com.wsu.kyleaure.chatbot.Link.Link;
+import com.wsu.kyleaure.chatbot.Link.SimpleLink;
+
 
 /**
  * Client GUI - Runs all client activities
@@ -307,7 +310,7 @@ public class Client extends JFrame {
 			
 			//CONSTRUCT sending buffer (SB)
 			//SB: CLIENTID
-			for(int i=0; i<3; i++) {
+			for(int i=0; i<clientID.getText().length(); i++) {
 				sendingBuffer[i] = (byte) clientID.getText().charAt(i);
 			}
 			//SB: LENGTH

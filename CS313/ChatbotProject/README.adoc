@@ -9,6 +9,26 @@ v1.0, 2018-09-02
 * **Course** - CS313
 * **Instructor** - Dr. Chi Lin
 
+== Building
+Run the maven target package to create an executable jar:
+
+```sh
+mvn package
+```
+
+=== Running
+Go to target directory:
+
+```sh
+cd target
+```
+
+Execute java program:
+
+```sh
+java -jar ChatbotProject-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+```
+
 == Documentation
 I have exported my Chatbot program into an executable JAR file located within the root of my project directory.  To run my program just run the Chatbot.jar file.  I have made a GUI for this program that will be displayed in two windows.  The first window is the client view where you can set the client ID, error percentage, and trace options.  The second window is the client view where you can set only the trace options.
 
