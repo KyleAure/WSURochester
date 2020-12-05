@@ -12,7 +12,7 @@ code or assignments.
 == Author Information
 **Kyle Jon Aure** - Creator - link:{AuthorURL}[KyleAure]
 
-Computer Science student at link:www.winona.edu[Winona State University]
+Computer Science student at https://www.winona.edu/[Winona State University]
 
 == Links to Course Projects
 * link:{RepoURL}/tree/master/CS313[CS313 - Networking and Telecommunications]
